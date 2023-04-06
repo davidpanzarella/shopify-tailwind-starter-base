@@ -25,6 +25,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   });
 
   if (summary.closest('header-drawer, menu-drawer')) return;
+  if (summary.closest('header-drawer, menu-drawer')) return;
   summary.parentElement.addEventListener('keyup', onKeyUpEscape);
 });
 
@@ -171,7 +172,7 @@ function onKeyUpEscape(event) {
 }
 
 class QuantityInput extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
@@ -381,7 +382,7 @@ Shopify.CountryProvinceSelector.prototype = {
 };
 
 class MenuDrawer extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
 
     this.mainDetailsToggle = this.querySelector('details');
@@ -408,10 +409,7 @@ class MenuDrawer extends HTMLElement {
     if (!openDetailsElement) return;
 
     openDetailsElement === this.mainDetailsToggle
-      ? this.closeMenuDrawer(
-          event,
-          this.mainDetailsToggle.querySelector('summary'),
-        )
+      ? this.closeMenuDrawer(event, this.mainDetailsToggle.querySelector('summary'))
       : this.closeSubmenu(openDetailsElement);
   }
 
@@ -452,10 +450,7 @@ class MenuDrawer extends HTMLElement {
         parentMenuElement && parentMenuElement.classList.add('submenu-open');
         !reducedMotion || reducedMotion.matches
           ? addTrapFocus()
-          : summaryElement.nextElementSibling.addEventListener(
-              'transitionend',
-              addTrapFocus,
-            );
+          : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
       }, 100);
     }
   }
@@ -490,6 +485,8 @@ class MenuDrawer extends HTMLElement {
 
     if (event instanceof KeyboardEvent)
       elementToFocus?.setAttribute('aria-expanded', false);
+
+    if (event instanceof KeyboardEvent) elementToFocus?.setAttribute('aria-expanded', false);
   }
 
   onFocusOut() {
@@ -548,19 +545,14 @@ class MenuDrawer extends HTMLElement {
 customElements.define('menu-drawer', MenuDrawer);
 
 class HeaderDrawer extends MenuDrawer {
-  constructor() {
+  constructor () {
     super();
   }
 
   openMenuDrawer(summaryElement) {
     this.header = this.header || document.querySelector('.section-header');
     this.borderOffset =
-      this.borderOffset ||
-      this.closest('.header-wrapper').classList.contains(
-        'header-wrapper--border-bottom',
-      )
-        ? 1
-        : 0;
+      this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
     document.documentElement.style.setProperty(
       '--header-bottom-position',
       `${parseInt(
@@ -604,7 +596,7 @@ class HeaderDrawer extends MenuDrawer {
 customElements.define('header-drawer', HeaderDrawer);
 
 class ModalDialog extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
     this.querySelector('[id^="ModalClose-"]').addEventListener(
       'click',
@@ -655,7 +647,7 @@ class ModalDialog extends HTMLElement {
 customElements.define('modal-dialog', ModalDialog);
 
 class ModalOpener extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
 
     const button = this.querySelector('button');
@@ -670,7 +662,7 @@ class ModalOpener extends HTMLElement {
 customElements.define('modal-opener', ModalOpener);
 
 class DeferredMedia extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
     const poster = this.querySelector('[id^="Deferred-Poster-"]');
     if (!poster) return;
@@ -706,7 +698,7 @@ class DeferredMedia extends HTMLElement {
 customElements.define('deferred-media', DeferredMedia);
 
 class SliderComponent extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
     this.slider = this.querySelector('[id^="Slider-"]');
     this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
@@ -736,8 +728,7 @@ class SliderComponent extends HTMLElement {
       this.sliderItemsToShow[1].offsetLeft -
       this.sliderItemsToShow[0].offsetLeft;
     this.slidesPerPage = Math.floor(
-      (this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) /
-        this.sliderItemOffset,
+      (this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) / this.sliderItemOffset
     );
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
     this.update();
@@ -820,7 +811,7 @@ class SliderComponent extends HTMLElement {
 customElements.define('slider-component', SliderComponent);
 
 class SlideshowComponent extends SliderComponent {
-  constructor() {
+  constructor () {
     super();
     this.sliderControlWrapper = this.querySelector('.slider-buttons');
     this.enableSliderLooping = true;
@@ -885,11 +876,7 @@ class SlideshowComponent extends SliderComponent {
       this.autoplayButtonIsSetToPlay = true;
       this.play();
     } else {
-      this.reducedMotion.matches ||
-      this.announcementBarArrowButtonWasClicked ||
-      !this.desktopLayout.matches
-        ? this.pause()
-        : this.play();
+      this.reducedMotion.matches ? this.pause() : this.play();
     }
   }
 
@@ -1005,8 +992,7 @@ class SlideshowComponent extends SliderComponent {
     const slideScrollPosition =
       this.currentPage === this.sliderItems.length
         ? 0
-        : this.slider.scrollLeft +
-          this.slider.querySelector('.slideshow__slide').clientWidth;
+        : this.slider.scrollLeft + this.slider.querySelector('.slideshow__slide').clientWidth;
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
@@ -1038,9 +1024,7 @@ class SlideshowComponent extends SliderComponent {
     const slideScrollPosition =
       this.slider.scrollLeft +
       this.sliderFirstItemNode.clientWidth *
-        (this.sliderControlLinksArray.indexOf(event.currentTarget) +
-          1 -
-          this.currentPage);
+      (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
@@ -1050,7 +1034,7 @@ class SlideshowComponent extends SliderComponent {
 customElements.define('slideshow-component', SlideshowComponent);
 
 class VariantSelects extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
     this.addEventListener('change', this.onVariantChange);
   }
@@ -1209,11 +1193,8 @@ class VariantSelects extends HTMLElement {
       : this.dataset.section;
 
     fetch(
-      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
-        this.dataset.originalSection
-          ? this.dataset.originalSection
-          : this.dataset.section
-      }`,
+      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section
+      }`
     )
       .then((response) => response.text())
       .then((responseText) => {
@@ -1225,28 +1206,16 @@ class VariantSelects extends HTMLElement {
           `price-${this.dataset.section}`,
         );
         const source = html.getElementById(
-          `price-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
+          `price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const skuSource = html.getElementById(
-          `Sku-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
+          `Sku-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const skuDestination = document.getElementById(
           `Sku-${this.dataset.section}`,
         );
         const inventorySource = html.getElementById(
-          `Inventory-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
-          }`,
+          `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const inventoryDestination = document.getElementById(
           `Inventory-${this.dataset.section}`,
@@ -1341,7 +1310,7 @@ class VariantSelects extends HTMLElement {
 customElements.define('variant-selects', VariantSelects);
 
 class VariantRadios extends VariantSelects {
-  constructor() {
+  constructor () {
     super();
   }
 
@@ -1368,7 +1337,7 @@ class VariantRadios extends VariantSelects {
 customElements.define('variant-radios', VariantRadios);
 
 class ProductRecommendations extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
   }
 

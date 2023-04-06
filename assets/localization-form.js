@@ -2,7 +2,7 @@ if (!customElements.get('localization-form')) {
   customElements.define(
     'localization-form',
     class LocalizationForm extends HTMLElement {
-      constructor() {
+      constructor () {
         super();
         this.elements = {
           input: this.querySelector(
