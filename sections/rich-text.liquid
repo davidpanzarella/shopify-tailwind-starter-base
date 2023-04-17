@@ -26,7 +26,6 @@
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
                 {{ block.settings.heading }}
@@ -37,7 +36,6 @@
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
                 {{ block.settings.caption | escape }}
@@ -48,7 +46,6 @@
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
                 {{ block.settings.text }}
@@ -59,7 +56,6 @@
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
                 {%- if block.settings.button_label != blank -%}
