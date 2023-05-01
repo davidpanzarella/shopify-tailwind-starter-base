@@ -2216,6 +2216,10 @@ product-info .loading-overlay:not(.hidden)~*,
   .announcement-bar-slider {
     width: 60%;
   }
+
+  .announcement-bar-slider {
+    width: 60%;
+  }
 }
 
 .announcement-bar__link {
