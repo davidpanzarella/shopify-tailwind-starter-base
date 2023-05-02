@@ -876,7 +876,7 @@ class SlideshowComponent extends SliderComponent {
       this.autoplayButtonIsSetToPlay = true;
       this.play();
     } else {
-      this.reducedMotion.matches ? this.pause() : this.play();
+      this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked || !this.desktopLayout.matches ? this.pause() : this.play();
     }
   }
 
