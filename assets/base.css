@@ -3173,8 +3173,8 @@ details-disclosure>details {
   clip-path: inset(0);
 }
 
-.animate--fixed>img:not(.zoom):not(.deferred-media__poster-button),
-.animate--fixed>svg:not(.zoom):not(.deferred-media__poster-button) {
+.animate--fixed > img:not(.zoom):not(.deferred-media__poster-button),
+.animate--fixed > svg:not(.zoom):not(.deferred-media__poster-button) {
   position: fixed;
   height: 100vh;
 }
@@ -3228,10 +3228,21 @@ details-disclosure>details {
     animation-delay: calc(var(--animation-order) * 75ms);
   }
 
+<<<<<<< HEAD
   .scroll-trigger.scroll-trigger--design-mode.animate--fade-in,
   .scroll-trigger.scroll-trigger--design-mode.animate--slide-in,
   .scroll-trigger.scroll-trigger--design-mode .slider,
   .scroll-trigger:not(.scroll-trigger--offscreen).scroll-trigger--cancel {
+||||||| parent of e263e89 ([Facet filters] Remove animation from product grid re render (#2597))
+  .scroll-trigger--design-mode.animate--fade-in,
+  .scroll-trigger--design-mode.animate--slide-in,
+  .scroll-trigger--design-mode .slider {
+=======
+  .scroll-trigger--design-mode.animate--fade-in,
+  .scroll-trigger--design-mode.animate--slide-in,
+  .scroll-trigger--design-mode .slider,
+  .scroll-trigger:not(.scroll-trigger--offscreen).scroll-trigger--cancel {
+>>>>>>> e263e89 ([Facet filters] Remove animation from product grid re render (#2597))
     opacity: 1;
     animation: none;
     transition: none;
