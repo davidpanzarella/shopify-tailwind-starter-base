@@ -70,6 +70,11 @@
 
             <tbody>
               {%- for item in cart.items -%}
+                <script>
+                  console.log("properties:", {{ item | json }});
+                  console.log("properties:", {{ item.properties | json }});
+                </script>
+
                 <tr class='cart-item' id='CartItem-{{ item.index | plus: 1 }}'>
                   <td class='cart-item__media'>
                     {% if item.image %}
