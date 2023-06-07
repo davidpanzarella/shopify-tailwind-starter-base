@@ -1,4 +1,5 @@
 Dawn 10.0.0 introduces new color schemes, animation options across templates and sections, performance improvements for large images, an improved announcement bar, and the ability to change the shape of product cards images.
+Dawn 10.0.0 introduces new color schemes, animation options across templates and sections, performance improvements for large images, an improved announcement bar, and the ability to change the shape of product cards images.
 
 ### Added
 
