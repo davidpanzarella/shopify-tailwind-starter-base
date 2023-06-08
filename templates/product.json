@@ -112,8 +112,8 @@
       "settings": {
         "enable_sticky_info": true,
         "media_size": "large",
-        "constrain_to_viewport": false,
-        "media_fit": "cover",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "media_position": "right",
         "image_zoom": "none",
