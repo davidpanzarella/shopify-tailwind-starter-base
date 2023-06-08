@@ -1,6 +1,6 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/keg-collars-logo.png",
+    "logo": "shopify:\/\/shop_images\/logo.png",
     "logo_width": 200,
     "colors_solid_button_labels": "{{ shop.brand.colors.primary[0].background }}",
     "colors_accent_1": "#121212",
@@ -107,7 +107,7 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
-    "accent_icons": "text",
+    "accent_icons": "accent-1",
     "social_facebook_link": "",
     "social_instagram_link": "",
     "social_youtube_link": "",
@@ -121,7 +121,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "page",
+    "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
