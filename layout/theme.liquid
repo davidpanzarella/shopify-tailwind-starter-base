@@ -261,6 +261,41 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    <script>
+      console.log('Custom javascript!');
+
+const customQuerySelector = (selector, ...classNames) => {
+    const elements = document.querySelectorAll(selector);
+        console.log(elements);
+
+    elements.forEach(element => {
+            console.log(element);
+
+        classNames.forEach(className => {
+                    console.log(className);
+
+            element.classList.add(className);
+        });
+    });
+}
+
+const checkElementsExist = setInterval(() => {
+    const customilyLoaded = document.querySelectorAll('#cl_optionsapp .customily_option label');
+    console.log(customilyLoaded);
+    if (customilyLoaded.length > 0) {
+        clearInterval(checkElementsExist);
+        // set classes for styling 
+        customQuerySelector('#cl_optionsapp .customily_option select', 'select__select');
+        customQuerySelector('#cl_optionsapp .customily_option label', 'form__label');
+        customQuerySelector('#cl_optionsapp .customily-download-button', 'button');
+        customQuerySelector('#cl_optionsapp .cl_remove-image', 'button', 'button--secondary');
+
+        
+    }
+}, 100); // check every 100ms
+
+    </script>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
