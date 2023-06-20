@@ -90,23 +90,12 @@
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-<<<<<<< HEAD
         "full_width": false,
-||||||| parent of aa3c269 (Updating theme)
-        "color_scheme": "background-1",
-=======
->>>>>>> aa3c269 (Updating theme)
         "show_view_all": false,
-<<<<<<< HEAD
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-1",
-||||||| parent of aa3c269 (Updating theme)
-        "swipe_on_mobile": false,
-=======
-        "color_scheme": "background-1",
->>>>>>> aa3c269 (Updating theme)
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
