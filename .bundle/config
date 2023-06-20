@@ -1,0 +1,3 @@
+---
+BUNDLE_PATH: "/Users/davidpanzarella/Library/Caches/shopify-gems-nodejs"
+BUNDLE_WITHOUT: "development:test"

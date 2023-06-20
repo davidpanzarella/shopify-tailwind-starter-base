@@ -112,10 +112,15 @@
         "enable_sticky_info": true,
         "media_size": "large",
         "constrain_to_viewport": true,
+<<<<<<< HEAD
         "media_fit": "cover",
         "gallery_layout": "thumbnail_slider",
         "media_position": "right",
         "image_zoom": "none",
+||||||| parent of aa3c269 (Updating theme)
+=======
+        "gallery_layout": "stacked",
+>>>>>>> aa3c269 (Updating theme)
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
