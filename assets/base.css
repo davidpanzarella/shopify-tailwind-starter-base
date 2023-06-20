@@ -1419,7 +1419,8 @@ button.shopify-payment-button__button--unbranded {
 .button:after,
 .shopify-challenge__button:after,
 .customer button:after,
-.shopify-payment-button__button--unbranded:after {
+.shopify-payment-button__button--unbranded:after,
+.customily-download-button:after{
   content: '';
   position: absolute;
   top: var(--buttons-border-width);
