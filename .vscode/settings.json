@@ -12,5 +12,8 @@
   },
   "[liquid]": {
     "editor.formatOnSave": true
-  }
+  },
+  "cSpell.words": [
+    "metafields"
+  ]
 }
