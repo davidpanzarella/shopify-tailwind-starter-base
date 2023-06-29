@@ -45,9 +45,13 @@
   </section>
 
   <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 'auto',
+    window.addEventListener('load', function () {
+      const swiper = new Swiper('.swiper', {
+        slidesPerView: 'auto',
+        loop: true,
+      });
     });
+
     console.log('swiper:', swiper);
   </script>
 {%- endif -%}
