@@ -58,20 +58,6 @@
       console.log('DOMContentLoaded');
       const swiper = new Swiper('.swiper', {
         slidesPerView: 'auto',
-        spaceBetween: parseInt(document.querySelector('.swiper').dataset.spaceBetween),
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: parseInt(document.querySelector('.swiper').dataset.slidesPerViewDesktop),
-          },
-          0: {
-            slidesPerView: parseInt(document.querySelector('.swiper').dataset.slidesPerViewMobile),
-          },
-        },
       });
       console.log('swiper:', swiper);
     });
