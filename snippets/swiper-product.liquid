@@ -48,9 +48,16 @@
   </section>
 
   <script>
+    window.addEventListener('load', function () {
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+      });
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
       console.log('DOMContentLoaded');
       console.log(`typeof Swiper !== 'undefined':`, typeof Swiper !== 'undefined');
+
       if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper('.swiper', {
           slidesPerView: 'auto',
