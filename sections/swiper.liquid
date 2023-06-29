@@ -80,7 +80,7 @@
 {% endschema %}
 
 {%- assign product_collection = section.settings.product_collection | default: collections.all -%}
-{%- assign products = product_collection.products | limit: section.settings.num_products -%}
+{%- assign products = product_collection.products | slice: 0, section.settings.num_products -%}
 
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
