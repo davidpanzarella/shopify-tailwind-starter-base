@@ -1,0 +1,55 @@
+{% schema %}
+{
+  "name": "Swiper Product List",
+  "settings": [
+    {
+      "type": "collection",
+      "label": "Collection",
+      "id": "collection",
+      "info": "Select the collection from which to display products."
+    },
+    {
+      "type": "range",
+      "label": "Slides per View (Mobile)",
+      "id": "slides_per_view_mobile",
+      "default": 1,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "type": "range",
+      "label": "Slides per View (Desktop)",
+      "id": "slides_per_view_desktop",
+      "default": 3,
+      "min": 1,
+      "max": 5
+    },
+    {
+      "type": "range",
+      "label": "Space Between Slides",
+      "id": "space_between",
+      "default": 20,
+      "min": 0,
+      "max": 50
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Navigation",
+      "id": "show_navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Pagination",
+      "id": "show_pagination",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
