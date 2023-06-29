@@ -49,6 +49,7 @@
 
   <script>
     
+    
     window.addEventListener('load', function () {
       const swiper = new Swiper('.swiper', {
         loop: true,
@@ -58,7 +59,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       console.log('DOMContentLoaded');
       const swiper = new Swiper('.swiper', {
-        slidesPerView: 'auto',
+        {% comment %} slidesPerView: 'auto',
         spaceBetween: parseInt(document.querySelector('.swiper').dataset.spaceBetween),
         loop: true,
         navigation: {
@@ -72,10 +73,11 @@
           0: {
             slidesPerView: parseInt(document.querySelector('.swiper').dataset.slidesPerViewMobile),
           },
-        },
+        }, {% endcomment %}
       });
       console.log(`swiper':`, swiper');
     });
+
 
   </script>
 {%- endif -%}
