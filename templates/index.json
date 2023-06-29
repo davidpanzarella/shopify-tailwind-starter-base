@@ -244,32 +244,17 @@
         "padding_bottom": 36
       }
     },
-    "cde90454-8ef8-411b-8a9f-c2b13c684976": {
-      "type": "featured-collection",
+    "9c5e0290-9f6c-4655-bc5e-1f5d781bf522": {
+      "type": "swiper-product-list",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "keg-collars",
-        "products_to_show": 10,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "Featured Products",
+        "product_collection": "custom-design-keg-collars",
+        "show_sale_products": false,
+        "show_new_products": false,
+        "num_products": 10,
+        "slides_per_view_mobile": "2",
+        "slides_per_view_desktop": "5",
+        "space_between": 5
       }
     }
   },
@@ -280,6 +265,7 @@
     "collage",
     "video",
     "multicolumn",
-    "cde90454-8ef8-411b-8a9f-c2b13c684976"
+    "cde90454-8ef8-411b-8a9f-c2b13c684976",
+    "9c5e0290-9f6c-4655-bc5e-1f5d781bf522"
   ]
 }
