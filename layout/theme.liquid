@@ -255,12 +255,8 @@
       >
     {%- endif -%}
 
-    {% for section in sections %}
-      {% if section.type == 'swiper-product-list' %}
-        <link rel='stylesheet' href='{{ 'swiper.min.css' | asset_url }}'>
-        <script src='{{ 'swiper.min.js' | asset_url }}'></script>
-      {% endif %}
-    {% endfor %}
+    <link rel='stylesheet' href='{{ 'swiper.min.css' | asset_url }}'>
+    <script src='{{ 'swiper.min.js' | asset_url }}'></script>
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
