@@ -11,7 +11,7 @@
   <section class='swiper-product-list'>
     <h2>{{ section.settings.title }}</h2>
     <div
-      class='swiper-container'
+      class='swiper'
       data-slides-per-view-mobile='{{ section.settings.slides_per_view_mobile }}'
       data-slides-per-view-desktop='{{ section.settings.slides_per_view_desktop }}'
       data-space-between='{{ section.settings.space_between }}'
@@ -52,9 +52,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       console.log('DOMContentLoaded');
-      const swiper = new Swiper('.swiper-container', {
+      const swiper = new Swiper('.swiper', {
         slidesPerView: 'auto',
-        spaceBetween: parseInt(document.querySelector('.swiper-container').dataset.spaceBetween),
+        spaceBetween: parseInt(document.querySelector('.swiper').dataset.spaceBetween),
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
