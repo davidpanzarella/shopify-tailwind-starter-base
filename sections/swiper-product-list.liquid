@@ -1,6 +1,7 @@
 {% schema %}
 {
   "name": "Swiper Product List",
+  "class": "index-section",
   "settings": [
     {
       "type": "text",
@@ -60,6 +61,19 @@
       "info": "The space (in pixels) between slides."
     }
   ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "category": "Products",
@@ -79,67 +93,4 @@
 }
 {% endschema %}
 
-{%- assign product_collection = section.settings.product_collection | default: collections.all -%}
-{%- assign products = product_collection.products | slice: 0, section.settings.num_products -%}
-
-<script>
-  console.log("product_collection:", {{ products | json }});
-  console.log("products:", {{ products | json }});
-</script>
-
-{%- if products.size > 0 -%}
-  <section class='swiper-product-list'>
-    <script>
-      console.log("products.LazyProduc:", {{ products.LazyProduc | json }});
-    </script>
-    <h2>{{ section.settings.title }}</h2>
-    <div
-      class='swiper-container'
-      data-slides-per-view-mobile='{{ section.settings.slides_per_view_mobile }}'
-      data-slides-per-view-desktop='{{ section.settings.slides_per_view_desktop }}'
-      data-space-between='{{ section.settings.space_between }}'
-    >
-      <div class='swiper-wrapper'>
-        {%- for product in products -%}
-          <div class='swiper-slide'>
-            <a href='{{ product.url }}' class='product-link'>
-              <div class='product-image'>
-                <img
-                  src='{{ product.featured_image.src | image_url: 'master' }}'
-                  alt='{{ product.featured_image.alt }}'
-                  loading='eager'
-                  width='{{ product.featured_image.width }}'
-                  height='{{ product.featured_image.height }}'
-                >
-              </div>
-              <div class='product-title'>{{ product.title }}</div>
-              <div class='product-price'>{{ product.price | money }}</div>
-            </a>
-          </div>
-        {%- endfor -%}
-      </div>
-      <div class='swiper-button-next'></div>
-      <div class='swiper-button-prev'></div>
-    </div>
-  </section>
-
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 'auto',
-      spaceBetween: parseInt(document.querySelector('.swiper-container').dataset.spaceBetween),
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: parseInt(document.querySelector('.swiper-container').dataset.slidesPerViewDesktop),
-        },
-        0: {
-          slidesPerView: parseInt(document.querySelector('.swiper-container').dataset.slidesPerViewMobile),
-        },
-      },
-    });
-  </script>
-{%- endif -%}
+{% render 'swiper-product', section: section %}
