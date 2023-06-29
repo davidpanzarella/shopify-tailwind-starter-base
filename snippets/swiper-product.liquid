@@ -4,7 +4,7 @@
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
     <script>
-      console.log("products.LazyProduc:", {{ products.LazyProduc | json }});
+      console.log("products:", {{ products | json }});
     </script>
     <h2>{{ section.settings.title }}</h2>
     <div
@@ -15,6 +15,9 @@
     >
       <div class='swiper-wrapper'>
         {%- for product in products -%}
+          <script>
+            console.log("product:", {{ product | json }});
+          </script>
           <div class='swiper-slide'>
             <a href='{{ product.url }}' class='product-link'>
               <div class='product-image'>
