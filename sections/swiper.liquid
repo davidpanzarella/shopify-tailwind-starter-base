@@ -99,7 +99,9 @@
                 <img
                   src='{{ product.featured_image.src | image_url: 'master' }}'
                   alt='{{ product.featured_image.alt }}'
-                  loading='{% if forloop.index <= section.settings.num_products %}eager{% else %}lazy{% endif %}'
+                  loading='eager'
+                  width='{{ product.featured_image.width }}'
+                  height='{{ product.featured_image.height }}'
                 >
               </div>
               <div class='product-title'>{{ product.title }}</div>
