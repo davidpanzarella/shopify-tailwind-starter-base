@@ -1,9 +1,10 @@
 {% assign featured_collection = section.settings.featured_collection %}
 {% assign products = collections[featured_collection].products %}
+{% assign products_to_display = section.settings.collection.all_products_count %}
 
 <script>
   console.log("section:", {{ section.settings | json }});
-  console.log("products:", {{ products }});
+  console.log("products_to_display:", {{ products_to_display }});
 </script>
 
 {%- if products.size > 0 -%}
