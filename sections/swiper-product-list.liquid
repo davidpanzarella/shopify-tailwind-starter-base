@@ -81,7 +81,11 @@
 
 {%- assign product_collection = section.settings.product_collection | default: collections.all -%}
 {%- assign products = product_collection.products | slice: 0, section.settings.num_products -%}
-console.log(`products:`, products);
+
+<script>
+  console.log("product_collection:", {{ products | json }});
+  console.log("products:", {{ products | json }});
+</script>
 
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
