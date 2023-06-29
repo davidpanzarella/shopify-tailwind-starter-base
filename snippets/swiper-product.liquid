@@ -2,6 +2,7 @@
 {%- assign products = product_collection.products | slice: 0, section.settings.num_products -%}
 <script>
   console.log("products:", {{ products | json }});
+  console.log("section.settings.num_products:", {{ section.settings.num_products }});
 </script>
 
 {%- if products.size > 0 -%}
