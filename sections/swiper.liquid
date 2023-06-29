@@ -1,4 +1,4 @@
-{%- schema -%}
+{% schema %}
 {
   "name": "Swiper Product List",
   "settings": [
@@ -77,7 +77,7 @@
     }
   ]
 }
-{%- endschema -%}
+{% endschema %}
 
 {%- assign product_collection = section.settings.product_collection | default: collections.all -%}
 {%- assign products = product_collection.products | limit: section.settings.num_products -%}
