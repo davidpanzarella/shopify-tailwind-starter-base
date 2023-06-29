@@ -7,8 +7,8 @@
 {% assign products = collections[featured_collection].products %}
 
 <script>
+  console.log("section:", {{ section }});
   console.log("products:", {{ products | json }});
-  console.log("section.settings.num_products:", {{ section.settings.num_products }});
 </script>
 
 {%- if products.size > 0 -%}
