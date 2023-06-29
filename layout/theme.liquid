@@ -255,8 +255,10 @@
       >
     {%- endif -%}
 
-    <link rel='stylesheet' href='{{ 'swiper.css' | asset_url }}'>
-    <script src='{{ 'swiper.js' | asset_url }}' async></script>
+    {% if global_swiper_included %}
+      {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
+      {{ 'swiper.min.js' | asset_url | script_tag }}
+    {% endif %}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
