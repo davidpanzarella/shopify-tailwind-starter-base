@@ -1,5 +1,5 @@
-{%- assign product_collection = section.settings.product_collection.products -%}
-{%- assign products = product_collection | slice: 0, section.settings.num_products -%}
+{%- assign product_collection = section.settings.product_collection -%}
+{%- assign products = product_collection.products | slice: 0, section.settings.num_products -%}
 
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
