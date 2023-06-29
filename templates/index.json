@@ -83,6 +83,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -222,7 +223,7 @@
       "type": "swiper-product-list",
       "settings": {
         "title": "Featured Products",
-        "product_collection": "custom-design-keg-collars",
+        "product_collection": "template-keg-collars",
         "show_sale_products": false,
         "show_new_products": false,
         "num_products": 10,
