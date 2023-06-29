@@ -10,9 +10,6 @@
     <h2>{{ section.settings.title }}</h2>
     <div
       class='swiper'
-      data-slides-per-view-mobile='{{ section.settings.slides_per_view_mobile }}'
-      data-slides-per-view-desktop='{{ section.settings.slides_per_view_desktop }}'
-      data-space-between='{{ section.settings.space_between }}'
     >
       <div class='swiper-wrapper'>
         {%- for product in products -%}
@@ -48,12 +45,6 @@
   </section>
 
   <script>
-    window.addEventListener('load', function () {
-      const swiper = new Swiper('.swiper', {
-        loop: true,
-      });
-    });
-
     const swiper = new Swiper('.swiper', {
       slidesPerView: 'auto',
     });
