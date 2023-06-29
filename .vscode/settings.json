@@ -1,7 +1,19 @@
 {
   "cSpell.words": [
+    "describedby",
+    "endcomment",
+    "endform",
+    "endstyle",
     "endunless",
+    "giftcard",
+    "gtin",
+    "haspopup",
     "metafields",
+    "msie",
+    "qrcode",
+    "roledescription",
+    "soldout",
+    "tabindex",
     "trelliscommerce"
   ],
   "editor.formatOnSave": false,
@@ -13,9 +25,5 @@
   },
   "[liquid]": {
     "editor.formatOnSave": true
-  },
-  "cSpell.words": [
-    "endunless",
-    "metafields"
-  ]
+  }
 }
