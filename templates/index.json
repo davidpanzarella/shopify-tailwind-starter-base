@@ -248,7 +248,7 @@
       "type": "swiper-product-list",
       "settings": {
         "title": "Featured Products",
-        "product_collection": "cider",
+        "product_collection": "custom-design-keg-collars",
         "show_sale_products": false,
         "show_new_products": false,
         "num_products": 10,
