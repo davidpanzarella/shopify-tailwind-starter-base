@@ -54,12 +54,9 @@
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-      console.log('DOMContentLoaded');
-      const swiper = new Swiper('.swiper', {
-        slidesPerView: 'auto',
-      });
-      console.log('swiper:', swiper);
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 'auto',
     });
+    console.log('swiper:', swiper);
   </script>
 {%- endif -%}
