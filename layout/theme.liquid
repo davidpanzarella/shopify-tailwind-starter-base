@@ -318,6 +318,12 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
+      window.addEventListener('load', function () {
+        const swiper = new Swiper('.swiper', {
+          loop: true,
+        });
+      });
     </script>
 
     {%- if settings.predictive_search_enabled -%}
