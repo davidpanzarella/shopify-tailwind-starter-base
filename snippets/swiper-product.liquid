@@ -79,10 +79,10 @@
         },
         breakpoints: {
           640: {
-            slidesPerView: 2,
+            slidesPerView: {{ section.settings.slides_per_view_mobile }},
           },
           768: {
-            slidesPerView: {{ section.settings.slides_per_view_desktop - {{ section.settings.slides_per_view_mobile }} }},
+            slidesPerView: 3,
           },
           1024: {
             slidesPerView: {{ section.settings.slides_per_view_desktop }},
