@@ -28,18 +28,39 @@
           "settings": {
             "collection": ""
           }
+        },
+        "713aa488-4d77-4516-83c2-52a7ad9e0bf9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "553467c2-6790-4970-b6aa-3432dab33d32": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "3f93c962-99ec-466b-b0f4-47a490f329c1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
         "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-0",
         "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-1",
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2"
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2",
+        "713aa488-4d77-4516-83c2-52a7ad9e0bf9",
+        "553467c2-6790-4970-b6aa-3432dab33d32",
+        "3f93c962-99ec-466b-b0f4-47a490f329c1"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "image_ratio": "square",
-        "columns_desktop": 3,
+        "columns_desktop": 5,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "1",
@@ -57,12 +78,12 @@
         "show_description": false,
         "description_style": "body",
         "collection": "template-keg-collars",
-        "products_to_show": 25,
+        "products_to_show": 16,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "image_ratio": "square",
         "image_shape": "default",
@@ -95,12 +116,66 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "c4cfbfd0-4ed3-44fd-b118-536916388aa1": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-0": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-1": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-2": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-0",
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-1",
+        "template--19745261355318__c4cfbfd0-4ed3-44fd-b118-536916388aa1-168860024706d9257f-2"
+      ],
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "banner",
     "6d031afb-3fd7-421f-a47b-d2d9a49961d1",
     "d2da5b46-8ccb-4967-8f18-d8242ea27e1b",
-    "product-grid"
+    "product-grid",
+    "c4cfbfd0-4ed3-44fd-b118-536916388aa1"
   ]
 }
