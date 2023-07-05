@@ -71,10 +71,22 @@
     window.addEventListener('load', function () {
       console.log('section.settings:', section.settings);
       const swiper = new Swiper('.swiper', {
-        slidesPerView: {{ section.settings.slides_per_view }},
+        slidesPerView: {{ section.settings.slides_per_view_desktop }},
         spaceBetween: '{{ section.settings.space_between }}px',
         pagination: {
+          el: ".swiper-pagination",
           clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: {{ section.settings.slides_per_view_desktop - {{ section.settings.slides_per_view_mobile }} }},
+          },
+          1024: {
+            slidesPerView: {{ section.settings.slides_per_view_desktop }},
+          },
         },
       });
     });
