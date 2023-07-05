@@ -1,6 +1,5 @@
 {% assign product_collection = section.settings.product_collection %}
 {% assign collection = collections[product_collection] %}
-console.log(`collection:`, collection);
 {% assign products = collection.products %}
 
 {%- style -%}
@@ -27,6 +26,7 @@ console.log(`collection:`, collection);
 {%- endstyle -%}
 
 <script>
+  console.log("collection:", {{ collection | json }});
   console.log("section:", {{ section.settings | json }});
 </script>
 
