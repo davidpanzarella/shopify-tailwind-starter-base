@@ -69,6 +69,7 @@
 
   <script>
     window.addEventListener('load', function () {
+      console.log('section.settings:', section.settings);
       const swiper = new Swiper('.swiper', {
         slidesPerView: {{ section.settings.slides_per_view }},
         spaceBetween: '{{ section.settings.space_between }}px',
@@ -77,7 +78,6 @@
           clickable: true,
         },
       });
-      console.log('swiper:', swiper);
     });
   </script>
 {%- endif -%}
