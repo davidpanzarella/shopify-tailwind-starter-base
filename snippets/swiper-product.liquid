@@ -74,8 +74,10 @@
     
     
     
+    
+    
     window.addEventListener('load', function () {
-      console.log('section.settings:', section.settings.slides_per_view_desktop);
+      console.log('section.settings:', {{ section.settings.slides_per_view_desktop }});
 
       console.log(`slidesPerView:`, {{ section.settings.slides_per_view_auto }});
       let slidesPerView = ({{ section.settings.slides_per_view_auto }} || {{ section.settings.slides_per_view_desktop }} === "")  ? 'auto' : {{ section.settings.slides_per_view_desktop }};
@@ -112,6 +114,8 @@
         },
       });
     });
+
+
 
 
 
