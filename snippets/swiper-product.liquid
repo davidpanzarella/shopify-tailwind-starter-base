@@ -68,10 +68,9 @@
 
   <script>
     window.addEventListener('load', function () {
-      let slidesPerView = {% if section.settings.slides_per_view_auto or section.settings.slides_per_view_desktop == blank %}'auto'{% else %}{{ section.settings.slides_per_view_desktop }}{% endif %};
+      const swiperClass = '{{ section.settings.space_between }}-swiper';
 
-      const swiper = new Swiper('.swiper', {
-        slidesPerView: slidesPerView,
+      const swiper = new Swiper(swiperClass, {
         spaceBetween: '{{ section.settings.space_between }}px',
         pagination: {
           el: ".swiper-pagination",
