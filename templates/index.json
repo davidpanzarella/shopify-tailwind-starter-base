@@ -235,7 +235,7 @@
         "show_description": false,
         "description_style": "uppercase",
         "collection": "template-keg-collars",
-        "products_to_show": 25,
+        "products_to_show": 14,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
@@ -249,7 +249,7 @@
         "show_rating": false,
         "enable_quick_add": false,
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
