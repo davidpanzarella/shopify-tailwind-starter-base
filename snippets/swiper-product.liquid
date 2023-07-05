@@ -69,35 +69,34 @@
   <script>
     let slidesPerView = {% if section.settings.slides_per_view_auto or section.settings.slides_per_view_desktop == blank %}'auto'{% else %}{{ section.settings.slides_per_view_desktop }}{% endif %};
 
-
-      const swiper = new Swiper('.swiper', {
-        slidesPerView: slidesPerView,
-        spaceBetween: '{{ section.settings.space_between }}px',
-        pagination: {
-          el: ".swiper-pagination",
-          dynamicBullets: true,
-          clickable: true,
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: slidesPerView,
+      spaceBetween: '{{ section.settings.space_between }}px',
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true,
+      },
+      grabCursor: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: {{ section.settings.slides_per_view_mobile }},
         },
-        grabCursor: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+        768: {
+          slidesPerView: 3,
         },
-        lazy: {
-          loadPrevNext: true,
-          loadOnTransitionStart: true,
+        1024: {
+          slidesPerView: slidesPerView,
         },
-        breakpoints: {
-          640: {
-            slidesPerView: {{ section.settings.slides_per_view_mobile }},
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: slidesPerView,
-          },
-        },
-      });
+      },
+    });
   </script>
 {%- endif -%}
