@@ -235,7 +235,7 @@
         "show_description": false,
         "description_style": "uppercase",
         "collection": "template-keg-collars",
-        "products_to_show": 14,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
