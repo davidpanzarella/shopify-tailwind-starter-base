@@ -68,6 +68,7 @@
 
   <script>
     window.addEventListener('load', function () {
+      console.log('section.settings:', section.settings);
 
       let slidesPerView = {{ section.settings.slides_per_view_auto }} ? 'auto' : {{ section.settings.slides_per_view_desktop }};
 
