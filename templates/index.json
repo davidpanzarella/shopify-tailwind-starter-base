@@ -192,12 +192,22 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "c9ae2c70-aa1e-4f47-8e69-de58ee88ed01": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "c9ae2c70-aa1e-4f47-8e69-de58ee88ed01"
       ],
       "settings": {
         "title": "",
@@ -225,8 +235,8 @@
         "show_description": false,
         "description_style": "body",
         "collection": "keg-collars",
-        "products_to_show": 10,
-        "columns_desktop": 4,
+        "products_to_show": 25,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
@@ -234,7 +244,7 @@
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
@@ -248,7 +258,7 @@
       "type": "swiper-product-list",
       "settings": {
         "title": "Featured Products",
-        "product_collection": "custom-design-keg-collars",
+        "product_collection": "template-keg-collars",
         "show_sale_products": false,
         "show_new_products": false,
         "num_products": 10,
