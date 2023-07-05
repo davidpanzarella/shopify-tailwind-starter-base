@@ -70,8 +70,8 @@
   <script>
     window.addEventListener('load', function () {
       const swiper = new Swiper('.swiper', {
-        slidesPerView: {{ section.settings.product_collection.slides_per_view }},
-        spaceBetween: '{{ section.settings.product_collection.space_between }}px',
+        slidesPerView: {{ section.settings.slides_per_view }},
+        spaceBetween: '{{ section.settings.space_between }}px',
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
