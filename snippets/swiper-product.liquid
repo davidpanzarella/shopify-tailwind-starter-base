@@ -68,12 +68,10 @@
   </section>
 
   <script>
-    
-    
     window.addEventListener('load', function () {
       const swiper = new Swiper('.swiper', {
-        slidesPerView: ,
-        spaceBetween: `${section.settings.product_collection.space_between}px`,
+        slidesPerView: {{ section.settings.product_collection.slides_per_view }},
+        spaceBetween: '{{ section.settings.product_collection.space_between }}px',
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -81,7 +79,5 @@
       });
       console.log('swiper:', swiper);
     });
-
-
   </script>
 {%- endif -%}
