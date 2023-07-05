@@ -31,9 +31,7 @@
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
     <h2>{{ section.settings.title }}</h2>
-    <div
-      class='swiper'
-    >
+    <div class='swiper'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
           <script>
@@ -62,6 +60,7 @@
           </div>
         {%- endfor -%}
       </div>
+      <div class='swiper-pagination'></div>
       <div class='swiper-button-next'></div>
       <div class='swiper-button-prev'></div>
     </div>
@@ -69,11 +68,22 @@
 
   <script>
     window.addEventListener('load', function () {
+      console.log('section.settings:', section.settings);
+
+      let slidesPerView = {{ section.settings.slides_per_view_auto }} ? 'auto' : {{ section.settings.slides_per_view }};
+
+      if (slidesPerView === 'auto' && {{ section.settings.slides_per_view_desktop }}) {
+        slidesPerView = 'auto';
+      } else if (slidesPerView !== 'auto' && {{ section.settings.slides_per_view_desktop }}) {
+        slidesPerView = {{ section.settings.slides_per_view_desktop }};
+      }
+
       const swiper = new Swiper('.swiper', {
-        slidesPerView: {{ section.settings.slides_per_view_auto }},
+        slidesPerView: slidesPerView,
         spaceBetween: '{{ section.settings.space_between }}px',
         pagination: {
           el: ".swiper-pagination",
+          dynamicBullets: true,
           clickable: true,
         },
         grabCursor: true,
@@ -89,7 +99,7 @@
             slidesPerView: 3,
           },
           1024: {
-            slidesPerView: {{ section.settings.slides_per_view_desktop }},
+            slidesPerView: slidesPerView,
           },
         },
       });
