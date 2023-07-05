@@ -67,22 +67,9 @@
   </section>
 
   <script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     window.addEventListener('load', function () {
-      console.log('section.settings:', {{ section.settings.slides_per_view_mobile }});
 
-      console.log(`slidesPerView:`, {{ section.settings.slides_per_view_auto }});
-      let slidesPerView = ({{ section.settings.slides_per_view_auto }} || !{{ section.settings.slides_per_view_desktop }})  ? 'auto' : {{ section.settings.slides_per_view_desktop }};
+    let slidesPerView = {% if section.settings.slides_per_view_auto or section.settings.slides_per_view_desktop == blank %}'auto'{% else %}{{ section.settings.slides_per_view_desktop }}{% endif %};
 
       if (slidesPerView === 'auto' && {{ section.settings.slides_per_view_desktop }}) {
         slidesPerView = 'auto';
@@ -116,18 +103,5 @@
         },
       });
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
   </script>
 {%- endif -%}
