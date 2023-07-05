@@ -31,7 +31,7 @@
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
     <h2 class='page-width'>{{ section.settings.title }}</h2>
-    <div class='swiper {{ section.settings.space_between }}-swiper'>
+    <div class='swiper {{ section.settings.product-collection }}-swiper'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
           <script>
@@ -68,7 +68,7 @@
 
   <script>
     window.addEventListener('load', function () {
-      const swiperClass = '.{{ section.settings.space_between }}-swiper';
+      const swiperClass = '.{{ section.settings.product-collection }}-swiper';
 
       const swiper = new Swiper(swiperClass, {
         spaceBetween: '{{ section.settings.space_between }}px',
