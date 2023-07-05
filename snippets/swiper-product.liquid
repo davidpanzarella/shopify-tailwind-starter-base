@@ -31,7 +31,7 @@
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
     <h2 class='page-width'>{{ section.settings.title }}</h2>
-    <div class='swiper {{ section.settings.product_collection }}-swiper'>
+    <div class='swiper {{ section.settings.product-collection }}-swiper'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
           <script>
@@ -77,11 +77,11 @@
           dynamicBullets: true,
           clickable: true,
         },
-        grabCursor: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        mousewheel: true,
         breakpoints: {
           640: {
             slidesPerView: {{ section.settings.slides_per_view_mobile }}
