@@ -2,11 +2,11 @@
 {% assign products = collections[product_collection].products %}
 
 {%- style -%}
-  --desktop-margin-left-first-item: max(
-    5rem,
-    calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2)
-  );
   .swiper {
+    --desktop-margin-left-first-item: max(
+      5rem,
+      calc((100vw - var(--page-width) + 10rem - var(--grid-desktop-horizontal-spacing)) / 2)
+    );
     width: 100%;
     height: 100%;
     margin-left: var(--desktop-margin-left-first-item);
