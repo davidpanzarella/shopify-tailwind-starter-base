@@ -68,8 +68,7 @@
 
   <script>
     window.addEventListener('load', function () {
-
-    let slidesPerView = {% if section.settings.slides_per_view_auto or section.settings.slides_per_view_desktop == blank %}'auto'{% else %}{{ section.settings.slides_per_view_desktop }}{% endif %};
+      let slidesPerView = {% if section.settings.slides_per_view_auto or section.settings.slides_per_view_desktop == blank %}'auto'{% else %}{{ section.settings.slides_per_view_desktop }}{% endif %};
 
       const swiper = new Swiper('.swiper', {
         slidesPerView: slidesPerView,
