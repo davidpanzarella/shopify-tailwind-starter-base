@@ -71,7 +71,7 @@
     window.addEventListener('load', function () {
       console.log('section.settings:', section.settings);
       const swiper = new Swiper('.swiper', {
-        slidesPerView: {{ section.settings.slides_per_view_desktop }},
+        slidesPerView: {{ section.settings.slides_per_view_auto }},
         spaceBetween: '{{ section.settings.space_between }}px',
         pagination: {
           el: ".swiper-pagination",
