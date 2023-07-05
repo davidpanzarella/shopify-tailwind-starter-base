@@ -31,16 +31,7 @@
 {%- if products.size > 0 -%}
   <section class='swiper-product-list'>
     <h2 class='page-width'>{{ section.settings.title }}</h2>
-    <div
-      class='swiper'
-      data-swiper-carousel-after='clone'
-      data-swiper-carousel-allow-touch-move='true'
-      data-swiper-carousel-centered-slides='true'
-      data-swiper-carousel-centered-slides-bounds='true'
-      data-swiper-carousel-free-mode='true'
-      data-swiper-carousel-slide-to-clicked-slide='true'
-      data-swiper-carousel-slides-per-view='auto'
-    >
+    <div class='swiper'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
           <script>
