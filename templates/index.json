@@ -228,7 +228,7 @@
         "show_new_products": false,
         "num_products": 10,
         "slides_per_view_mobile": "2",
-        "slides_per_view_desktop": "5",
+        "slides_per_view_desktop": "3",
         "space_between": 5
       }
     }
