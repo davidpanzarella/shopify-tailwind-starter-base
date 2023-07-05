@@ -261,10 +261,10 @@
         "product_collection": "template-keg-collars",
         "show_sale_products": false,
         "show_new_products": false,
-        "num_products": 20,
-        "slides_per_view_auto": false,
-        "slides_per_view_mobile": "1",
-        "slides_per_view_desktop": "4",
+        "num_products": 10,
+        "slides_per_view_auto": true,
+        "slides_per_view_mobile": "2",
+        "slides_per_view_desktop": "5",
         "space_between": 16
       }
     }
