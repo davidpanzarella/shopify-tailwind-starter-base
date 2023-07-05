@@ -234,7 +234,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "keg-collars",
+        "collection": "template-keg-collars",
         "products_to_show": 25,
         "columns_desktop": 3,
         "full_width": false,
