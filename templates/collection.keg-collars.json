@@ -5,68 +5,7 @@
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
-    },
-    "6d031afb-3fd7-421f-a47b-d2d9a49961d1": {
-      "type": "collection-list",
-      "blocks": {
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "{{ collection }}"
-          }
-        },
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "713aa488-4d77-4516-83c2-52a7ad9e0bf9": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "553467c2-6790-4970-b6aa-3432dab33d32": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "3f93c962-99ec-466b-b0f4-47a490f329c1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-0",
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-1",
-        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2",
-        "713aa488-4d77-4516-83c2-52a7ad9e0bf9",
-        "553467c2-6790-4970-b6aa-3432dab33d32",
-        "3f93c962-99ec-466b-b0f4-47a490f329c1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "background-2"
       }
     },
     "d2da5b46-8ccb-4967-8f18-d8242ea27e1b": {
@@ -93,6 +32,60 @@
         "enable_quick_add": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6d031afb-3fd7-421f-a47b-d2d9a49961d1": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-design-keg-collars"
+          }
+        },
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "713aa488-4d77-4516-83c2-52a7ad9e0bf9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "553467c2-6790-4970-b6aa-3432dab33d32": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-0",
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-1",
+        "template--19745261355318__6d031afb-3fd7-421f-a47b-d2d9a49961d1-1687982891d8454f4d-2",
+        "713aa488-4d77-4516-83c2-52a7ad9e0bf9",
+        "553467c2-6790-4970-b6aa-3432dab33d32"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -173,8 +166,8 @@
   },
   "order": [
     "banner",
-    "6d031afb-3fd7-421f-a47b-d2d9a49961d1",
     "d2da5b46-8ccb-4967-8f18-d8242ea27e1b",
+    "6d031afb-3fd7-421f-a47b-d2d9a49961d1",
     "product-grid",
     "c4cfbfd0-4ed3-44fd-b118-536916388aa1"
   ]
