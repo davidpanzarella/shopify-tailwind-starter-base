@@ -43,11 +43,11 @@
             <a href='{{ product.url }}' class='product-link'>
               <div class='product-image'>
                 <img
-                  src='{{ product.featured_image.src | img_url }}'
+                  src='{{ product.featured_image.src | img_url: '640x640' }}'
                   alt='{{ product.featured_image.alt }}'
                   loading='eager'
-                  width='480'
-                  height='480'
+                  width='640'
+                  height='640'
                 >
               </div>
               <div class='product-title'>{{ product.title }}</div>
