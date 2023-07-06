@@ -31,7 +31,7 @@
 </script>
 
 {%- if products.size > 0 -%}
-  <section class='swiper-product-list page-width hidden'>
+  <section class='swiper-product-list page-width'>
     <h2>{{ section.settings.title }}</h2>
     <div class='swiper {{ section.settings.product_collection }}-swiper'>
       <div class='swiper-wrapper'>
@@ -76,7 +76,7 @@
     window.addEventListener('DOMContentLoaded', function () {
       const swiperClass = '.{{ section.settings.product_collection }}-swiper';
 
-      const swiper = new Swiper(swiperClass, {
+      const swiper = new Swiper(".swiper", {
         slidesPerView: 1,
         spaceBetween: '{{ section.settings.space_between }}px',
         breakpoints: {
