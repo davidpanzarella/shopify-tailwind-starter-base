@@ -39,26 +39,37 @@
           <script>
             console.log("product:", {{ product | json }});
           </script>
-          <div class='swiper-slide'>
-            <a href='{{ product.url }}' class='product-link'>
-              <div class='product-image'>
-                <img
-                  src='{{ product.featured_image.src | img_url: '640x640' }}'
-                  alt='{{ product.featured_image.alt }}'
-                  loading='eager'
-                  width='640'
-                  height='640'
-                >
-              </div>
-              <div class='product-title'>{{ product.title }}</div>
-              <div class='product-price'>{{ product.price | money }}</div>
-              {% if section.settings.show_sale_products and product.tags contains 'sale' %}
-                <div class='product-sale'>Sale</div>
-              {% endif %}
-              {% if section.settings.show_new_products and product.tags contains 'new' %}
-                <div class='product-new'>New</div>
-              {% endif %}
-            </a>
+          <div
+            id='Slide-{{ section.id }}-{{ forloop.index }}'
+            class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style='--animation-order: {{ forloop.index }};'
+            {% endif %}
+          >
+            {% render 'card-product', card_product: product, section_id: section.id %}
+
+            {% comment %}
+              <a href='{{ product.url }}' class='product-link'>
+                <div class='product-image'>
+                  <img
+                    src='{{ product.featured_image.src | img_url: '640x640' }}'
+                    alt='{{ product.featured_image.alt }}'
+                    loading='eager'
+                    width='640'
+                    height='640'
+                  >
+                </div>
+                <div class='product-title'>{{ product.title }}</div>
+                <div class='product-price'>{{ product.price | money }}</div>
+                {% if section.settings.show_sale_products and product.tags contains 'sale' %}
+                  <div class='product-sale'>Sale</div>
+                {% endif %}
+                {% if section.settings.show_new_products and product.tags contains 'new' %}
+                  <div class='product-new'>New</div>
+                {% endif %}
+              </a>
+            {% endcomment %}
           </div>
         {%- endfor -%}
       </div>
