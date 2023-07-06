@@ -62,10 +62,10 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class='swiper-scrollbar'></div>
       <div class='swiper-button-next'></div>
       <div class='swiper-button-prev'></div>
       <div class='swiper-pagination'></div>
+      <div class='swiper-scrollbar'></div>
     </div>
   </section>
 
@@ -97,6 +97,7 @@
             slidesPerView: {{ section.settings.slides_per_view_desktop }}
           },
         },
+
       });
 
       document.querySelector(swiperClass).classList.remove('hidden');
