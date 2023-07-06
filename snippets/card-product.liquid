@@ -159,6 +159,9 @@
                 {{ card_product.metafields.custom['product-size'].value }}
                 {{ card_product.metafields.custom['product-shape'].value }}
                 {{ card_product.metafields.custom['product-type'].value }}
+                {{ card_product.metafields.custom.color.value }}
+                {{ card_product.metafields.custom['product-template-name'].value }}
+                {{ card_product.metafields.custom['product-template-type'].value }}
               {%- else -%}
                 {{ card_product.title | escape }}
               {% endif %}
