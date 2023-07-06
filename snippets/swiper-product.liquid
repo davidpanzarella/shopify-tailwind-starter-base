@@ -62,6 +62,8 @@
           </div>
         {%- endfor -%}
       </div>
+      <div class='swiper-scrollbar'></div>
+
       {% comment %}
         <div class='swiper-button-next'></div>
         <div class='swiper-button-prev'></div>
@@ -76,7 +78,7 @@
 
       const swiper = new Swiper(swiperClass, {
         spaceBetween: '{{ section.settings.space_between }}px',
-        mousewheel: true,
+        grab: true,
         breakpoints: {
           640: {
             slidesPerView: {{ section.settings.slides_per_view_mobile }}
