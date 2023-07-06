@@ -477,7 +477,7 @@ table:not([class]) th {
 a:empty,
 ul:empty,
 dl:empty,
-div:empty,
+div:empty:not(.swiper):not(.swiper-slide):not(.swiper-wrapper):not(.swiper-button-next):not(.swiper-button-prev):not(.swiper-pagination),
 section:empty,
 article:empty,
 p:empty,
@@ -489,6 +489,7 @@ h5:empty,
 h6:empty {
   display: none;
 }
+
 
 .link,
 .customer a {
