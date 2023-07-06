@@ -32,11 +32,11 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class='swiper-button-next'></div>
-      <div class='swiper-button-prev'></div>
       <div class='swiper-scrollbar'></div>
 
       {% comment %}
+        <div class='swiper-button-next'></div>
+        <div class='swiper-button-prev'></div>
         <div class='swiper-pagination'></div>
       {% endcomment %}
     </div>
@@ -63,10 +63,6 @@
           1024: {
             slidesPerView: {{ section.settings.slides_per_view_desktop }}
           },
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
         },
         mousewheel: {
           forceToAxis: true,
