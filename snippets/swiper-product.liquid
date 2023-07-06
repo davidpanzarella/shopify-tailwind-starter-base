@@ -52,8 +52,8 @@
           </div>
         {%- endif -%}
       </div>
-
-      <div class='swiper {{ section.settings.product_collection }}-swiper hidden {% if section.settings.full_width %} slider-component-full-width{% endif %} page-width'>
+      <div class="{% if section.settings.full_width %} slider-component-full-width{% endif %} page-width">
+      <div class='swiper {{ section.settings.product_collection }}-swiper hidden >
         <div class='swiper-wrapper'>
           {%- for product in products -%}
             <script>
@@ -80,6 +80,7 @@
           <div class='swiper-pagination'></div>
         {% endcomment %}
       </div>
+    </div>
     </div>
   </div>
 
