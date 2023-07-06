@@ -3,15 +3,18 @@
 {% assign products = collection.products %}
 
 {%- style -%}
-  --swiper-scrollbar-border-radius: 10px;
-  --swiper-scrollbar-top: auto;
-  --swiper-scrollbar-bottom: 4px;
-  --swiper-scrollbar-left: auto;
-  --swiper-scrollbar-right: 4px;
-  --swiper-scrollbar-sides-offset: 1%;
-  --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
-  --swiper-scrollbar-drag-bg-color: pink;
-  --swiper-scrollbar-size: 4px;
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    --swiper-scrollbar-border-radius: 10px;
+    --swiper-scrollbar-top: auto;
+    --swiper-scrollbar-bottom: 4px;
+    --swiper-scrollbar-left: auto;
+    --swiper-scrollbar-right: 4px;
+    --swiper-scrollbar-sides-offset: 1%;
+    --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.1);
+    --swiper-scrollbar-drag-bg-color: pink;
+    --swiper-scrollbar-size: 4px;
+  }
 {%- endstyle -%}
 
 <script>
