@@ -23,7 +23,12 @@
             id='Slide-{{ section.id }}-{{ forloop.index }}'
             class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
           >
-            {% render 'card-product', card_product: product, section_id: section.id %}
+            {%
+              render 'card-product',
+              card_product: product,
+              section_id: section.id,
+              show_secondary_image: section.settings.show_secondary_image,
+            %}
 
             {% comment %}
               <a href='{{ product.url }}' class='product-link'>
