@@ -2,12 +2,66 @@
 {
   "name": "Swiper Product List",
   "class": "swiper-product-list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
-      "type": "text",
-      "label": "Title",
+      "type": "inline_richtext",
       "id": "title",
-      "default": "Featured Products"
+      "default": "Featured collection",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.featured-collection.settings.show_description.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "description_style",
+      "label": "t:sections.featured-collection.settings.description_style.label",
+      "options": [
+        {
+          "value": "body",
+          "label": "t:sections.featured-collection.settings.description_style.options__1.label"
+        },
+        {
+          "value": "subtitle",
+          "label": "t:sections.featured-collection.settings.description_style.options__2.label"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:sections.featured-collection.settings.description_style.options__3.label"
+        }
+      ],
+      "default": "body"
     },
     {
       "type": "collection",
@@ -17,7 +71,7 @@
     },
     {
       "type": "range",
-      "label": "Number of Products",
+      "label": "t:sections.featured-collection.settings.products_to_show.label",
       "id": "num_products",
       "default": 5,
       "min": 5,
@@ -46,6 +100,26 @@
       "max": 48,
       "step": 8,
       "info": "The space (in pixels) between slides."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 48,
+      "step": 8,
+      "unit": "rem",
+      "label": "Padding Top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 48,
+      "step": 8,
+      "unit": "rem",
+      "label": "Padding Bottom",
+      "default": 32
     }
   ],
   "blocks": [
@@ -69,9 +143,11 @@
         "title": "Featured Products",
         "product_collection": "",
         "num_products": 6,
+        "padding_top": 32,
+        "padding_bottom": 32,
         "show_secondary_image": true,
         "slides_per_view_desktop": "4",
-        "space_between": 16
+        "space_between": 8
       }
     }
   ]
