@@ -12,14 +12,17 @@
       "type": "swiper-product-list",
       "settings": {
         "title": "Featured Products",
+        "heading_size": "h2",
+        "description": "<p>vvsdfafdsfdsfsdfsda<\/p>",
+        "show_description": false,
+        "description_style": "uppercase",
         "product_collection": "template-keg-collars",
-        "show_sale_products": false,
-        "show_new_products": false,
-        "num_products": 12,
-        "slides_per_view_auto": false,
-        "slides_per_view_mobile": "1",
+        "num_products": 16,
+        "show_secondary_image": true,
         "slides_per_view_desktop": "3",
-        "space_between": 16
+        "space_between": 24,
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "d2da5b46-8ccb-4967-8f18-d8242ea27e1b": {
