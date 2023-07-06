@@ -31,27 +31,44 @@
 </script>
 
 {%- if products.size > 0 -%}
-  <section class='page-width'>
+  <section class='swiper-product-list page-width'>
     <h2>{{ section.settings.title }}</h2>
     <div class='swiper {{ section.settings.product_collection }}-swiper hidden'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
+          <script>
+            console.log("product:", {{ product | json }});
+          </script>
           <div class='swiper-slide'>
-            <div class='product-title'>{{ product.title }}</div>
-            <div class='product-price'>{{ product.price | money }}</div>
-            {% if section.settings.show_sale_products and product.tags contains 'sale' %}
-              <div class='product-sale'>Sale</div>
-            {% endif %}
-            {% if section.settings.show_new_products and product.tags contains 'new' %}
-              <div class='product-new'>New</div>
-            {% endif %}
+            <a href='{{ product.url }}' class='product-link'>
+              <div class='product-image'>
+                <img
+                  src='{{ product.featured_image.src | img_url: '640x640' }}'
+                  alt='{{ product.featured_image.alt }}'
+                  loading='eager'
+                  width='640'
+                  height='640'
+                >
+              </div>
+              <div class='product-title'>{{ product.title }}</div>
+              <div class='product-price'>{{ product.price | money }}</div>
+              {% if section.settings.show_sale_products and product.tags contains 'sale' %}
+                <div class='product-sale'>Sale</div>
+              {% endif %}
+              {% if section.settings.show_new_products and product.tags contains 'new' %}
+                <div class='product-new'>New</div>
+              {% endif %}
+            </a>
           </div>
         {%- endfor -%}
       </div>
-      <div class='swiper-button-next'></div>
-      <div class='swiper-button-prev'></div>
-      <div class='swiper-pagination'></div>
       <div class='swiper-scrollbar'></div>
+
+      {% comment %}
+        <div class='swiper-button-next'></div>
+        <div class='swiper-button-prev'></div>
+        <div class='swiper-pagination'></div>
+      {% endcomment %}
     </div>
   </section>
 
@@ -61,17 +78,11 @@
 
       const swiper = new Swiper(swiperClass, {
         slidesPerView: 1,
-        cssMode: true,
         grabCursor: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+        freeMode: {
+          enabled: true,
+          sticky: true,
         },
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        mousewheel: true,
-        keyboard: true,
         spaceBetween: '{{ section.settings.space_between }}px',
         breakpoints: {
           640: {
@@ -84,7 +95,14 @@
             slidesPerView: {{ section.settings.slides_per_view_desktop }}
           },
         },
-
+        mousewheel: {
+          forceToAxis: true,
+          releaseOnEdges: true,
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        },
       });
 
       document.querySelector(swiperClass).classList.remove('hidden');
