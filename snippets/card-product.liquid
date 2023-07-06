@@ -165,7 +165,7 @@
             </a>
           </h3>
           <div class='card-information'>
-            {% if card_product.metafields.custom['product-format'].value == 'Template' %}
+            {% if card_product.metafields.custom['product-template-options'].value %}
               <span class='caption-large light'>
                 {{- card_product.metafields.custom['product-template-options'].value -}}
               </span>
