@@ -63,7 +63,6 @@
         {%- endfor -%}
       </div>
       <div class='swiper-scrollbar'></div>
-
       <div class='swiper-button-next'></div>
       <div class='swiper-button-prev'></div>
       <div class='swiper-pagination'></div>
@@ -76,11 +75,16 @@
 
       const swiper = new Swiper(swiperClass, {
         slidesPerView: 1,
-        grabCursor: true,
-        freeMode: {
-          enabled: true,
-          sticky: true,
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
         spaceBetween: '{{ section.settings.space_between }}px',
         breakpoints: {
           640: {
@@ -92,14 +96,6 @@
           1024: {
             slidesPerView: {{ section.settings.slides_per_view_desktop }}
           },
-        },
-        mousewheel: {
-          forceToAxis: true,
-          releaseOnEdges: true,
-        },
-        scrollbar: {
-          el: '.swiper-scrollbar',
-          draggable: true,
         },
       });
 
