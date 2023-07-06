@@ -62,9 +62,11 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class='swiper-button-next'></div>
-      <div class='swiper-button-prev'></div>
-      <div class='swiper-pagination'></div>
+      {% comment %}
+        <div class='swiper-button-next'></div>
+        <div class='swiper-button-prev'></div>
+        <div class='swiper-pagination'></div>
+      {% endcomment %}
     </div>
   </section>
 
@@ -74,15 +76,7 @@
 
       const swiper = new Swiper(swiperClass, {
         spaceBetween: '{{ section.settings.space_between }}px',
-        pagination: {
-          el: ".swiper-pagination",
-          dynamicBullets: true,
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+        mousewheel: true,
         breakpoints: {
           640: {
             slidesPerView: {{ section.settings.slides_per_view_mobile }}
