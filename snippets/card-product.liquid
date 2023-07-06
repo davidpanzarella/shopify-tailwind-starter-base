@@ -158,11 +158,7 @@
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
               {% if card_product.metafields.custom['product-format'].value == 'Template' %}
-                {{ card_product.metafields.custom['product-size'].value }}
-                {{ card_product.metafields.custom['product-shape'].value }}
-                {{ card_product.metafields.custom['product-type'].value }}
-                {{ card_product.metafields.custom['product-template-name'].value }}
-                {{ card_product.metafields.custom['product-format'].value -}}
+                {{- card_product.metafields.custom['product-template-options'].value -}}
               {%- else -%}
                 {{ card_product.title | escape }}
               {% endif %}
@@ -171,7 +167,11 @@
           <div class='card-information'>
             {% if card_product.metafields.custom['product-format'].value == 'Template' %}
               <span class='caption-large light'>
-                {{- card_product.metafields.custom['product-template-options'].value -}}
+                {{ card_product.metafields.custom['product-size'].value }}
+                {{ card_product.metafields.custom['product-shape'].value }}
+                {{ card_product.metafields.custom['product-type'].value }}
+                {{ card_product.metafields.custom['product-template-name'].value }}
+                {{ card_product.metafields.custom['product-format'].value -}}
               </span>
             {%- endif -%}
 
