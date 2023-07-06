@@ -23,9 +23,6 @@
     height: 100%;
     object-fit: cover;
   }
-  .swiper-scrollbar-drag {
-    display: block;
-  }
 {%- endstyle -%}
 
 <script>
@@ -45,6 +42,10 @@
           <div
             id='Slide-{{ section.id }}-{{ forloop.index }}'
             class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style='--animation-order: {{ forloop.index }};'
+            {% endif %}
           >
             {% render 'card-product', card_product: product, section_id: section.id %}
 
