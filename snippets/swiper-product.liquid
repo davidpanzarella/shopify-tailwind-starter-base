@@ -49,8 +49,11 @@
                 height='640'
               >
             </div>
-            {% comment %} <a href='{{ product.url }}' class='product-link'> {% endcomment %}
-            <div class='product-title'>{{ product.title }}</div>
+
+            <div class='product-title'>
+              <a href='{{ product.url }}' class='product-link'>{{ product.title }}</a>
+            </div>
+
             <div class='product-price'>{{ product.price | money }}</div>
             {% if section.settings.show_sale_products and product.tags contains 'sale' %}
               <div class='product-sale'>Sale</div>
@@ -58,7 +61,6 @@
             {% if section.settings.show_new_products and product.tags contains 'new' %}
               <div class='product-new'>New</div>
             {% endif %}
-            {% comment %} </a> {% endcomment %}
           </div>
         {%- endfor -%}
       </div>
