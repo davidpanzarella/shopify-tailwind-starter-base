@@ -79,6 +79,11 @@
       const swiper = new Swiper(swiperClass, {
         slidesPerView: 1,
         cssMode: true,
+        grabCursor: true,
+        freeMode: {
+          enabled: true,
+          sticky: true,
+        },
         spaceBetween: '{{ section.settings.space_between }}px',
         breakpoints: {
           640: {
