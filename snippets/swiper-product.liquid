@@ -77,10 +77,19 @@
       const swiperClass = '.{{ section.settings.product_collection }}-swiper';
 
       const swiper = new Swiper(swiperClass, {
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: '{{ section.settings.space_between }}px',
-        grabCursor: true,
-
+        breakpoints: {
+          640: {
+            slidesPerView: {{ section.settings.slides_per_view_mobile }}
+          },
+          768: {
+            slidesPerView: 3
+          },
+          1024: {
+            slidesPerView: {{ section.settings.slides_per_view_desktop }}
+          },
+        },
         scrollbar: {
           el: '.swiper-scrollbar',
         },
