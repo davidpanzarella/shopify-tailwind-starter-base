@@ -155,13 +155,14 @@
               class='full-unstyled-link'
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
-              {{ card_product.title | escape }}
+              {{ card_product.title | escape }}asdfasdfdssd
             </a>
           </h3>
           <div class='card-information'>
             <div class='caption-with-letter-spacing light'>
               {{ card_product.metafields.custom['product-format'].value }}
-              | {{ card_product.metafields.custom['product-type'].value }}
+              | {{ card_product.metafields.custom['product-type'].value }} |
+              {{ card_product.metafields.custom['product-type'].value }}
             </div>
 
             {%- if show_vendor -%}
