@@ -78,6 +78,9 @@
 
       const swiper = new Swiper(swiperClass, {
         slidesPerView: 1,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+
         spaceBetween: '{{ section.settings.space_between }}px',
         breakpoints: {
           640: {
