@@ -169,9 +169,14 @@
             </a>
           </h3>
           <div class='card-information'>
+            {% if card_product.metafields.custom['product-format'].value == 'Template' %}
+              <span class='caption-large light'>
+                {{- card_product.metafields.custom['product-template-options'].value -}}
+              </span>
+            {%- endif -%}
+
             <div class='caption-with-letter-spacing light'>
-              {{ card_product.metafields.custom['product-template-options'].value }}
-              | {{ card_product.metafields.custom.color.value }}
+              {{ card_product.metafields.custom.color.value }}
             </div>
 
             {%- if show_vendor -%}
