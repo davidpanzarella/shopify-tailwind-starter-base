@@ -73,7 +73,6 @@
   </section>
 
   <script>
-    
     window.addEventListener('load', function () {
       const swiperClass = '.{{ section.settings.product_collection }}-swiper';
 
@@ -96,12 +95,7 @@
         },
       });
 
-      swiper.on('init', function () {
-        console.log(`swiperClass:`, swiperClass);
-        document.querySelector(swiperClass).classList.remove('hidden');
-      });
-
+      document.querySelector(swiperClass).classList.remove('hidden');
     });
-
   </script>
 {%- endif -%}
