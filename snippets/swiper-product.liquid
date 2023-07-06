@@ -27,57 +27,56 @@
 </script>
 
 {%- if products.size > 0 -%}
-
-<div class="color-{{ section.settings.color_scheme }} isolate gradient">
-  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
-
-   <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
-      {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {{ section.settings.title }}
-        </h2>
-      {%- endif -%}
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
-        <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
-          {%- else -%}
-            {{ section.settings.description -}}
-          {%- endif %}
-        </div>
-      {%- endif -%}
-    </div>
-    <div class='swiper {{ section.settings.product_collection }}-swiper hidden'>
-      <div class='swiper-wrapper'>
-        {%- for product in products -%}
-          <script>
-            console.log("product:", {{ product | json }});
-          </script>
-          <div
-            class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
-            id='Slide-{{ section.id }}-{{ forloop.index }}'
-          >
-            {%
-              render 'card-product',
-              card_product: product,
-              section_id: section.id,
-              show_secondary_image: section.settings.show_secondary_image,
-            %}
+  <div class='color-{{ section.settings.color_scheme }} isolate gradient'>
+    <div class='collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}'>
+      <div class='collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}'>
+        {%- if section.settings.title != blank -%}
+          <h2 class='title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank
+          or section.settings.show_description
+          and section.settings.collection.description != empty
+        -%}
+          <div class='collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+            {%- if section.settings.show_description -%}
+              {{ section.settings.collection.description }}
+            {%- else -%}
+              {{ section.settings.description -}}
+            {%- endif %}
           </div>
-        {%- endfor -%}
+        {%- endif -%}
       </div>
-      <div class='swiper-scrollbar'></div>
+      <div class='swiper {{ section.settings.product_collection }}-swiper hidden'>
+        <div class='swiper-wrapper'>
+          {%- for product in products -%}
+            <script>
+              console.log("product:", {{ product | json }});
+            </script>
+            <div
+              class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+              id='Slide-{{ section.id }}-{{ forloop.index }}'
+            >
+              {%
+                render 'card-product',
+                card_product: product,
+                section_id: section.id,
+                show_secondary_image: section.settings.show_secondary_image,
+              %}
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class='swiper-scrollbar'></div>
 
-      {% comment %}
-        <div class='swiper-button-next'></div>
-        <div class='swiper-button-prev'></div>
-        <div class='swiper-pagination'></div>
-      {% endcomment %}
+        {% comment %}
+          <div class='swiper-button-next'></div>
+          <div class='swiper-button-prev'></div>
+          <div class='swiper-pagination'></div>
+        {% endcomment %}
+      </div>
     </div>
-  </section>
+  </div>
 
   <script>
     window.addEventListener('load', function () {
