@@ -37,25 +37,14 @@
       <div class='swiper-wrapper'>
         {%- for product in products -%}
           <div class='swiper-slide'>
-            <a href='{{ product.url }}' class='product-link'>
-              <div class='product-image'>
-                <img
-                  src='{{ product.featured_image.src | img_url: '640x640' }}'
-                  alt='{{ product.featured_image.alt }}'
-                  loading='eager'
-                  width='640'
-                  height='640'
-                >
-              </div>
-              <div class='product-title'>{{ product.title }}</div>
-              <div class='product-price'>{{ product.price | money }}</div>
-              {% if section.settings.show_sale_products and product.tags contains 'sale' %}
-                <div class='product-sale'>Sale</div>
-              {% endif %}
-              {% if section.settings.show_new_products and product.tags contains 'new' %}
-                <div class='product-new'>New</div>
-              {% endif %}
-            </a>
+            <div class='product-title'>{{ product.title }}</div>
+            <div class='product-price'>{{ product.price | money }}</div>
+            {% if section.settings.show_sale_products and product.tags contains 'sale' %}
+              <div class='product-sale'>Sale</div>
+            {% endif %}
+            {% if section.settings.show_new_products and product.tags contains 'new' %}
+              <div class='product-new'>New</div>
+            {% endif %}
           </div>
         {%- endfor -%}
       </div>
