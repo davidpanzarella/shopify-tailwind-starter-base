@@ -176,7 +176,8 @@
             {%- endif -%}
 
             <div class='caption-with-letter-spacing light'>
-              {{ card_product.metafields.custom.color.value }}
+              {{ card_product.metafields.custom.color.value }} ·
+              {{ card_product.metafields.custom['product-size'].value }}
             </div>
 
             {%- if show_vendor -%}
