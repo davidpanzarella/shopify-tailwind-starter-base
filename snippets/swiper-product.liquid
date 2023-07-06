@@ -52,35 +52,35 @@
           </div>
         {%- endif -%}
       </div>
-      <div class="{% if section.settings.full_width %} slider-component-full-width{% endif %} page-width">
-        <div class='swiper {{ section.settings.product_collection }}-swiper hidden >
-        <div class='swiper-wrapper'>
-          {%- for product in products -%}
-            <script>
-              console.log("product:", {{ product | json }});
-            </script>
-            <div
-              class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
-              id='Slide-{{ section.id }}-{{ forloop.index }}'
-            >
-              {%
-                render 'card-product',
-                card_product: product,
-                section_id: section.id,
-                show_secondary_image: section.settings.show_secondary_image,
-              %}
-            </div>
-          {%- endfor -%}
-        </div>
-        <div class='swiper-scrollbar'></div>
+      <div class='{% if section.settings.full_width %} slider-component-full-width{% endif %} page-width'>
+        <div class='swiper {{ section.settings.product_collection }}-swiper hidden'>
+          <div class='swiper-wrapper'>
+            {%- for product in products -%}
+              <script>
+                console.log("product:", {{ product | json }});
+              </script>
+              <div
+                class='swiper-slide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+                id='Slide-{{ section.id }}-{{ forloop.index }}'
+              >
+                {%
+                  render 'card-product',
+                  card_product: product,
+                  section_id: section.id,
+                  show_secondary_image: section.settings.show_secondary_image,
+                %}
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class='swiper-scrollbar'></div>
 
-        {% comment %}
-          <div class='swiper-button-next'></div>
-          <div class='swiper-button-prev'></div>
-          <div class='swiper-pagination'></div>
-        {% endcomment %}
+          {% comment %}
+            <div class='swiper-button-next'></div>
+            <div class='swiper-button-prev'></div>
+            <div class='swiper-pagination'></div>
+          {% endcomment %}
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
