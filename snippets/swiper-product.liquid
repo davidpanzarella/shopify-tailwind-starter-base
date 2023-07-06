@@ -36,9 +36,6 @@
     <div class='swiper {{ section.settings.product_collection }}-swiper hidden'>
       <div class='swiper-wrapper'>
         {%- for product in products -%}
-          <script>
-            console.log("product:", {{ product | json }});
-          </script>
           <div class='swiper-slide'>
             <a href='{{ product.url }}' class='product-link'>
               <div class='product-image'>
