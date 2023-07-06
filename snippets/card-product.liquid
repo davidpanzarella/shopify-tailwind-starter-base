@@ -163,8 +163,6 @@
                 {{ card_product.metafields.custom['product-format'].value -}}
                 <br>
                 <br>
-                {{ card_product.metafields.custom['product-template-options'].value }}
-                {{ card_product.metafields.custom.color.value }}
               {%- else -%}
                 {{ card_product.title | escape }}
               {% endif %}
@@ -172,8 +170,10 @@
           </h3>
           <div class='card-information'>
             <div class='caption-with-letter-spacing light'>
-              | {{ card_product.metafields.custom['product-type'].value }} |
-              {{ card_product.metafields.custom['product-color'].value }}
+              {{ card_product.metafields.custom['product-template-options'].value }}
+              | {{ card_product.metafields.custom['product-type'].value }}
+              |
+              {{ card_product.metafields.custom.color.value }}
             </div>
 
             {%- if show_vendor -%}
