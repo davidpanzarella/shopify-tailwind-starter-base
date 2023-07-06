@@ -94,6 +94,11 @@
           el: '.swiper-scrollbar',
         },
       });
+
+      swiper.on('init', function () {
+        document.querySelector(swiperClass).classList.remove('hidden');
+      });
+
     });
   </script>
 {%- endif -%}
