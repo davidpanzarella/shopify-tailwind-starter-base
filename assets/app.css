@@ -522,6 +522,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.twcss-text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.twcss-text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
 .twcss-underline {
   text-decoration-line: underline;
 }
