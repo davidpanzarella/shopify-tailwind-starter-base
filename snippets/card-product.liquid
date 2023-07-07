@@ -176,7 +176,6 @@
                 endif
               %}
 
-              {{ card_product.metafields.custom.product_template_caption.value }}
               {{ colorDisplay }}
               {{ productTitle }}
             </a>
@@ -185,6 +184,9 @@
             <span class='caption-large light'>
               {% if card_product.metafields.custom['product-template-options'].value %}
                 {{- card_product.metafields.custom['product-template-options'].value -}}
+              {%- endif -%}
+              {% if card_product.metafields.custom.product_template_caption.value %}
+                {{- {{ card_product.metafields.custom.product_template_caption.value -}}
               {%- endif -%}
             </span>
 
