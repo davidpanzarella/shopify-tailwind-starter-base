@@ -173,9 +173,10 @@
                 else
                   assign productTitle = card_product.title | escape
                 endif
-                echo colorDisplay
-                echo productTitle
               %}
+
+              {{ colorDisplay }}
+              {{ productTitle }}
             </a>
           </h3>
           <div class='card-information'>
