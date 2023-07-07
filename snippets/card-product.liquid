@@ -104,7 +104,6 @@
 
         <script>
           console.log("card_product:", {{ card_product | json }});
-          console.log("card_product.metafields.custom.color:", {{ card_product.metafields.custom.color.value[0] | json }});
         </script>
 
         <div class='card__content'>
@@ -162,12 +161,11 @@
                 assign productTitle = ''
 
                 if card_product.metafields.custom['product-template-name'].value
-                  assign color = card_product.metafields.custom.color.value
+                  assign color = card_product.metafields.custom.color.value[0]
                   assign colorDisplay = ''
                   assign productTitle = card_product.metafields.custom['product-template-name'].value | escape
 
-                  if color == 'black and white'
-                    echo color
+                  if color == 'Black and White'
                     assign colorDisplay = 'B&W'
                   else
                     assign colorDisplay = color
