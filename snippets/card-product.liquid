@@ -175,8 +175,11 @@
               <span>{{ card_product.metafields.custom['product-format'].value -}}</span>
               <span> · {{ card_product.metafields.custom['product-size'].value }} · </span>
               <span>{{ card_product.metafields.custom['product-shape'].value }} · </span>
-              <span>{{ card_product.metafields.custom['product-type'].value }} · </span>
-              <span>{{ card_product.metafields.custom.color.value }}</span>
+              <span>{{ card_product.metafields.custom['product-type'].value }}</span>
+              {% if card_product.metafields.custom.color.value %}
+                ·
+                <span>{{ card_product.metafields.custom.color.value }}</span>
+              {%- endif -%}
             </div>
 
             {%- if show_vendor -%}
