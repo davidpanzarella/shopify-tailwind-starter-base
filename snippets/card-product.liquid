@@ -175,8 +175,9 @@
                   assign productTitle = card_product.title | escape
                 endif
               %}
+              assign caption = card_product.metafields.custom['product-template-caption'].value | escape
 
-              {{ card_product.metafields.custom['product-template-caption'].value }}
+              {{ caption }}
               {{ colorDisplay }}
               {{ productTitle }}
             </a>
