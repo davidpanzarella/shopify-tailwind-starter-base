@@ -183,11 +183,13 @@
           <div class='card-information'>
             <span class='caption-large light'>
               {% if card_product.metafields.custom['product-template-options'].value %}
-                <span>{{- card_product.metafields.custom['product-template-options'].value -}}</span>
+                <span>
+                  {{- card_product.metafields.custom['product-template-options'].value -}}
+                  ·
+                </span>
               {%- endif -%}
               {% if card_product.metafields.custom.product_template_caption.value %}
                 <span>
-                  ·
                   {{- card_product.metafields.custom.product_template_caption.value -}}
                 </span>
               {%- endif -%}
