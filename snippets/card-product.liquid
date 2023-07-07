@@ -158,6 +158,9 @@
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
               {% if card_product.metafields.custom['product-template-name'].value %}
+                {% if card_product.metafields.custom.color.value %}
+                  {{ card_product.metafields.custom.color.value }}
+                {%- endif -%}
                 {{ card_product.metafields.custom['product-template-name'].value }} Design
               {%- else -%}
                 {{ card_product.title | escape }}
@@ -176,10 +179,6 @@
               <span> · {{ card_product.metafields.custom['product-size'].value }} · </span>
               <span>{{ card_product.metafields.custom['product-shape'].value }} · </span>
               <span>{{ card_product.metafields.custom['product-type'].value }}</span>
-              {% if card_product.metafields.custom.color.value %}
-                ·
-                <span>{{ card_product.metafields.custom.color.value }}</span>
-              {%- endif -%}
             </div>
 
             {%- if show_vendor -%}
