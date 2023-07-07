@@ -173,10 +173,10 @@
 
             <div class='caption-with-letter-spacing light'>
               {{ card_product.metafields.custom['product-format'].value -}}
-              &nbsp;· {{ card_product.metafields.custom['product-size'].value }} ·
-              {{ card_product.metafields.custom['product-shape'].value }} ·
-              {{ card_product.metafields.custom['product-type'].value }} ·
-              {{ card_product.metafields.custom.color.value }}
+              &nbsp;·&nbsp;{{ card_product.metafields.custom['product-size'].value }} &nbsp;·&nbsp;
+              {{- card_product.metafields.custom['product-shape'].value }}
+              &nbsp;·&nbsp;{{ card_product.metafields.custom['product-type'].value }} &nbsp;·&nbsp;
+              {{- card_product.metafields.custom.color.value }}
             </div>
 
             {%- if show_vendor -%}
