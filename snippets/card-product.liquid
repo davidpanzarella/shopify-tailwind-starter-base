@@ -158,7 +158,6 @@
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
               {% liquid
-                assign caption = card_product.metafields.custom['product-template-caption'].value | escape
                 assign colorDisplay = ''
                 assign color = card_product.metafields.custom.color.value[0]
 
@@ -177,7 +176,7 @@
                 endif
               %}
 
-              {{ caption }}
+              {{ card_product.metafields.custom.product_template_caption.value }}
               {{ colorDisplay }}
               {{ productTitle }}
             </a>
