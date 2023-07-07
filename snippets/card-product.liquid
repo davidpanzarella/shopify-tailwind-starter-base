@@ -163,6 +163,7 @@
                 if card_product.metafields.custom['product-template-name'].value
                   assign color = card_product.metafields.custom.color.value
                   assign colorDisplay = ''
+                  assign productTitle = card_product.metafields.custom['product-template-name'].value | escape
 
                   if color == 'Black and White'
                     assign colorDisplay = 'B&W'
@@ -175,12 +176,8 @@
                 endif
               %}
 
-              {% if card_product.metafields.custom['product-template-name'].value %}
-                {{ colorDisplay }}
-                {{ card_product.metafields.custom['product-template-name'].value }} Design
-              {%- else -%}
-                {{ card_product.title | escape }}
-              {% endif %}
+              {{ colorDisplay }}
+              {{ productTitle }}
             </a>
           </h3>
           <div class='card-information'>
