@@ -522,6 +522,11 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.twcss-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .twcss-text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
