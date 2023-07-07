@@ -165,11 +165,11 @@
             </a>
           </h3>
           <div class='card-information'>
-            {% if card_product.metafields.custom['product-template-options'].value %}
-              <span class='caption-large light'>
+            <span class='caption-large light'>
+              {% if card_product.metafields.custom['product-template-options'].value %}
                 {{- card_product.metafields.custom['product-template-options'].value -}}
-              </span>
-            {%- endif -%}
+              {%- endif -%}
+            </span>
 
             <div class='caption-with-letter-spacing light'>
               <span>{{ card_product.metafields.custom['product-format'].value -}}</span>
