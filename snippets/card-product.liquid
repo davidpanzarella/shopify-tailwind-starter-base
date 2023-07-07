@@ -104,7 +104,7 @@
 
         <script>
           console.log("card_product:", {{ card_product | json }});
-          console.log("card_product.metafields.custom['color']:", {{ card_product.metafields.custom['color'].value }});
+          console.log("card_product.metafields.custom.color:", {{ card_product.metafields.custom.color.value | json }});
         </script>
 
         <div class='card__content'>
