@@ -164,7 +164,7 @@
                   assign color = card_product.metafields.custom.color.value
                   assign colorDisplay = ''
                   assign productTitle = card_product.metafields.custom['product-template-name'].value | escape
-                  echo color == 'Black and White'
+                  echo color
 
                   if color == 'Black and White'
                     assign colorDisplay = 'B&W'
