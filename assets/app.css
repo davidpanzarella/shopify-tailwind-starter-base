@@ -521,3 +521,7 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+
+.twcss-underline {
+  text-decoration-line: underline;
+}
