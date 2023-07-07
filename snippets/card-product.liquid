@@ -157,6 +157,24 @@
               class='full-unstyled-link'
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
+              {% liquid
+                assign productTitle = ''
+
+                if card_product.metafields.custom['product-template-name'].value
+                  assign color = card_product.metafields.custom.color.value
+                  assign colorDisplay = ''
+
+                  if color == 'Black and White'
+                    assign colorDisplay = 'B&W'
+                  else
+                    assign colorDisplay = 'This is a potion!'
+                  endif
+                  echo colorDisplay
+                else
+                  assign productTitle = card_product.title | escape
+                endif
+              %}
+
               {% if card_product.metafields.custom['product-template-name'].value %}
                 {% if card_product.metafields.custom.color.value %}
                   {{ card_product.metafields.custom.color.value }}
