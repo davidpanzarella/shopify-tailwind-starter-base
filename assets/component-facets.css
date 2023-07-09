@@ -737,7 +737,7 @@ details.menu-opening .mobile-facets__close svg {
 }
 
 .mobile-facets__main {
-  padding: 2.7rem 0 0;
+  padding: 1.6875rem 0 0;
   position: relative;
   z-index: 1;
   flex-grow: 1;
@@ -852,7 +852,7 @@ input.mobile-facets__checkbox {
 .mobile-facets__label .icon-checkmark {
   position: absolute;
   top: 1.9rem;
-  left: 2.8rem;
+  left: 1.75rem;
   visibility: hidden;
 }
 
