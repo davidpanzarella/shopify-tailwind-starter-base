@@ -27,7 +27,7 @@
 @media screen and (max-width: 989px) {
   .facets-container {
     grid-template-columns: auto minmax(0, max-content);
-    column-gap: 2rem;
+    column-gap: 1.25rem;
   }
 }
 
@@ -49,7 +49,7 @@
   display: block;
   color: rgba(var(--color-foreground), 0.85);
   font-size: 0.875rem;
-  margin: 0 2rem 0 0;
+  margin: 0 1.25rem 0 0;
 }
 
 .facet-filters__summary {
@@ -129,7 +129,7 @@
 }
 
 .mobile-facets__sort .select__select:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
@@ -137,25 +137,25 @@
 
 .mobile-facets__sort .select__select.focused,
 .no-js .mobile-facets__sort .select__select:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .facet-filters__sort:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 1rem;
   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 0.75rem rgba(var(--color-foreground), 0.3);
+    0 0 0.1.25rem 0.75rem rgba(var(--color-foreground), 0.3);
 }
 
 .facet-filters__sort.focused,
 .no-js .facet-filters__sort:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 1rem;
   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 0.75rem rgba(var(--color-foreground), 0.3);
+    0 0 0.1.25rem 0.75rem rgba(var(--color-foreground), 0.3);
 }
 
 .no-js .facet-filters__sort:focus:not(:focus-visible),
@@ -189,7 +189,7 @@
   display: block;
   color: rgba(var(--color-foreground), 0.85);
   font-size: 0.875rem;
-  margin: -1.5rem 2rem 0 0;
+  margin: -1.5rem 1.25rem 0 0;
 }
 
 .facets__reset {
@@ -263,7 +263,7 @@
 
 .facets__header {
   border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
@@ -274,7 +274,7 @@
 }
 
 .facets__list {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.25rem;
 }
 
 .facets__item {
@@ -288,7 +288,7 @@
 }
 
 .facet-checkbox {
-  padding: 1rem 2rem 1rem 0;
+  padding: 1rem 1.25rem 1rem 0;
   flex-grow: 1;
   position: relative;
   font-size: 0.875rem;
@@ -347,11 +347,11 @@
 
 .facets__price {
   display: flex;
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
 .facets__price .field + .field-currency {
-  margin-left: 2rem;
+  margin-left: 1.25rem;
 }
 
 .facets__price .field {
@@ -392,8 +392,8 @@ button.facets__button {
   display: block;
   margin-right: 1.5rem;
   margin-top: 1.5rem;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  padding-left: 0.1.25rem;
+  padding-right: 0.1.25rem;
   text-decoration: none;
 }
 
@@ -459,7 +459,7 @@ span.active-facets__button-inner:after {
 }
 
 .active-facets__button:hover .active-facets__button-inner {
-  box-shadow: 0 0 0 0.2rem rgb(var(--color-foreground));
+  box-shadow: 0 0 0 0.1.25rem rgb(var(--color-foreground));
 }
 
 .active-facets__button--light .active-facets__button-inner {
@@ -467,7 +467,7 @@ span.active-facets__button-inner:after {
 }
 
 .active-facets__button--light:hover .active-facets__button-inner {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.4);
+  box-shadow: 0 0 0 0.1.25rem rgba(var(--color-foreground), 0.4);
 }
 
 a.active-facets__button:focus-visible {
@@ -489,7 +489,7 @@ a.active-facets__button.focused,
 
 a.active-facets__button:focus-visible .active-facets__button-inner {
   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.2),
-    0 0 0 0.2rem rgb(var(--color-background)),
+    0 0 0 0.1.25rem rgb(var(--color-background)),
     0 0 0 0.4rem rgb(var(--color-foreground));
   outline: none;
 }
@@ -497,7 +497,7 @@ a.active-facets__button:focus-visible .active-facets__button-inner {
 a.active-facets__button.focused .active-facets__button-inner,
 .no-js a.active-facets__button:focus .active-facets__button-inner {
   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.2),
-    0 0 0 0.2rem rgb(var(--color-background)),
+    0 0 0 0.1.25rem rgb(var(--color-background)),
     0 0 0 0.4rem rgb(var(--color-foreground));
   outline: none;
 }
@@ -506,7 +506,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   align-self: center;
   flex-shrink: 0;
   margin-left: 0.6rem;
-  margin-right: -0.2rem;
+  margin-right: -0.1.25rem;
   pointer-events: none;
   width: 0.75rem;
 }
@@ -679,7 +679,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets__open svg {
-  width: 2rem;
+  width: 1.25rem;
 }
 
 .mobile-facets__open line,
@@ -702,7 +702,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets__close svg {
-  width: 2.2rem;
+  width: 2.1.25rem;
 }
 
 details.menu-opening .mobile-facets__close {
@@ -724,7 +724,7 @@ details.menu-opening .mobile-facets__close svg {
   margin-top: 1.5rem;
   padding: 0.75rem 2.6rem;
   text-decoration: none;
-  width: calc(100% - 5.2rem);
+  width: calc(100% - 5.1.25rem);
 }
 
 .no-js .mobile-facets__close-button {
@@ -834,7 +834,7 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__label {
-  padding: 1.5rem 2rem 1.5rem 2.5rem;
+  padding: 1.5rem 1.25rem 1.5rem 2.5rem;
   width: 100%;
   transition: background-color 0.2s ease;
   word-break: break-word;
@@ -872,7 +872,7 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  padding: 2rem;
+  padding: 1.25rem;
   bottom: 0;
   position: sticky;
   display: flex;
@@ -990,7 +990,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets__header-vertical {
-    padding: 1.5rem 2rem 1.5rem 0;
+    padding: 1.5rem 1.25rem 1.5rem 0;
     font-size: 0.875rem;
   }
 
@@ -1024,7 +1024,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .active-facets__button-wrapper {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .facets-vertical .no-js .facets__button-no-js {
@@ -1035,7 +1035,7 @@ input.mobile-facets__checkbox {
   .facets-vertical .no-js .facet-filters__field {
     justify-content: flex-start;
     padding-bottom: 1rem;
-    padding-top: 2rem;
+    padding-top: 1.25rem;
   }
 
   .facets-vertical .facets__price {
@@ -1085,7 +1085,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-container-drawer .mobile-facets__wrapper {
-    margin-right: 2rem;
+    margin-right: 1.25rem;
     flex-grow: 1;
   }
 

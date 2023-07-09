@@ -76,7 +76,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: calc(var(--font-heading-scale) * 2rem);
+  font-size: calc(var(--font-heading-scale) * 1.25rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -99,7 +99,7 @@ h2,
   background-color: rgb(var(--color-button));
   box-shadow: 0 0 0 0.1rem rgb(var(--color-button));
   color: rgb(var(--color-button-label));
-  min-width: 12rem;
+  min-width: 11.25rem;
   height: auto;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
@@ -111,7 +111,7 @@ h2,
 }
 
 .button:hover {
-  box-shadow: 0 0 0 0.2rem rgb(var(--color-button));
+  box-shadow: 0 0 0 0.1.25rem rgb(var(--color-button));
 }
 
 .button--secondary {
@@ -125,7 +125,7 @@ h2,
 }
 
 .button--secondary:hover {
-  box-shadow: 0 0 0 0.2rem rgb(var(--color-secondary-button-label));
+  box-shadow: 0 0 0 0.1.25rem rgb(var(--color-secondary-button-label));
 }
 
 @media (forced-colors: active) {
@@ -262,7 +262,7 @@ h2,
 }
 
 *:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
@@ -271,7 +271,7 @@ h2,
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
 .no-js *:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);

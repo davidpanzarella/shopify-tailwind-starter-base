@@ -362,11 +362,11 @@
 }
 
 .image-with-text__content > * + * {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .image-with-text__content > .image-with-text__text:empty ~ a {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .image-with-text__content > :first-child:is(.image-with-text__heading),
@@ -381,7 +381,7 @@
 }
 
 .image-with-text__content .button + .image-with-text__text {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .image-with-text__content .image-with-text__text + .button {

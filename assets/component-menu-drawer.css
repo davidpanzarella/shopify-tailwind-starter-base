@@ -120,7 +120,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__menu li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1.25rem;
 }
 
 .menu-drawer__menu-item {
@@ -134,7 +134,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .no-js .menu-drawer__submenu .menu-drawer__menu-item {
-  padding: 0.75rem 5.2rem 0.75rem 6rem;
+  padding: 0.75rem 5.1.25rem 0.75rem 6rem;
 }
 
 .no-js .menu-drawer__submenu .menu-drawer__submenu .menu-drawer__menu-item {
@@ -142,7 +142,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
-  padding-right: 5.2rem;
+  padding-right: 5.1.25rem;
 }
 
 .no-js .menu-drawer__menu-item .icon-caret {
@@ -220,7 +220,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .header--has-social .menu-drawer__utility-links {
-  padding: 2rem 3rem;
+  padding: 1.25rem 3rem;
 }
 
 @media screen and (max-width: 749px) {
@@ -228,7 +228,7 @@ details[open].menu-opening > .menu-drawer__submenu {
       :not(.header--has-social):not(.header--has-localizations)
     )
     .menu-drawer__utility-links {
-    padding: 2rem;
+    padding: 1.25rem;
   }
 }
 
@@ -256,8 +256,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__account .icon-account {
-  height: 2rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   margin-right: 1rem;
 }
 

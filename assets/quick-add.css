@@ -35,7 +35,7 @@
 }
 
 .quick-add-modal__content {
-  --modal-height-offset: 3.2rem;
+  --modal-height-offset: 3.1.25rem;
   position: absolute;
   top: 0;
   left: 50%;
@@ -58,8 +58,8 @@
   }
 
   quick-add-modal .quick-add-modal__toggle {
-    top: 2rem;
-    right: 2rem;
+    top: 1.25rem;
+    right: 1.25rem;
   }
 }
 
@@ -132,7 +132,7 @@
 .quick-add-modal__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.2rem;
+  width: 2.1.25rem;
 }
 
 quick-add-modal .product:not(.featured-product) .product__view-details {
@@ -203,7 +203,7 @@ quick-add-modal .product__title > a {
 quick-add-modal .product__title > a:hover {
   color: rgb(var(--color-foreground));
   text-decoration: underline;
-  text-underline-offset: 0.2rem;
+  text-underline-offset: 0.1.25rem;
   text-decoration-thickness: 0.3rem;
 }
 
