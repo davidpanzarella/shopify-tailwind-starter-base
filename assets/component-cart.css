@@ -94,7 +94,7 @@ cart-items {
   align-items: flex-end;
   position: absolute;
   line-height: 1;
-  height: 1.8rem;
+  height: 1.125rem;
   top: -3rem;
   color: rgba(var(--color-foreground), 0.75);
 }

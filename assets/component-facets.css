@@ -950,7 +950,7 @@ input.mobile-facets__checkbox {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.8rem;
+  width: 1.125rem;
 }
 
 .product-count__text.loading + .loading-overlay__spinner {
