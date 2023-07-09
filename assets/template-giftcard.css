@@ -64,7 +64,7 @@ h2,
 
 h1,
 .h1 {
-  font-size: calc(var(--font-heading-scale) * 3rem);
+  font-size: calc(var(--font-heading-scale) * 1.875rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -94,7 +94,7 @@ h2,
   align-items: center;
   text-align: center;
   border: none;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 1.875rem;
   text-decoration: none;
   background-color: rgb(var(--color-button));
   box-shadow: 0 0 0 0.1rem rgb(var(--color-button));
@@ -135,12 +135,12 @@ h2,
 }
 
 .gift-card {
-  padding: 3rem;
+  padding: 1.875rem;
 }
 
 @media only screen and (min-width: 750px) {
   .gift-card {
-    padding: 5rem 5rem 3rem;
+    padding: 5rem 5rem 1.875rem;
   }
 }
 
@@ -149,7 +149,7 @@ h2,
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 3rem auto;
+  margin: 1.875rem auto;
   max-width: 40rem;
 }
 
@@ -187,7 +187,7 @@ h2,
   text-align: center;
   letter-spacing: 0.25rem;
   opacity: 0.8;
-  margin: 3rem 0;
+  margin: 1.875rem 0;
 }
 
 .gift-card__text-wrapper {
@@ -210,7 +210,7 @@ h2,
   font-size: 0.75rem;
   letter-spacing: 0.1rem;
   line-height: 1;
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 1.1.875rem;
   text-align: center;
   background-color: rgb(var(--color-background));
   border-color: rgba(var(--color-foreground), 0.04);
@@ -224,7 +224,7 @@ h2,
 }
 
 .gift-card__qr-code {
-  margin: 3rem 0;
+  margin: 1.875rem 0;
 }
 
 .gift-card__qr-code img {
@@ -234,7 +234,7 @@ h2,
 .gift_card__apple-wallet {
   line-height: 0;
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: 1.875rem;
   text-align: center;
 }
 
@@ -263,8 +263,8 @@ h2,
 
 *:focus-visible {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  outline-offset: 0.1.875rem;
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
@@ -272,14 +272,14 @@ h2,
 .focused,
 .no-js *:focus {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  outline-offset: 0.1.875rem;
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .button:focus-visible {
   box-shadow: 0 0 0 0.1rem rgb(var(--color-button)),
-    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
@@ -291,19 +291,19 @@ h2,
 
 .button:focus {
   box-shadow: 0 0 0 0.1rem rgb(var(--color-button)),
-    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .button--secondary:focus-visible {
   box-shadow: 0 0 0 0.1rem rgb(var(--color-secondary-button-label)),
-    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .button--secondary:focus {
   box-shadow: 0 0 0 0.1rem rgb(var(--color-secondary-button-label)),
-    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
@@ -319,9 +319,9 @@ h2,
 
 .form__message .icon {
   flex-shrink: 0;
-  height: 1.3rem;
+  height: 1.1.875rem;
   margin-right: 0.5rem;
-  width: 1.3rem;
+  width: 1.1.875rem;
 }
 
 @media print {

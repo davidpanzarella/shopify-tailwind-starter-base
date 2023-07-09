@@ -43,7 +43,7 @@
 }
 
 .article-card__link {
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.1.875rem;
 }
 
 .article-card .card__heading {
@@ -79,7 +79,7 @@
 }
 
 .article-card__link:not(:only-child) {
-  margin-right: 3rem;
+  margin-right: 1.875rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -102,7 +102,7 @@
 
 @media screen and (min-width: 750px) {
   .article-card__image--small .ratio::before {
-    padding-bottom: 14.3rem;
+    padding-bottom: 14.1.875rem;
   }
 
   .article-card__image--medium .ratio::before {

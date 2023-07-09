@@ -149,7 +149,7 @@ predictive-search[loading]
   .predictive-search__item-heading,
 .predictive-search__list-item:hover .predictive-search__item-heading {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.1.875rem;
 }
 
 .predictive-search__item {
@@ -210,7 +210,7 @@ predictive-search[loading]
 .predictive-search__item--term {
   justify-content: space-between;
   align-items: center;
-  padding: 1.3rem 1.25rem;
+  padding: 1.1.875rem 1.25rem;
   word-break: break-all;
   line-height: calc(1 + 0.4 / var(--font-body-scale));
 }

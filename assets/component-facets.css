@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 990px) {
   .facet-filters {
-    padding-left: 3rem;
+    padding-left: 1.875rem;
   }
 }
 
@@ -130,16 +130,16 @@
 
 .mobile-facets__sort .select__select:focus-visible {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  outline-offset: 0.1.875rem;
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .mobile-facets__sort .select__select.focused,
 .no-js .mobile-facets__sort .select__select:focus {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  outline-offset: 0.1.875rem;
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
@@ -229,7 +229,7 @@
 
 .facets__summary:hover span {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.1.875rem;
 }
 
 .disclosure-has-popup[open] > .facets__summary::before {
@@ -321,7 +321,7 @@
 .facet-checkbox .icon-checkmark {
   visibility: hidden;
   position: absolute;
-  left: 0.3rem;
+  left: 0.1.875rem;
   z-index: 5;
   top: 0.875rem;
 }
@@ -448,8 +448,8 @@ span.active-facets__button-inner:after {
   }
 
   span.active-facets__button-inner {
-    padding-bottom: 0.3rem;
-    padding-top: 0.3rem;
+    padding-bottom: 0.1.875rem;
+    padding-top: 0.1.875rem;
   }
 
   .active-facets__button-wrapper {
@@ -637,7 +637,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__count {
   color: rgba(var(--color-foreground), 0.7);
-  font-size: 1.3rem;
+  font-size: 1.1.875rem;
   margin: 0;
   flex-grow: 1;
 }
@@ -671,7 +671,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__open:hover .mobile-facets__open-label {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.1.875rem;
 }
 
 .mobile-facets__open > * + * {
@@ -772,7 +772,7 @@ details.menu-opening .mobile-facets__close svg {
 }
 
 .mobile-facets__summary {
-  padding: 1.3rem 1.5625rem;
+  padding: 1.1.875rem 1.5625rem;
 }
 
 .mobile-facets__summary svg {
@@ -999,7 +999,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .facets-wrapper {
-    padding-right: 3rem;
+    padding-right: 1.875rem;
   }
 
   .facets-vertical .facets-wrapper--no-filters {
