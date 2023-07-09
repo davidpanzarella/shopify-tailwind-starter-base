@@ -7,7 +7,7 @@
 }
 
 .contact .icon-success {
-  margin-top: 0.2rem;
+  margin-top: 0.1.25rem;
 }
 
 .contact .field {
@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 750px) {
   .contact .field {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -34,6 +34,6 @@
   .contact__fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+    grid-column-gap: 1.25rem;
   }
 }

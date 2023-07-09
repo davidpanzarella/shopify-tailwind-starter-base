@@ -44,7 +44,7 @@
   }
 
   .product--right .product__media-list {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .product__media-container .slider-buttons {
@@ -91,7 +91,7 @@
 
 .shopify-payment-button__button [role='button'].focused,
 .no-js .shopify-payment-button__button [role='button']:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5) !important;
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5) !important;
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
     0 0 0 0.3rem rgb(var(--color-background)),
@@ -104,7 +104,7 @@
 }
 
 .shopify-payment-button__button [role='button']:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5) !important;
+  outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5) !important;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
     0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3) !important;
@@ -185,7 +185,7 @@ variant-selects {
 }
 
 fieldset.product-form__input .form__label {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1.25rem;
 }
 
 .product-form__input input[type='radio'] {
@@ -204,8 +204,8 @@ fieldset.product-form__input .form__label {
   border-radius: var(--variant-pills-radius);
   color: rgb(var(--color-foreground));
   display: inline-block;
-  margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
+  margin: 0.7rem 0.5rem 0.1.25rem 0;
+  padding: 1rem 1.25rem;
   font-size: 0.875rem;
   letter-spacing: 0.1rem;
   line-height: 1;
@@ -516,8 +516,8 @@ a.product__text {
   }
 
   .slider.product__media-list::-webkit-scrollbar {
-    height: 0.2rem;
-    width: 0.2rem;
+    height: 0.1.25rem;
+    width: 0.1.25rem;
   }
 
   .product__media-list::-webkit-scrollbar-thumb {
@@ -644,8 +644,8 @@ a.product__text {
   .product--medium.product--columns
     .product__media-item--full
     .deferred-media__poster-button {
-    height: 4.2rem;
-    width: 4.2rem;
+    height: 4.1.25rem;
+    width: 4.1.25rem;
   }
 
   .product--medium.product--columns
@@ -792,7 +792,7 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product-media-modal__content {
-    padding-bottom: 2rem;
+    padding-bottom: 1.25rem;
   }
 
   .product-media-modal__content > *:not(.active) {
@@ -848,11 +848,11 @@ a.product__text {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  right: 2rem;
+  right: 1.25rem;
   padding: 0.75rem;
   position: fixed;
   z-index: 2;
-  top: 2rem;
+  top: 1.25rem;
   width: 4rem;
 }
 
@@ -862,7 +862,7 @@ a.product__text {
 
 @media screen and (min-width: 750px) {
   .product-media-modal__content {
-    padding: 2rem 11rem;
+    padding: 1.25rem 11rem;
   }
 
   .product-media-modal__content > * {
@@ -870,18 +870,18 @@ a.product__text {
   }
 
   .product-media-modal__content > * + * {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
   }
 
   .product-media-modal__toggle {
     right: 5rem;
-    top: 2.2rem;
+    top: 2.1.25rem;
   }
 }
 
 @media screen and (min-width: 990px) {
   .product-media-modal__content {
-    padding: 2rem 11rem;
+    padding: 1.25rem 11rem;
   }
 
   .product-media-modal__content > * + * {
@@ -904,7 +904,7 @@ a.product__text {
 .product-media-modal__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.2rem;
+  width: 2.1.25rem;
 }
 
 /* Product popup */
@@ -1018,7 +1018,7 @@ a.product__text {
 }
 
 .product-popup-modal__button:hover {
-  text-decoration-thickness: 0.2rem;
+  text-decoration-thickness: 0.1.25rem;
 }
 
 .product-popup-modal__content-info {
@@ -1062,7 +1062,7 @@ a.product__text {
 .product-popup-modal__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.2rem;
+  width: 2.1.25rem;
 }
 
 .product__media-list .media > * {
@@ -1292,8 +1292,8 @@ a.product__text {
 
 .thumbnail__badge {
   color: rgb(var(--color-foreground), 0.6);
-  height: 2rem;
-  width: 2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   left: auto;
   right: calc(0.4rem + var(--media-border-width));
   top: calc(0.4rem + var(--media-border-width));
@@ -1381,7 +1381,7 @@ a.product__text {
 }
 
 .icon-with-text--vertical {
-  --icon-size: calc(var(--font-heading-scale) * 2rem);
+  --icon-size: calc(var(--font-heading-scale) * 1.25rem);
 }
 
 .icon-with-text .icon {
@@ -1576,7 +1576,7 @@ a.product__text {
 }
 
 .recipient-fields__field {
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.25rem 0;
 }
 
 .recipient-fields .field__label {

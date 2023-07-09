@@ -55,7 +55,7 @@
 }
 
 .multicolumn-list__item:only-child {
-  max-width: 72rem;
+  max-width: 71.25rem;
 }
 
 .multicolumn-list__item--empty {
