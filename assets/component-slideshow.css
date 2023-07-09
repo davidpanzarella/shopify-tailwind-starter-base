@@ -6,7 +6,7 @@ slideshow-component {
 
 @media screen and (max-width: 989px) {
   .no-js slideshow-component .slider {
-    padding-bottom: 3rem;
+    padding-bottom: 1.875rem;
   }
 }
 

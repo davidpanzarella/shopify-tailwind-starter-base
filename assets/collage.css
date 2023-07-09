@@ -1,6 +1,6 @@
 .collage-wrapper-title {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 1.875rem;
 }
 
 .collage {
@@ -176,7 +176,7 @@
   content: '';
   position: absolute;
   z-index: 1;
-  outline-offset: 0.3rem;
+  outline-offset: 0.1.875rem;
   bottom: calc(var(--border-width) * -1);
   left: calc(var(--border-width) * -1);
   right: calc(var(--border-width) * -1);
@@ -184,13 +184,13 @@
 }
 
 .collage-card .deferred-media__poster:focus:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
 }
 
 .collage-card .deferred-media__poster:focus-visible:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
 }

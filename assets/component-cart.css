@@ -18,7 +18,7 @@ cart-items.is-empty .title-wrapper-with-link,
 .cart__warnings {
   display: none;
   text-align: center;
-  padding: 3rem 0 1rem;
+  padding: 1.875rem 0 1rem;
 }
 
 .cart__empty-text {
@@ -47,7 +47,7 @@ cart-items.is-empty .title-wrapper-with-link,
   }
 
   .cart__empty-text {
-    margin: 0 0 3rem;
+    margin: 0 0 1.875rem;
   }
 }
 
@@ -57,7 +57,7 @@ cart-items {
 
 .cart__items {
   position: relative;
-  padding-bottom: 3rem;
+  padding-bottom: 1.875rem;
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
@@ -95,7 +95,7 @@ cart-items {
   position: absolute;
   line-height: 1;
   height: 1.125rem;
-  top: -3rem;
+  top: -1.875rem;
   color: rgba(var(--color-foreground), 0.75);
 }
 

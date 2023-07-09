@@ -537,7 +537,7 @@
 }
 
 .order > div:nth-of-type(2) > div:first-of-type h2 ~ p:last-of-type {
-  margin-bottom: 3rem;
+  margin-bottom: 1.875rem;
 }
 
 .order .item-props {
@@ -652,7 +652,7 @@
 }
 
 .order .regular-price {
-  font-size: 1.3rem;
+  font-size: 1.1.875rem;
 }
 
 /* Addresses */
@@ -668,7 +668,7 @@
 
 @media screen and (min-width: 750px) {
   .addresses li > button:first-of-type {
-    margin-top: 3rem;
+    margin-top: 1.875rem;
   }
 }
 

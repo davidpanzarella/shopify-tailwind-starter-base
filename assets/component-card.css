@@ -150,7 +150,7 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 1.1.875rem 1rem;
 }
 
 .card:not(.ratio) > .card__content {
@@ -180,7 +180,7 @@
 }
 
 .card:not(.card--horizontal) > .card__content > .card__badge {
-  margin: 1.3rem;
+  margin: 1.1.875rem;
 }
 
 .card__media .media img {
@@ -224,7 +224,7 @@
   .card--horizontal .card__heading,
   .card--horizontal .price__container .price-item,
   .card--horizontal__quick-add {
-    font-size: calc(var(--font-heading-scale) * 1.3rem);
+    font-size: calc(var(--font-heading-scale) * 1.1.875rem);
   }
 }
 
@@ -251,17 +251,17 @@
 }
 
 .card__heading a:after {
-  outline-offset: 0.3rem;
+  outline-offset: 0.1.875rem;
 }
 
 .card__heading a:focus:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
 }
 
 .card__heading a:focus-visible:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+  box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
 }
@@ -301,7 +301,7 @@
 
   .underline-links-hover:hover a {
     text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    text-underline-offset: 0.1.875rem;
   }
 }
 
