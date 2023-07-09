@@ -340,7 +340,7 @@ fieldset.product-form__input .form__label {
 .product__info-container .product-form,
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
-  margin: 2.5rem 0;
+  margin: 1.5625rem 0;
 }
 
 .product__text {
@@ -505,7 +505,7 @@ a.product__text {
 
 @media screen and (max-width: 749px) {
   .product__media-list {
-    margin-left: -2.5rem;
+    margin-left: -1.5625rem;
     margin-bottom: 3rem;
     width: calc(100% + 4rem);
   }
@@ -1536,7 +1536,7 @@ a.product__text {
   display: block;
   position: relative;
   max-width: 44rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5625rem;
 }
 
 .recipient-form-field-label {

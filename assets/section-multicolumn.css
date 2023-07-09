@@ -85,9 +85,9 @@
 }
 
 .multicolumn-card-spacing {
-  padding-top: 2.5rem;
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+  padding-top: 1.5625rem;
+  margin-left: 1.5625rem;
+  margin-right: 1.5625rem;
 }
 
 .multicolumn-card__info > :nth-child(2) {
@@ -138,7 +138,7 @@
 }
 
 .multicolumn-card__info {
-  padding: 2.5rem;
+  padding: 1.5625rem;
 }
 
 .background-none .multicolumn-card__info {
@@ -152,7 +152,7 @@
 }
 
 .background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {
-  padding-top: 2.5rem;
+  padding-top: 1.5625rem;
 }
 
 .background-none .slider .multicolumn-card__info {
@@ -170,8 +170,8 @@
   .multicolumn-list:not(.slider)
   .center
   .multicolumn-card__info {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
 }
 
 @media screen and (max-width: 749px) {

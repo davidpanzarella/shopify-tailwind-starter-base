@@ -36,7 +36,7 @@
   display: flex;
   grid-column: 2;
   grid-row: 1;
-  padding-left: 2.5rem;
+  padding-left: 1.5625rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -96,7 +96,7 @@
 }
 
 .facet-filters button {
-  margin-left: 2.5rem;
+  margin-left: 1.5625rem;
 }
 
 .facet-filters__sort {
@@ -400,7 +400,7 @@ button.facets__button {
 span.active-facets__button-inner {
   color: rgb(var(--color-foreground));
   box-shadow: 0 0 0 0.1rem rgb(var(--color-foreground));
-  border-radius: 2.6rem;
+  border-radius: 1.625rem;
   font-size: 1rem;
   min-height: 0;
   min-width: 0;
@@ -613,7 +613,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__header {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  padding: 1rem 2.5rem;
+  padding: 1rem 1.5625rem;
   text-align: center;
   display: flex;
   position: sticky;
@@ -627,7 +627,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets__info {
-  padding: 0 2.6rem;
+  padding: 0 1.625rem;
 }
 
 .mobile-facets__heading {
@@ -722,7 +722,7 @@ details.menu-opening .mobile-facets__close svg {
   font: inherit;
   letter-spacing: inherit;
   margin-top: 1.5rem;
-  padding: 0.75rem 2.6rem;
+  padding: 0.75rem 1.625rem;
   text-decoration: none;
   width: calc(100% - 5.1.25rem);
 }
@@ -772,7 +772,7 @@ details.menu-opening .mobile-facets__close svg {
 }
 
 .mobile-facets__summary {
-  padding: 1.3rem 2.5rem;
+  padding: 1.3rem 1.5625rem;
 }
 
 .mobile-facets__summary svg {
@@ -834,7 +834,7 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__label {
-  padding: 1.5rem 1.25rem 1.5rem 2.5rem;
+  padding: 1.5rem 1.25rem 1.5rem 1.5625rem;
   width: 100%;
   transition: background-color 0.2s ease;
   word-break: break-word;

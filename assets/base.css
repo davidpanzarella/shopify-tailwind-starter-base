@@ -1811,8 +1811,8 @@ details[open] > .share-button__fallback {
 }
 
 .field__button > svg {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5625rem;
+  width: 1.5625rem;
 }
 
 .field__input:-webkit-autofill ~ .field__button,

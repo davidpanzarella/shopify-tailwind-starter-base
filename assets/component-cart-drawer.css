@@ -63,7 +63,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .cart-drawer__warnings--has-collection .cart__login-title {
-  margin-top: 2.5rem;
+  margin-top: 1.5625rem;
 }
 
 .drawer.active .drawer__inner {
@@ -170,7 +170,7 @@ cart-drawer {
 }
 
 .cart-drawer__collection {
-  margin: 0 2.5rem 1.5rem;
+  margin: 0 1.5625rem 1.5rem;
 }
 
 .cart-drawer .drawer__cart-items-wrapper {
@@ -256,7 +256,7 @@ cart-drawer-items {
 
 .cart-drawer .cart-item .loading-overlay {
   right: 5px;
-  padding-top: 2.5rem;
+  padding-top: 1.5625rem;
 }
 
 .cart-drawer .cart-items td {
