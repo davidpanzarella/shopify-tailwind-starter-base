@@ -22,7 +22,7 @@ cart-items.is-empty .title-wrapper-with-link,
 }
 
 .cart__empty-text {
-  margin: 4.5rem 0 2rem;
+  margin: 4.5rem 0 1.25rem;
 }
 
 .cart__contents > * + * {
@@ -103,7 +103,7 @@ cart-items {
   height: 100%;
   position: relative;
   border-radius: var(--inputs-radius);
-  padding: 1rem 2rem;
+  padding: 1rem 1.25rem;
 }
 
 .cart__note .text-area {
@@ -186,7 +186,7 @@ cart-items {
 }
 
 .tax-note {
-  margin: 2.2rem 0 1rem auto;
+  margin: 2.1.25rem 0 1rem auto;
   text-align: center;
   display: block;
 }
@@ -210,7 +210,7 @@ cart-items {
   }
 
   .tax-note {
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.1.25rem;
     text-align: right;
   }
 
