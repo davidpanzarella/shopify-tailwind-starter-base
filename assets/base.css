@@ -343,7 +343,7 @@ h4,
 
 h5,
 .h5 {
-  font-size: calc(var(--font-heading-scale) * 1.2rem);
+  font-size: calc(var(--font-heading-scale) * 0.75rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -393,7 +393,7 @@ blockquote {
 }
 
 .caption-with-letter-spacing--medium {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   letter-spacing: 0.16rem;
 }
 
@@ -759,7 +759,7 @@ summary::-webkit-details-marker {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 1rem;
   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+    0 0 0.2rem 0.75rem rgba(var(--color-foreground), 0.3);
 }
 
 .focus-offset.focused,
@@ -767,7 +767,7 @@ summary::-webkit-details-marker {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 1rem;
   box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
+    0 0 0.2rem 0.75rem rgba(var(--color-foreground), 0.3);
 }
 
 .no-js .focus-offset:focus:not(:focus-visible) {
@@ -1339,14 +1339,14 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button--tertiary {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   padding: 1rem 1.5rem;
   min-width: calc(9rem + var(--buttons-border-width) * 2);
   min-height: calc(3.5rem + var(--buttons-border-width) * 2);
 }
 
 .button--small {
-  padding: 1.2rem 2.6rem;
+  padding: 0.75rem 2.6rem;
 }
 
 /* Button - other */
@@ -1434,7 +1434,7 @@ details[open] > .share-button__fallback {
 }
 
 .share-button__button .icon-share {
-  height: 1.2rem;
+  height: 0.75rem;
   margin-right: 1rem;
   min-width: 1.3rem;
 }
@@ -1650,7 +1650,7 @@ details[open] > .share-button__fallback {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -2018,9 +2018,9 @@ input[type='checkbox'] {
 }
 
 .quantity__rules {
-  margin-top: 1.2rem;
+  margin-top: 0.75rem;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
 }
 
 .quantity__rules .caption {
@@ -2156,7 +2156,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 .utility-bar__grid .list-social {
   justify-content: flex-start;
   align-content: center;
-  margin-left: -1.2rem;
+  margin-left: -0.75rem;
 }
 
 @media screen and (max-width: 989px) {
@@ -2524,7 +2524,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .header__icon--cart {
   position: relative;
-  margin-right: -1.2rem;
+  margin-right: -0.75rem;
 }
 
 .header__icon--menu[aria-expanded='true']::before {
@@ -2719,7 +2719,7 @@ details[open] > .header__submenu {
 
 /* Header menu */
 .header__inline-menu {
-  margin-left: -1.2rem;
+  margin-left: -0.75rem;
   grid-area: navigation;
   display: none;
 }
@@ -2752,7 +2752,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 0.75rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
@@ -2882,7 +2882,7 @@ details-disclosure > details {
   border: 1px solid transparent;
   border-radius: var(--badge-corner-radius);
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1rem;
   line-height: 1;
   padding: 0.5rem 1.3rem 0.6rem 1.3rem;
@@ -3113,8 +3113,8 @@ details-disclosure > details {
 
 @media screen and (min-width: 750px) {
   .rte table td {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 

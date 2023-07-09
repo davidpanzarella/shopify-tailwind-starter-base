@@ -178,13 +178,13 @@ cart-remove-button .icon-remove {
 }
 
 .cart-item__error-text {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   order: 1;
 }
 
 .cart-item__error-text + svg {
   flex-shrink: 0;
-  width: 1.2rem;
+  width: 0.75rem;
   margin-right: 0.7rem;
 }
 
