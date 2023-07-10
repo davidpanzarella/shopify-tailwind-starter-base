@@ -1029,6 +1029,7 @@ select {
   font-size: 1.8rem;
   line-height: 2.8rem;
 }
+<<<<<<< HEAD
 
 .tw-text-xl {
   font-size: 2rem;
@@ -1041,3 +1042,12 @@ select {
   line-height: 2.8rem;
 }
 }}}
+||||||| parent of 290aa1b (Got TW configured with Dawn defaults)
+
+.tw-text-xl {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+=======
+}}}
+>>>>>>> 290aa1b (Got TW configured with Dawn defaults)
