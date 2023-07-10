@@ -648,7 +648,9 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
-<<<<<<< HEAD
+*,
+::before,
+::after {
 *, ::before, ::after {
 ||||||| parent of 9e0ef37 (Got TW configured with Dawn defaults)
 *,
@@ -880,14 +882,7 @@ select {
 ::before,
 ::after {
 >>>>>>> 9e0ef37 (Got TW configured with Dawn defaults)
-||||||| parent of 5bb3fea (Got TW configured with Dawn defaults)
-*, ::before, ::after {
-=======
-*,
-::before,
-::after {
->>>>>>> 5bb3fea (Got TW configured with Dawn defaults)
-  --tw-border-spacing-x: 0;
+  --tw-border-spacing-x: 0;9e0ef37--tw-border-spacing-x
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -966,6 +961,26 @@ select {
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+<<<<<<< HEAD
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+||||||| parent of 6b50515 (Saving updates)
   --tw-blur: ;
   --tw-brightness: ;
   --tw-contrast: ;
@@ -989,14 +1004,40 @@ select {
 .tw-text-xl {
   font-size: 2rem;
   line-height: 2.8rem;
+=======
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
 }
 
-.tw-text-xl {
-  font-size: 2rem;
+.tw-text-lg {
+  font-size: 1.8rem;
   line-height: 2.8rem;
 }
 
 .tw-text-xl {
   font-size: 2rem;
   line-height: 2.8rem;
+>>>>>>> 6b50515 (Saving updates)
 }
+
+.tw-text-xl {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+}}}
