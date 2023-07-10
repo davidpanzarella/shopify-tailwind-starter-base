@@ -25,5 +25,6 @@
   },
   "[liquid]": {
     "editor.formatOnSave": true
-  }
+  },
+  "tailwindCSS.rootFontSize": 10
 }

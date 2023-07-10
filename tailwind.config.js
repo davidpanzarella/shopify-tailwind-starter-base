@@ -1,5 +1,4 @@
 module.exports = {
-  prefix: 'twcss-',
   content: [
     './layout/*.liquid',
     './templates/*.liquid',
@@ -7,7 +6,16 @@ module.exports = {
     './sections/*.liquid',
     './snippets/*.liquid',
   ],
+  prefix: 'tw-',
   theme: {
+    fontSize: {
+      base: '16px',
+    },
+    extend: {
+      //   fontFamily: {
+      //     heading: 'var(--font-heading-family)',
+      //   },
+    },
     screens: {
       sm: '320px',
       md: '750px',
@@ -16,14 +24,14 @@ module.exports = {
       x2lg: '1920px',
       pageMaxWidth: '1440px',
     },
-    extend: {
-      fontFamily: {
-        heading: 'var(--font-heading-family)',
-      },
-    },
     color: {
       black: '#000000',
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwindcss-base-font-size'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
 };
