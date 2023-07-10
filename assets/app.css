@@ -692,7 +692,65 @@ select {
   --tw-backdrop-sepia:  ;
 }
 
+.-tw-inset-1 {
+  inset: -0.4rem;
+}
+
+.tw--inset-1 {
+  inset: -0.4rem;
+}
+
+.-tw-top-1 {
+  top: -0.4rem;
+}
+
+.tw--top-1 {
+  top: -0.4rem;
+}
+
+.tw-space-y-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 1;
+}
+
+.tw-space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+.tw-divide-y-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 1;
+}
+
+.tw-divide-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 1;
+}
+
 .tw-text-xl {
   font-size: 2rem;
   line-height: 2.8rem;
+}
+
+.tw-ordinal {
+  --tw-ordinal: ordinal;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.tw-slashed-zero {
+  --tw-slashed-zero: slashed-zero;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.tw-ring-inset {
+  --tw-ring-inset: inset;
+}
+
+.\[a-zA-Z-\:\#\] {
+  a-z-a--z-: #;
+}
+
+@media (prefers-color-scheme: dark) {
+  @media (min-width: 990px) {
+    .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
+      paint-order: markers;
+    }
+  }
 }
