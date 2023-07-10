@@ -39,10 +39,10 @@
   display: flex;
   justify-content: center;
   margin: 0 0 0 auto;
-  padding: 0.75rem;
+  padding: 1.2rem;
   position: fixed;
   right: 0.5rem;
-  top: 1.25rem;
+  top: 2rem;
   width: 4rem;
   z-index: 2;
 }
@@ -56,15 +56,15 @@
 
 @media screen and (min-width: 990px) {
   .modal-video__toggle {
-    right: 4.1.875rem;
-    top: 1.875rem;
+    right: 4.3rem;
+    top: 3rem;
   }
 }
 
 .modal-video__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.1.25rem;
+  width: 2.2rem;
 }
 
 .modal-video__content-info {

@@ -6,7 +6,7 @@
 }
 
 .card--card .quick-add {
-  margin: 0 1.1.875rem 1rem;
+  margin: 0 1.3rem 1rem;
 }
 
 .quick-add-modal {
@@ -35,7 +35,7 @@
 }
 
 .quick-add-modal__content {
-  --modal-height-offset: 3.1.25rem;
+  --modal-height-offset: 3.2rem;
   position: absolute;
   top: 0;
   left: 50%;
@@ -45,7 +45,7 @@
   background-color: rgb(var(--color-background));
   overflow: hidden;
   max-width: var(--page-width);
-  width: calc(100% - 1.875rem);
+  width: calc(100% - 3rem);
 }
 
 @media screen and (min-width: 750px) {
@@ -58,8 +58,8 @@
   }
 
   quick-add-modal .quick-add-modal__toggle {
-    top: 1.25rem;
-    right: 1.25rem;
+    top: 2rem;
+    right: 2rem;
   }
 }
 
@@ -74,7 +74,7 @@
 }
 
 .quick-add-modal__content-info {
-  --modal-padding: 1.5625rem;
+  --modal-padding: 2.5rem;
   padding-right: 4.4rem;
   display: flex;
   overflow-y: auto;
@@ -104,7 +104,7 @@
   }
 
   quick-add-modal .product--mobile-columns .product__media-item {
-    width: calc(100% - 1.875rem - var(--grid-mobile-horizontal-spacing));
+    width: calc(100% - 3rem - var(--grid-mobile-horizontal-spacing));
   }
 }
 
@@ -117,7 +117,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 0.75rem;
+  padding: 1.2rem;
   z-index: 5;
   width: 4rem;
   position: fixed;
@@ -132,7 +132,7 @@
 .quick-add-modal__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.1.25rem;
+  width: 2.2rem;
 }
 
 quick-add-modal .product:not(.featured-product) .product__view-details {
@@ -203,8 +203,8 @@ quick-add-modal .product__title > a {
 quick-add-modal .product__title > a:hover {
   color: rgb(var(--color-foreground));
   text-decoration: underline;
-  text-underline-offset: 0.1.25rem;
-  text-decoration-thickness: 0.1.875rem;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 0.3rem;
 }
 
 quick-add-modal .product-form__buttons {
