@@ -724,6 +724,11 @@ select {
   --tw-divide-x-reverse: 1;
 }
 
+.tw-bg-bone {
+  --tw-bg-opacity: 1;
+  background-color: rgb(214 202 186 / var(--tw-bg-opacity));
+}
+
 .tw-text-base {
   font-size: 1.6rem;
   line-height: 2.4rem;
