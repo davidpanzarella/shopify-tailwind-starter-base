@@ -774,6 +774,11 @@ select {
   color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
+.tw-text-stone-700 {
+  --tw-text-opacity: 1;
+  color: rgb(68 64 60 / var(--tw-text-opacity));
+}
+
 .tw-ring-inset {
   --tw-ring-inset: inset;
 }
