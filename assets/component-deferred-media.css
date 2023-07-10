@@ -38,8 +38,7 @@
   outline: none;
   box-shadow: 0 0 0 var(--media-border-width)
       rgba(var(--color-foreground), var(--media-border-opacity)),
-    0 0 0 calc(var(--media-border-width) + 0.1.875rem)
-      rgb(var(--color-background)),
+    0 0 0 calc(var(--media-border-width) + 0.3rem) rgb(var(--color-background)),
     0 0 0 calc(var(--media-border-width) + 0.5rem)
       rgba(var(--color-foreground), 0.5);
   border-radius: calc(var(--media-radius) - var(--media-border-width));
@@ -49,8 +48,7 @@
   outline: none;
   box-shadow: 0 0 0 var(--media-border-width)
       rgba(var(--color-foreground), var(--media-border-opacity)),
-    0 0 0 calc(var(--media-border-width) + 0.1.875rem)
-      rgb(var(--color-background)),
+    0 0 0 calc(var(--media-border-width) + 0.3rem) rgb(var(--color-background)),
     0 0 0 calc(var(--media-border-width) + 0.5rem)
       rgba(var(--color-foreground), 0.5);
   border-radius: calc(var(--media-radius) - var(--media-border-width));
@@ -81,8 +79,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6.1.25rem;
-  width: 6.1.25rem;
+  height: 6.2rem;
+  width: 6.2rem;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -97,10 +95,10 @@
 }
 
 .deferred-media__poster-button .icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .deferred-media__poster-button .icon-play {
-  margin-left: 0.1.25rem;
+  margin-left: 0.2rem;
 }

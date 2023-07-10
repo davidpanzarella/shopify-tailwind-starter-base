@@ -422,6 +422,10 @@ video {
   display: none;
 }
 
+html {
+  font-size: 10px;
+}
+
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -686,4 +690,9 @@ select {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+
+.tw-text-xl {
+  font-size: 2rem;
+  line-height: 2.8rem;
 }

@@ -30,7 +30,7 @@
 
 @media screen and (min-width: 750px) {
   .collapsible-content__media--small {
-    height: 30.875rem;
+    height: 31.4rem;
   }
 
   .collapsible-content__media--large {
@@ -56,13 +56,13 @@
 }
 
 .collapsible-content__heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   margin-top: 0;
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content__heading {
-    margin-bottom: 1.875rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -107,7 +107,7 @@
 
 .collapsible-content summary:hover .accordion__title {
   text-decoration: underline;
-  text-underline-offset: 0.1.875rem;
+  text-underline-offset: 0.3rem;
 }
 
 /* check for flexbox gap in older Safari versions */

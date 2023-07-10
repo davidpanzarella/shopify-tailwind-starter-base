@@ -43,7 +43,7 @@
 }
 
 .article-card__link {
-  text-underline-offset: 0.1.875rem;
+  text-underline-offset: 0.3rem;
 }
 
 .article-card .card__heading {
@@ -52,8 +52,8 @@
 
 .blog-articles .article-card .card__information,
 .blog__posts .article-card .card__information {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .article-card__info {
@@ -62,7 +62,7 @@
 
 .article-card__footer {
   letter-spacing: 0.1rem;
-  font-size: 0.875rem;
+  font-size: 1.4rem;
 }
 
 .article-card__footer:not(:last-child) {
@@ -75,11 +75,11 @@
 
 .article-card__excerpt {
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 1.2rem;
 }
 
 .article-card__link:not(:only-child) {
-  margin-right: 1.875rem;
+  margin-right: 3rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -93,7 +93,7 @@
 }
 
 .article-card__image--medium .ratio::before {
-  padding-bottom: 21.25rem;
+  padding-bottom: 22rem;
 }
 
 .article-card__image--large .ratio::before {
@@ -102,7 +102,7 @@
 
 @media screen and (min-width: 750px) {
   .article-card__image--small .ratio::before {
-    padding-bottom: 14.1.875rem;
+    padding-bottom: 14.3rem;
   }
 
   .article-card__image--medium .ratio::before {

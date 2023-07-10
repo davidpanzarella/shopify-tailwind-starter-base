@@ -137,8 +137,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 @media screen and (min-width: 990px) {
   .header:not(.drawer-menu).page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left3.125rem;
+    padding-right3.125rem;
   }
 
   .page-width--narrow {
@@ -168,7 +168,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .element-margin-top {
-  margin-top: 5rem;
+  margin-top3.125rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -289,7 +289,7 @@ h5,
 }
 
 .h0 {
-  font-size: calc(var(--font-heading-scale) * 4rem);
+  font-size: calc(var(--font-heading-scale) * 2.5rem);
 }
 
 @media only screen and (min-width: 750px) {
@@ -306,7 +306,7 @@ h1,
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
-    font-size: calc(var(--font-heading-scale) * 4rem);
+    font-size: calc(var(--font-heading-scale) * 2.5rem);
   }
 }
 
@@ -514,7 +514,7 @@ h6:empty {
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-decoration: none;
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.8125rem;
   white-space: nowrap;
 }
 
@@ -541,7 +541,7 @@ hr {
   height: 0.1rem;
   background-color: rgba(var(--color-foreground), 0.2);
   display: block;
-  margin: 5rem 0;
+  margin3.125rem 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -705,7 +705,7 @@ summary::-webkit-details-marker {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.1.875rem;
   box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.2.5rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
@@ -714,7 +714,7 @@ summary::-webkit-details-marker {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.1.875rem;
   box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.2.5rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
@@ -803,7 +803,7 @@ summary::-webkit-details-marker {
 }
 
 .title--primary {
-  margin: 4rem 0;
+  margin: 2.5rem 0;
 }
 
 .title-wrapper--self-padded-tablet-down,
@@ -822,7 +822,7 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 990px) {
   .title,
   .title-wrapper-with-link {
-    margin: 5rem 0 1.875rem;
+    margin3.125rem 0 1.875rem;
   }
 
   .title--primary {
@@ -1218,7 +1218,7 @@ button.shopify-payment-button__button--unbranded,
 .customer button,
 button.shopify-payment-button__button--unbranded {
   min-width: calc(11.25rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-height: calc(2.8125rem + var(--buttons-border-width) * 2);
 }
 
 .shopify-payment-button__button--branded {
@@ -1311,7 +1311,7 @@ button.shopify-payment-button__button--unbranded {
   outline: 0;
   box-shadow: 0 0 0 0.1.875rem rgb(var(--color-background)),
     0 0 0 0.5rem rgba(var(--color-foreground), 0.5),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.2.5rem rgba(var(--color-foreground), 0.3);
 }
 
 .button:focus:not(:focus-visible):not(.focused),
@@ -1342,7 +1342,7 @@ button.shopify-payment-button__button--unbranded {
   font-size: 0.75rem;
   padding: 1rem 1.5rem;
   min-width: calc(9rem + var(--buttons-border-width) * 2);
-  min-height: calc(3.5rem + var(--buttons-border-width) * 2);
+  min-height: calc(2.1875rem + var(--buttons-border-width) * 2);
 }
 
 .button--small {
@@ -1414,7 +1414,7 @@ button.shopify-payment-button__button--unbranded {
   color: rgb(var(--color-link));
   margin-left: 0;
   padding-left: 0;
-  min-height: 4.4rem;
+  min-height: 4.2.5rem;
 }
 
 details[open] > .share-button__fallback {
@@ -1485,8 +1485,8 @@ details[open] > .share-button__fallback {
 }
 
 .share-button__fallback button {
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 4.2.5rem;
+  height: 4.2.5rem;
   padding: 0;
   flex-shrink: 0;
   display: flex;
@@ -1550,7 +1550,7 @@ details[open] > .share-button__fallback {
   outline: 0.1.25rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.1rem;
   box-shadow: 0 0 0 0.1rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+    0 0 0.5rem 0.2.5rem rgba(var(--color-foreground), 0.3);
 }
 
 .share-button__fallback .field__input {
@@ -1600,7 +1600,7 @@ details[open] > .share-button__fallback {
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
-  height: 4.5rem;
+  height: 2.8125rem;
   min-height: calc(var(--inputs-border-width) * 2);
   min-width: calc(7rem + (var(--inputs-border-width) * 2));
   position: relative;
@@ -1800,14 +1800,14 @@ details[open] > .share-button__fallback {
   color: currentColor;
   cursor: pointer;
   display: flex;
-  height: 4.4rem;
+  height: 4.2.5rem;
   justify-content: center;
   overflow: hidden;
   padding: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 4.4rem;
+  width: 4.2.5rem;
 }
 
 .field__button > svg {
@@ -1887,7 +1887,7 @@ input[type='checkbox'] {
 
 .form-status-list {
   padding: 0;
-  margin: 1.25rem 0 4rem;
+  margin: 1.25rem 0 2.5rem;
 }
 
 .form-status-list li {
@@ -1905,7 +1905,7 @@ input[type='checkbox'] {
   width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  min-height: calc((var(--inputs-border-width) * 2) + 2.8125rem);
 }
 
 .quantity:after {
@@ -1956,7 +1956,7 @@ input[type='checkbox'] {
 }
 
 .quantity__button {
-  width: calc(4.5rem / var(--font-body-scale));
+  width: calc(2.8125rem / var(--font-body-scale));
   flex-shrink: 0;
   font-size: 1.125rem;
   border: 0;
@@ -2081,8 +2081,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
   justify-content: center;
   align-items: center;
   padding: 0rem;
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 4.2.5rem;
+  width: 4.2.5rem;
   background-color: transparent;
 }
 
@@ -2235,8 +2235,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 @media screen and (min-width: 990px) {
   body:has(.section-header .header:not(.drawer-menu)) .utility-bar .page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left3.125rem;
+    padding-right3.125rem;
   }
 
   .announcement-bar-slider {
@@ -2479,8 +2479,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 }
 
 .header__icons .shopify-app-block {
-  max-width: 4.4rem;
-  max-height: 4.4rem;
+  max-width: 4.2.5rem;
+  max-height: 4.2.5rem;
   overflow: hidden;
 }
 
@@ -2517,8 +2517,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .header__icon,
 .header__icon--cart .icon {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 4.2.5rem;
+  width: 4.2.5rem;
   padding: 0;
 }
 
@@ -3328,7 +3328,7 @@ details-disclosure > details {
     box-shadow: -1rem -1rem 1rem -1rem rgba(0, 0, 0, 0.05),
       1rem 1rem 1rem -1rem rgba(0, 0, 0, 0.05),
       0 0 0.5rem 0 rgba(255, 255, 255, 0),
-      0 1.25rem 3.5rem -1.25rem rgba(0, 0, 0, 0.5);
+      0 1.25rem 2.1875rem -1.25rem rgba(0, 0, 0, 0.5);
   }
 
   .animate--hover-3d-lift .deferred-media:hover .deferred-media__poster-button {
