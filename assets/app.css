@@ -592,6 +592,11 @@ select {
   outline: 1px auto -webkit-focus-ring-color;
 }
 
+:root {
+  --color-primary: #F2A100;
+  --color-secondary: 111 114 185;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -761,6 +766,8 @@ select {
 .\[a-zA-Z-\:\#\] {
   a-z-a--z-: #;
 }
+
+/* set up base styles for TW */
 
 :root {
   --alpha-button-background: 1;
