@@ -734,6 +734,11 @@ select {
   line-height: 2.8rem;
 }
 
+.tw-text-base {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
 .tw-ordinal {
   --tw-ordinal: ordinal;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
