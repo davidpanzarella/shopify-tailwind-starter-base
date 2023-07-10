@@ -1202,6 +1202,10 @@ select {
   line-height: 2.8rem;
 }
 
+.tw-font-bold {
+  font-weight: 700;
+}
+
 .tw-ordinal {
   --tw-ordinal: ordinal;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
@@ -1215,6 +1219,10 @@ select {
 .tw-text-stone-700 {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
+}
+
+.tw-no-underline {
+  text-decoration-line: none;
 }
 
 .tw-ring-inset {
