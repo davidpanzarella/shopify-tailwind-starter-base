@@ -701,3 +701,13 @@ select {
   font-size: 1.8rem;
   line-height: 2.8rem;
 }
+
+.tw-text-orange-900 {
+  --tw-text-opacity: 1;
+  color: rgb(124 45 18 / var(--tw-text-opacity));
+}
+
+.tw-text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
+}
