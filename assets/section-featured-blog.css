@@ -16,7 +16,7 @@
 }
 
 .blog-placeholder__content {
-  padding: 1.875rem;
+  padding: 3rem;
   background: rgba(var(--color-foreground), 0.04);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .blog-placeholder .rte-width {
-  margin-top: 0.75rem;
+  margin-top: 1.2rem;
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -63,7 +63,7 @@
 
 @media screen and (max-width: 749px) {
   .blog__post.article {
-    width: calc(100% - 1.875rem - var(--grid-mobile-horizontal-spacing));
+    width: calc(100% - 3rem - var(--grid-mobile-horizontal-spacing));
   }
 }
 
@@ -76,7 +76,7 @@
 }
 
 .blog__button {
-  margin-top: 1.875rem;
+  margin-top: 3rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -88,7 +88,7 @@
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
   @media screen and (min-width: 750px) {
-    .blog__posts .article + .article {
+    .blog__posts .article+.article {
       margin-left: var(--grid-desktop-horizontal-spacing);
     }
   }

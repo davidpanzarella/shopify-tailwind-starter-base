@@ -35,7 +35,7 @@
     > *:nth-child(3n + 2):last-child
     .article-card__image--small
     .ratio::before {
-    padding-bottom: 21.25rem;
+    padding-bottom: 22rem;
   }
 
   .blog-articles--collage
@@ -94,6 +94,6 @@
     > *:nth-child(3n + 2):last-child
     .article-card__image--large
     .ratio::before {
-    padding-bottom: 81.5625rem;
+    padding-bottom: 82.5rem;
   }
 }

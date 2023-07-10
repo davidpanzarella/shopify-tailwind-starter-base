@@ -3,7 +3,7 @@
 }
 
 .main-page-title {
-  margin-bottom: 1.875rem;
+  margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -18,6 +18,6 @@
 }
 
 .page-placeholder {
-  width: 51.5625rem;
-  height: 51.5625rem;
+  width: 52.5rem;
+  height: 52.5rem;
 }
