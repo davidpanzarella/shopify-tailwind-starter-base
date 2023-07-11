@@ -14,10 +14,11 @@
     assign divider = '/'
   endif
 
-  assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-' | pluralize
-  assign product_format = product.metafields.custom['product-format'] | replace: ' ', '-' | pluralize
+  assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-'
+  assign product_format = product.metafields.custom['product-format'] | replace: ' ', '-'
   assign breadcrumb_link_type = '/collections/' | append: product_type
-  assign breadcrumb_link_format_type = '/collections/' | append: product_format | append: '-' | append: product_type
+  assign breadcrumb_link_format_type = '/collections/' | append: product_format | append: '-' | append: product_type | pluralize
+  echo breadcrumb_link_format_type
 -%}
 
 <nav aria-label="Breadcrumb">
