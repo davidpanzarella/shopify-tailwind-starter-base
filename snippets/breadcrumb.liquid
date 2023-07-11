@@ -2,24 +2,31 @@
   Renders a breadcrumb navigation for the current page.
 
   Accepts:
-  - breadcrumb-collection: {Object} Collection Liquid object
+  - product: {Object} Product Liquid object
   - divider: {String} Divider to use (optional)
 
   Usage:
-  {% render 'breadcrumb-collection' %}
+  {% render 'breadcrumb-collection', product: product %}
 {% endcomment %}
 
 {%- liquid
   if divider == null
     assign divider = '/'
   endif
+
+  assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-' | pluralize
+  assign product_format = product.metafields.custom['product-format'] | replace: ' ', '-' | pluralize
+  assign breadcrumb_link_type = '/collections/' | append: product_type
+  assign breadcrumb_link_format_type = '/collections/' | append: product_format | append: '-' | append: product_type
 -%}
 
 <nav aria-label="Breadcrumb">
   <ol role="list" class="flex items-center space-x-2">
     <li>
       <div class="flex items-center text-sm">
-        <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Travel</a>
+        <a href="{{ breadcrumb_link_type }}" class="font-medium text-gray-500 hover:text-gray-900">
+          {{- product_type | capitalize -}}
+        </a>
         <svg
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -32,7 +39,10 @@
     </li>
     <li>
       <div class="flex items-center text-sm">
-        <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Bags</a>
+        <a href="{{ breadcrumb_link_format_type }}" class="font-medium text-gray-500 hover:text-gray-900">
+          {{- product_format | capitalize }}
+          {{ product_type | capitalize -}}
+        </a>
       </div>
     </li>
   </ol>
