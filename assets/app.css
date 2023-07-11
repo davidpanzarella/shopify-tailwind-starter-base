@@ -697,11 +697,6 @@ select {
   --tw-backdrop-sepia:  ;
 }
 
-.tw-mx-4 {
-  margin-left: 1.6rem;
-  margin-right: 1.6rem;
-}
-
 .tw-bg-bone {
   --tw-bg-opacity: 1;
   background-color: rgb(214 202 186 / var(--tw-bg-opacity));
