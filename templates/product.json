@@ -15,6 +15,11 @@
           "settings": {
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
         "d3f63a5c-d610-449a-b907-0aaf391b977b": {
           "type": "rating",
           "settings": {
@@ -48,11 +53,6 @@
           "settings": {
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
           }
         },
         "collapsible-row-0": {
@@ -101,13 +101,13 @@
       "block_order": [
         "vendor",
         "title",
+        "description",
         "d3f63a5c-d610-449a-b907-0aaf391b977b",
         "caption",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
