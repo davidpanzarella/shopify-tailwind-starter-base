@@ -29,7 +29,7 @@
   {%- endstyle -%}
 
   <script>
-    console.log("product:", {{ product.metafields | json }});
+    console.log("product:", {{ product.metafields.custom | json }});
   </script>
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
