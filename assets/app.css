@@ -712,15 +712,6 @@ select {
   line-height: 2rem;
 }
 
-.tw-text-xl {
-  font-size: 2rem;
-  line-height: 2.8rem;
-}
-
-.tw-font-bold {
-  font-weight: 700;
-}
-
 .tw-text-stone-500 {
   --tw-text-opacity: 1;
   color: rgb(120 113 108 / var(--tw-text-opacity));
@@ -729,10 +720,6 @@ select {
 .tw-text-stone-700 {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
-}
-
-.tw-no-underline {
-  text-decoration-line: none;
 }
 
 /* set up base styles for TW */
