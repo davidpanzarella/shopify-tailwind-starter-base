@@ -16,7 +16,7 @@
 
   assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-'
   assign product_format = product.metafields.custom['product-format'] | replace: ' ', '-'
-  assign breadcrumb_link_type = '/collections/' | append: product_type | downcase
+  assign breadcrumb_link_type = '/collections/' | append: product_type | pluralize | downcase
   assign breadcrumb_link_format_type = '/collections/' | append: product_format | append: '-' | append: product_type | pluralize | downcase
   echo breadcrumb_link_format_type
 -%}
