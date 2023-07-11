@@ -14,7 +14,7 @@
     assign divider = '/'
   endif
 
-  assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-'
+  assign product_type = product.metafields.custom['product-type'] | replace: ' ', '-' lowercase
   assign product_format = product.metafields.custom['product-format'] | replace: ' ', '-'
   assign breadcrumb_link_type = '/collections/' | append: product_type
   assign breadcrumb_link_format_type = '/collections/' | append: product_format | append: '-' | append: product_type | pluralize
