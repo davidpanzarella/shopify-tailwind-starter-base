@@ -1211,6 +1211,11 @@ select {
   line-height: 2.8rem;
 }
 
+.tw-text-sm {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
 .tw-font-bold {
   font-weight: 700;
 }
@@ -1228,6 +1233,11 @@ select {
 .tw-text-stone-700 {
   --tw-text-opacity: 1;
   color: rgb(68 64 60 / var(--tw-text-opacity));
+}
+
+.tw-text-stone-500 {
+  --tw-text-opacity: 1;
+  color: rgb(120 113 108 / var(--tw-text-opacity));
 }
 
 .tw-no-underline {
