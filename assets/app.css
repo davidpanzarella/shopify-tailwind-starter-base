@@ -1171,6 +1171,15 @@ select {
   top: -0.4rem;
 }
 
+.tw-m-4 {
+  margin: 1.6rem;
+}
+
+.tw-mx-4 {
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+}
+
 .tw-space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
 }
