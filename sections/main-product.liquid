@@ -28,6 +28,10 @@
     }
   {%- endstyle -%}
 
+  <script>
+    console.log("product:", {{ section | json }});
+  </script>
+
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {% if section.settings.image_zoom == 'hover' %}
