@@ -21,6 +21,10 @@
   assign product_format_cleaned = product_format | downcase | replace: ' ', '-'
   assign link_type = link_start | append: product_type_cleaned
   assign link_format = link_start | append: product_format_cleaned | append: '-' | append: product_type_cleaned
+  assign pluralize_link = s
+  if product_type == 'Template'
+    assign pluralize_link = null
+  endif
 %}
 
 <script>
@@ -31,9 +35,9 @@
   <ol role="list" class="flex items-center space-x-1">
     <li>
       <div class="flex items-center text-sm">
-        <a href="{{ link_type }}s" class="font-medium text-gray-500 hover:text-gray-900">
+        <a href="{{ link_type }}{{pluralize_link}}" class="font-medium text-gray-500 hover:text-gray-900">
           {{- product_type -}}
-          s
+          {{ pluralize_link }}
         </a>
         <svg
           viewBox="0 0 20 20"
@@ -47,7 +51,10 @@
     </li>
     <li>
       <div class="flex items-center text-sm">
-        <a href="{{ link_format }}s" class="font-medium text-gray-500 hover:text-gray-900">{{- product_format }}s </a>
+        <a href="{{ link_format }}{{pluralize_link}}" class="font-medium text-gray-500 hover:text-gray-900">
+          {{- product_format -}}
+          {{- pluralize_link }}
+        </a>
       </div>
     </li>
   </ol>
