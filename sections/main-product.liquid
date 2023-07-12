@@ -131,32 +131,36 @@
                   console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
                 </script>
 
-                <div class="sm:flex sm:justify-between">
-                  <!-- Design Options selector -->
-                  <fieldset>
-                    <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
-                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
-                      {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                        <script>
-                          console.log("related_product:", {{ related_product | json }});
-                        </script>
-                        {% assign isActive = false %}
-                        {% if related_product.handle == product.handle %}
-                          {% assign isActive = true %}
-                        {% endif %}
-                        <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none {% if isActive %}ring-2 ring-indigo-500 ring-offset-2 border-transparent bg-indigo-600 text-white hover:bg-indigo-700{% else %}border-gray-200 bg-white text-gray-900 hover:bg-gray-50{% endif %}">
-                          <a href="/products/{{ related_product.handle }}" id="design-option-{{ forloop.index }}" class="text-base font-medium text-gray-900">{{ related_product.metafields.custom['product-template-options'] }}</a>
-                          <!--
-                            Active: "border", Not Active: "border-2"
-                            Checked: "border-indigo-500", Not Checked: "border-transparent"
-                          -->
-                          <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                        </label>
-                      {% endfor %}
-                    </div>
-                  </fieldset>
-                </div>
-                
+                <!-- Design Options selector -->
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
+                  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+                    {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                      <script>
+                        console.log("related_product:", {{ related_product | json }});
+                      </script>
+                      {% assign isActive = false %}
+                      {% if related_product.handle == product.handle %}
+                        {% assign isActive = true %}
+                      {% endif %}
+                      <label class="group relative flex items-center justify-center rounded-md border py-3 px-4 text-sm font-medium uppercase hover:bg-gray-50 focus:outline-none {% if isActive %}ring-2 ring-indigo-500 ring-offset-2 border-transparent bg-indigo-600 text-white hover:bg-indigo-700{% else %}border-gray-200 bg-white text-gray-900 hover:bg-gray-50{% endif %}">
+                        <a
+                          href="/products/{{ related_product.handle }}"
+                          id="design-option-{{ forloop.index }}"
+                          class="text-base font-medium text-gray-900"
+                        >
+                          {{- related_product.metafields.custom['product-template-options'] -}}
+                        </a>
+                        <!--
+                          Active: "border", Not Active: "border-2"
+                          Checked: "border-indigo-500", Not Checked: "border-transparent"
+                        -->
+                        <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                      </label>
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              </div>
 
               {% comment %}
                 <h1>{{ product.title | escape }}</h1>
