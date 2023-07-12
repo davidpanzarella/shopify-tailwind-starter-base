@@ -368,6 +368,38 @@
 
               <section aria-labelledby="options-heading" class="tw-mt-6">
                 <h3 id="options-heading" class="tw-sr-only">Product options</h3>
+                <label id="listbox-label" class="sr-only">Product options</label>
+                <div class="relative">
+                  <ul
+                    class="divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    tabindex="-1"
+                    role="listbox"
+                    aria-labelledby="listbox-label"
+                    aria-activedescendant="listbox-option-0"
+                  >
+                    {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                      <li
+                        class="text-gray-900 cursor-default select-none p-4 text-sm"
+                        id="listbox-option-{{ forloop.index }}"
+                        role="option"
+                      >
+                        <div class="flex flex-col">
+                          <div class="flex justify-between">
+                            <p class="font-normal">
+                              {{ related_product.metafields.custom['product-template-options'] }}
+                            </p>
+                            <span class="text-indigo-600">
+                              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                              </svg>
+                            </span>
+                          </div>
+                          <p class="text-gray-500 mt-2">{{ related_product.description }}</p>
+                        </div>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
 
                 <form>
                   <div class="tw-sm:flex tw-sm:justify-between">
