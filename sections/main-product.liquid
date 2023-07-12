@@ -114,14 +114,19 @@
                 </h1>
 
                 <p class="text-lg text-gray-900 sm:text-xl">
-                  <span class="tw-text-base tw-text-stone-700">
-                    {% if product.metafields.custom['product-template-options'].value %}
+                    {{ product.metafields.custom['product-size'].value }}
+                    {{ product.metafields.custom['product-shape'].value }}
+                    {{ product.metafields.custom['product-format'].value -}}
+                    {{ product.metafields.custom['product-type'].value }}
+
+
+                    {% comment %} {% if product.metafields.custom['product-template-options'].value %}
                       <span>{{- product.metafields.custom['product-template-options'].value -}}</span>
                     {%- endif -%}
                     {% if product.metafields.custom.product_template_caption.value %}
                       <span> · </span>
                       {{- product.metafields.custom.product_template_caption.value -}}
-                    {%- endif -%}
+                    {%- endif -%} {% endcomment %}
                   </span>
                 </p>
               </div>
