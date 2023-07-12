@@ -147,7 +147,7 @@
                           {% if related_product.handle == product.handle %}
                             {% assign isActive = true %}
                           {% endif %}
-                          <label class="flex items-center justify-center rounded-md border py-3 px-3 text-sm font-base sm:flex-1 cursor-pointer focus:outline-none {% if isActive %}ring-2 ring-indigo-500 ring-offset-2 border-transparent bg-indigo-600 text-white hover:bg-indigo-700{% else %}border-gray-200 bg-white text-gray-900 hover:bg-gray-50{% endif %}">
+                          <label class="flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1  focus:outline-none {% if isActive %}ring-2 ring-indigo-500 ring-offset-2 border-transparent bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer{% else %}border-gray-200 bg-white text-gray-900 hover:bg-gray-50{% endif %}">
                             {% if isActive %}
                               <span id="design-option-{{ forloop.index }}" class="text-base font-medium text-gray-900">
                                 {{- related_product.metafields.custom['product-template-options'] -}}
