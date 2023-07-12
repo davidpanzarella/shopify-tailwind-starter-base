@@ -829,6 +829,10 @@ select {
   margin-left: 0.4rem;
 }
 
+.mt-2 {
+  margin-top: 0.8rem;
+}
+
 .block {
   display: block;
 }
@@ -915,6 +919,10 @@ select {
 
 .gap-4 {
   gap: 1.6rem;
+}
+
+.gap-3 {
+  gap: 1.2rem;
 }
 
 .gap-y-6 {
@@ -1025,6 +1033,11 @@ select {
 .px-4 {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+}
+
+.px-3 {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 .pl-4 {
@@ -4798,6 +4811,10 @@ details-disclosure > details {
 @media (min-width: 320px) {
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:flex-1 {
+    flex: 1 1 0%;
   }
 
   .sm\:grid-cols-2 {
