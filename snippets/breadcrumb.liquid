@@ -18,10 +18,12 @@
   assign product_format = product.metafields.custom['product-format']
   assign breadcrumb_link_type = '/collections/' | append: product_type | replace: ' ', '-'
   assign breadcrumb_link_format_type = '/collections/' | append: product_format | replace: ' ', '-' | append: product_type | replace: ' ', '-' | pluralize | downcase
--%}
+
+  assign linkType = product.metafields.custom['product-type'] | downcase | replace: ' ', '-' | pluralize
+%}
 
 <script>
-  console.log("adf:", {{ breadcrumb_link_type | json }});
+  console.log("adf:", {{ linkType | json }});
 </script>
 
 <nav aria-label="Breadcrumb">
