@@ -149,37 +149,6 @@
                   </div>
                 </form>
               </section>
-              <section aria-labelledby="options-heading" class="tw-mt-6">
-                <h3 id="options-heading" class="tw-sr-only">Product options</h3>
-                <form>
-                  <div class="tw-sm:flex tw-sm:justify-between">
-                    <!-- Design Options selector -->
-                    <fieldset>
-                      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Design Options</legend>
-                      <div class="tw-mt-1">
-                        <select
-                          id="design-options"
-                          name="design-options"
-                          class="tw-block tw-w-full tw-rounded-sm tw-border-0 tw-py-1.5 tw-pl-3 tw-pr-10 tw-text-gray-900 tw-ring-1 tw-ring-inset tw-ring-gray-300 tw-focus:ring-2 tw-focus:ring-indigo-600 tw-text-base"
-                          onchange="location = this.value;"
-                        >
-                          {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                            <option
-                              value="/products/{{ related_product.handle }}"
-                              {% if related_product.handle == product.handle %}
-                                selected
-                              {% endif %}
-                            >
-                              {{ related_product.metafields.custom['product-template-options'] }}
-                            </option>
-                          {% endfor %}
-                        </select>
-                      </div>
-                    </fieldset>
-                  </div>
-                </form>
-              </section>
-
               {% comment %}
                 <h1>{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
