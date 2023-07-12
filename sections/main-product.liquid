@@ -114,6 +114,7 @@
                 </h1>
               </div>
 
+              <div class="sm:flex sm:justify-between">
                 <span class="tw-text-base tw-text-stone-700">
                   {% if product.metafields.custom['product-template-options'].value %}
                     <span>{{- product.metafields.custom['product-template-options'].value -}}</span>
@@ -125,32 +126,30 @@
                 </span>
 
                 <!-- Design Options selector -->
-                <div class="sm:flex sm:justify-between">
-                  <fieldset>
-                    <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
-                    <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      {% for related_product in product.metafields.custom.customily_product_equivalents %}
-                        {% assign isActive = false %}
-                        {% if related_product.handle == product.handle %}
-                          {% assign isActive = true %}
-                        {% endif %}
-                        <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none {% if isActive %}active-class{% else %}inactive-class{% endif %}">
-                          <a
-                            href="/products/{{ related_product.handle }}"
-                            id="design-option-{{ forloop.index }}"
-                            class="text-base font-medium text-gray-900"
-                          >
-                            {{- related_product.metafields.custom['product-template-options'] -}}
-                          </a>
-                          <div
-                            class="pointer-events-none absolute -inset-px rounded-lg border-2"
-                            aria-hidden="true"
-                          ></div>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </fieldset>
-                </div>
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
+                  <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {% for related_product in product.metafields.custom.customily_product_equivalents %}
+                      {% assign isActive = false %}
+                      {% if related_product.handle == product.handle %}
+                        {% assign isActive = true %}
+                      {% endif %}
+                      <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none {% if isActive %}active-class{% else %}inactive-class{% endif %}">
+                        <a
+                          href="/products/{{ related_product.handle }}"
+                          id="design-option-{{ forloop.index }}"
+                          class="text-base font-medium text-gray-900"
+                        >
+                          {{- related_product.metafields.custom['product-template-options'] -}}
+                        </a>
+                        <div
+                          class="pointer-events-none absolute -inset-px rounded-lg border-2"
+                          aria-hidden="true"
+                        ></div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </fieldset>
               </div>
 
               {% comment %}
