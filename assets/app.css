@@ -929,6 +929,12 @@ select {
   margin-bottom: calc(2.4rem * var(--tw-space-y-reverse));
 }
 
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.4rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.4rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
