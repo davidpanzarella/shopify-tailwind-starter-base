@@ -8,13 +8,13 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
+        "description": {
+          "type": "description",
           "settings": {
           }
         },
-        "description": {
-          "type": "description",
+        "price": {
+          "type": "price",
           "settings": {
           }
         },
@@ -76,8 +76,8 @@
       },
       "block_order": [
         "title",
-        "price",
         "description",
+        "price",
         "variant_picker",
         "buy_buttons",
         "collapsible-row-0",
