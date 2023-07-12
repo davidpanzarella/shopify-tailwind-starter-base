@@ -19,7 +19,7 @@
   assign breadcrumb_link_type = '/collections/' | append: product_type | replace: ' ', '-'
   assign breadcrumb_link_format_type = '/collections/' | append: product_format | replace: ' ', '-' | append: product_type | replace: ' ', '-' | pluralize | downcase
 
-  assign linkType = product_type | downcase | replace: ' ', '-'
+  assign linkType = product_type | downcase | replace: ' ', '-' | pluralize
 %}
 
 <script>
