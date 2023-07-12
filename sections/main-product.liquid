@@ -92,7 +92,7 @@
               <div class="product__title" {{ block.shopify_attributes }}>
                 {% liquid
                   assign colorDisplay = ''
-                  assign color = card_product.metafields.custom.color.value[0]
+                  assign color = product.metafields.custom.color.value[0]
 
                   if color == 'Black and White'
                     assign colorDisplay = 'B&W'
@@ -101,11 +101,11 @@
                   endif
 
                   assign productTitle = ''
-                  if card_product.metafields.custom['product-template-name'].value
-                    assign productTitle = card_product.metafields.custom['product-template-name'].value | escape
+                  if product.metafields.custom['product-template-name'].value
+                    assign productTitle = product.metafields.custom['product-template-name'].value | escape
 
                   else
-                    assign productTitle = card_product.title | escape
+                    assign productTitle = product.title | escape
                   endif
                 %}
                 <div class="mt-4">
