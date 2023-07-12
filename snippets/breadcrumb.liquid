@@ -18,7 +18,7 @@
   assign product_format = product.metafields.custom['product-format']
   assign link_start = '/collections/'
   assign link_type = link_start | append: product_type | downcase | replace: ' ', '-'
-  assign link_format = link_start | append: product_format | downcase | replace: ' ', '-' | append: product_type
+  assign link_format = link_start | append: product_format | append: product_type | downcase | replace: ' ', '-'
 %}
 
 <script>
