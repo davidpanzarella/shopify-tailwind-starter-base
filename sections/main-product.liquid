@@ -134,6 +134,9 @@
                   <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
                   <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {% for related_product in product.metafields.custom.customily_product_equivalents %}
+                      <script>
+                        console.log("related_product:", {{ related_product | json }});
+                      </script>
                       {% assign isActive = false %}
                       {% if related_product.handle == product.handle %}
                         {% assign isActive = true %}
