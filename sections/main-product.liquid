@@ -125,6 +125,10 @@
                   {%- endif -%}
                 </span>
 
+                <script>
+                  console.log("product:", {{ product.metafields.custom.color.value | json }});
+                </script>
+
                 <!-- Design Options selector -->
                 <fieldset>
                   <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
