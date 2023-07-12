@@ -412,18 +412,24 @@
               </div>
 
               <script>
-                document.getElementById('dropdown-button').addEventListener('click', function () {
-                  var dropdownOptions = document.getElementById('dropdown-options')
-                  dropdownOptions.classList.toggle('tw-hidden')
-                })
+                // Get the dropdown menu
+                var dropdown = document.querySelector('.dropdown-menu')
 
-                var options = document.getElementsByClassName('dropdown-option')
-                for (var i = 0; i < options.length; i++) {
-                  options[i].addEventListener('click', function () {
-                    document.getElementById('selected-option').textContent = this.getAttribute('data-value')
-                    document.getElementById('dropdown-options').classList.add('tw-hidden')
-                  })
+                // Function to show the dropdown
+                function showDropdown() {
+                  dropdown.style.opacity = '1'
+                  dropdown.style.transition = 'opacity 0.1s ease-in'
                 }
+
+                // Function to hide the dropdown
+                function hideDropdown() {
+                  dropdown.style.opacity = '0'
+                  dropdown.style.transition = 'opacity 0.1s ease-out'
+                }
+
+                // Attach these functions to the appropriate events
+                dropdown.addEventListener('mouseenter', showDropdown)
+                dropdown.addEventListener('mouseleave', hideDropdown)
               </script>
 
               <section aria-labelledby="options-heading" class="tw-mt-6">
