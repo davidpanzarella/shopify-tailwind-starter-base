@@ -22,9 +22,9 @@
   assign link_type = link_start | append: product_type_cleaned
   assign link_format = link_start | append: product_format_cleaned | append: '-' | append: product_type_cleaned
   if product_format == 'Template'
-    assign pluralize_link = null
+    assign pluralize_link = ''
   else
-    assign pluralize_link = s
+    assign pluralize_link = 's'
   endif
 %}
 
