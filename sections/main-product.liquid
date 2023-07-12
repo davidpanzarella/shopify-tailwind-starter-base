@@ -107,13 +107,13 @@
                   assign productTitle = product.title | escape
                 endif
               %}
-              <div class="mt-4">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <div class="tw-mt-4">
+                <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
                   {{ colorDisplay }}
                   {{ productTitle }}
                 </h1>
 
-                <p class="text-lg text-gray-900 sm:text-xl">
+                <p class="tw-text-lg tw-text-gray-900 tw-sm:text-xl">
                   {{ product.metafields.custom['product-size'].value }}
                   {{ product.metafields.custom['product-shape'].value }}
                   {{ product.metafields.custom['product-type'].value }}
@@ -124,15 +124,15 @@
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
               </script>
 
-              <section aria-labelledby="options-heading" class="mt-6">
-                <h3 id="options-heading" class="sr-only">Product options</h3>
+              <section aria-labelledby="options-heading" class="tw-mt-6">
+                <h3 id="options-heading" class="tw-sr-only">Product options</h3>
 
                 <form>
-                  <div class="sm:flex sm:justify-between">
+                  <div class="tw-sm:flex tw-sm:justify-between">
                     <!-- Design Options selector -->
                     <fieldset>
-                      <legend class="block text-sm font-medium text-gray-700">Design Options</legend>
-                      <div class="mt-1 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Design Options</legend>
+                      <div class="tw-mt-1 tw-grid tw-grid-cols-1 tw-gap-2 tw-sm:grid-cols-2">
                         {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                           <script>
                             console.log("related_product:", {{ related_product | json }});
@@ -141,16 +141,19 @@
                           {% if related_product.handle == product.handle %}
                             {% assign isActive = true %}
                           {% endif %}
-                          <label class="flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium sm:flex-1  focus:outline-none {% if isActive %}ring-2 ring-indigo-500 ring-offset-2 border-transparent text-white{% else %} cursor-pointer border-gray-200 bg-white text-gray-900 hover:bg-gray-50{% endif %}">
+                          <label class="tw-flex tw-items-center tw-justify-center tw-rounded-md tw-border tw-py-3 tw-px-3 tw-text-sm tw-font-medium tw-sm:flex-1  tw-focus:outline-none {% if isActive %}tw-ring-2 tw-ring-indigo-500 tw-ring-offset-2 tw-border-transparent tw-text-white{% else %} tw-cursor-pointer tw-border-gray-200 tw-bg-white tw-text-gray-900 tw-hover:bg-gray-50{% endif %}">
                             {% if isActive %}
-                              <span id="design-option-{{ forloop.index }}" class="text-base font-medium text-gray-900">
+                              <span
+                                id="design-option-{{ forloop.index }}"
+                                class="tw-text-base tw-font-medium tw-text-gray-900"
+                              >
                                 {{- related_product.metafields.custom['product-template-options'] -}}
                               </span>
                             {% else %}
                               <a
                                 href="/products/{{ related_product.handle }}"
                                 id="design-option-{{ forloop.index }}"
-                                class="text-base font-medium text-gray-900"
+                                class="tw-text-base tw-font-medium tw-text-gray-900"
                               >
                                 {{- related_product.metafields.custom['product-template-options'] -}}
                               </a>
@@ -159,7 +162,10 @@
                               Active: "border", Not Active: "border-2"
                               Checked: "border-indigo-500", Not Checked: "border-transparent"
                             -->
-                            <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                            <span
+                              class="tw-pointer-events-none tw-absolute tw--inset-px tw-rounded-md"
+                              aria-hidden="true"
+                            ></span>
                           </label>
                         {% endfor %}
                       </div>
