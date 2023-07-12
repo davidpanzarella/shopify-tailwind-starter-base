@@ -28,7 +28,10 @@
   <ol role="list" class="flex items-center space-x-2">
     <li>
       <div class="flex items-center text-sm">
-        <a href="{{ breadcrumb_link_type }}" class="font-medium text-gray-500 hover:text-gray-900">
+        <a
+          href="{{ breadcrumb_link_type | pluralize | downcase }}"
+          class="font-medium text-gray-500 hover:text-gray-900"
+        >
           {{- product_type -}}
         </a>
         <svg
