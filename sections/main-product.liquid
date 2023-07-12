@@ -89,40 +89,73 @@
                 {{- block.settings.text -}}
               </p>
             {%- when 'title' -%}
-              <div class="product__title" {{ block.shopify_attributes }}>
-                {% liquid
-                  assign colorDisplay = ''
-                  assign color = product.metafields.custom.color.value[0]
+              {% comment %} <div class="product__title" {{ block.shopify_attributes }}> {% endcomment %}
+              {% liquid
+                assign colorDisplay = ''
+                assign color = product.metafields.custom.color.value[0]
 
-                  if color == 'Black and White'
-                    assign colorDisplay = 'B&W'
-                  else
-                    assign colorDisplay = color
-                  endif
+                if color == 'Black and White'
+                  assign colorDisplay = 'B&W'
+                else
+                  assign colorDisplay = color
+                endif
 
-                  assign productTitle = ''
-                  if product.metafields.custom['product-template-name'].value
-                    assign productTitle = product.metafields.custom['product-template-name'].value | escape
-                  else
-                    assign productTitle = product.title | escape
-                  endif
-                %}
-                <div class="mt-4">
-                  <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    {{ colorDisplay }}
-                    {{ productTitle }}
-                  </h1>
-                </div>
-
-                {% comment %}
-                  <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
-                {% endcomment %}
+                assign productTitle = ''
+                if product.metafields.custom['product-template-name'].value
+                  assign productTitle = product.metafields.custom['product-template-name'].value | escape
+                else
+                  assign productTitle = product.title | escape
+                endif
+              %}
+              <div class="mt-4">
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  {{ colorDisplay }}
+                  {{ productTitle }}
+                </h1>
               </div>
+
+              <div class="sm:flex sm:justify-between">
+                <!-- Size selector -->
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-700">Size</legend>
+                  <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
+                      <a
+                        href="/products/18l-product"
+                        id="size-choice-0-label"
+                        class="text-base font-medium text-gray-900"
+                        >18L</a
+                      >
+                      <p id="size-choice-0-description" class="mt-1 text-sm text-gray-500">
+                        Perfect for a reasonable amount of snacks.
+                      </p>
+                      <div class="pointer-events-none absolute -inset-px rounded-lg border-2" aria-hidden="true"></div>
+                    </div>
+                    <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
+                      <a
+                        href="/products/20l-product"
+                        id="size-choice-1-label"
+                        class="text-base font-medium text-gray-900"
+                        >20L</a
+                      >
+                      <p id="size-choice-1-description" class="mt-1 text-sm text-gray-500">
+                        Enough room for a serious amount of snacks.
+                      </p>
+                      <div class="pointer-events-none absolute -inset-px rounded-lg border-2" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              {% comment %}
+                <h1>{{ product.title | escape }}</h1>
+                <a href="{{ product.url }}" class="product__title">
+                  <h2 class="h1">
+                    {{ product.title | escape }}
+                  </h2>
+                </a>
+              {% endcomment %}
+              {% comment %} </div> {% endcomment %}
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
