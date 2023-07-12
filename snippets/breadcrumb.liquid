@@ -21,7 +21,7 @@
 -%}
 
 <script>
-  console.log("adf:", {{ breadcrumb_link_format_type }});
+  console.log("adf:", {{ product_type }});
 </script>
 
 <nav aria-label="Breadcrumb">
@@ -29,7 +29,7 @@
     <li>
       <div class="flex items-center text-sm">
         <a href="{{ breadcrumb_link_type }}" class="font-medium text-gray-500 hover:text-gray-900">
-          {{- product_type | capitalize -}}
+          {{- product_type -}}
         </a>
         <svg
           viewBox="0 0 20 20"
