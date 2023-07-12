@@ -383,7 +383,7 @@
                           {% if related_product.handle == product.handle %}
                             {% assign isActive = true %}
                           {% endif %}
-                          <label class="tw-flex tw-items-center tw-justify-center tw-rounded-sm tw-border tw-py-2 tw-px-2 tw-text-sm tw-font-medium tw-sm:flex-1  tw-focus:outline-none {% if isActive %}tw-ring-2 tw-ring-indigo-500 tw-ring-offset-2 tw-border-transparent tw-text-white{% else %} tw-cursor-pointer tw-border-gray-200 tw-bg-white tw-text-gray-900 tw-hover:bg-gray-20{% endif %}">
+                          <label class="tw-flex tw-items-center tw-justify-center tw-rounded-sm tw-border tw-py-2 tw-px-2 tw-text-sm tw-font-medium tw-sm:flex-1  tw-focus:outline-none {% if isActive %}tw-ring-2 tw-ring-indigo-500 tw-ring-offset-2 tw-border-transparent tw-text-white{% else %} tw-cursor-pointer tw-border-gray-200 tw-bg-white tw-text-gray-900 hover:tw-bg-gray-50{% endif %}">
                             {% if isActive %}
                               <span
                                 id="design-option-{{ forloop.index }}"
