@@ -368,10 +368,41 @@
 
               <section aria-labelledby="options-heading" class="tw-mt-6">
                 <div>
-                  <label id="listbox-label" class="tw-sr-only">Product Options</label>
+                  <label id="listbox-label" class="tw-sr-only">Change published status</label>
                   <div class="tw-relative">
+                    <div class="tw-inline-flex tw-divide-x tw-divide-indigo-700 tw-rounded-md tw-shadow-sm">
+                      <div class="tw-inline-flex tw-items-center tw-gap-x-1.5 tw-rounded-l-md tw-bg-indigo-600 tw-px-3 tw-py-2 tw-text-white tw-shadow-sm">
+                        <svg
+                          class="tw--ml-0.5 tw-h-5 tw-w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="tw-text-sm tw-font-semibold">Published</p>
+                      </div>
+                      <button
+                        type="button"
+                        class="tw-inline-flex tw-items-center tw-rounded-l-none tw-rounded-r-md tw-bg-indigo-600 tw-p-2 tw-hover:bg-indigo-700 tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-indigo-600 tw-focus:ring-offset-2 tw-focus:ring-offset-gray-50"
+                        aria-haspopup="listbox"
+                        aria-expanded="true"
+                        aria-labelledby="listbox-label"
+                      >
+                        <span class="tw-sr-only">Change published status</span>
+                        <svg
+                          class="tw-h-5 tw-w-5 tw-text-white"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                      </button>
+                    </div>
+
                     <ul
-                      class="tw-divide-y tw-divide-gray-200 tw-overflow-hidden tw-rounded-md tw-bg-white tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-focus:outline-none"
+                      class="tw-absolute tw-right-0 tw-z-10 tw-mt-2 tw-w-72 tw-origin-top-right tw-divide-y tw-divide-gray-200 tw-overflow-hidden tw-rounded-md tw-bg-white tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-focus:outline-none"
                       tabindex="-1"
                       role="listbox"
                       aria-labelledby="listbox-label"
