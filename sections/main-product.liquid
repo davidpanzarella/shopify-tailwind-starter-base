@@ -112,19 +112,19 @@
                   {{ colorDisplay }}
                   {{ productTitle }}
                 </h1>
-              </div>
 
-              {% comment %}
-                <span class="tw-text-base tw-text-stone-700">
-                  {% if product.metafields.custom['product-template-options'].value %}
-                    <span>{{- product.metafields.custom['product-template-options'].value -}}</span>
-                  {%- endif -%}
-                  {% if product.metafields.custom.product_template_caption.value %}
-                    <span> · </span>
-                    {{- product.metafields.custom.product_template_caption.value -}}
-                  {%- endif -%}
-                </span>
-              {% endcomment %}
+                <p class="text-lg text-gray-900 sm:text-xl">
+                  <span class="tw-text-base tw-text-stone-700">
+                    {% if product.metafields.custom['product-template-options'].value %}
+                      <span>{{- product.metafields.custom['product-template-options'].value -}}</span>
+                    {%- endif -%}
+                    {% if product.metafields.custom.product_template_caption.value %}
+                      <span> · </span>
+                      {{- product.metafields.custom.product_template_caption.value -}}
+                    {%- endif -%}
+                  </span>
+                </p>
+              </div>
 
               <script>
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
