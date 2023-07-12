@@ -777,6 +777,10 @@ select {
   display: grid;
 }
 
+.tw-hidden {
+  display: none;
+}
+
 .tw-h-5 {
   height: 2rem;
 }
