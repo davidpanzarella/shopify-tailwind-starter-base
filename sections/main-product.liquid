@@ -143,7 +143,7 @@
                       {% if related_product.handle == product.handle %}
                         {% assign isActive = true %}
                       {% endif %}
-                      <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none {% if isActive %}active-class{% else %}inactive-class{% endif %}">
+                      <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none {% if isActive %}border-indigo-500{% else %}border-2 border-transparent{% endif %}">
                         <a
                           href="/products/{{ related_product.handle }}"
                           id="design-option-{{ forloop.index }}"
