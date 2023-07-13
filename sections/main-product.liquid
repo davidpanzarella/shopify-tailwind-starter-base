@@ -196,14 +196,12 @@
                 </ul>
               </div>
               <script>
-                function dropdownData(currentHandle, itemsJson) {
-                  console.log(`dropdownData / itemsJson:`, itemsJson);
-                  const items = JSON.stringify().parse(itemsJson);
+                function dropdownData(currentHandle, items) {
                   console.log(`dropdownData / items:`, items);
                   return {
                     open: false,
                     items: items,
-                    selected: itemsJson.find((item) => item.handle === currentHandle) || items[0],
+                    selected: items.find((item) => item.handle === currentHandle) || items[0],
                   };
                 }
               </script>
