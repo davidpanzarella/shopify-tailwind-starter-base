@@ -162,7 +162,7 @@
     </div>
 
     <!-- Product image -->
-    <div class="tw-mt-10 lg:tw-col-start-2 lg:tw-row-span-2 lg:tw-mt-0 lg:tw-self-center">
+    <div class="tw-mt-10 lg:tw-col-start-2 lg:tw-row-span-2 lg:tw-mt-0 lg:tw-self-center product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
         <div class="product__media-wrapper">
           {% render 'product-media-gallery', variant_images: variant_images %}
