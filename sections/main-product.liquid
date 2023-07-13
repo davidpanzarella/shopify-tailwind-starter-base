@@ -161,6 +161,7 @@
 
               {% liquid
                 assign custom_items = '' | split: ','
+                echo custom_items
               %}
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
