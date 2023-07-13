@@ -131,7 +131,7 @@
                       alt="{{ related_product.title }}"
                       onclick="updateProduct('{{ related_product.handle }}')"
                     >
-                    <h2>{{ related_product.title }}</h2>
+                    {{- related_product.metafields.custom['product-template-options'] -}}
                   </div>
                 {% endfor %}
               </div>
