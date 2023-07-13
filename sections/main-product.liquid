@@ -201,8 +201,10 @@
                 
                 
                 
+                
                 function dropdownData(currentHandle, itemsJson) {
                   const items = JSON.parse(itemsJson)
+                  console.log(`dropdownData / items:`, items);
                   return {
                     open: false,
                     items: items,
@@ -213,6 +215,7 @@
                     };
                   }
                 }
+
 
 
 
