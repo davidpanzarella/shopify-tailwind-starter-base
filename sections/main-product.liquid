@@ -161,11 +161,8 @@
 
               {% liquid
                 assign custom_items = '' | split: ','
-                echo custom_items
               %}
-              <script>
-                console.log("custom_items:", {{ custom_items | json }});
-              </script>
+
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                 {% liquid
                   assign item = '' | split: ','
@@ -176,7 +173,9 @@
                   echo custom_items
                 %}
               {% endfor %}
-
+              <script>
+                console.log("custom_items:", {{ custom_items | json }});
+              </script>
               {% comment %}
                 <div x-data="dropdownData('{{ product.handle }}', {{ custom_items }})">
                   <button
