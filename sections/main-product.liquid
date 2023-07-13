@@ -97,13 +97,13 @@
         </p>
       </div>
 
+      <section aria-labelledby="information-heading" class="mt-4">
+        <h2 id="information-heading" class="sr-only">Product information</h2>
 
-        <section aria-labelledby="information-heading" class="mt-4">
-          <h2 id="information-heading" class="sr-only">Product information</h2>
-  
-          {% comment %} <div class="flex items-center">
+        {% comment %}
+          <div class="flex items-center">
             <p class="text-lg text-gray-900 sm:text-xl">$220</p>
-  
+
             <div class="ml-4 border-l border-gray-300 pl-4">
               <h2 class="sr-only">Reviews</h2>
               <div class="flex items-center">
@@ -131,32 +131,32 @@
                 <p class="ml-2 text-sm text-gray-500">1624 reviews</p>
               </div>
             </div>
-          </div> {% endcomment %}
-  
-          {%- if product.description != blank -%}
-            <div class="mt-4 space-y-6">
-            <div  class="text-base text-gray-500" {{ block.shopify_attributes }}>
+          </div>
+        {% endcomment %}
+
+        {%- if product.description != blank -%}
+          <div class="mt-4 space-y-6">
+            <div class="text-base text-gray-500" {{ block.shopify_attributes }}>
               {{ product.description }}
             </div>
-          {%- endif -%}
-  
-          <div class="mt-6 flex items-center">
-            <svg class="h-5 w-5 flex-shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            <p class="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
           </div>
-        </section>
+        {%- endif -%}
 
+        <div class="mt-6 flex items-center">
+          <svg class="h-5 w-5 flex-shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+          <p class="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
+        </div>
+      </section>
 
-
-        {% comment %}
-          <p class="tw-text-base">
-            {{ product.metafields.custom['product-size'].value }}
-            {{ product.metafields.custom['product-shape'].value }}
-            {{ product.metafields.custom['product-type'].value }}
-          </p>
-        {% endcomment %}
+      {% comment %}
+        <p class="tw-text-base">
+          {{ product.metafields.custom['product-size'].value }}
+          {{ product.metafields.custom['product-shape'].value }}
+          {{ product.metafields.custom['product-type'].value }}
+        </p>
+      {% endcomment %}
     </div>
 
     <!-- Product image -->
