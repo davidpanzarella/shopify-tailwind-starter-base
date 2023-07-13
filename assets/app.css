@@ -4816,6 +4816,10 @@ details-disclosure > details {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:tw-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .sm\:tw-justify-between {
     justify-content: space-between;
   }
