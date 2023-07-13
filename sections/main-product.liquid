@@ -192,14 +192,19 @@
             <p class="mt-1 truncate text-xs leading-5 text-gray-500">
               {{- productTypeDisplay-}}
             </p>
-              
           {% else %}
             <a
               href="/products/{{ related_product.handle }}"
               id="design-option-{{ forloop.index }}"
-              class="tw-text-base tw-font-medium tw-text-gray-900"
+              class="text-sm font-semibold leading-6"
             >
-              <p class="text-sm font-semibold leading-6 text-gray-900">Lawrence Brooks</p>
+              <p                            class="text-sm font-semibold leading-6 text-gray-900"
+
+              {{- related_product.metafields.custom['product-template-options'] -}}
+            </p>
+            <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+              {{- productTypeDisplay-}}
+            </p>
             </a>
           {% endif %}
         </div>
