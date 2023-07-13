@@ -132,6 +132,12 @@
 
               <div class="grid grid-cols-2 gap-4">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                  {% liquid
+                    assign currentProduct = false
+                    if product.handle == related_product.handle
+                      assign currentProduct = true
+                    endif
+                  %}
                   <div
                     class="group cursor-pointer"
                     onclick="window.location.href='/products/{{ related_product.handle }}'"
