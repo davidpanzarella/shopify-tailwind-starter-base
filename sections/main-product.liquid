@@ -176,11 +176,11 @@
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                   <li id="design-option-{{ forloop.index }}" class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5">
                     <img
-                      class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
-                      src="{{ related_product.media[1].preview_image | image_url: width: 80 }}"
+                      class="tw-h-120 tw-w-120 tw-flex-none tw-rounded-full tw-bg-gray-50"
+                      src="{{ related_product.media[1].preview_image | image_url: width: 120 }}"
                       alt="{{ related_product.title }}"
-                      width="80"
-                      height="80"
+                      width="120"
+                      height="120"
                       loading="lazy"
                       class="tw-object-cover tw-w-full tw-h-full"
                     >
