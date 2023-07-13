@@ -172,36 +172,36 @@
                 </ul>
               </div>
 
-              <ul role="list" class="divide-y divide-gray-100">
+              <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                  <li id="design-option-{{ forloop.index }}" class="flex gap-x-4 px-3 py-5">
+                  <li id="design-option-{{ forloop.index }}" class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5">
                     <img
-                      class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                      class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
                       src="{{ related_product.media[1].preview_image | image_url: width: 80 }}"
                       alt="{{ related_product.title }}"
                       width="80"
                       height="80"
                       loading="lazy"
-                      class="object-cover w-full h-full"
+                      class="tw-object-cover tw-w-full tw-h-full"
                     >
-                    <div class="min-w-0">
+                    <div class="tw-min-w-0">
                       {% if isActive %}
-                        <p class="text-sm font-semibold leading-6 text-gray-900">
+                        <p class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900">
                           {{- related_product.metafields.custom['product-template-options'] -}}
                         </p>
-                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                        <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
                           {{- productTypeDisplay- }}
                         </p>
                       {% else %}
                         <a
                           href="/products/{{ related_product.handle }}"
                           id="design-option-{{ forloop.index }}"
-                          class="text-sm font-semibold leading-6"
+                          class="tw-text-sm tw-font-semibold tw-leading-6"
                         >
-                          <p class="text-sm font-semibold leading-6 text-gray-900">
+                          <p class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900">
                             {{- related_product.metafields.custom['product-template-options'] -}}
                           </p>
-                          <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                          <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
                             {{- productTypeDisplay- }}
                           </p>
                         </a>
