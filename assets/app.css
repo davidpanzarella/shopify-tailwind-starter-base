@@ -765,6 +765,10 @@ select {
   height: 100%;
 }
 
+.tw-h-12 {
+  height: 4.8rem;
+}
+
 .tw-w-5 {
   width: 2rem;
 }
@@ -775,6 +779,10 @@ select {
 
 .tw-w-64 {
   width: 25.6rem;
+}
+
+.tw-w-12 {
+  width: 4.8rem;
 }
 
 .tw-min-w-0 {
