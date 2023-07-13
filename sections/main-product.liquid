@@ -122,6 +122,20 @@
               <script>
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
               </script>
+
+              <div class="grid grid-cols-3 gap-4">
+                {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                  <div class="product-card">
+                    <img
+                      src="{{ related_product.image.src }}"
+                      alt="{{ related_product.title }}"
+                      onclick="updateProduct('{{ related_product.handle }}')"
+                    >
+                    <h2>{{ related_product.title }}</h2>
+                  </div>
+                {% endfor %}
+              </div>
+
               <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
                 <button
                   @click="open = !open"
