@@ -121,7 +121,7 @@
               </div>
               <script>
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
-                console.log("product img:", {{ related_product.media[0].preview_image.src | json }});
+                console.log("product img:", {{ product.media[0].preview_image | json }});
               </script>
 
               <div class="grid grid-cols-2 gap-4">
