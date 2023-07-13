@@ -190,27 +190,29 @@
                 </ul>
               </div>
 
-              <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
-                <button
-                  @click="open = !open"
-                  x-text="selected"
-                  class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
-                ></button>
-                <ul
-                  x-show="open"
-                  @click.away="open = false"
-                  class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
-                >
-                  <template x-for="(item, index) in items" :key="index">
-                    <li
-                      @click="selected = item; open = false; console.log('Selected item:', item)"
-                      class="tw-text-gray-900 tw-cursor-default tw-select-none tw-relative tw-py-1 tw-pl-3 tw-pr-9"
-                    >
-                      <span x-text="item" class="tw-font-normal tw-block tw-truncate"></span>
-                    </li>
-                  </template>
-                </ul>
-              </div>
+              {% comment %}
+                <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
+                  <button
+                    @click="open = !open"
+                    x-text="selected"
+                    class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
+                  ></button>
+                  <ul
+                    x-show="open"
+                    @click.away="open = false"
+                    class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
+                  >
+                    <template x-for="(item, index) in items" :key="index">
+                      <li
+                        @click="selected = item; open = false; console.log('Selected item:', item)"
+                        class="tw-text-gray-900 tw-cursor-default tw-select-none tw-relative tw-py-1 tw-pl-3 tw-pr-9"
+                      >
+                        <span x-text="item" class="tw-font-normal tw-block tw-truncate"></span>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              {% endcomment %}
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
