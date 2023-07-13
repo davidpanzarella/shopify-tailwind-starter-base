@@ -202,8 +202,8 @@
                     >
                       <img
                         class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
-                        :src="item.media[1].preview_image"
-                        :alt="item.title"
+                        :src="item.image"
+                        :alt="item.name"
                         width="120"
                         height="120"
                         loading="lazy"
@@ -211,10 +211,10 @@
                       >
                       <div class="tw-min-w-0">
                         <p
-                          x-text="item.metafields.custom['product-size'].value"
                           class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
-                          {% comment %} x-text="item.metafields.custom['product-template-name'].value" {% endcomment %}
-                        ></p>
+                        >
+                          {{ item.name }}
+                        </p>
                         <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
                           {{ product.metafields.custom['product-size'].value }}
                           {{ product.metafields.custom['product-shape'].value }}
