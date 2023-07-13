@@ -61,58 +61,60 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="tw-mx-auto tw-max-w-2xl tw-px-4 tw-py-16 tw-sm:px-6 tw-sm:py-24 tw-lg:grid tw-lg:max-w-7xl tw-lg:grid-cols-2 tw-lg:gap-x-8 tw-lg:px-8">
-    <div class="tw-lg:max-w-lg tw-lg:self-end">
-      {% render 'breadcrumb', product: product %}
-      {% liquid
-        assign colorDisplay = ''
-        assign color = product.metafields.custom.color.value[0]
+  <div class="bg-white">
+    <div class="tw-mx-auto tw-max-w-2xl tw-px-4 tw-py-16 tw-sm:px-6 tw-sm:py-24 tw-lg:grid tw-lg:max-w-7xl tw-lg:grid-cols-2 tw-lg:gap-x-8 tw-lg:px-8">
+      <div class="tw-lg:max-w-lg tw-lg:self-end">
+        {% render 'breadcrumb', product: product %}
+        {% liquid
+          assign colorDisplay = ''
+          assign color = product.metafields.custom.color.value[0]
 
-        if color == 'Black and White'
-          assign colorDisplay = 'B&W'
-        else
-          assign colorDisplay = color
-        endif
+          if color == 'Black and White'
+            assign colorDisplay = 'B&W'
+          else
+            assign colorDisplay = color
+          endif
 
-        assign productTitle = ''
-        if product.metafields.custom['product-template-name'].value
-          assign productTitle = product.metafields.custom['product-template-name'].value | escape
-        else
-          assign productTitle = product.title | escape
-        endif
+          assign productTitle = ''
+          if product.metafields.custom['product-template-name'].value
+            assign productTitle = product.metafields.custom['product-template-name'].value | escape
+          else
+            assign productTitle = product.title | escape
+          endif
 
-        assign productTypeDisplay = product.metafields.custom['product-size'].value | append: ' ' | append: product.metafields.custom['product-shape'].value | append: ' ' | append: product.metafields.custom['product-type'].value
-      %}
-      <div class="tw-mt-4">
-        <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
-          {{ colorDisplay }}
-          {{ productTitle }}
-        </h1>
+          assign productTypeDisplay = product.metafields.custom['product-size'].value | append: ' ' | append: product.metafields.custom['product-shape'].value | append: ' ' | append: product.metafields.custom['product-type'].value
+        %}
+        <div class="tw-mt-4">
+          <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
+            {{ colorDisplay }}
+            {{ productTitle }}
+          </h1>
 
-        <p class="tw-text-lg tw-text-gray-900 tw-sm:text-xl">
-          {{- product.metafields.custom['product-template-options'] -}}
-        </p>
-        {% comment %}
-          <p class="tw-text-base">
-            {{ product.metafields.custom['product-size'].value }}
-            {{ product.metafields.custom['product-shape'].value }}
-            {{ product.metafields.custom['product-type'].value }}
+          <p class="tw-text-lg tw-text-gray-900 tw-sm:text-xl">
+            {{- product.metafields.custom['product-template-options'] -}}
           </p>
-        {% endcomment %}
+          {% comment %}
+            <p class="tw-text-base">
+              {{ product.metafields.custom['product-size'].value }}
+              {{ product.metafields.custom['product-shape'].value }}
+              {{ product.metafields.custom['product-type'].value }}
+            </p>
+          {% endcomment %}
+        </div>
       </div>
-    </div>
 
-    <!-- Product image -->
-    <div class="tw-mt-10 tw-lg:col-start-2 tw-lg:row-span-2 tw-lg:mt-0 tw-lg:self-center">
-      <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
-        <img
-          src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
-          alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
-          class="tw-h-full tw-w-full tw-object-cover tw-object-center"
-        >
+      <!-- Product image -->
+      <div class="tw-mt-10 tw-lg:col-start-2 tw-lg:row-span-2 tw-lg:mt-0 tw-lg:self-center">
+        <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
+            alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
+            class="tw-h-full tw-w-full tw-object-cover tw-object-center"
+          >
+        </div>
       </div>
+      <div class="tw-mt-10 tw-lg:col-start-1 tw-lg:row-start-2 tw-lg:max-w-lg tw-lg:self-start">asdfasdf</div>
     </div>
-    <div class="tw-mt-10 tw-lg:col-start-1 tw-lg:row-start-2 tw-lg:max-w-lg tw-lg:self-start">asdfasdf</div>
   </div>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
