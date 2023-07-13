@@ -169,6 +169,9 @@
                   class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
                 >
                   <template x-for="(item, index) in items" :key="index">
+                    <script>
+                      console.log("item:", {{ item | json }});
+                    </script>
                     <li
                       @click="selected = item; open = false"
                       class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
