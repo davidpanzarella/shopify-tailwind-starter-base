@@ -131,32 +131,23 @@
               </script>
 
               <div class="grid grid-cols-2 gap-4">
-                {% comment %}
-                  {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                    {% liquid
-                      assign currentProduct = false
-                      if product.handle == related_product.handle
-                        assign currentProduct = true
-                      endif
-                    %}
-
-                    <div
-                      class="group cursor-pointer"
-                      onclick="window.location.href='/products/{{ related_product.handle }}'"
-                    >
-                      <div class="w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200">
-                        <img
-                          src="{{ related_product.media[1].preview_image | image_url: width: 200 }}"
-                          alt="{{ related_product.title }}"
-                          width="200"
-                          height="200"
-                          loading="lazy"
-                          class="object-cover w-full h-full"
-                        >
-                      </div>
+                {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                  <div
+                    class="group cursor-pointer"
+                    onclick="window.location.href='/products/{{ related_product.handle }}'"
+                  >
+                    <div class="w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200">
+                      <img
+                        src="{{ related_product.media[1].preview_image | image_url: width: 200 }}"
+                        alt="{{ related_product.title }}"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                        class="object-cover w-full h-full"
+                      >
                     </div>
-                  {% endfor %}
-                {% endcomment %}
+                  </div>
+                {% endfor %}
               </div>
 
               <div x-data="{ open: false, items: {{ product.metafields.custom.customily_product_equivalents.value | json }}, selected: items[0] }">
@@ -172,7 +163,7 @@
                 >
                   <template x-for="(item, index) in items" :key="index">
                     <li
-                      @click="selected = item; open = false;"
+                      @click="selected = item; open = false; console.log('Selected item:', item)"
                       class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
                     >
                       <img
@@ -186,7 +177,7 @@
                       >
                       <div class="tw-min-w-0">
                         <p class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900">
-                          {{- product.metafields.custom['product-template-options'] -}}
+                          {{- item.metafields.custom['product-template-options'] -}}
                         </p>
                         <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
                           {{ product.metafields.custom['product-size'].value }}
@@ -199,29 +190,27 @@
                 </ul>
               </div>
 
-              {% comment %}
-                <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
-                  <button
-                    @click="open = !open"
-                    x-text="selected"
-                    class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
-                  ></button>
-                  <ul
-                    x-show="open"
-                    @click.away="open = false"
-                    class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
-                  >
-                    <template x-for="(item, index) in items" :key="index">
-                      <li
-                        @click="selected = item; open = false; console.log('Selected item:', item)"
-                        class="tw-text-gray-900 tw-cursor-default tw-select-none tw-relative tw-py-1 tw-pl-3 tw-pr-9"
-                      >
-                        <span x-text="item" class="tw-font-normal tw-block tw-truncate"></span>
-                      </li>
-                    </template>
-                  </ul>
-                </div>
-              {% endcomment %}
+              <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
+                <button
+                  @click="open = !open"
+                  x-text="selected"
+                  class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
+                ></button>
+                <ul
+                  x-show="open"
+                  @click.away="open = false"
+                  class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
+                >
+                  <template x-for="(item, index) in items" :key="index">
+                    <li
+                      @click="selected = item; open = false; console.log('Selected item:', item)"
+                      class="tw-text-gray-900 tw-cursor-default tw-select-none tw-relative tw-py-1 tw-pl-3 tw-pr-9"
+                    >
+                      <span x-text="item" class="tw-font-normal tw-block tw-truncate"></span>
+                    </li>
+                  </template>
+                </ul>
+              </div>
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
