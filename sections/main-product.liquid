@@ -195,20 +195,18 @@
                   </template>
                 </ul>
               </div>
-              {% comment %}
-                <script>
-                  function dropdownData(currentHandle, itemsJson) {
-                    console.log(`dropdownData / currentHandle:`, currentHandle)
-                    const items = JSON.parse(itemsJson)
-                    console.log(`dropdownData / items:`, items)
-                    return {
-                      open: false,
-                      items: items,
-                      selected: items.find((item) => item.handle === currentHandle) || items[0],
-                    }
+              <script>
+                function dropdownData(currentHandle, itemsJson) {
+                  console.log(`dropdownData / currentHandle:`, currentHandle)
+                  const items = JSON.parse(itemsJson)
+                  console.log(`dropdownData / items:`, items)
+                  return {
+                    open: false,
+                    items: items,
+                    selected: items.find((item) => item.handle === currentHandle) || items[0],
                   }
-                </script>
-              {% endcomment %}
+                }
+              </script>
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
