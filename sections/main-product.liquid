@@ -157,7 +157,7 @@
                 {% endfor %}
               </div>
 
-              <div x-data="dropdownData('{{ product.handle }}', {{ product.metafields.custom.customily_product_equivalents.value | json }})">
+              <div x-data="dropdownData('{{ product.handle }}', {{ product.metafields.custom.customily_product_equivalents | json }})">
                 <button
                   @click="open = !open"
                   x-text="selected.title"
