@@ -195,7 +195,7 @@
                     class="group cursor-pointer"
                     onclick="window.location.href='/products/{{ related_product.handle }}'"
                   >
-                    <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} ring-2 ring-indigo-500{% endif %}">
+                    <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product == true %} ring-2 ring-indigo-500{% endif %}">
                       <img
                         src="{{ related_product.media[1].preview_image | image_url: width: 200 }}"
                         alt="{{ related_product.title }}"
