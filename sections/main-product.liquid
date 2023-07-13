@@ -157,7 +157,7 @@
                 {% endfor %}
               </div>
 
-              <div x-data="{ open: false, items: {{ product.metafields.custom.customily_product_equivalents.value | json }}, selected: items[0] }">
+              <div x-data="{ open: false, items: {{ product.metafields.custom.customily_product_equivalents.value | json }}, selected: items.find(item => item.handle === '{{ product.handle }}') || items[0] }">
                 <button
                   @click="open = !open"
                   x-text="selected.title"
@@ -170,8 +170,9 @@
                 >
                   <template x-for="(item, index) in items" :key="index">
                     <li
-                      @click="selected = item; open = false; console.log('Selected item:', item)"
+                      @click="selected = item; open = false"
                       class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
+                      :class="{ 'tw-bg-indigo-100': item.handle === '{{ product.handle }}' }"
                     >
                       <img
                         class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
