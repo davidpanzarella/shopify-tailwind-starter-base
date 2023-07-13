@@ -62,7 +62,7 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <div class="tw-mx-auto tw-max-w-2xl tw-px-4 tw-py-16 tw-sm:px-6 tw-sm:py-24 lg:tw-grid lg:tw-max-w-7xl lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
+  <div class="tw-mx-auto tw-max-w-2xl tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-max-w-7xl lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
     <div class="lg:tw-max-w-lg lg:tw-self-end">
       {% render 'breadcrumb', product: product %}
       {% liquid
@@ -85,12 +85,12 @@
         assign productTypeDisplay = product.metafields.custom['product-size'].value | append: ' ' | append: product.metafields.custom['product-shape'].value | append: ' ' | append: product.metafields.custom['product-type'].value
       %}
       <div class="tw-mt-4">
-        <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
+        <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 sm:tw-text-4xl">
           {{ colorDisplay }}
           {{ productTitle }}
         </h1>
 
-        <p class="tw-text-lg tw-text-gray-900 tw-sm:text-xl">
+        <p class="tw-text-lg tw-text-gray-900 sm:tw-text-xl">
           {{- product.metafields.custom['product-template-options'] -}}
         </p>
         {% comment %}
@@ -165,12 +165,12 @@
                 assign productTypeDisplay = product.metafields.custom['product-size'].value | append: ' ' | append: product.metafields.custom['product-shape'].value | append: ' ' | append: product.metafields.custom['product-type'].value
               %}
               <div class="tw-mt-4">
-                <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
+                <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 sm:tw-text-4xl">
                   {{ colorDisplay }}
                   {{ productTitle }}
                 </h1>
 
-                <p class="tw-text-lg tw-text-gray-900 tw-sm:text-xl">
+                <p class="tw-text-lg tw-text-gray-900 sm:tw-text-xl">
                   {{- product.metafields.custom['product-template-options'] -}}
                 </p>
                 {% comment %}
@@ -340,11 +340,11 @@
               <section aria-labelledby="options-heading" class="tw-mt-6">
                 <h3 id="options-heading" class="tw-sr-only">Product options</h3>
                 <form>
-                  <div class="tw-sm:flex tw-sm:justify-between">
+                  <div class="sm:tw-flex sm:tw-justify-between">
                     <!-- Design Options selector -->
                     <fieldset>
                       <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Current Design</legend>
-                      <div class="tw-mt-1 tw-grid tw-sm:grid-cols-2 tw-grid-cols-1 tw-gap-2">
+                      <div class="tw-mt-1 tw-grid sm:tw-grid-cols-2 tw-grid-cols-1 tw-gap-2">
                         {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                           <script>
                             console.log("related_product:", {{ related_product | json }});
@@ -353,7 +353,7 @@
                           {% if related_product.handle == product.handle %}
                             {% assign isActive = true %}
                           {% endif %}
-                          <label class="tw-max-w-fit tw-flex tw-items-center tw-justify-center tw-rounded-sm tw-border tw-py-2 tw-px-2 tw-text-sm tw-font-medium tw-sm:flex-1  tw-focus:outline-none  {% if isActive %} tw-ring-indigo-500 tw-border-transparent tw-text-white tw-ring-2{% else %}tw-ring-2 tw-cursor-pointer tw-border-gray-200 tw-bg-white tw-text-gray-900 hover:tw-border-gray-400{% endif %}">
+                          <label class="tw-max-w-fit tw-flex tw-items-center tw-justify-center tw-rounded-sm tw-border tw-py-2 tw-px-2 tw-text-sm tw-font-medium sm:tw-flex-1  tw-focus:outline-none  {% if isActive %} tw-ring-indigo-500 tw-border-transparent tw-text-white tw-ring-2{% else %}tw-ring-2 tw-cursor-pointer tw-border-gray-200 tw-bg-white tw-text-gray-900 hover:tw-border-gray-400{% endif %}">
                             {% if isActive %}
                               <span
                                 id="design-option-{{ forloop.index }}"
@@ -389,7 +389,7 @@
                 <section aria-labelledby="options-heading" class="tw-mt-6">
                   <h3 id="options-heading" class="tw-sr-only">Product options</h3>
                   <form>
-                    <div class="tw-sm:flex tw-sm:justify-between">
+                    <div class="sm:tw-flex sm:tw-justify-between">
                       <!-- Design Options selector -->
                       <fieldset>
                         <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Design Options</legend>
