@@ -166,10 +166,10 @@
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                 {% liquid
-                  assign item = '' | split: ','
-                  assign item["image"] = related_product.media[1].preview_image | image_url: width: 200
-                  assign item["handle"] = related_product.handle
-                  assign item["title"] = related_product.metafields.custom['product-template-name'].value
+                  assign item = ''
+                  assign item["image"] = item | concat: related_product.media[1].preview_image | image_url: width: 200
+                  assign item["handle"] = item | concat:related_product.handle
+                  assign item["title"] = item | concat:related_product.metafields.custom['product-template-name'].value
                   echo item
                   assign custom_items = custom_items | append: item
                 %}
