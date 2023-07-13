@@ -171,8 +171,8 @@
                   | append: related_product.handle
                   | append: "', 'image': '"
                   | append: related_product.media[1].preview_image
-                  | append: "', 'product-template-name': '"
-                  | append: related_product.metafields.custom['product-template-name'].value
+                  | append: "', 'name': '"
+                  | append: related_product.metafields.custom['product-template-options'].value
                   | append: "' },"
                 %}
                 {% assign custom_items = custom_items | append: item %}
