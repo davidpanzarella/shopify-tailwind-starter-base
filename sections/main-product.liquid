@@ -170,7 +170,7 @@
                 {% assign item = "{ 'handle': '"
                   | append: related_product.handle
                   | append: "', 'image': '"
-                  | append: related_product.media[1].preview_image
+                  | append: related_product.media[1].preview_image.value
                   | append: "', 'name': '"
                   | append: related_product.metafields.custom['product-template-options'].value
                   | append: "' },"
