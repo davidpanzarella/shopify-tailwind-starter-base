@@ -170,7 +170,6 @@
                 assign productTitle = ''
                 if card_product.metafields.custom['product-template-name'].value
                   assign productTitle = card_product.metafields.custom['product-template-name'].value | escape
-
                 else
                   assign productTitle = card_product.title | escape
                 endif
