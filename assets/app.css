@@ -811,6 +811,10 @@ select {
   max-width: fit-content;
 }
 
+.tw-max-w-2xl {
+  max-width: 67.2rem;
+}
+
 .tw-flex-none {
   flex: none;
 }
@@ -4740,6 +4744,10 @@ details-disclosure > details {
 
   .lg\:tw-max-w-lg {
     max-width: 51.2rem;
+  }
+
+  .lg\:tw-max-w-7xl {
+    max-width: 128rem;
   }
 
   .lg\:tw-grid-cols-2 {
