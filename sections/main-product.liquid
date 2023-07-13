@@ -170,7 +170,7 @@
                 >
                   <template x-for="(item, index) in items" :key="index">
                     <script>
-                      console.log('item:', item);
+                      console.log('item:', item.handle);
                     </script>
                     <li
                       @click="selected = item; open = false"
