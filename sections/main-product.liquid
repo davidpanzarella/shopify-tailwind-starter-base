@@ -185,17 +185,16 @@
         >
         <div class="min-w-0">
           {% if isActive %}
-            <div>
-            <span
+            <p
               id="design-option-{{ forloop.index }}"
                class="text-sm font-semibold leading-6 text-gray-900"
             >
               {{- related_product.metafields.custom['product-template-options'] -}}
-            </span>
-              <span class="mt-1 truncate text-xs leading-5 text-gray-500">
+            </p>
+              <p class="mt-1 truncate text-xs leading-5 text-gray-500">
                 {{- productTypeDisplay-}}
-              </span>
-            </div>
+              </p>
+              
           {% else %}
             <a
               href="/products/{{ related_product.handle }}"
