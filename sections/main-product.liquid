@@ -164,14 +164,16 @@
               %}
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                assign current_product = false if product.handle == related_product.handle assign current_product = true
-                endif assign item = '' | json assign item = item | parse_json t
+                {% liquid
+                  assign item = '' | json
+                  assign item = item | parse_json
 
-                assign item["image"] = related_product.media[1].preview_image | image_url: width: 200 assign
-                item["handle"] = related_product.handle assign item["product_template_name"] =
-                related_product.metafields.custom['product-template-name'].value
+                  assign item["image"] = related_product.media[1].preview_image | image_url: width: 200
+                  assign item["handle"] = related_product.handle
+                  assign item["product_template_name"] = related_product.metafields.custom['product-template-name'].value
 
-                assign custom_items = custom_items | push: item # Add the item to the array
+                  assign custom_items = custom_items | push: item
+                %}
               {% endfor %}
 
               <div x-data="dropdownData('{{ product.handle }}', {{ custom_items }})">
