@@ -174,7 +174,7 @@
                 assign custom_items = custom_items | push: item # Add the item to the array
               {% endfor %}
 
-              <div x-data="dropdownData('{{ product.handle }}', {{ product.metafields.custom.customily_product_equivalents.value | json | escape }})">
+              <div x-data="dropdownData('{{ product.handle }}', {{ custom_items }})">
                 <button
                   @click="open = !open"
                   x-text="selected.title"
@@ -218,7 +218,7 @@
               </div>
               <script>
                 function dropdownData(currentHandle, items) {
-                  console.log(`dropdownData / items:`, items.metafields.custom['product-template-name']);
+                  console.log(`dropdownData / items:`, items);
                   return {
                     open: false,
                     items: [items, ...items.metafields],
