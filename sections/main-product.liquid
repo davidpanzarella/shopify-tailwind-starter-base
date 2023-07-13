@@ -198,6 +198,7 @@
                 </ul>
               </div>
               <script>
+                
                 function dropdownData(currentHandle, itemsJson) {
                   console.log(`dropdownData / itemsJson:`, itemsJson)
                   console.log(`dropdownData / currentHandle:`, currentHandle)
@@ -206,9 +207,13 @@
                   return {
                     open: false,
                     items: items,
-                    selected: items.find((item) => item.handle === currentHandle) || items[0],
+                    selected: items.find((item) => {
+                      console.log(`dropdownData / item:`, item);
+                      return item.handle === currentHandle) || items[0],;
+                    };
                   }
                 }
+
               </script>
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
