@@ -63,7 +63,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="tw-mx-auto tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
-    <div class="">
+    <div class="lg:tw-max-w-lg lg:tw-self-end">
       {% render 'breadcrumb', product: product %}
       {% liquid
         assign colorDisplay = ''
@@ -171,6 +171,7 @@
         >
       </div>
     </div>
+
     <!-- Product form -->
     <div class="tw-mt-10 lg:tw-col-start-1 lg:tw-row-start-2 lg:tw-max-w-lg lg:tw-self-start">
       <section aria-labelledby="options-heading">
