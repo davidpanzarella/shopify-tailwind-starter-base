@@ -159,7 +159,7 @@
                 {% endfor %}
               </div>
 
-              {% assign custom_items = '' %}
+              {% assign custom_items = '[' %}
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                 {% assign current_product = false %}
