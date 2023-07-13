@@ -351,23 +351,21 @@
                     endif
                   %}
 
-                  {% comment %}
-                    <div
-                      class="group cursor-pointer"
-                      onclick="window.location.href='/products/{{ related_product.handle }}'"
-                    >
-                      <div class="w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200">
-                        <img
-                          src="{{ related_product.media[1].preview_image | image_url: width: 200 }}"
-                          alt="{{ related_product.title }}"
-                          width="200"
-                          height="200"
-                          loading="lazy"
-                          class="object-cover w-full h-full"
-                        >
-                      </div>
+                  <div
+                    class="group cursor-pointer"
+                    onclick="window.location.href='/products/{{ related_product.handle }}'"
+                  >
+                    <div class="w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200">
+                      <img
+                        src="{{ related_product.media[2].preview_image | image_url: width: 200 }}"
+                        alt="{{ related_product.title }}"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                        class="object-cover w-full h-full"
+                      >
                     </div>
-                  {% endcomment %}
+                  </div>
                 {% endfor %}
               </div>
 
