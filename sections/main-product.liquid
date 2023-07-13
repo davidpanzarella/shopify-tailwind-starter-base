@@ -65,6 +65,17 @@
     <div class="lg:max-w-lg lg:self-end">
       {% render 'breadcrumb', product: product %}
     </div>
+
+    <!-- Product image -->
+    <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
+      <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
+        <img
+          src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
+          alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
+          class="h-full w-full object-cover object-center"
+        >
+      </div>
+    </div>
   </div>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
