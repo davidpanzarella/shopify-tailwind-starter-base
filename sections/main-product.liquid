@@ -133,6 +133,8 @@
                       <img
                         src="{{ related_product.images[0] | image_url: '280x280' }}"
                         alt="{{ related_product.title }}"
+                        width="{{ image.width }}"
+                        height="{{ image.height }}"
                         class="h-full w-full object-cover object-center"
                       >
                     </div>
