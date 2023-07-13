@@ -122,23 +122,6 @@
               <script>
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
               </script>
-              <div class="grid grid-cols-2 gap-4">
-                {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                  <div
-                    class="group cursor-pointer"
-                    onclick="window.location.href='/products/{{ related_product.handle }}'"
-                  >
-                    <div class="w-full aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200">
-                      <img
-                        src="{{ related_product.media[0].preview_image | image_url: width: 200 }}"
-                        alt="{{ related_product.title }}"
-                        loading="lazy"
-                        class="object-cover"
-                      >
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
 
               <div class="grid grid-cols-2 gap-4">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
@@ -150,8 +133,10 @@
                       <img
                         src="{{ related_product.media[0].preview_image | image_url: width: 200 }}"
                         alt="{{ related_product.title }}"
+                        width="200"
+                        height="200"
                         loading="lazy"
-                        class="object-cover"
+                        class="object-cover w-full h-full"
                       >
                     </div>
                   </div>
