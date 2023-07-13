@@ -201,7 +201,7 @@
                     <li
                       @click="selected = item; open = false"
                       class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
-                      :class="{ 'tw-bg-indigo-100': item.handle === '{{ product.handle }}' }"
+                      :class="{ 'tw-bg-indigo-100': selected.name === item.name }"
                     >
                       <img
                         class="tw-h-34 tw-w-34 tw-flex-none tw-rounded-full tw-bg-gray-50"
