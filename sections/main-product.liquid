@@ -165,14 +165,11 @@
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                 {% liquid
-                  assign item = '' | json
-                  assign item = item | parse_json
-
                   assign item["image"] = related_product.media[1].preview_image | image_url: width: 200
                   assign item["handle"] = related_product.handle
-                  assign item["product_template_name"] = related_product.metafields.custom['product-template-name'].value
+                  assign item["title"] = related_product.metafields.custom['product-template-name'].value
 
-                  assign custom_items = custom_items | push: item
+                  assign custom_items = custom_items | append: item
                 %}
               {% endfor %}
 
