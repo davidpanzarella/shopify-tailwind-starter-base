@@ -163,7 +163,9 @@
                 assign custom_items = '' | split: ','
                 echo custom_items
               %}
-
+              <script>
+                console.log("custom_items:", {{ custom_items | json }});
+              </script>
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                 {% liquid
                   assign item = '' | split: ','
