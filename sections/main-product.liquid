@@ -198,7 +198,7 @@
               <script>
                 function dropdownData(currentHandle, itemsJson) {
                   console.log(`dropdownData / itemsJson:`, itemsJson);
-                  const items = JSON.parse(itemsJson);
+                  const items = JSON.stringify().parse(itemsJson);
                   console.log(`dropdownData / items:`, items);
                   return {
                     open: false,
