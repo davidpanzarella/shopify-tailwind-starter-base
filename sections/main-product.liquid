@@ -173,7 +173,7 @@
               </div>
 
     <ul role="list" class="divide-y divide-gray-100">
-      <li class="flex gap-x-4 px-3 py-5">
+      <li id="design-option-{{ forloop.index }}" class="flex gap-x-4 px-3 py-5">
         <img
           class="h-12 w-12 flex-none rounded-full bg-gray-50" 
           src="{{ related_product.media[1].preview_image | image_url: width: 80 }}"
@@ -185,15 +185,13 @@
         >
         <div class="min-w-0">
           {% if isActive %}
-            <p
-              id="design-option-{{ forloop.index }}"
-               class="text-sm font-semibold leading-6 text-gray-900"
+            <p                            class="text-sm font-semibold leading-6 text-gray-900"
             >
               {{- related_product.metafields.custom['product-template-options'] -}}
             </p>
-              <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-                {{- productTypeDisplay-}}
-              </p>
+            <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+              {{- productTypeDisplay-}}
+            </p>
               
           {% else %}
             <a
@@ -202,12 +200,8 @@
               class="tw-text-base tw-font-medium tw-text-gray-900"
             >
               <p class="text-sm font-semibold leading-6 text-gray-900">Lawrence Brooks</p>
-
-              
             </a>
           {% endif %}
-          <p class="text-sm font-semibold leading-6 text-gray-900">Lawrence Brooks</p>
-          <p class="mt-1 truncate text-xs leading-5 text-gray-500">lawrence.brooks@example.com</p>
         </div>
       </li>
     </ul>
