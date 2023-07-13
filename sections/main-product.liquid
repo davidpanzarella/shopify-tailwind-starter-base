@@ -106,6 +106,8 @@
                 else
                   assign productTitle = product.title | escape
                 endif
+
+                assign productTypeDisplay = product.metafields.custom['product-size'].value | append : ' ' | append : product.metafields.custom['product-shape'].value | append : ' ' | append : product.metafields.custom['product-type'].value
               %}
               <div class="tw-mt-4">
                 <h1 class="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 tw-sm:text-4xl">
@@ -169,6 +171,7 @@
                   </template>
                 </ul>
               </div>
+
     <ul role="list" class="divide-y divide-gray-100">
       <li class="flex gap-x-4 px-3 py-5">
         <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
@@ -188,14 +191,17 @@
         <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
         <div class="min-w-0">
           {% if isActive %}
-            <span
+            <p
               id="design-option-{{ forloop.index }}"
-              class="tw-text-base tw-font-medium tw-text-gray-900"
+               class="text-sm font-semibold leading-6 text-gray-900"
             >
-              <p class="text-sm font-semibold leading-6 text-gray-900">{{- related_product.metafields.custom['product-template-options'] -}}</p>
-
               {{- related_product.metafields.custom['product-template-options'] -}}
-            </span>
+              <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                {{- productTypeDisplay-}}
+                
+              </p>
+
+            </p>
           {% else %}
             <a
               href="/products/{{ related_product.handle }}"
