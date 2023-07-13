@@ -199,6 +199,7 @@
               </div>
               <script>
                 
+                
                 function dropdownData(currentHandle, itemsJson) {
                   console.log(`dropdownData / itemsJson:`, itemsJson)
                   console.log(`dropdownData / currentHandle:`, currentHandle)
@@ -209,10 +210,12 @@
                     items: items,
                     selected: items.find((item) => {
                       console.log(`dropdownData / item:`, item);
+                      console.log(`selected:items.find / item.handle === currentHandle:`, item.handle === currentHandle);
                       return item.handle === currentHandle) || items[0],;
                     };
                   }
                 }
+
 
               </script>
 
