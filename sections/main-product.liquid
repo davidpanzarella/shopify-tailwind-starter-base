@@ -201,7 +201,7 @@
               </div>
               <script>
                 function dropdownData(currentHandle, items) {
-                  console.log(`dropdownData / items:`, [items, ...items.metafields]);
+                  console.log(`dropdownData / items:`, items.metafields.custom);
                   return {
                     open: false,
                     items: [items, ...items.metafields],
