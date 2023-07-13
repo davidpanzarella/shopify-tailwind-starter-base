@@ -159,20 +159,27 @@
                 {% endfor %}
               </div>
 
-              {% liquid
-                assign custom_items = '' | split: ','
-              %}
+              {% assign custom_items = '' %}
 
               {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
-                {% liquid
-                  assign item = ''
-                  assign item["image"] = related_product.media[1].preview_image | image_url: width: 200
-                  assign item["handle"] = related_product.handle
-                  assign item["title"] = related_product.metafields.custom['product-template-name'].value
-                  assign custom_items = custom_items | append: item
-                  echo custom_items
+                {% assign current_product = false %}
+                {% if product.handle == related_product.handle %}
+                  {% assign current_product = true %}
+                {% endif %}
+
+                {% assign item = "{ 'handle': '"
+                  | append: related_product.handle
+                  | append: "', 'image': '"
+                  | append: related_product.media[1].preview_image
+                  | append: "', 'product-template-name': '"
+                  | append: related_product.metafields.custom['product-template-name'].value
+                  | append: "' },"
                 %}
+                {% assign custom_items = custom_items | append: item %}
               {% endfor %}
+
+              {% assign custom_items = custom_items | remove: ', ' | append: ']' %}
+
               <script>
                 console.log("custom_items:", {{ custom_items | json }});
               </script>
