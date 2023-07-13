@@ -170,7 +170,7 @@
                 >
                   <template x-for="(item, index) in items" :key="index">
                     <script>
-                      console.log("item:", {{ item | json }});
+                      console.log('item:', item);
                     </script>
                     <li
                       @click="selected = item; open = false"
