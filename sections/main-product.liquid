@@ -173,40 +173,42 @@
               </div>
 
               <ul role="list" class="divide-y divide-gray-100">
-                <li id="design-option-{{ forloop.index }}" class="flex gap-x-4 px-3 py-5">
-                  <img
-                    class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                    src="{{ related_product.media[1].preview_image | image_url: width: 80 }}"
-                    alt="{{ related_product.title }}"
-                    width="80"
-                    height="80"
-                    loading="lazy"
-                    class="object-cover w-full h-full"
-                  >
-                  <div class="min-w-0">
-                    {% if isActive %}
-                      <p class="text-sm font-semibold leading-6 text-gray-900">
-                        {{- related_product.metafields.custom['product-template-options'] -}}
-                      </p>
-                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-                        {{- productTypeDisplay- }}
-                      </p>
-                    {% else %}
-                      <a
-                        href="/products/{{ related_product.handle }}"
-                        id="design-option-{{ forloop.index }}"
-                        class="text-sm font-semibold leading-6"
-                      >
+                {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
+                  <li id="design-option-{{ forloop.index }}" class="flex gap-x-4 px-3 py-5">
+                    <img
+                      class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                      src="{{ related_product.media[1].preview_image | image_url: width: 80 }}"
+                      alt="{{ related_product.title }}"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      class="object-cover w-full h-full"
+                    >
+                    <div class="min-w-0">
+                      {% if isActive %}
                         <p class="text-sm font-semibold leading-6 text-gray-900">
                           {{- related_product.metafields.custom['product-template-options'] -}}
                         </p>
                         <p class="mt-1 truncate text-xs leading-5 text-gray-500">
                           {{- productTypeDisplay- }}
                         </p>
-                      </a>
-                    {% endif %}
-                  </div>
-                </li>
+                      {% else %}
+                        <a
+                          href="/products/{{ related_product.handle }}"
+                          id="design-option-{{ forloop.index }}"
+                          class="text-sm font-semibold leading-6"
+                        >
+                          <p class="text-sm font-semibold leading-6 text-gray-900">
+                            {{- related_product.metafields.custom['product-template-options'] -}}
+                          </p>
+                          <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                            {{- productTypeDisplay- }}
+                          </p>
+                        </a>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
               </ul>
 
               <section aria-labelledby="options-heading" class="tw-mt-6">
