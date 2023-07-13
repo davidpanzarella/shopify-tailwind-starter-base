@@ -197,9 +197,11 @@
                   </template>
                 </ul>
               </div>
-
               <script>
-                function dropdownData(currentHandle, items) {
+                function dropdownData(currentHandle, itemsJson) {
+                  console.log(`dropdownData / itemsJson:`, itemsJson)
+                  console.log(`dropdownData / currentHandle:`, currentHandle)
+                  const items = JSON.parse(itemsJson)
                   return {
                     open: false,
                     items: items,
