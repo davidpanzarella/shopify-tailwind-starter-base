@@ -168,7 +168,7 @@
                 {% endif %}
 
                 {% assign get_link = related_product.handle %}
-                {% assign get_image = related_product.media[1].preview_image | image_url: width: 200 %}
+                {% assign get_image = related_product.media[1].preview_image | image_url: width: 400 %}
 
                 {% assign item = "{ 'handle': '"
                   | append: get_link
@@ -204,11 +204,11 @@
                       :class="{ 'tw-bg-indigo-100': item.handle === '{{ product.handle }}' }"
                     >
                       <img
-                        class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
+                        class="tw-h-34 tw-w-34 tw-flex-none tw-rounded-full tw-bg-gray-50"
                         :src="item.image"
                         :alt="item.name"
-                        width="120"
-                        height="120"
+                        width="336"
+                        height="auto"
                         loading="lazy"
                         class="tw-object-cover tw-w-full tw-h-full"
                       >
