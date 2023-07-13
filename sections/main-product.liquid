@@ -380,7 +380,7 @@
                 {% endif %}
 
                 {% assign get_link = related_product.handle %}
-                {% assign get_image = related_product.media[1].preview_image | image_url: width: 400 %}
+                {% assign get_image = related_product.media[2].preview_image | image_url: width: 400 %}
 
                 {% assign item = "{ 'handle': '"
                   | append: get_link
