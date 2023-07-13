@@ -183,60 +183,58 @@
               <script>
                 console.log("custom_items:", {{ custom_items | json }});
               </script>
-              {% comment %}
-                <div x-data="dropdownData('{{ product.handle }}', {{ custom_items }})">
-                  <button
-                    @click="open = !open"
-                    x-text="selected.title"
-                    class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
-                  ></button>
-                  <ul
-                    x-show="open"
-                    @click.away="open = false"
-                    class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
-                  >
-                    <template x-for="(item, index) in items" :key="index">
-                      <li
-                        @click="selected = item; open = false"
-                        class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
-                        :class="{ 'tw-bg-indigo-100': item.handle === '{{ product.handle }}' }"
+              <div x-data="dropdownData('{{ product.handle }}', {{ custom_items }})">
+                <button
+                  @click="open = !open"
+                  x-text="selected.title"
+                  class="tw-px-4 tw-py-2 tw-rounded tw-bg-indigo-600 tw-text-white"
+                ></button>
+                <ul
+                  x-show="open"
+                  @click.away="open = false"
+                  class="tw-absolute tw-mt-2 tw-w-64 tw-py-1 tw-bg-white tw-rounded-md tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 tw-overflow-hidden"
+                >
+                  <template x-for="(item, index) in items" :key="index">
+                    <li
+                      @click="selected = item; open = false"
+                      class="tw-flex tw-gap-x-4 tw-px-3 tw-py-5"
+                      :class="{ 'tw-bg-indigo-100': item.handle === '{{ product.handle }}' }"
+                    >
+                      <img
+                        class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
+                        :src="item.media[1].preview_image"
+                        :alt="item.title"
+                        width="120"
+                        height="120"
+                        loading="lazy"
+                        class="tw-object-cover tw-w-full tw-h-full"
                       >
-                        <img
-                          class="tw-h-12 tw-w-12 tw-flex-none tw-rounded-full tw-bg-gray-50"
-                          :src="item.media[1].preview_image"
-                          :alt="item.title"
-                          width="120"
-                          height="120"
-                          loading="lazy"
-                          class="tw-object-cover tw-w-full tw-h-full"
-                        >
-                        <div class="tw-min-w-0">
-                          <p
-                            x-text="item.metafields.custom['product-size'].value"
-                            class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
-                            {% comment %} x-text="item.metafields.custom['product-template-name'].value" {% endcomment %}
-                          ></p>
-                          <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
-                            {{ product.metafields.custom['product-size'].value }}
-                            {{ product.metafields.custom['product-shape'].value }}
-                            {{ product.metafields.custom['product-type'].value }}
-                          </p>
-                        </div>
-                      </li>
-                    </template>
-                  </ul>
-                </div>
-                <script>
-                  function dropdownData(currentHandle, items) {
-                    console.log(`dropdownData / items:`, items);
-                    return {
-                      open: false,
-                      items: [items, ...items.metafields],
-                      selected: items.find((item) => item.handle === currentHandle) || items[0],
-                    };
-                  }
-                </script>
-              {% endcomment %}
+                      <div class="tw-min-w-0">
+                        <p
+                          x-text="item.metafields.custom['product-size'].value"
+                          class="tw-text-sm tw-font-semibold tw-leading-6 tw-text-gray-900"
+                          {% comment %} x-text="item.metafields.custom['product-template-name'].value" {% endcomment %}
+                        ></p>
+                        <p class="tw-mt-1 tw-truncate tw-text-xs tw-leading-5 tw-text-gray-500">
+                          {{ product.metafields.custom['product-size'].value }}
+                          {{ product.metafields.custom['product-shape'].value }}
+                          {{ product.metafields.custom['product-type'].value }}
+                        </p>
+                      </div>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+              <script>
+                function dropdownData(currentHandle, items) {
+                  console.log(`dropdownData / items:`, items);
+                  return {
+                    open: false,
+                    items: [items, ...items.metafields],
+                    selected: items.find((item) => item.handle === currentHandle) || items[0],
+                  };
+                }
+              </script>
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
