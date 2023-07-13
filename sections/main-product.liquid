@@ -264,6 +264,104 @@
         </form>
       </section>
     </div>
+    <div class="tw-mt-10 lg:tw-col-start-1 lg:tw-row-start-2 lg:tw-max-w-lg lg:tw-self-start">
+      <section aria-labelledby="options-heading">
+        <h2 id="options-heading" class="tw-sr-only">Product options</h2>
+
+        <form>
+          <div class="sm:tw-flex sm:tw-justify-between">
+            <!-- Size selector -->
+            <fieldset>
+              <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Size</legend>
+              <div class="tw-mt-1 tw-grid tw-grid-cols-1 tw-gap-4 sm:tw-grid-cols-2">
+                <!-- Active: "ring-2 ring-indigo-500" -->
+                <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none">
+                  <input
+                    type="radio"
+                    name="size-choice"
+                    value="18L"
+                    class="tw-sr-only"
+                    aria-labelledby="size-choice-0-label"
+                    aria-describedby="size-choice-0-description"
+                  >
+                  <p id="size-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">18L</p>
+                  <p id="size-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
+                    Perfect for a reasonable amount of snacks.
+                  </p>
+                  <!--
+                    Active: "border", Not Active: "border-2"
+                    Checked: "border-indigo-500", Not Checked: "border-transparent"
+                  -->
+                  <div
+                    class="tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg tw-border-2"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <!-- Active: "ring-2 ring-indigo-500" -->
+                <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none">
+                  <input
+                    type="radio"
+                    name="size-choice"
+                    value="20L"
+                    class="tw-sr-only"
+                    aria-labelledby="size-choice-1-label"
+                    aria-describedby="size-choice-1-description"
+                  >
+                  <p id="size-choice-1-label" class="tw-text-base tw-font-medium tw-text-gray-900">20L</p>
+                  <p id="size-choice-1-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
+                    Enough room for a serious amount of snacks.
+                  </p>
+                  <!--
+                    Active: "border", Not Active: "border-2"
+                    Checked: "border-indigo-500", Not Checked: "border-transparent"
+                  -->
+                  <div
+                    class="tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg tw-border-2"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="tw-mt-4">
+            <a href="#" class="tw-group tw-inline-flex tw-text-sm tw-text-gray-500 hover:tw-text-gray-700">
+              <span>What size should I buy?</span>
+              <svg
+                class="tw-ml-2 tw-h-5 tw-w-5 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+          <div class="tw-mt-10">
+            <button
+              type="submit"
+              class="tw-flex tw-w-full tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-px-8 tw-py-3 tw-text-base tw-font-medium tw-text-white hover:tw-bg-indigo-700 tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-indigo-500 tw-focus:ring-offset-2 tw-focus:ring-offset-gray-50"
+            >
+              Add to bag
+            </button>
+          </div>
+          <div class="tw-mt-6 tw-text-center">
+            <a href="#" class="tw-group tw-inline-flex tw-text-base tw-font-medium">
+              <svg
+                class="tw-mr-2 tw-h-6 tw-w-6 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <span class="tw-text-gray-500 hover:tw-text-gray-700">Lifetime Guarantee</span>
+            </a>
+          </div>
+        </form>
+      </section>
+    </div>
   </div>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">

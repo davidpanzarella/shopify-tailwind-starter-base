@@ -737,7 +737,15 @@ select {
   position: absolute;
 }
 
+.tw-relative {
+  position: relative;
+}
+
 .tw--inset-px {
+  inset: -1px;
+}
+
+.-tw-inset-px {
   inset: -1px;
 }
 
@@ -770,12 +778,20 @@ select {
   margin-top: 2.4rem;
 }
 
+.tw-mr-2 {
+  margin-right: 0.8rem;
+}
+
 .tw-block {
   display: block;
 }
 
 .tw-flex {
   display: flex;
+}
+
+.tw-inline-flex {
+  display: inline-flex;
 }
 
 .tw-grid {
@@ -790,6 +806,10 @@ select {
   height: 100%;
 }
 
+.tw-h-6 {
+  height: 2.4rem;
+}
+
 .tw-w-5 {
   width: 2rem;
 }
@@ -800,6 +820,10 @@ select {
 
 .tw-w-full {
   width: 100%;
+}
+
+.tw-w-6 {
+  width: 2.4rem;
 }
 
 .tw-min-w-0 {
@@ -841,6 +865,10 @@ select {
 
 .tw-gap-2 {
   gap: 0.8rem;
+}
+
+.tw-gap-4 {
+  gap: 1.6rem;
 }
 
 .tw-gap-x-4 {
@@ -909,6 +937,10 @@ select {
   border-width: 0px;
 }
 
+.tw-border-2 {
+  border-width: 2px;
+}
+
 .tw-border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -916,6 +948,11 @@ select {
 
 .tw-border-transparent {
   border-color: transparent;
+}
+
+.tw-border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .tw-bg-bone {
@@ -951,6 +988,10 @@ select {
 .tw-object-center {
   -o-object-position: center;
      object-position: center;
+}
+
+.tw-p-4 {
+  padding: 1.6rem;
 }
 
 .tw-px-2 {
@@ -993,12 +1034,26 @@ select {
   padding-bottom: 2rem;
 }
 
+.tw-px-8 {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
+
+.tw-py-3 {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
 .tw-pl-3 {
   padding-left: 1.2rem;
 }
 
 .tw-pr-10 {
   padding-right: 4rem;
+}
+
+.tw-text-center {
+  text-align: center;
 }
 
 .tw-text-3xl {
@@ -4726,6 +4781,21 @@ details-disclosure > details {
 .hover\:tw-border-gray-400:hover {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
+.hover\:tw-bg-indigo-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-text-gray-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-gray-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 @media (min-width: 320px) {
