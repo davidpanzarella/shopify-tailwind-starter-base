@@ -157,7 +157,7 @@
                 {% endfor %}
               </div>
 
-              <div x-data="{ open: false, items: {{ product.metafields.custom.customily_product_equivalents.value | json }}, selected: items.find(item => item.handle === '{{ product.handle }}') || items[0] }">
+              <div x-data="dropdownData('{{ product.handle }}', {{ product.metafields.custom.customily_product_equivalents.value | json }})">
                 <button
                   @click="open = !open"
                   x-text="selected.title"
@@ -197,6 +197,16 @@
                   </template>
                 </ul>
               </div>
+
+              <script>
+                function dropdownData(currentHandle, items) {
+                  return {
+                    open: false,
+                    items: items,
+                    selected: items.find((item) => item.handle === currentHandle) || items[0],
+                  }
+                }
+              </script>
 
               <ul role="list" class="tw-divide-y tw-divide-gray-100">
                 {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
