@@ -178,7 +178,7 @@
                 {% assign custom_items = custom_items | append: item %}
               {% endfor %}
 
-              {% assign custom_items = custom_items | remove: ', ' | append: ']' %}
+              {% assign custom_items = custom_items | append: ']' %}
 
               <script>
                 console.log("custom_items:", {{ custom_items | json }});
