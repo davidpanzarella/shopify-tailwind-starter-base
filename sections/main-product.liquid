@@ -230,7 +230,7 @@
                   console.log(`dropdownData / items:`, items);
                   return {
                     open: false,
-                    items: [items, ...items.metafields],
+                    items: items,
                     selected: items.find((item) => item.handle === currentHandle) || items[0],
                   };
                 }
