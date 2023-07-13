@@ -61,15 +61,15 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
-  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-    <div class="lg:max-w-lg lg:self-end">
+  <div class="tw-mx-auto tw-max-w-2xl tw-px-4 tw-py-16 tw-sm:px-6 tw-sm:py-24 tw-lg:grid tw-lg:max-w-7xl tw-lg:grid-cols-2 tw-lg:gap-x-8 tw-lg:px-8">
+    <div class="tw-lg:max-w-lg tw-lg:self-end">
       {% render 'breadcrumb', product: product %}
       {% liquid
         assign colorDisplay = ''
         assign color = product.metafields.custom.color.value[0]
 
         if color == 'Black and White'
-          assign colorDisplay = 'B&W'
+          assign colorDisplay = 'tw-B&W'
         else
           assign colorDisplay = color
         endif
@@ -103,12 +103,12 @@
     </div>
 
     <!-- Product image -->
-    <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-      <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg">
+    <div class="tw-mt-10 tw-lg:col-start-2 tw-lg:row-span-2 tw-lg:mt-0 tw-lg:self-center">
+      <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
         <img
           src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
           alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
-          class="h-full w-full object-cover object-center"
+          class="tw-h-full tw-w-full tw-object-cover tw-object-center"
         >
       </div>
     </div>
