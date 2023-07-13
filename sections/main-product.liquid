@@ -122,38 +122,26 @@
               <script>
                 console.log("product:", {{ product.metafields.custom.customily_product_equivalents.value | json }});
               </script>
-              <div x-data="{ open: false }">
-                <label id="listbox-label" class="sr-only">Change published status</label>
-                <div class="relative">
-                  <div class="inline-flex divide-x divide-indigo-700 rounded-md shadow-sm">
-                    <div class="inline-flex items-center gap-x-1.5 rounded-l-md bg-indigo-600 px-3 py-2 text-white shadow-sm">
-                      <!-- SVG and text here... -->
-                    </div>
-                    <button
-                      @click="open = !open"
-                      type="button"
-                      class="inline-flex items-center rounded-l-none rounded-r-md bg-indigo-600 p-2 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-gray-50"
-                      aria-haspopup="listbox"
-                      :aria-expanded="open"
-                      aria-labelledby="listbox-label"
+              <div x-data="{ open: false, items: ['Published', 'Draft'], selected: 'Published' }">
+                <button
+                  @click="open = !open"
+                  x-text="selected"
+                  class="px-4 py-2 rounded bg-indigo-600 text-white"
+                ></button>
+                <ul
+                  x-show="open"
+                  @click.away="open = false"
+                  class="absolute mt-2 w-64 py-1 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
+                >
+                  <template x-for="(item, index) in items" :key="index">
+                    <li
+                      @click="selected = item; open = false; console.log('Selected item:', item)"
+                      class="text-gray-900 cursor-default select-none relative py-1 pl-3 pr-9"
                     >
-                      asdfdsafsdf
-                      <!-- SVG here... -->
-                    </button>
-                  </div>
-
-                  <ul
-                    x-show="open"
-                    @click.away="open = false"
-                    class="absolute right-0 z-10 mt-2 w-72 origin-top-right divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                    tabindex="-1"
-                    role="listbox"
-                    aria-labelledby="listbox-label"
-                    aria-activedescendant="listbox-option-0"
-                  >
-                    <!-- List items here... -->
-                  </ul>
-                </div>
+                      <span x-text="item" class="font-normal block truncate"></span>
+                    </li>
+                  </template>
+                </ul>
               </div>
 
               <section aria-labelledby="options-heading" class="tw-mt-6">
