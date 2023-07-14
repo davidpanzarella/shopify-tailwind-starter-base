@@ -63,7 +63,7 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} {% if product.media.size > 0 %}{% else %}product--no-media{% endif %}">
-    <div class="sm:tw-px-6 tw-mx-auto tw-px-4 tw-py-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
+    <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
       <div class="lg:tw-max-w-lg lg:tw-self-end">
         {% render 'breadcrumb', product: product %}
         {% liquid
@@ -164,14 +164,14 @@
 
       <!-- Product image -->
       <div class="tw-mt-10 lg:tw-col-start-2 lg:tw-row-span-2 lg:tw-mt-0 lg:tw-self-center">
-        <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
+        <div class="tw-overflow-hidden tw-rounded-lg tw-aspect-h-1 tw-aspect-w-1">
           {% render 'product-media-gallery', variant_images: variant_images %}
 
           {% comment %}
             <img
               src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
               alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
-              class="tw-h-full tw-w-full tw-object-cover tw-object-center"
+              class="tw-object-cover tw-object-center tw-w-full tw-h-full"
             >
           {% endcomment %}
         </div>
@@ -187,7 +187,7 @@
               <!-- Size selector -->
               <fieldset>
                 <legend class="tw-block tw-text-base tw-font-medium tw-text-gray-700">Design Options</legend>
-                <div class="tw-mt-1 tw-grid tw-grid-cols-1 tw-gap-4 sm:tw-grid-cols-3">
+                <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-3">
                   {% for related_product in product.metafields.custom.customily_product_equivalents.value %}
                     {% liquid
                       assign current_product = false
@@ -215,7 +215,7 @@
 
                   {% comment %}
                     <!-- Active: "ring-2 ring-indigo-500" -->
-                    <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none">
+                    <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
                       <input
                         type="radio"
                         name="size-choice"
@@ -233,12 +233,12 @@
                         Checked: "border-indigo-500", Not Checked: "border-transparent"
                       -->
                       <div
-                        class="tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg tw-border-2"
+                        class="tw-absolute tw-border-2 tw-rounded-lg tw-pointer-events-none -tw-inset-px"
                         aria-hidden="true"
                       ></div>
                     </div>
                     <!-- Active: "ring-2 ring-indigo-500" -->
-                    <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none">
+                    <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
                       <input
                         type="radio"
                         name="size-choice"
@@ -256,7 +256,7 @@
                         Checked: "border-indigo-500", Not Checked: "border-transparent"
                       -->
                       <div
-                        class="tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg tw-border-2"
+                        class="tw-absolute tw-border-2 tw-rounded-lg tw-pointer-events-none -tw-inset-px"
                         aria-hidden="true"
                       ></div>
                     </div>
@@ -265,10 +265,10 @@
               </fieldset>
             </div>
             <div class="tw-mt-4">
-              <a href="#" class="tw-group tw-inline-flex tw-text-sm tw-text-gray-500 hover:tw-text-gray-700">
+              <a href="#" class="tw-inline-flex tw-text-sm tw-text-gray-500 tw-group hover:tw-text-gray-700">
                 <span>What size should I buy?</span>
                 <svg
-                  class="tw-ml-2 tw-h-5 tw-w-5 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500"
+                  class="tw-flex-shrink-0 tw-w-5 tw-h-5 tw-ml-2 tw-text-gray-400 hover:tw-text-gray-500"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   aria-hidden="true"
@@ -280,15 +280,15 @@
             <div class="tw-mt-10">
               <button
                 type="submit"
-                class="tw-flex tw-w-full tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-px-8 tw-py-3 tw-text-base tw-font-medium tw-text-white hover:tw-bg-indigo-700 tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-indigo-500 tw-focus:ring-offset-2 tw-focus:ring-offset-gray-50"
+                class="tw-flex tw-items-center tw-justify-center tw-w-full tw-px-8 tw-py-3 tw-text-base tw-font-medium tw-text-white tw-bg-indigo-600 tw-border tw-border-transparent tw-rounded-md hover:tw-bg-indigo-700 tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-indigo-500 tw-focus:ring-offset-2 tw-focus:ring-offset-gray-50"
               >
                 Add to bag
               </button>
             </div>
             <div class="tw-mt-6 tw-text-center">
-              <a href="#" class="tw-group tw-inline-flex tw-text-base tw-font-medium">
+              <a href="#" class="tw-inline-flex tw-text-base tw-font-medium tw-group">
                 <svg
-                  class="tw-mr-2 tw-h-6 tw-w-6 tw-flex-shrink-0 tw-text-gray-400 hover:tw-text-gray-500"
+                  class="tw-flex-shrink-0 tw-w-6 tw-h-6 tw-mr-2 tw-text-gray-400 hover:tw-text-gray-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
