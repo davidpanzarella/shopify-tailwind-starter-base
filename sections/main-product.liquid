@@ -64,7 +64,9 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   {% assign current_product_type = product.metafields.custom['product-type'] %}
-  {% assign related_products = collections.all.products | where: 'custom.product-type', current_product_type %}
+  {% assign related_products = collections.all.products
+    | where: product.metafields.custom['product-type'], current_product_type
+  %}
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
     console.log("related_products", {{ related_products | json }});
