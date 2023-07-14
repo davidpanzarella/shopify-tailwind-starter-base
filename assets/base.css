@@ -476,10 +476,7 @@ table:not([class]) th {
   opacity: 0.7;
 }
 
-a:empty,
-ul:empty,
-dl:empty,
-div:empty,
+div:empty:not([class*='swiper']),
 section:empty,
 article:empty,
 p:empty,
