@@ -62,6 +62,7 @@
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+
   {% assign current_product_type = product.metafields.custom['product-type'] %}
   {% assign related_products = collections.all.products %}
 
