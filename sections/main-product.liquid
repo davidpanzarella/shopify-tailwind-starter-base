@@ -63,7 +63,7 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} {% if product.media.size > 0 %}{% else %}product--no-media{% endif %}">
-    <div class="sm:tw-px-6 tw-mx-auto tw-px-4 tw-py-6  sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
+    <div class="sm:tw-px-6 tw-mx-auto tw-px-4 tw-py-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
       <div class="lg:tw-max-w-lg lg:tw-self-end">
         {% render 'breadcrumb', product: product %}
         {% liquid
@@ -105,25 +105,25 @@
             <div class="flex items-center">
               <p class="text-lg text-gray-900 sm:text-xl">$220</p>
 
-              <div class="ml-4 border-l border-gray-300 pl-4">
+              <div class="pl-4 ml-4 border-l border-gray-300">
                 <h2 class="sr-only">Reviews</h2>
                 <div class="flex items-center">
                   <div>
                     <div class="flex items-center">
                       <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
-                      <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                       </svg>
-                      <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                       </svg>
-                      <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                       </svg>
-                      <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="flex-shrink-0 w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                       </svg>
-                      <svg class="text-gray-300 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <svg class="flex-shrink-0 w-5 h-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
                       </svg>
                     </div>
@@ -144,8 +144,8 @@
           {%- endif -%}
 
           {% comment %}
-            <div class="mt-6 flex items-center">
-              <svg class="h-5 w-5 flex-shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <div class="flex items-center mt-6">
+              <svg class="flex-shrink-0 w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
               </svg>
               <p class="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
@@ -197,7 +197,7 @@
                     %}
 
                     <div
-                      class="group cursor-pointer"
+                      class="cursor-pointer group"
                       onclick="window.location.href='/products/{{ related_product.handle }}'"
                     >
                       <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} tw-ring-2 tw-ring-indigo-500{% endif %}">
@@ -464,7 +464,7 @@
                   <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
                     {{ 'products.product.quantity.label' | t }}
                     <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-                      <span class="loading-overlay hidden">
+                      <span class="hidden loading-overlay">
                         <span class="loading-overlay__spinner">
                           <svg
                             aria-hidden="true"
@@ -687,7 +687,7 @@
                         {%- endif -%}
                         <slideshow-component class="slider-mobile-gutter">
                           {%- assign number_of_slides = recommendations.products_count | plus: 0.0 | divided_by: block.settings.products_per_page | ceil -%}
-                          <div id="Slider-{{ block.id }}" class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere" role="list"{% if number_of_slides > 1 %} aria-label="{{ 'general.slider.name' | t }}"{% endif %}>
+                          <div id="Slider-{{ block.id }}" class="grid contains-card contains-card--product complementary-slider grid--1-col slider slider--everywhere" role="list"{% if number_of_slides > 1 %} aria-label="{{ 'general.slider.name' | t }}"{% endif %}>
                             {%- for i in (1..number_of_slides) -%}
                               <div id="Slide-{{ block.id }}-{{ forloop.index }}" class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide" tabindex="-1" role="group"{% if number_of_slides > 1 %} aria-roledescription="{{ 'sections.slideshow.slide' | t }}" aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"{% endif %}>
                                 <ul class="list-unstyled" role="list">
