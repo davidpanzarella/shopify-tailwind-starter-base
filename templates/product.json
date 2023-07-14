@@ -6,7 +6,7 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
+            "text": "{{ product.metafields.custom[\"product-format\"].value }}",
             "text_style": "uppercase"
           }
         },
@@ -30,7 +30,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "dropdown"
           }
         },
         "quantity_selector": {
@@ -112,7 +112,10 @@
         "enable_sticky_info": true,
         "media_size": "large",
         "constrain_to_viewport": true,
-        "gallery_layout": "stacked",
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "right",
+        "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
