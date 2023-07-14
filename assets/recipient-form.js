@@ -2,7 +2,7 @@ if (!customElements.get('recipient-form')) {
   customElements.define(
     'recipient-form',
     class RecipientForm extends HTMLElement {
-      constructor () {
+      constructor() {
         super();
         this.recipientFieldsLiveRegion = this.querySelector(`#Recipient-fields-live-region-${this.dataset.sectionId}`);
         this.checkboxInput = this.querySelector(`#Recipient-checkbox-${this.dataset.sectionId}`);
