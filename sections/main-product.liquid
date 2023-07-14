@@ -164,11 +164,15 @@
     <!-- Product image -->
     <div class="tw-mt-10 lg:tw-col-start-2 lg:tw-row-span-2 lg:tw-mt-0 lg:tw-self-center">
       <div class="tw-aspect-h-1 tw-aspect-w-1 tw-overflow-hidden tw-rounded-lg">
-        <img
-          src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
-          alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
-          class="tw-h-full tw-w-full tw-object-cover tw-object-center"
-        >
+        {% render 'product-media-gallery', variant_images: variant_images %}
+
+        {% comment %}
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg"
+            alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
+            class="tw-h-full tw-w-full tw-object-cover tw-object-center"
+          >
+        {% endcomment %}
       </div>
     </div>
 
@@ -1034,7 +1038,7 @@
     {%- if section.settings.media_position == 'right' -%}
       {% comment %} Duplicate gallery to display after product content on tablet/desktop breakpoint {% endcomment %}
       <div class="grid__item product__media-wrapper small-hide">
-        {% comment %} {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %} {% endcomment %}
+        {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
       </div>
     {%- endif -%}
   </div>
