@@ -64,7 +64,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   {% assign current_product_type = product.type %}
-  {% assign related_products = collections.all.products | where: 'custom.color', 'Full Color' %}
+  {% assign related_products = collections.all.products | where: 'color', 'Full Color' %}
 
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
