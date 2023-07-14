@@ -62,7 +62,7 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div class="product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-mx-auto tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
       <div class="lg:tw-max-w-lg lg:tw-self-end">
         {% render 'breadcrumb', product: product %}
