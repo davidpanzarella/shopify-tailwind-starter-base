@@ -157,9 +157,9 @@
 
   {% assign matchedColor = false %}
 
-  {% assign colorArray = '[' %}
-  {% assign sizeArray = '[' %}
-  {% assign shapeArray = '[' %}
+  {% assign colorArray = '' %}
+  {% assign sizeArray = '' %}
+  {% assign shapeArray = '' %}
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
@@ -223,10 +223,6 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-
-  {% assign colorArray = colorArray | append: ']' %}
-  {% assign sizeArray = sizeArray | append: ']' %}
-  {% assign shapeArray = shapeArray | append: ']' %}
 
   {% assign uniqueColors = colorArray | map: 'name' | uniq %}
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
