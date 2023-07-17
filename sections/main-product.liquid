@@ -183,7 +183,7 @@
           "name": "MATCHED COLOR"
         }]' %}
         {% echo colorObject %}
-        {% assign colorArray = colorArray | concat: colorObject %}
+        {% assign colorArray = colorArray | append: colorObject %}
         {% echo colorArray %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
