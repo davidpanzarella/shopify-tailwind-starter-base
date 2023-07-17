@@ -69,16 +69,16 @@
     assign uniqueColors = '' | split: ''
     assign uniqueSizes = '' | split: ''
     assign currentColor = product.metafields.custom.color.value[0]
-    assign currentProductType = product.metafields.custom['product-type'].value
+    assign currentProductFormat = product.metafields.custom['product-format'].value
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     echo currentColor | append: ' - '
-    echo currentProductType | append: ' - '
+    echo currentProductFormat | append: ' - '
     echo currentTemplate | append: ' - '
     echo currentTemplateOptions
 
     for size in related_products_by_type
-      if size.available and size.metafields.custom['product-type'].value == currentProductType and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions and size.metafields.custom.color.value == currentColor
+      if size.available and size.metafields.custom['product-format'].value == currentProductFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions and size.metafields.custom.color.value == currentColor
         echo size.title | append: ' - '
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
