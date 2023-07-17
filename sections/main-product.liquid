@@ -123,8 +123,8 @@
       endif
     endfor
 
+    assign uniqueColors = uniqueColors | join: ','
     echo uniqueColors
-
     assign colorDisplay = ''
     if currentColor == 'Black and White'
       assign colorDisplay = 'B&W'
