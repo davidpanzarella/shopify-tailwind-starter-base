@@ -194,7 +194,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      {{ relatedProductColor }}|{{ relatedProductColor }}|{{ relatedProductShape }}|{{ relatedProductSize }}|{{ relatedProduct.handle }},
+      {{- relatedProductColor -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
     {% endif %}
   {% endfor %}
   {%- endcapture -%}
