@@ -109,6 +109,8 @@
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
 
         if relatedProductColor == currentColor
+          assign colorArray = colorArray[currentIndex].name | concat: relatedProductColor
+          echo colorArray
           if relatedProductShape != currentShape
             assign uniqueProductByShape = relatedProduct.title | handle
           endif
