@@ -227,6 +227,11 @@
     {% endif %}
   {% endfor %}
 
+  {% assign colorArray = colorArray | append: ']' %}
+  {% assign sizeArray = sizeArray | append: ']' %}
+  {% assign shapeArray = shapeArray | append: ']' %}
+
+  {% assign uniqueColors = colorArray | map: 'name' | uniq %}
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
   {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
 
