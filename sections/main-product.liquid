@@ -194,11 +194,11 @@
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
       {% echo relatedProductSize %}
-      {% assign uniqueColors = uniqueColors | concat: relatedProductColor | uniq %}
+      {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
       {% echo uniqueColors %}
-      {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape | uniq %}
+      {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
       {% echo uniqueShapes %}
-      {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize | uniq %}
+      {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
       {% echo uniqueSizes %}
 
       {% if relatedProductColor == currentColor and relatedProductShape != currentShape %}
