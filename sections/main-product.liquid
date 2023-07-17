@@ -80,11 +80,11 @@
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
 
-    assign uniqueColors = '' | split: ''
+    assign uniqueColors = '' | split: ','
     assign uniqueShapes = ''
     assign uniqueSizes = ''
 
-    assign colorArray = ''
+    assign colorArray = '' | split: ','
     assign shapeArray = ''
     assign sizeArray = ''
     assign currentUniqIndex = 0
@@ -103,7 +103,7 @@
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         assign currentUniqIndex = currentUniqIndex | plus: 1
-        assign uniqueColors = uniqueColors | concat: relatedProductColor
+        assign uniqueColors = colorArray | concat: relatedProductColor
 
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
