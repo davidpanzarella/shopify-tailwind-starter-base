@@ -67,7 +67,7 @@
   {% assign related_products = collections.all.products | where: 'type', current_product_type %}
   {% for size in related_products %}
     <script>
-      console.log("current_product_type",{{ size.metafields.custom.product-size.value| json }});
+      console.log("current_product_type",{{ size.metafields.custom.product-size.value | json }});
     </script>
   {% endfor %}
 
