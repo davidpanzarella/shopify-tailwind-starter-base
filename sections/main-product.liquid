@@ -103,9 +103,6 @@
       assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-        assign currentIndex = currentIndex | plus: 1
-        echo currentIndex
-
         assign uniqueColors = uniqueColors | concat: relatedProductColor
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
@@ -373,15 +370,18 @@
                 {% assign uniqueColors = '' %}
                 {% assign uniqueShapes = '' %}
                 {% assign uniqueSizes = '' %}
+                {% assign currentIndex = 1 %}
 
                 {% if relatedProduct.available
                   and relatedProductFormat == currentFormat
                   and relatedProductTemplate == currentTemplate
                   and relatedProductTemplateOptions == currentTemplateOptions
                 %}
+                  {% assign currentIndex = currentIndex | plus: 1 %}
+                  {% echo currentIndex %}
                   {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
-                  {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
-                  {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+                  {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
+                  {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
 
                   {% echo relatedProductSize %}
                   {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
