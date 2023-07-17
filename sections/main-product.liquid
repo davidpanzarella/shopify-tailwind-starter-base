@@ -63,6 +63,9 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
+  {% comment %}
+    Fetch all products of the same type as the current product for the related products section
+  {% endcomment %}
   {% liquid
     assign current_product_type = product.metafields.custom['product-type'] | append: 's'
     assign related_products_by_type = collections.all.products | where: 'type', current_product_type
