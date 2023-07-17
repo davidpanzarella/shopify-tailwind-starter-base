@@ -360,7 +360,7 @@
           <form>
             {% for relatedProduct in relatedProductsByType %}
               {%- if forloop.length > 0 -%}
-                {% assign currentIndex = 1 %}
+                {% assign currentIndex = 0 %}
                 {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
                 {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
                 {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
