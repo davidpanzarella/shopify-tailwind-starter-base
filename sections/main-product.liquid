@@ -184,6 +184,7 @@
         }' %}
         {% echo colorObject %}
         {% assign colorArray = colorArray | concat: colorObject %}
+        {% echo colorArray %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
         {% assign colorObject = '{
