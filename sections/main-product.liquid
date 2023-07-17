@@ -378,6 +378,9 @@
                 %}
                   {% assign currentIndex = currentIndex | plus: 1 %}
                   {% echo currentIndex %}
+                  {% assign uniqueColors[currentIndex].name = 'test' %}
+                  {% echo uniqueColors %}
+
                   {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
                   {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
                   {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
