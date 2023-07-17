@@ -178,15 +178,14 @@
         and relatedProductTemplateOptions == currentTemplateOptions
       %}
         {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
-          {% assign colorObject[forloop.index].handle = null %}
-          {% assign colorObject[forloop.index].name = relatedProduct.title %}
-          {% echo colorObject %}
+          {% assign colorArray[forloop.index].handle = null %}
+          {% assign colorArray[forloop.index].name = relatedProduct.title %}
+          {% echo colorArray %}
         {% elsif relatedProductColor != currentColor %}
-          {% assign colorObject[forloop.index].handle = relatedProduct.handle %}
-          {% assign colorObject[forloop.index].name = relatedProduct.title %}
-          {% echo colorObject %}
+          {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
+          {% assign colorArray[forloop.index].name = relatedProduct.title %}
+          {% echo colorArray %}
         {% endif %}
-        {% assign colorArray = colorArray | concat: colorObject %}
         {% echo colorArray %}
 
         {% if relatedProductShape != currentShape %}
