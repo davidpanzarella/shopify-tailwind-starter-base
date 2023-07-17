@@ -80,12 +80,6 @@
     </script>
   {% endfor %}
 
-  {% assign uniqueSizes = related_products
-    | map: 'related_products.metafields.custom.product-size.value'
-    | compact
-    | uniq
-  %}
-
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
     console.log("related_products", {{ related_products | json }});
