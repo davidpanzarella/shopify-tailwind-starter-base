@@ -188,43 +188,32 @@
         and relatedProductTemplateOptions == currentTemplateOptions
       %}
         {% echo relatedProductSize %}
-        {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
-          {% assign colorArray[forloop.index].handle = null %}
-          {% assign colorArray[forloop.index].name = relatedProduct.title %}
-          {% echo colorArray %}
-        {% elsif relatedProductColor != currentColor %}
-          {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
-          {% assign colorArray[forloop.index].name = relatedProduct.title %}
-          {% echo colorArray %}
-        {% endif %}
-        {% echo colorArray %}
-        {% comment %}
-          {% if relatedProductShape != currentShape %}
-            {% assign shapeObject = '[{
-            "handle": "'
-              | append: relatedProduct.handle
-              | append: '",
-            "name": "'
-              | append: relatedProductShape
-              | append: '"
-          }]'
-            %}
-            {% assign shapeArray = shapeArray | concat: shapeObject %}
-          {% endif %}
 
-          {% if relatedProductSize != currentSize %}
-            {% assign sizeObject = '[{
+        {% if relatedProductShape != currentShape %}
+          {% assign shapeObject = '[{
             "handle": "'
-              | append: relatedProduct.handle
-              | append: '",
+            | append: relatedProduct.handle
+            | append: '",
             "name": "'
-              | append: relatedProductSize
-              | append: '"
+            | append: relatedProductShape
+            | append: '"
           }]'
-            %}
-            {% assign sizeArray = sizeArray | concat: sizeObject %}
-          {% endif %}
-        {% endcomment %}
+          %}
+          {% assign shapeArray = shapeArray | concat: shapeObject %}
+        {% endif %}
+
+        {% if relatedProductSize != currentSize %}
+          {% assign sizeObject = '[{
+            "handle": "'
+            | append: relatedProduct.handle
+            | append: '",
+            "name": "'
+            | append: relatedProductSize
+            | append: '"
+          }]'
+          %}
+          {% assign sizeArray = sizeArray | concat: sizeObject %}
+        {% endif %}
       {% endif %}
     {%- endif -%}
   {% endfor %}
