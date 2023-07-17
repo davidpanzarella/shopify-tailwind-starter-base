@@ -121,8 +121,9 @@
         endif
       endif
     endfor
+    echo uniqueColors
 
-    assign uniqueColors = uniqueColors | uniq | sort | join: ', '
+    assign uniqueColors = uniqueColors | join: ', ' | uniq | sort
     echo uniqueColors
 
     assign colorDisplay = ''
