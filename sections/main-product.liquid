@@ -182,7 +182,7 @@
           "handle": null,
           "name": "MATCHED COLOR"
         }' %}
-        {% assign colorArray = colorArray | append: colorObject %}
+        {% assign colorArray = colorArray | concat: colorObject %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
         {% assign colorObject = '{
@@ -194,7 +194,7 @@
           | append: '"
         }'
         %}
-        {% assign colorArray = colorArray | append: colorObject %}
+        {% assign colorArray = colorArray | concat: colorObject %}
       {% endif %}
 
       {% if relatedProductShape != currentShape %}
@@ -207,7 +207,7 @@
           | append: '"
         }'
         %}
-        {% assign shapeArray = shapeArray | append: shapeObject %}
+        {% assign shapeArray = shapeArray | concat: shapeObject %}
       {% endif %}
 
       {% if relatedProductSize != currentSize %}
@@ -220,7 +220,7 @@
           | append: '"
         }'
         %}
-        {% assign sizeArray = sizeArray | append: sizeObject %}
+        {% assign sizeArray = sizeArray | concat: sizeObject %}
       {% endif %}
     {% endif %}
   {% endfor %}
