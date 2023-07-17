@@ -103,7 +103,7 @@
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         assign currentUniqIndex = currentUniqIndex | plus: 1
-        assign uniqueColors = uniqueColors | concat: relatedProductColor
+        assign uniqueColors[currentUniqIndex] = relatedProductColor
 
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
