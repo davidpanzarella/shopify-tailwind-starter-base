@@ -193,6 +193,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
+      {% echo relatedProductSize %}
       {% assign uniqueColors = uniqueColors | concat: relatedProductColor | uniq %}
       {% echo uniqueColors %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape | uniq %}
