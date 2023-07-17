@@ -69,10 +69,10 @@
   {% liquid
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentProductFormat = product.metafields.custom['product-format'].value
-    assign currentProductType = product.metafields.custom['product-type'] | append: 's'
+    assign currentProductType = product.metafields.custom['product-type']
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
-    assign related_products_by_type = collections.all.products | where: 'type', currentProductType
+    assign related_products_by_type = collections.all.products | where: 'type', currentProductType | append: 's'
 
     assign uniqueColors = '' | split: ''
     assign uniqueProductByColor = ''
