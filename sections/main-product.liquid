@@ -178,10 +178,10 @@
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
       {% if relatedProductColor == currentColor and matchedColor == false %}
-        {% assign colorObject = '[{
+        {% assign colorObject = '{
           "handle": null,
           "name": "MATCHED COLOR"
-        }]' %}
+        }' %}
         {% echo colorObject %}
         {% assign colorArray = colorArray | append: colorObject %}
         {% echo colorArray %}
