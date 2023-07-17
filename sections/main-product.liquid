@@ -75,12 +75,14 @@
     endfor
   %}
 
-  {% for size in related_products %}
-    {% assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value %}
-    <script>
-      console.log("sized",{{ size.metafields.custom.product-size.value | json }});
-    </script>
-  {% endfor %}
+  {% comment %}
+    {% for size in related_products %}
+      {% assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value %}
+      <script>
+        console.log("sized",{{ size.metafields.custom.product-size.value | json }});
+      </script>
+    {% endfor %}
+  {% endcomment %}
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
 
