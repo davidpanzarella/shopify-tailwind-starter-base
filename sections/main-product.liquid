@@ -82,7 +82,7 @@
 
   {% for size in related_products %}
     <script>
-      console.log("current_product_type",{{ size.metafields.custom.product-size.value | json }});
+      console.log("size",{{ size.metafields.custom.product-size.value | json }});
     </script>
   {% endfor %}
 
