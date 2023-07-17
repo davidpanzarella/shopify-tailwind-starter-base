@@ -95,7 +95,6 @@
       if relatedProduct.handle == product.handle
         assign sameProduct = true
       endif
-      echo sameProduct
       assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
       assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
       assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
@@ -109,7 +108,6 @@
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
 
         assign colorArray = colorArray[currentIndex].name | concat: relatedProductColor
-        echo colorArray
         if relatedProductColor == currentColor
           assign colorArray = colorArray[currentIndex].handle | concat: relatedProduct.handle
           if relatedProductShape != currentShape
@@ -119,7 +117,7 @@
           assign uniqueProductByColor = relatedProduct.title | handle
         endif
 
-        if relatedProduct.metafields.custom['product-size'][0] != currentSize
+        if relatedProductSize != currentSize
           assign uniqueProductBySize = relatedProduct.title | handle
         endif
       endif
