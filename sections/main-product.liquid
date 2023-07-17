@@ -200,6 +200,24 @@
   {% assign items_array = items | split: ',' %}
   {% assign test = items_array | split: '|' %}
 
+  {%- for item in items_array -%}
+    {%- assign item_array = item | split: '|' -%}
+    {%- assign item_color = item_array[0] -%}
+    {%- assign item_shape = item_array[2] -%}
+    {%- assign item_size = item_array[3] -%}
+    {%- assign item_handle = item_array[4] -%}
+    {%- if item_color == currentColor -%}
+      {%- if item_shape != currentShape -%}
+        {%- assign uniqueProductByShape = item_handle -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- assign uniqueProductByColor = item_handle -%}
+    {%- endif -%}
+    {%- if item_size != currentSize -%}
+      {%- assign uniqueProductBySize = item_handle -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   <script>
     console.log("items_array", {{ items_array | json }});
     console.log("test", {{ test | json }});
