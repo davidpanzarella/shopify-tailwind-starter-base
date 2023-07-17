@@ -72,6 +72,7 @@
     for size in related_products
       if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value and size.metafields.custom['product-template-options'].value == product.metafields.custom['product-template-options'].value
         echo size.title | append: ' - '
+        assign uniqueColors = uniqueColors | concat: size.metafields.custom['product-size'].value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
       endif
     endfor
@@ -94,6 +95,7 @@
 
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
+    console.log("uniqueColors", {{ uniqueColors | json }});
     console.log("uniqueSizes", {{ uniqueSizes | json }});
   </script>
 
