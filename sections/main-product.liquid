@@ -128,7 +128,7 @@
   </script>
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
-  {% assign uniqueColors = uniqueColors | sort | uniq %}
+  {% assign uniqueColors = uniqueColors | uniq | sort %}
 
   <script>
     console.log("currentType", {{ currentType | json }});
