@@ -69,8 +69,8 @@
     assign uniqueSizes = '' | split: ''
 
     for size in related_products
-      echo size.status
-      if size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value
+      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value
+        echo size.status
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
       endif
     endfor
