@@ -70,7 +70,7 @@
     assign uniqueSizes = '' | split: ''
 
     for size in related_products
-      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value and size.metafields.custom['product-template-options'].value == product.metafields.custom['product-template-options'].value
+      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value and size.metafields.custom['product-template-options'].value == product.metafields.custom['product-template-options'].value and size.metafields.custom.color.value == product.metafields.custom.color.value
         echo size.title | append: ' - '
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
