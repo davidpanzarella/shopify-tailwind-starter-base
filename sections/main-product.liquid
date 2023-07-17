@@ -172,7 +172,7 @@
 
   {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
 
-  {% assign uniqueColors = '' | split: '' %}
+  {% assign uniqueColors = '' | split: ',' %}
   {% assign uniqueShapes = '' | split: '' %}
   {% assign uniqueSizes = '' | split: '' %}
 
@@ -193,7 +193,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      {% assign uniqueColors = uniqueColors | append: relatedProductColor %}
+      {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
       {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
 
