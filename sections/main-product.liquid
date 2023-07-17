@@ -86,32 +86,34 @@
 
     assign uniqueProductByColor = ''
 
-    for relatedProduct in relatedProductsByType
-      assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
-      assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
-      assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
-      assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
-      assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
-      assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
+    comment
+      for relatedProduct in relatedProductsByType
+        assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
+        assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
+        assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
+        assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
+        assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
+        assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
-      if relatedProduct.handle != product.handle and relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-        assign uniqueColors = uniqueColors | concat: relatedProductColor
-        assign uniqueShapes = uniqueShapes | concat: relatedProductShape
-        assign uniqueSizes = uniqueSizes | concat: relatedProductSize
+        if relatedProduct.handle != product.handle and relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
+          assign uniqueColors = uniqueColors | concat: relatedProductColor
+          assign uniqueShapes = uniqueShapes | concat: relatedProductShape
+          assign uniqueSizes = uniqueSizes | concat: relatedProductSize
 
-        if relatedProductColor == currentColor
-          if relatedProductShape != currentShape
-            assign uniqueProductByShape = relatedProduct.title | handle
+          if relatedProductColor == currentColor
+            if relatedProductShape != currentShape
+              assign uniqueProductByShape = relatedProduct.title | handle
+            endif
+          else
+            assign uniqueProductByColor = relatedProduct.title | handle
           endif
-        else
-          assign uniqueProductByColor = relatedProduct.title | handle
-        endif
 
-        if relatedProduct.metafields.custom['product-size'][0] != currentSize
-          assign uniqueProductBySize = relatedProduct.title | handle
+          if relatedProduct.metafields.custom['product-size'][0] != currentSize
+            assign uniqueProductBySize = relatedProduct.title | handle
+          endif
         endif
-      endif
-    endfor
+      endfor
+    endcomment
 
     assign colorDisplay = ''
     if currentColor == 'Black and White'
@@ -129,7 +131,6 @@
 
     assign productTitleDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
   %}
-
   <script>
     console.log("relatedProductsByType", {{ relatedProductsByType | json }});
     console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
@@ -145,6 +146,117 @@
     console.log("currentType", {{ currentType | json }});
     console.log("uniqueSizes", {{ uniqueSizes | json }});
     console.log("uniqueColors", {{ uniqueColors | json }});
+  </script>
+
+  {% assign currentColor = product.metafields.custom.color.value[0] %}
+  {% assign currentType = product.metafields.custom['product-type'] %}
+  {% assign currentTypes = currentType | append: 's' %}
+  {% assign currentFormat = product.metafields.custom['product-format'].value %}
+  {% assign currentShape = product.metafields.custom['product-shape'].value[0] %}
+  {% assign currentSize = product.metafields.custom['product-size'].value[0] %}
+  {% assign currentTemplate = product.metafields.custom['product-template-name'].value %}
+  {% assign currentTemplateOptions = product.metafields.custom['product-template-options'].value %}
+  {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
+
+  {% assign uniqueColors = '' | split: '' %}
+  {% assign uniqueShapes = '' | split: '' %}
+  {% assign uniqueSizes = '' | split: '' %}
+
+  {% assign matchedColor = false %}
+
+  {% capture colorArray %}[]{% endcapture %}
+  {% capture sizeArray %}[]{% endcapture %}
+  {% capture shapeArray %}[]{% endcapture %}
+
+  {% for relatedProduct in relatedProductsByType %}
+    {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+    {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+    {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+    {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+    {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+    {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+
+    {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+
+    {% if relatedProduct.handle != product.handle
+      and relatedProduct.available
+      and relatedProductFormat == currentFormat
+      and relatedProductTemplate == currentTemplate
+      and relatedProductTemplateOptions == currentTemplateOptions
+    %}
+      {% if relatedProductColor == currentColor and matchedColor == false %}
+        {% assign colorObject = '{
+        "handle": null,
+        "name": "MATCHED COLOR"
+      }' %}
+        {% assign colorArray = colorArray | append: colorObject %}
+        {% assign matchedColor = true %}
+      {% elsif relatedProductColor != currentColor %}
+        {% assign colorObject = '{
+        "handle": "'
+          | append: relatedProduct.handle
+          | append: '",
+        "name": "'
+          | append: relatedProductColor
+          | append: '"
+      }'
+        %}
+        {% assign colorArray = colorArray | append: colorObject %}
+      {% endif %}
+
+      {% if relatedProductShape != currentShape %}
+        {% assign shapeObject = '{
+        "handle": "'
+          | append: relatedProduct.handle
+          | append: '",
+        "name": "'
+          | append: relatedProductShape
+          | append: '"
+      }'
+        %}
+        {% assign shapeArray = shapeArray | append: shapeObject %}
+      {% endif %}
+
+      {% if relatedProductSize != currentSize %}
+        {% assign sizeObject = '{
+        "handle": "'
+          | append: relatedProduct.handle
+          | append: '",
+        "name": "'
+          | append: relatedProductSize
+          | append: '"
+      }'
+        %}
+        {% assign sizeArray = sizeArray | append: sizeObject %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
+  {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
+
+  {% capture result %}{
+  "color": {{ colorArray | strip }},
+  "size": {{ sizeArray | strip }},
+  "shape": {{ shapeArray | strip }}
+}{% endcapture %}
+
+  {% comment %}
+    Output the result or use it in JavaScript
+  {% endcomment %}
+
+  <script>
+    var result = {{ result }};
+    console.log("result", result);
+  </script>
+
+  {% comment %}
+    Output the result or use it in JavaScript
+  {% endcomment %}
+
+  <script>
+    var result = {{ result | json }};
+    console.log("result", result);
   </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
