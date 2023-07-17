@@ -237,12 +237,13 @@
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
   {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
 
-  {% capture result %}{
-  "color": {{ colorArray | strip }},
-  "size": {{ sizeArray | strip }},
-  "shape": {{ shapeArray | strip }}
-}
-{% endcapture %}
+  {% capture result %}
+  {
+    "color": {{ colorArray | strip }},
+    "size": {{ sizeArray | strip }},
+    "shape": {{ shapeArray | strip }}
+  }
+  {% endcapture %}
 
   {% comment %}
     Output the result or use it in JavaScript
