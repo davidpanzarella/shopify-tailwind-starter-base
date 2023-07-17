@@ -82,7 +82,7 @@
     </script>
   {% endfor %}
 
-  {% assign uniqueSizes = '' | uniq %}
+  {% assign uniqueSizes = uniqueSizes | uniq %}
 
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
