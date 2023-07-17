@@ -102,11 +102,7 @@
       assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
       assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
-      if relatedProductTemplateOptions == currentTemplateOptions
-        echo 'same format'
-      endif
-
-      if relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
+      if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         echo 'test'
         assign uniqueColors = uniqueColors | concat: relatedProductColor
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
