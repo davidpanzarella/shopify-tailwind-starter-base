@@ -63,27 +63,16 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  {% assign current_product_type = product.metafields.custom['product-type'] | append: 's' %}
-  {% assign related_products = collections.all.products | where: 'type', current_product_type %}
-  {% assign uniqueSizes = '' | split: '' %}
-  {% for product in related_products %}
-    {% for size in product.metafields.custom['product-size'].value %}
-      <script>
-        console.log("sized",{{ size }});
-      </script>
-      {% assign uniqueSizes = uniqueSizes | concat: size %}
-    {% endfor %}
-  {% endfor %}
-
   {% liquid
-    assign colorDisplay = ''
-    assign color = product.metafields.custom.color.value[0]
+    assign current_product_type = product.metafields.custom['product-type'] | append: 's'
+    assign related_products = collections.all.products | where: 'type', current_product_type
+    assign uniqueSizes = '' | split: ''
 
-    if color == 'Black and White'
-      assign colorDisplay = 'B&W'
-    else
-      assign colorDisplay = color
-    endif
+    for size in related_products
+      if size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value
+        assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
+      endif
+    endfor
   %}
 
   {% for size in related_products %}
