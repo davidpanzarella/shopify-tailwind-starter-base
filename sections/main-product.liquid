@@ -141,15 +141,6 @@
     </script>
   {% endcomment %}
 
-  {% assign uniqueSizes = uniqueSizes | uniq | sort %}
-  {% assign uniqueColors = uniqueColors | uniq | sort %}
-
-  <script>
-    console.log("currentType", {{ currentType | json }});
-    console.log("uniqueSizes", {{ uniqueSizes | json }});
-    console.log("uniqueColors", {{ uniqueColors | json }});
-  </script>
-
   {% assign currentColor = product.metafields.custom.color.value[0] %}
   {% assign currentType = product.metafields.custom['product-type'] %}
   {% assign currentTypes = currentType | append: 's' %}
@@ -166,9 +157,9 @@
 
   {% assign matchedColor = false %}
 
-  {% capture colorArray %}[]{% endcapture %}
-  {% capture sizeArray %}[]{% endcapture %}
-  {% capture shapeArray %}[]{% endcapture %}
+  {% assign colorArray = '[]' | split: '' %}
+  {% assign sizeArray = '[]' | split: '' %}
+  {% assign shapeArray = '[]' | split: '' %}
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
@@ -188,46 +179,46 @@
     %}
       {% if relatedProductColor == currentColor and matchedColor == false %}
         {% assign colorObject = '{
-        "handle": null,
-        "name": "MATCHED COLOR"
-      }' %}
+          "handle": null,
+          "name": "MATCHED COLOR"
+        }' %}
         {% assign colorArray = colorArray | append: colorObject %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
         {% assign colorObject = '{
-        "handle": "'
+          "handle": "'
           | append: relatedProduct.handle
           | append: '",
-        "name": "'
+          "name": "'
           | append: relatedProductColor
           | append: '"
-      }'
+        }'
         %}
         {% assign colorArray = colorArray | append: colorObject %}
       {% endif %}
 
       {% if relatedProductShape != currentShape %}
         {% assign shapeObject = '{
-        "handle": "'
+          "handle": "'
           | append: relatedProduct.handle
           | append: '",
-        "name": "'
+          "name": "'
           | append: relatedProductShape
           | append: '"
-      }'
+        }'
         %}
         {% assign shapeArray = shapeArray | append: shapeObject %}
       {% endif %}
 
       {% if relatedProductSize != currentSize %}
         {% assign sizeObject = '{
-        "handle": "'
+          "handle": "'
           | append: relatedProduct.handle
           | append: '",
-        "name": "'
+          "name": "'
           | append: relatedProductSize
           | append: '"
-      }'
+        }'
         %}
         {% assign sizeArray = sizeArray | append: sizeObject %}
       {% endif %}
@@ -237,13 +228,18 @@
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
   {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
 
-  {% capture result %}
-  {
-    "color": {{ colorArray | strip }},
-    "size": {{ sizeArray | strip }},
-    "shape": {{ shapeArray | strip }}
-  }
-  {% endcapture %}
+  {% assign result = '{
+    "color": '
+    | append: colorArray
+    | append: ',
+    "size": '
+    | append: sizeArray
+    | append: ',
+    "shape": '
+    | append: shapeArray
+    | append: '
+  }'
+  %}
 
   {% comment %}
     Output the result or use it in JavaScript
@@ -251,15 +247,6 @@
 
   <script>
     var result = {{ result }};
-    console.log("result", result);
-  </script>
-
-  {% comment %}
-    Output the result or use it in JavaScript
-  {% endcomment %}
-
-  <script>
-    var result = {{ result | json }};
     console.log("result", result);
   </script>
 
