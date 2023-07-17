@@ -63,10 +63,10 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  {% comment %}
-    Fetch all products of the same type as the current product for the related products section
-  {% endcomment %}
   {% liquid
+    comment
+      Fetch all products of the same type as the current product for the related products section
+    endcomment
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentType = product.metafields.custom['product-type']
     assign currentTypes = currentType | append: 's'
