@@ -179,11 +179,13 @@
       %}
         {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
           {% assign colorObject[forloop.index].handle = null %}
+          {% assign colorObject[forloop.index].name = relatedProduct.title %}
+          {% echo colorObject %}
         {% elsif relatedProductColor != currentColor %}
           {% assign colorObject[forloop.index].handle = relatedProduct.handle %}
+          {% assign colorObject[forloop.index].name = relatedProduct.title %}
+          {% echo colorObject %}
         {% endif %}
-        {% assign colorObject[forloop.index].name = relatedProduct.title %}
-        {% echo colorObject %}
         {% assign colorArray = colorArray | concat: colorObject %}
         {% echo colorArray %}
 
