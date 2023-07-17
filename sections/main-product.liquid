@@ -80,7 +80,7 @@
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
 
-    assign uniqueColors = '' | split: ','
+    assign uniqueColors = ''
     assign uniqueShapes = ''
     assign uniqueSizes = ''
 
