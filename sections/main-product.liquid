@@ -104,7 +104,7 @@
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         assign currentUniqIndex = currentUniqIndex | plus: 1
         assign uniqueColors = uniqueColors | concat: relatedProductColor
-        echo uniqueColors
+        echo uniqueColors | append: ' '
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
         assign colorArray = colorArray | concat: relatedProductColor
