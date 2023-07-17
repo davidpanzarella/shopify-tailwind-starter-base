@@ -108,8 +108,7 @@
           assign uniqueColors = uniqueColors | concat: ',' | append: relatedProductColor
         endunless
 
-        assign uniqueColors = uniqueColors | concat: relatedProductColor
-        echo uniqueColors | append: ' '
+        echo uniqueColors
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
         assign colorArray = colorArray | concat: relatedProductColor
