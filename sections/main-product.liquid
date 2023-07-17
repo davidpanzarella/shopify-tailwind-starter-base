@@ -198,7 +198,7 @@
     {% endif %}
   {% endfor %}
   {%- endcapture -%}
-  {% assign items_array = items | escape | split: ',' %}
+  {% assign items_array = items | strip | split: ',' %}
 
   <script>
     console.log("items_array", {{ items_array | json }});
