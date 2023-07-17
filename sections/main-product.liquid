@@ -199,7 +199,7 @@
   {% endfor %}
   {%- endcapture -%}
   {% assign items_array = items | split: ',' %}
-  {%- assign items_trimmed = items_array | map: 'newline_to_br' | join: '' | replace: '<br>', '' -%}
+  {% assign items_trimmed = items_array | map: 'newline_to_br' | join: '', '' %}
 
   <script>
     console.log("items_array", {{ items_trimmed | json }});
