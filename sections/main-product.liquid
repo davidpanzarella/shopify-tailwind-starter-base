@@ -89,9 +89,6 @@
     assign sizeArray = ''
     assign currentIndex = 0
 
-    assign product_titles = relatedProductsByType | map: metafields.custom['product-shape']
-    echo product_titles
-
     for relatedProduct in relatedProductsByType
       assign sameProduct = false
 
