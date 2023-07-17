@@ -84,6 +84,7 @@
     assign uniqueProductByColor = ''
 
     for relatedProduct in relatedProductsByType
+      assign relatedProductType = relatedProduct.metafields.custom['product-type']
       if relatedProduct.handle != product.handle and relatedProduct.available and relatedProduct.metafields.custom['product-format'].value == currentFormat and relatedProduct.metafields.custom['product-template-name'].value == currentTemplate and relatedProduct.metafields.custom['product-template-options'].value == currentTemplateOptions
         assign uniqueColors = uniqueColors | concat: relatedProduct.metafields.custom.color.value
         assign uniqueShapes = uniqueShapes | concat: relatedProduct.metafields.custom['product-shape'].value
