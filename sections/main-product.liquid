@@ -110,7 +110,6 @@
         echo colorArray
 
         if relatedProductColor == currentColor
-          assign colorArray = colorArray[currentIndex].handle | concat: relatedProduct.handle
           if relatedProductShape != currentShape
             assign uniqueProductByShape = relatedProduct.handle
           endif
