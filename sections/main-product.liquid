@@ -75,7 +75,7 @@
     echo currentColor | append: ' - '
     echo currentProductType | append: ' - '
     echo currentTemplate | append: ' - '
-    echo currentTemplateOptions | append: ' - '
+    echo currentTemplateOptions
 
     for size in related_products_by_type
       if size.available and size.metafields.custom['product-type'].value == currentProductType and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions and size.metafields.custom.color.value == currentColor
