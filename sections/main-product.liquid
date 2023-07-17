@@ -93,15 +93,6 @@
     console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
   </script>
 
-  {% comment %}
-    {% for size in related_products_by_type %}
-      {% assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value %}
-      <script>
-        console.log("sized",{{ size.metafields.custom.product-size.value | json }});
-      </script>
-    {% endfor %}
-  {% endcomment %}
-
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
 
   <script>
