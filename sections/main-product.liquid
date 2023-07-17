@@ -179,23 +179,13 @@
       %}
         {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
           {% assign colorObject[forloop.index].handle = null %}
-          {% assign colorObject[forloop.index].name = relatedProduct.title %}
-          {% echo colorObject %}
-          {% assign colorArray = colorArray | append: colorObject %}
-          {% echo colorArray %}
-          {% assign matchedColor = true %}
         {% elsif relatedProductColor != currentColor %}
-          {% assign colorObject = '[{
-          "handle": "'
-            | append: relatedProduct.handle
-            | append: '",
-          "name": "'
-            | append: relatedProductColor
-            | append: '"
-        }]'
-          %}
-          {% assign colorArray = colorArray | concat: colorObject %}
+          {% assign colorObject[forloop.index].handle = relatedProduct.handle %}
         {% endif %}
+        {% assign colorObject[forloop.index].name = relatedProduct.title %}
+        {% echo colorObject %}
+        {% assign colorArray = colorArray | concat: colorObject %}
+        {% echo colorArray %}
 
         {% if relatedProductShape != currentShape %}
           {% assign shapeObject = '[{
