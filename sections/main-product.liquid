@@ -181,6 +181,7 @@
       {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
       {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+      {% echo uniqueColors %}
 
       {% if relatedProduct.available
         and relatedProductFormat == currentFormat
