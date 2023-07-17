@@ -232,13 +232,13 @@
 
   {% assign result = '{
     "color": '
-    | append: [colorArray]
+    | append: colorArray
     | append: ',
     "size": '
-    | append: [sizeArray]
+    | append: sizeArray
     | append: ',
     "shape": '
-    | append: [shapeArray]
+    | append: shapeArray
     | append: '
   }'
   %}
