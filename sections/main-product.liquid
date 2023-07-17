@@ -172,7 +172,7 @@
 
   {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
 
-  {% assign uniqueColors = '' %}
+  {% assign uniqueColors = '' | split: '' %}
   {% assign uniqueShapes = '' | split: '' %}
   {% assign uniqueSizes = '' | split: '' %}
 
