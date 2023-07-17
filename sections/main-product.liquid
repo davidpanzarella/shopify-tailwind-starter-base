@@ -85,18 +85,18 @@
 
     for size in related_products_by_type
       if size.metafields.custom['product-format'].value == currentFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
+        assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
+        assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
+        assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
         if size.metafields.custom.color.value[0] != currentColor
-          assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
           assign uniqueProductByColor = size.title | handle
         endif
 
         if size.metafields.custom['product-shape'][0] != currentShape
-          assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
           assign uniqueProductByShape = size.title | handle
         endif
 
         if size.metafields.custom['product-size'][0] != currentSize
-          assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
           assign uniqueProductBySize = size.title | handle
         endif
       endif
@@ -128,7 +128,7 @@
   </script>
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
-  {% assign uniqueColors = uniqueColors | uniq | sort %}
+  {% assign uniqueColors = uniqueColors | sort | uniq %}
 
   <script>
     console.log("currentType", {{ currentType | json }});
