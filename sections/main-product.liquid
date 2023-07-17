@@ -72,10 +72,6 @@
     assign currentProductFormat = product.metafields.custom['product-format'].value
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
-    echo currentColor | append: ' - '
-    echo currentProductFormat | append: ' - '
-    echo currentTemplate | append: ' - '
-    echo currentTemplateOptions
     assign uniqueProductByColor = ''
 
     for size in related_products_by_type
@@ -83,8 +79,6 @@
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
         if size.metafields.custom.color.value[0] != currentColor
-          echo size.title | append: ' - '
-          echo size.handle | append: ' - '
           assign uniqueProductByColor = size.title | handle
         endif
       endif
