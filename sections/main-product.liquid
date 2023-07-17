@@ -219,6 +219,8 @@
   {%- endfor -%}
 
   <script>
+    console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
+    console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
     console.log("items_array", {{ items_array | json }});
     console.log("test", {{ test | json }});
   </script>
