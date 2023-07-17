@@ -360,9 +360,65 @@
       <div class="tw-mt-10 lg:tw-col-start-1 lg:tw-row-start-2 lg:tw-max-w-lg lg:tw-self-start">
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
-
           <form>
             <div class="sm:tw-flex sm:tw-justify-between">
+              {% for relatedProduct in relatedProductsByType %}
+                {%- if forloop.length > 0 -%}
+                  {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+                  {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+                  {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+                  {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+                  {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+                  {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+
+                  {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+
+                  {% if relatedProduct.available
+                    and relatedProductFormat == currentFormat
+                    and relatedProductTemplate == currentTemplate
+                    and relatedProductTemplateOptions == currentTemplateOptions
+                  %}
+                    {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
+                      {% assign colorArray[forloop.index].handle = null %}
+                      {% assign colorArray[forloop.index].name = relatedProduct.title %}
+                      {% echo colorArray %}
+                    {% elsif relatedProductColor != currentColor %}
+                      {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
+                      {% assign colorArray[forloop.index].name = relatedProduct.title %}
+                      {% echo colorArray %}
+                    {% endif %}
+                    {% echo colorArray %}
+                    {% comment %}
+                      {% if relatedProductShape != currentShape %}
+                        {% assign shapeObject = '[{
+                        "handle": "'
+                          | append: relatedProduct.handle
+                          | append: '",
+                        "name": "'
+                          | append: relatedProductShape
+                          | append: '"
+                      }]'
+                        %}
+                        {% assign shapeArray = shapeArray | concat: shapeObject %}
+                      {% endif %}
+
+                      {% if relatedProductSize != currentSize %}
+                        {% assign sizeObject = '[{
+                        "handle": "'
+                          | append: relatedProduct.handle
+                          | append: '",
+                        "name": "'
+                          | append: relatedProductSize
+                          | append: '"
+                      }]'
+                        %}
+                        {% assign sizeArray = sizeArray | concat: sizeObject %}
+                      {% endif %}
+                    {% endcomment %}
+                  {% endif %}
+                {%- endif -%}
+              {% endfor %}
+
               <!-- Size selector -->
               <fieldset>
                 <legend class="tw-block tw-text-base tw-font-medium tw-text-gray-700">Design Options</legend>
