@@ -197,7 +197,9 @@
       {% assign uniqueColors = uniqueColors | concat: relatedProductColor | uniq %}
       {% echo uniqueColors %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape | uniq %}
+      {% echo uniqueShapes %}
       {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize | uniq %}
+      {% echo uniqueSizes %}
 
       {% if relatedProductColor == currentColor and relatedProductShape != currentShape %}
         {% assign uniqueProductByShape = relatedProduct.title | handle %}
