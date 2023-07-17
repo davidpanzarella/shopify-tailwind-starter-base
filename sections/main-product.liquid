@@ -87,9 +87,11 @@
     assign colorArray = ''
     assign shapeArray = ''
     assign sizeArray = ''
+    assign currentIndex = 0
 
     for relatedProduct in relatedProductsByType
-      assign currentIndex = 0
+      assign currentIndex = 0 | plus: currentIndex
+      echo currentIndex
       assign sameProduct = false
 
       if relatedProduct.handle == product.handle
