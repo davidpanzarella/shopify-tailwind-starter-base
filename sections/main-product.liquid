@@ -104,7 +104,7 @@
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         assign currentUniqIndex = currentUniqIndex | plus: 1
         echo relatedProductColor
-        assign uniqueColors = uniqueColors | concat: relatedProduct.metafields.custom.color.value[0]
+        assign uniqueColors = uniqueColors | append: currentUniqIndex | concat: relatedProductColor
 
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
