@@ -68,25 +68,36 @@
   {% endcomment %}
   {% liquid
     assign currentColor = product.metafields.custom.color.value[0]
-    assign currentProductType = product.metafields.custom['product-type']
-    assign currentProductTypes = currentProductType | append: 's'
-    assign currentProductFormat = product.metafields.custom['product-format'].value
-    assign currentProductShape = product.metafields.custom['product-shape'].value
+    assign currentType = product.metafields.custom['product-type']
+    assign currentTypes = currentType | append: 's'
+    assign currentFormat = product.metafields.custom['product-format'].value
+    assign currentShape = product.metafields.custom['product-shape'].value
     assign currentSize = product.metafields.custom['product-size'].value
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
-    assign related_products_by_type = collections.all.products | where: 'type', currentProductTypes
+    assign related_products_by_type = collections.all.products | where: 'type', currentTypes
 
     assign uniqueColors = '' | split: ''
-    assign uniqueProductByColor = ''
+    assign uniqueShapes = '' | split: ''
     assign uniqueSizes = '' | split: ''
 
+    assign uniqueProductByColor = ''
+
     for size in related_products_by_type
-      if size.available and size.metafields.custom['product-format'].value == currentProductFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
+      if size.available and size.metafields.custom['product-format'].value == currentFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
+        assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
         if size.metafields.custom.color.value[0] != currentColor
           assign uniqueProductByColor = size.title | handle
+        endif
+
+        if size.metafields.custom['product-shape'] != currentShape
+          assign uniqueProductByShape = size.title | handle
+        endif
+
+        if size.metafields.custom['product-size'] != currentSize
+          assign uniqueProductBySize = size.title | handle
         endif
       endif
     endfor
@@ -111,6 +122,8 @@
   <script>
     console.log("related_products_by_type", {{ related_products_by_type | json }});
     console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
+    console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
+    console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
   </script>
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
