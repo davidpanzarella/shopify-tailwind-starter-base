@@ -221,8 +221,8 @@
   {% assign uniqueColors = colorArray | map: 'name' | uniq %}
 
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
-  {% echo uniqueSizes %}
   {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
+  {% echo uniqueSizes %}
 
   {% assign result = '{
       "color": '
