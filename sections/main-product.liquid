@@ -90,7 +90,7 @@
     assign currentIndex = 0
 
     for relatedProduct in relatedProductsByType
-      assign currentIndex = 0 | plus: currentIndex
+      assign currentIndex = currentIndex | plus: 1
       echo currentIndex
       assign sameProduct = false
 
