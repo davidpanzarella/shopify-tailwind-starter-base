@@ -92,11 +92,11 @@
           assign uniqueProductByColor = size.title | handle
         endif
 
-        if size.metafields.custom['product-shape'] != currentShape
+        if size.metafields.custom['product-shape'][0] != currentShape
           assign uniqueProductByShape = size.title | handle
         endif
 
-        if size.metafields.custom['product-size'] != currentSize
+        if size.metafields.custom['product-size'][0] != currentSize
           assign uniqueProductBySize = size.title | handle
         endif
       endif
