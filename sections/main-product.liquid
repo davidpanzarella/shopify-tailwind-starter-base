@@ -388,13 +388,13 @@
                   {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
                     {% assign colorArray[forloop.index].handle = null %}
                     {% assign colorArray[forloop.index].name = relatedProduct.title %}
-                    {% echo colorArray %}
+                    {% comment %} {% echo colorArray %} {% endcomment %}
                   {% elsif relatedProductColor != currentColor %}
                     {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
                     {% assign colorArray[forloop.index].name = relatedProduct.title %}
-                    {% echo colorArray %}
+                    {% comment %} {% echo colorArray %} {% endcomment %}
                   {% endif %}
-                  {% echo colorArray %}
+                  {% comment %} {% echo colorArray %} {% endcomment %}
                   {% comment %}
                     {% if relatedProductShape != currentShape %}
                       {% assign shapeObject = '[{
