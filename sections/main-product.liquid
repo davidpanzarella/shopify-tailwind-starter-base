@@ -88,16 +88,20 @@
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
-        if size.metafields.custom['product-size'][0] != currentSize
-          assign uniqueProductBySize = size.title | handle
-        endif
-
         if size.metafields.custom.color.value[0] != currentColor
           assign uniqueProductByColor = size.title | handle
+        else
+          assign uniqueProductByShape = size.title | handle
+        else
+          assign uniqueProductBySize = size.title | handle
         endif
 
         if size.metafields.custom['product-shape'][0] != currentShape
           assign uniqueProductByShape = size.title | handle
+        endif
+
+        if size.metafields.custom['product-size'][0] != currentSize
+          assign uniqueProductBySize = size.title | handle
         endif
       endif
     endfor
