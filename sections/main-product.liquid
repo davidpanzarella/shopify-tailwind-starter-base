@@ -199,9 +199,10 @@
   {% endfor %}
   {%- endcapture -%}
   {% assign items_array = items | split: ',' %}
+  {%- assign items_trimmed = items_array | map: 'newline_to_br' | join: '' | replace: '<br>', '' -%}
 
   <script>
-    console.log("items_array", {{ items_array | json }});
+    console.log("items_array", {{ items_trimmed | json }});
   </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
