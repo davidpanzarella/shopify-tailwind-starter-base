@@ -149,111 +149,101 @@
      //console.log("productTitleDisplay", {{ productTitleDisplay | json }});
   </script>
 
-  {% comment %}
-    {% assign currentColor = product.metafields.custom.color.value[0] %}
-    {% assign currentType = product.metafields.custom['product-type'] %}
-    {% assign currentTypes = currentType | append: 's' %}
-    {% assign currentFormat = product.metafields.custom['product-format'].value %}
-    {% assign currentShape = product.metafields.custom['product-shape'].value[0] %}
-    {% assign currentSize = product.metafields.custom['product-size'].value[0] %}
-    {% assign currentTemplate = product.metafields.custom['product-template-name'].value %}
-    {% assign currentTemplateOptions = product.metafields.custom['product-template-options'].value %}
-    {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
+  {% assign currentColor = product.metafields.custom.color.value[0] %}
+  {% assign currentType = product.metafields.custom['product-type'] %}
+  {% assign currentTypes = currentType | append: 's' %}
+  {% assign currentFormat = product.metafields.custom['product-format'].value %}
+  {% assign currentShape = product.metafields.custom['product-shape'].value[0] %}
+  {% assign currentSize = product.metafields.custom['product-size'].value[0] %}
+  {% assign currentTemplate = product.metafields.custom['product-template-name'].value %}
+  {% assign currentTemplateOptions = product.metafields.custom['product-template-options'].value %}
+  {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
 
-    {% assign uniqueColors = '' | split: ',' %}
-    {% assign uniqueShapes = '' | split: ',' %}
-    {% assign uniqueSizes = '' | split: ',' %}
+  {% assign uniqueColors = '' | split: ',' %}
+  {% assign uniqueShapes = '' | split: ',' %}
+  {% assign uniqueSizes = '' | split: ',' %}
 
-    {% assign colorArray = '' | split: '' %}
-    {% assign sizeArray = '' | split: '' %}
-    {% assign shapeArray = '' | split: '' %}
+  {% assign colorArray = '' | split: '' %}
+  {% assign sizeArray = '' | split: '' %}
+  {% assign shapeArray = '' | split: '' %}
 
-    {% for relatedProduct in relatedProductsByType %}
-      {%- if forloop.length > 0 -%}
-        {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
-        {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
-        {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
-        {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
-        {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
-        {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+  {% for relatedProduct in relatedProductsByType %}
+    {%- if forloop.length > 0 -%}
+      {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+      {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+      {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+      {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+      {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+      {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-        {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+      {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
 
-        {% if relatedProduct.available
-          and relatedProductFormat == currentFormat
-          and relatedProductTemplate == currentTemplate
-          and relatedProductTemplateOptions == currentTemplateOptions
-        %}
-          {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
-            {% assign colorArray[forloop.index].handle = null %}
-            {% assign colorArray[forloop.index].name = relatedProduct.title %}
-            {% echo colorArray %}
-          {% elsif relatedProductColor != currentColor %}
-            {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
-            {% assign colorArray[forloop.index].name = relatedProduct.title %}
-            {% echo colorArray %}
-          {% endif %}
+      {% if relatedProduct.available
+        and relatedProductFormat == currentFormat
+        and relatedProductTemplate == currentTemplate
+        and relatedProductTemplateOptions == currentTemplateOptions
+      %}
+        {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
+          {% assign colorArray[forloop.index].handle = null %}
+          {% assign colorArray[forloop.index].name = relatedProduct.title %}
           {% echo colorArray %}
-          {% comment %}
-            {% if relatedProductShape != currentShape %}
-              {% assign shapeObject = '[{
-              "handle": "'
-                | append: relatedProduct.handle
-                | append: '",
-              "name": "'
-                | append: relatedProductShape
-                | append: '"
-            }]'
-              %}
-              {% assign shapeArray = shapeArray | concat: shapeObject %}
-            {% endif %}
-
-            {% if relatedProductSize != currentSize %}
-              {% assign sizeObject = '[{
-              "handle": "'
-                | append: relatedProduct.handle
-                | append: '",
-              "name": "'
-                | append: relatedProductSize
-                | append: '"
-            }]'
-              %}
-              {% assign sizeArray = sizeArray | concat: sizeObject %}
-            {% endif %}
-          {% endcomment %}
+        {% elsif relatedProductColor != currentColor %}
+          {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
+          {% assign colorArray[forloop.index].name = relatedProduct.title %}
+          {% echo colorArray %}
         {% endif %}
-      {%- endif -%}
-    {% endfor %}
+        {% echo colorArray %}
+        {% comment %}
+          {% if relatedProductShape != currentShape %}
+            {% assign shapeObject = '[{
+            "handle": "'
+              | append: relatedProduct.handle
+              | append: '",
+            "name": "'
+              | append: relatedProductShape
+              | append: '"
+          }]'
+            %}
+            {% assign shapeArray = shapeArray | concat: shapeObject %}
+          {% endif %}
 
-    {% assign uniqueColors = colorArray | map: 'name' | uniq %}
-    {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
-    {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
-  {% endcomment %}
+          {% if relatedProductSize != currentSize %}
+            {% assign sizeObject = '[{
+            "handle": "'
+              | append: relatedProduct.handle
+              | append: '",
+            "name": "'
+              | append: relatedProductSize
+              | append: '"
+          }]'
+            %}
+            {% assign sizeArray = sizeArray | concat: sizeObject %}
+          {% endif %}
+        {% endcomment %}
+      {% endif %}
+    {%- endif -%}
+  {% endfor %}
 
-  {% comment %}
-    {% assign result = '{
+  {% assign uniqueColors = colorArray | map: 'name' | uniq %}
+  {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
+  {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
+
+  {% assign result = '{
       "color": '
-      | append: colorArray
-      | append: ',
+    | append: colorArray
+    | append: ',
       "size": '
-      | append: sizeArray
-      | append: ',
+    | append: sizeArray
+    | append: ',
       "shape": '
-      | append: shapeArray
-      | append: '
+    | append: shapeArray
+    | append: '
     }'
-    %}
-  {% endcomment %}
+  %}
 
-  {% comment %}
-    Output the result or use it in JavaScript
-  {% endcomment %}
-
-  {% comment %}
-    <script>
-      console.log("result", {{ colorArray | json }}}});
-    </script>
-  {% endcomment %}
+  <script>
+    console.log("result", {{ colorArray | json }}}});
+  </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
