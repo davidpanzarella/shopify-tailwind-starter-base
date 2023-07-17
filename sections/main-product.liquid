@@ -87,34 +87,33 @@
     assign collorArray = '' | split: ''
 
     for relatedProduct in relatedProductsByType
-      if forloop.length > 0
-        assign currentIndex = forloop | json
-        echo currentIndex
-        assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
-        assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
-        assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
-        assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
-        assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
-        assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
+      assign currentIndex = 0
+      echo currentIndex
+      assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
+      assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
+      assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
+      assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
+      assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
+      assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
-        if relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-          assign uniqueColors = uniqueColors | concat: relatedProductColor
-          assign uniqueShapes = uniqueShapes | concat: relatedProductShape
-          assign uniqueSizes = uniqueSizes | concat: relatedProductSize
+      if relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
+        assign uniqueColors = uniqueColors | concat: relatedProductColor
+        assign uniqueShapes = uniqueShapes | concat: relatedProductShape
+        assign uniqueSizes = uniqueSizes | concat: relatedProductSize
 
-          if relatedProductColor == currentColor
-            if relatedProductShape != currentShape
-              assign uniqueProductByShape = relatedProduct.title | handle
-            endif
-          else
-            assign uniqueProductByColor = relatedProduct.title | handle
+        if relatedProductColor == currentColor
+          if relatedProductShape != currentShape
+            assign uniqueProductByShape = relatedProduct.title | handle
           endif
+        else
+          assign uniqueProductByColor = relatedProduct.title | handle
+        endif
 
-          if relatedProduct.metafields.custom['product-size'][0] != currentSize
-            assign uniqueProductBySize = relatedProduct.title | handle
-          endif
+        if relatedProduct.metafields.custom['product-size'][0] != currentSize
+          assign uniqueProductBySize = relatedProduct.title | handle
         endif
       endif
+      increment currentIndex
     endfor
 
     assign colorDisplay = ''
