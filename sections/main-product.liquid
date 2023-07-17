@@ -68,9 +68,13 @@
     assign related_products_by_type = collections.all.products | where: 'type', current_product_type
     assign uniqueColors = '' | split: ''
     assign uniqueSizes = '' | split: ''
+    assign currentColor = product.metafields.custom.color.value
+    assign currentProductType = product.metafields.custom[product-type].value
+    assign currentTemplate = product.metafields.custom['product-template-name'].value
+    assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
 
     for size in related_products_by_type
-      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value and size.metafields.custom['product-template-options'].value == product.metafields.custom['product-template-options'].value and size.metafields.custom.color.value == product.metafields.custom.color.value
+      if size.available and size.metafields.custom['product-type'].value == currentProductType and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions and size.metafields.custom.color.value == currentColor
         echo size.title | append: ' - '
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
