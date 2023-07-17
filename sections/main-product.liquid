@@ -103,10 +103,7 @@
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
         assign currentUniqIndex = currentUniqIndex | plus: 1
-        echo relatedProductColor | append: currentUniqIndex | append: '<br>'
-        echo uniqueColors | append: currentUniqIndex | append: '<br>'
         assign uniqueColors = uniqueColors | append: relatedProductColor
-        echo uniqueColors | append: currentUniqIndex
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
         assign colorArray = colorArray | concat: relatedProductColor
