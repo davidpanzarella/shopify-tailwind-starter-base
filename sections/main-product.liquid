@@ -219,6 +219,8 @@
   {% endfor %}
 
   {% assign uniqueColors = colorArray | map: 'name' | uniq %}
+  {% echo uniqueColors %}
+
   {% assign uniqueSizes = sizeArray | map: 'name' | uniq %}
   {% assign uniqueShapes = shapeArray | map: 'name' | uniq %}
 
