@@ -65,7 +65,7 @@
 
   {% assign current_product_type = product.metafields.custom['product-type'] | append: 's' %}
   {% assign related_products = collections.all.products | where: 'type', current_product_type %}
-  {% assign uniqueSizes = related_products | map: 'metafields.custom.product-size.value' | compact | uniq %}
+  {% assign uniqueSizes = related_products | map: 'metafields.custom.product-size' | compact | uniq %}
 
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
