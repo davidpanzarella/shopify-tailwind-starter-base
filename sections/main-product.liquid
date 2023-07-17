@@ -65,7 +65,10 @@
 
   {% liquid
     comment
-      Fetch all products of the same type as the current product for the related products section
+      Get all products of the same product type as the current product for the related products section
+      - If the current product is the same color as the related product, but a different shape, size, or format
+        then create a unique list for each that holds the related product handle and the name of the shape, size, or format
+        otherwise, if the current product is a different color than the related product, then create a unique list for the other color
     endcomment
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentType = product.metafields.custom['product-type']
@@ -83,11 +86,6 @@
 
     assign uniqueProductByColor = ''
 
-    comment
-      If the related product is the same color as the current product, but a different shape, assign the unique product by shape
-      If the related product is a different color than the current product, assign the unique product by color
-      If the related product is a different size than the current product, assign the unique product by size
-    endcomment
     for relatedProduct in relatedProductsByType
       assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
       assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
