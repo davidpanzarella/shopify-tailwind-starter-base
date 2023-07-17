@@ -84,7 +84,7 @@
     assign uniqueProductByColor = ''
 
     for size in related_products_by_type
-      if size.available and size.metafields.custom['product-format'].value == currentFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
+      if size.metafields.custom['product-format'].value == currentFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
