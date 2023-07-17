@@ -111,14 +111,14 @@
         if relatedProductColor == currentColor
           assign colorArray = colorArray[currentIndex].handle | concat: relatedProduct.handle
           if relatedProductShape != currentShape
-            assign uniqueProductByShape = relatedProduct.title | handle
+            assign uniqueProductByShape = relatedProduct.handle
           endif
         else
-          assign uniqueProductByColor = relatedProduct.title | handle
+          assign uniqueProductByColor = relatedProduct.handle
         endif
 
         if relatedProductSize != currentSize
-          assign uniqueProductBySize = relatedProduct.title | handle
+          assign uniqueProductBySize = relatedProduct.handle
         endif
       endif
       increment currentIndex
