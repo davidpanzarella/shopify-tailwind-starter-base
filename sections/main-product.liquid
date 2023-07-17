@@ -383,7 +383,7 @@
                   {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
                   {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
 
-                  {% echo relatedProductColor %}
+                  {% comment %} {% echo relatedProductColor %} {% endcomment %}
                   {% comment %} {% echo relatedProductSize %} {% endcomment %}
                   {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
                     {% assign colorArray[forloop.index].handle = null %}
