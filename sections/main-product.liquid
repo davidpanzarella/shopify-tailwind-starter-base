@@ -151,9 +151,9 @@
   {% assign currentTemplateOptions = product.metafields.custom['product-template-options'].value %}
   {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
 
-  {% assign uniqueColors = '' | split: '' %}
-  {% assign uniqueShapes = '' | split: '' %}
-  {% assign uniqueSizes = '' | split: '' %}
+  {% assign uniqueColors = '' | split: ',' %}
+  {% assign uniqueShapes = '' | split: ',' %}
+  {% assign uniqueSizes = '' | split: ',' %}
 
   {% assign matchedColor = false %}
 
@@ -182,6 +182,7 @@
           "handle": null,
           "name": "MATCHED COLOR"
         }' %}
+        echo colorObject
         {% assign colorArray = colorArray | concat: colorObject %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
