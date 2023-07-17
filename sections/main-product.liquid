@@ -65,7 +65,7 @@
 
   {% assign current_product_type = product.metafields.custom['product-type'] %}
   {% assign all_products = collections.all.products %}
-  {% assign related_products = collections.all.products | where: 'metafields.custom.color', 'Black and White' %}
+  {% assign related_products = collections.all.products | where: 'type', 'Keg Collars' %}
 
   <script>
     console.log("current_product_type", {{ current_product_type | json }});
