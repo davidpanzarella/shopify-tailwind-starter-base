@@ -171,16 +171,15 @@
 
     {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
 
-    {% if relatedProduct.handle != product.handle
-      and relatedProduct.available
+    {% if relatedProduct.available
       and relatedProductFormat == currentFormat
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      {% if relatedProductColor == currentColor and matchedColor == false %}
+      {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
         {% assign colorObject = '{
           "handle": null,
-          "name": "MATCHED COLOR"
+          "name": relatedProduct.title
         }' %}
         {% echo colorObject %}
         {% assign colorArray = colorArray | append: colorObject %}
