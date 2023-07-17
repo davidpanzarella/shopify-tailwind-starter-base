@@ -71,8 +71,8 @@
     assign currentType = product.metafields.custom['product-type']
     assign currentTypes = currentType | append: 's'
     assign currentFormat = product.metafields.custom['product-format'].value
-    assign currentShape = product.metafields.custom['product-shape'].value
-    assign currentSize = product.metafields.custom['product-size'].value
+    assign currentShape = product.metafields.custom['product-shape'].value[0]
+    assign currentSize = product.metafields.custom['product-size'].value[0]
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     assign related_products_by_type = collections.all.products | where: 'type', currentTypes
