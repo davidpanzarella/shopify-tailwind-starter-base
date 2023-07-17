@@ -90,8 +90,6 @@
     assign currentIndex = 0
 
     for relatedProduct in relatedProductsByType
-      assign currentIndex = currentIndex | plus: 1
-      echo currentIndex
       assign sameProduct = false
 
       if relatedProduct.handle == product.handle
@@ -105,8 +103,8 @@
       assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-        echo relatedProductColor
-        echo colorArray[currentIndex] | json
+        assign currentIndex = currentIndex | plus: 1
+        echo currentIndex
 
         assign uniqueColors = uniqueColors | concat: relatedProductColor
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
