@@ -68,7 +68,7 @@
     assign related_products_by_type = collections.all.products | where: 'type', current_product_type
     assign uniqueColors = '' | split: ''
     assign uniqueSizes = '' | split: ''
-    assign currentColor = product.metafields.custom.color[0].value
+    assign currentColor = product.metafields.custom.color.value[0]
     assign currentProductType = product.metafields.custom['product-type'].value
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
