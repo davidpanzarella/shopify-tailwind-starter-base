@@ -103,6 +103,8 @@
       assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
       if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
+        echo relatedProductsByType | json
+
         assign uniqueColors = uniqueColors | concat: relatedProductColor
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
