@@ -359,73 +359,75 @@
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
-            {% for relatedProduct in relatedProductsByType %}
-              {%- if forloop.length > 0 -%}
-                {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
-                {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
-                {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
-                {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
-                {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
-                {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+            {% comment %}
+              {% for relatedProduct in relatedProductsByType %}
+                {%- if forloop.length > 0 -%}
+                  {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+                  {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+                  {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+                  {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+                  {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+                  {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-                {% comment %} {% assign uniqueColors = '' %} {% endcomment %}
-                {% assign uniqueShapes = '' %}
-                {% assign uniqueSizes = '' %}
+                  {% comment %} {% assign uniqueColors = '' %} {% endcomment %}
+                  {% assign uniqueShapes = '' %}
+                  {% assign uniqueSizes = '' %}
 
-                {% if relatedProduct.available
-                  and relatedProductFormat == currentFormat
-                  and relatedProductTemplate == currentTemplate
-                  and relatedProductTemplateOptions == currentTemplateOptions
-                %}
-                  {% assign currentIndex = currentIndex | plus: 1 %}
-                  {% echo currentIndex %}
+                  {% if relatedProduct.available
+                    and relatedProductFormat == currentFormat
+                    and relatedProductTemplate == currentTemplate
+                    and relatedProductTemplateOptions == currentTemplateOptions
+                  %}
+                    {% assign currentIndex = currentIndex | plus: 1 %}
+                    {% echo currentIndex %}
 
-                  {% comment %} {% assign uniqueColors = uniqueColors | concat: relatedProductColor %} {% endcomment %}
-                  {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
-                  {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
+                    {% comment %} {% assign uniqueColors = uniqueColors | concat: relatedProductColor %} {% endcomment %}
+                    {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
+                    {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
 
-                  {% comment %} {% echo relatedProductColor %} {% endcomment %}
-                  {% comment %} {% echo relatedProductSize %} {% endcomment %}
-                  {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
-                    {% assign colorArray[forloop.index].handle = null %}
-                    {% assign colorArray[forloop.index].name = relatedProduct.title %}
+                    {% comment %} {% echo relatedProductColor %} {% endcomment %}
+                    {% comment %} {% echo relatedProductSize %} {% endcomment %}
+                    {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
+                      {% assign colorArray[forloop.index].handle = null %}
+                      {% assign colorArray[forloop.index].name = relatedProduct.title %}
+                      {% comment %} {% echo colorArray %} {% endcomment %}
+                    {% elsif relatedProductColor != currentColor %}
+                      {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
+                      {% assign colorArray[forloop.index].name = relatedProduct.title %}
+                      {% comment %} {% echo colorArray %} {% endcomment %}
+                    {% endif %}
                     {% comment %} {% echo colorArray %} {% endcomment %}
-                  {% elsif relatedProductColor != currentColor %}
-                    {% assign colorArray[forloop.index].handle = relatedProduct.handle %}
-                    {% assign colorArray[forloop.index].name = relatedProduct.title %}
-                    {% comment %} {% echo colorArray %} {% endcomment %}
+                    {% comment %}
+                      {% if relatedProductShape != currentShape %}
+                        {% assign shapeObject = '[{
+                        "handle": "'
+                          | append: relatedProduct.handle
+                          | append: '",
+                        "name": "'
+                          | append: relatedProductShape
+                          | append: '"
+                      }]'
+                        %}
+                        {% assign shapeArray = shapeArray | concat: shapeObject %}
+                      {% endif %}
+
+                      {% if relatedProductSize != currentSize %}
+                        {% assign sizeObject = '[{
+                        "handle": "'
+                          | append: relatedProduct.handle
+                          | append: '",
+                        "name": "'
+                          | append: relatedProductSize
+                          | append: '"
+                      }]'
+                        %}
+                        {% assign sizeArray = sizeArray | concat: sizeObject %}
+                      {% endif %}
+                    {% endcomment %}
                   {% endif %}
-                  {% comment %} {% echo colorArray %} {% endcomment %}
-                  {% comment %}
-                    {% if relatedProductShape != currentShape %}
-                      {% assign shapeObject = '[{
-                      "handle": "'
-                        | append: relatedProduct.handle
-                        | append: '",
-                      "name": "'
-                        | append: relatedProductShape
-                        | append: '"
-                    }]'
-                      %}
-                      {% assign shapeArray = shapeArray | concat: shapeObject %}
-                    {% endif %}
-
-                    {% if relatedProductSize != currentSize %}
-                      {% assign sizeObject = '[{
-                      "handle": "'
-                        | append: relatedProduct.handle
-                        | append: '",
-                      "name": "'
-                        | append: relatedProductSize
-                        | append: '"
-                    }]'
-                      %}
-                      {% assign sizeArray = sizeArray | concat: sizeObject %}
-                    {% endif %}
-                  {% endcomment %}
-                {% endif %}
-              {%- endif -%}
-            {% endfor %}
+                {%- endif -%}
+              {% endfor %}
+            {% endcomment %}
 
             <!-- Size selector -->
             <div class="sm:tw-flex sm:tw-justify-between">
