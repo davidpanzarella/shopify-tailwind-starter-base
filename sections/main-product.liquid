@@ -67,10 +67,11 @@
     Fetch all products of the same type as the current product for the related products section
   {% endcomment %}
   {% liquid
-    assign current_product_type = product.metafields.custom['product-type'] | append: 's'
-    assign related_products_by_type = collections.all.products | where: 'type', current_product_type
+    assign currentProductType = product.metafields.custom['product-type'] | append: 's'
+    assign related_products_by_type = collections.all.products | where: 'type', currentProductType
     assign uniqueColors = '' | split: ''
     assign uniqueSizes = '' | split: ''
+
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentProductFormat = product.metafields.custom['product-format'].value
     assign currentTemplate = product.metafields.custom['product-template-name'].value
@@ -96,7 +97,7 @@
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
 
   <script>
-    console.log("current_product_type", {{ current_product_type | json }});
+    console.log("currentProductType", {{ currentProductType | json }});
     console.log("uniqueColors", {{ uniqueColors | json }});
     console.log("uniqueSizes", {{ uniqueSizes | json }});
   </script>
