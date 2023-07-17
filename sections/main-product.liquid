@@ -179,6 +179,7 @@
   {% assign uniqueProductByColor = '' %}
   {% assign uniqueProductByShape = '' %}
   {% assign uniqueProductBySize = '' %}
+  {% assign test = '' | split: '' %}
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
@@ -193,6 +194,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
+      {% assign test = test | concat: relatedProduct | append: ',' %}
       {% assign uniqueColors = uniqueColors | concat: relatedProductColor | append: ',' %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
       {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
@@ -212,7 +214,7 @@
   {% endfor %}
 
   <script>
-    console.log("uniqueColors", {{ uniqueColors | json }});
+    console.log("test", {{ test | json }});
   </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
