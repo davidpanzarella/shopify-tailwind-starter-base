@@ -95,7 +95,7 @@
       if relatedProduct.handle == product.handle
         assign sameProduct = true
       endif
-
+      echo sameProduct
       assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
       assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
       assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
