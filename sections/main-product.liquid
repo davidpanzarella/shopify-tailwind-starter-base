@@ -66,10 +66,11 @@
   {% liquid
     assign current_product_type = product.metafields.custom['product-type'] | append: 's'
     assign related_products = collections.all.products | where: 'type', current_product_type
+    assign uniqueColors = '' | split: ''
     assign uniqueSizes = '' | split: ''
 
     for size in related_products
-      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value
+      if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value and size.metafields.custom['product-template-options'].value == product.metafields.custom['product-template-options'].value
         echo size.title | append: ' - '
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
       endif
