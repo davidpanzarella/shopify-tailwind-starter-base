@@ -122,7 +122,7 @@
       endif
     endfor
 
-    assign uniqueColors = uniqueColors | uniq | sort
+    assign uniqueColors = uniqueColors | sort | uniq
     echo uniqueColors
 
     assign colorDisplay = ''
