@@ -76,6 +76,7 @@
     echo currentProductFormat | append: ' - '
     echo currentTemplate | append: ' - '
     echo currentTemplateOptions
+    assign uniqueProductByColor = ''
 
     for size in related_products_by_type
       if size.available and size.metafields.custom['product-format'].value == currentProductFormat and size.metafields.custom['product-template-name'].value == currentTemplate and size.metafields.custom['product-template-options'].value == currentTemplateOptions
@@ -86,6 +87,11 @@
         echo currentTemplateOptions
         assign uniqueColors = uniqueColors | concat: size.metafields.custom.color.value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
+        if size.metafields.custom.color.value[0] != currentColor
+          echo size.title | append: ' - '
+          echo size.handle | append: ' - '
+          assign uniqueProductByColor = uniqueColors | concat: size.handle
+        endif
       endif
     endfor
   %}
