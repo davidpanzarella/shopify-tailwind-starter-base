@@ -201,7 +201,7 @@
           %}
           {% assign shapeArray = shapeArray | concat: shapeObject %}
         {% endif %}
-
+        {% echo shapeArray %}
         {% if relatedProductSize != currentSize %}
           {% assign sizeObject = '[{
             "handle": "'
