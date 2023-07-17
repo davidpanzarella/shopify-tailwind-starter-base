@@ -96,7 +96,7 @@
         assign sameProduct = true
       endif
       assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
-      assign relatedProductFormat = relatedProduct.metafields.custom['product-format'][0].value
+      assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
       assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
       assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
       assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
