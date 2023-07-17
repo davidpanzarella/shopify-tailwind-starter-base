@@ -182,7 +182,7 @@
           "handle": null,
           "name": "MATCHED COLOR"
         }' %}
-        echo colorObject | json
+        {% echo colorObject %}
         {% assign colorArray = colorArray | concat: colorObject %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
@@ -195,7 +195,6 @@
           | append: '"
         }'
         %}
-        echo colorObject
         {% assign colorArray = colorArray | concat: colorObject %}
       {% endif %}
 
