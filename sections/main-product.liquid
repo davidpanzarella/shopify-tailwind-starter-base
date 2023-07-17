@@ -246,7 +246,7 @@
   {% endcomment %}
 
   <script>
-    var result = {{ result }};
+    var result = {{ result | json }};
     console.log("result", result);
   </script>
 
