@@ -193,7 +193,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
+      {% assign uniqueColors = uniqueColors | append: relatedProductColor | append: ',' %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
       {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
 
