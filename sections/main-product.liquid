@@ -251,9 +251,11 @@
     Output the result or use it in JavaScript
   {% endcomment %}
 
-  <script>
-    console.log("result", {{ colorArray | json }}}});
-  </script>
+  {% comment %}
+    <script>
+      console.log("result", {{ colorArray | json }}}});
+    </script>
+  {% endcomment %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
