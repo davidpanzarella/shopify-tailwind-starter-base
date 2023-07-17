@@ -178,8 +178,8 @@
         and relatedProductTemplateOptions == currentTemplateOptions
       %}
         {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
-          {% assign colorObject[0].handle = null %}
-          {% assign colorObject[0].name = relatedProduct.title %}
+          {% assign colorObject[forloop.index].handle = null %}
+          {% assign colorObject[forloop.index].name = relatedProduct.title %}
           {% echo colorObject %}
           {% assign colorArray = colorArray | append: colorObject %}
           {% echo colorArray %}
