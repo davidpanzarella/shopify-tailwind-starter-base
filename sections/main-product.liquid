@@ -193,25 +193,7 @@
       and relatedProductFormat == currentFormat
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
-    %}
-      {{- relatedProductColor -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
-
-      {% comment %} {% assign uniqueColors = uniqueColors | concat: relatedProductColor | append: ',' %}
-      {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
-      {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
-
-      {% if relatedProductColor == currentColor and relatedProductShape != currentShape %}
-        {% assign uniqueProductByShape = relatedProduct.title | handle %}
-      {% endif %}
-
-      {% if relatedProductColor != currentColor %}
-        {% assign uniqueProductByColor = relatedProduct.title | handle %}
-      {% endif %}
-
-      {% if relatedProductSize != currentSize %}
-        {% assign uniqueProductBySize = relatedProduct.title | handle %}
-      {% endif %} {% endcomment %}
-    {% endif %}
+    %}{{- relatedProductColor -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},{% endif %}
   {% endfor %}
   {%- endcapture -%}
   {% assign items_array = items | split: ',' %}
