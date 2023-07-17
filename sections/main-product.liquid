@@ -194,7 +194,7 @@
       and relatedProductTemplateOptions == currentTemplateOptions
     -%}
       {{- relatedProductColor -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
-    {% endif %}
+    {%- endif -%}
   {%- endfor -%}
   {%- endcapture -%}
   {%- assign items_array = items | split: ',' -%}
