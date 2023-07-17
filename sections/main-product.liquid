@@ -131,13 +131,15 @@
 
     assign productTitleDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
   %}
-  <script>
-    console.log("relatedProductsByType", {{ relatedProductsByType | json }});
-    console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
-    console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
-    console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
-    console.log("productTitleDisplay", {{ productTitleDisplay | json }});
-  </script>
+  {% comment %}
+    <script>
+      console.log("relatedProductsByType", {{ relatedProductsByType | json }});
+      console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
+      console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
+      console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
+      console.log("productTitleDisplay", {{ productTitleDisplay | json }});
+    </script>
+  {% endcomment %}
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
   {% assign uniqueColors = uniqueColors | uniq | sort %}
@@ -239,7 +241,8 @@
   "color": {{ colorArray | strip }},
   "size": {{ sizeArray | strip }},
   "shape": {{ shapeArray | strip }}
-}{% endcapture %}
+}
+{% endcapture %}
 
   {% comment %}
     Output the result or use it in JavaScript
