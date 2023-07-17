@@ -83,24 +83,26 @@
 
     assign uniqueProductByColor = ''
 
+    comment
+      If the related product is the same color as the current product, but a different shape, assign the unique product by shape
+      If the related product is a different color than the current product, assign the unique product by color
+      If the related product is a different size than the current product, assign the unique product by size
+    endcomment
     for relatedProduct in relatedProductsByType
+      assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
       assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
       assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
       assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
+      assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
+      assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
 
       if relatedProduct.handle != product.handle and relatedProduct.available and relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-        assign uniqueColors = uniqueColors | concat: relatedProduct.metafields.custom.color.value
-        assign uniqueShapes = uniqueShapes | concat: relatedProduct.metafields.custom['product-shape'].value
-        assign uniqueSizes = uniqueSizes | concat: relatedProduct.metafields.custom['product-size'].value
+        assign uniqueColors = uniqueColors | concat: relatedProductColor
+        assign uniqueShapes = uniqueShapes | concat: relatedProductShape
+        assign uniqueSizes = uniqueSizes | concat: relatedProductSize
 
-        comment
-          If the related product is the same color as the current product, but a different shape, assign the unique product by shape
-          If the related product is a different color than the current product, assign the unique product by color
-          If the related product is a different size than the current product, assign the unique product by size
-        endcomment
-
-        if relatedProduct.metafields.custom.color.value[0] == currentColor
-          if relatedProduct.metafields.custom['product-shape'][0] != currentShape
+        if relatedProductColor == currentColor
+          if relatedProductShape != currentShape
             assign uniqueProductByShape = relatedProduct.title | handle
           endif
         else
