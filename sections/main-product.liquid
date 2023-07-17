@@ -198,31 +198,22 @@
   {%- endfor -%}
   {%- endcapture -%}
   {% assign items_array = items | split: ',' %}
-  {% assign test = items_array | split: '|' %}
+
+  {% comment %}
+    now that we have the other products that relate to this product, we need to find the unique colors, shapes, and sizes
+     for each product. We will use the handle of the product to identify it.
+
+     Lets start with the sizes. We need to know how many other sizes there are for this product and the related products in this list (which also include the current product). We then need to store the handle of the product that has a different size than the current product. We will use this handle to create a link to the product page for that product and not use the link for the current product.
+  {% endcomment %}
 
   {%- for item in items_array -%}
     {%- assign item_array = item | split: '|' -%}
-    {%- assign item_color = item_array[0] -%}
-    {%- assign item_shape = item_array[2] -%}
-    {%- assign item_size = item_array[3] -%}
-    {%- assign item_handle = item_array[4] -%}
-    {%- if item_color == currentColor -%}
-      {%- if item_shape != currentShape -%}
-        {%- assign uniqueProductByShape = item_handle -%}
-      {%- endif -%}
-    {%- else -%}
-      {%- assign uniqueProductByColor = item_handle -%}
-    {%- endif -%}
-    {%- if item_size != currentSize -%}
-      {%- assign uniqueProductBySize = item_handle -%}
-    {%- endif -%}
   {%- endfor -%}
 
   <script>
     console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
     console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
     console.log("items_array", {{ items_array | json }});
-    console.log("test", {{ test | json }});
   </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
