@@ -194,11 +194,8 @@
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
       {% assign uniqueColors = uniqueColors | append: relatedProductColor %}
-      {% echo uniqueColors %}
       {% assign uniqueShapes = uniqueShapes | concat: relatedProductShape %}
-      {% echo uniqueShapes %}
       {% assign uniqueSizes = uniqueSizes | concat: relatedProductSize %}
-      {% echo uniqueSizes %}
 
       {% if relatedProductColor == currentColor and relatedProductShape != currentShape %}
         {% assign uniqueProductByShape = relatedProduct.title | handle %}
@@ -215,7 +212,7 @@
   {% endfor %}
 
   <script>
-    console.log("uniqueColors", {{ uniqueColors | json }});
+    console.log("uniqueColors", {{ uniqueColors | uniq | json }});
   </script>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
