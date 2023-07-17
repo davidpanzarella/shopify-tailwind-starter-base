@@ -76,6 +76,8 @@
   {% endfor %}
 
   {% for size in related_products %}
+    {% assign uniqueSizes = uniqueSizes | concat: size %}
+
     <script>
       console.log("size",{{ size.metafields.custom.product-size.value | json }});
     </script>
