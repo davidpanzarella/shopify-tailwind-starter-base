@@ -70,7 +70,7 @@
 
     for size in related_products
       if size.available and size.metafields.custom['product-template-name'].value == product.metafields.custom['product-template-name'].value
-        echo size.title
+        echo size.title | append: ' - '
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
       endif
     endfor
