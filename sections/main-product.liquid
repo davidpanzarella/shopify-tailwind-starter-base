@@ -107,6 +107,7 @@
         assign uniqueShapes = uniqueShapes | concat: relatedProductShape
         assign uniqueSizes = uniqueSizes | concat: relatedProductSize
         assign colorArray = colorArray | concat: relatedProductColor
+        echo colorArray
 
         if relatedProductColor == currentColor
           assign colorArray = colorArray[currentIndex].handle | concat: relatedProduct.handle
