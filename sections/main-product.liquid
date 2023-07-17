@@ -89,6 +89,10 @@
         assign uniqueShapes = uniqueShapes | concat: size.metafields.custom['product-shape'].value
         assign uniqueSizes = uniqueSizes | concat: size.metafields.custom['product-size'].value
 
+        comment
+          hhhh
+        endcomment
+
         if size.metafields.custom.color.value[0] == currentColor
           if size.metafields.custom['product-shape'][0] != currentShape
             assign uniqueProductByShape = size.title | handle
