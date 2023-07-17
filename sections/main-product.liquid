@@ -187,40 +187,40 @@
         {% echo colorArray %}
         {% assign matchedColor = true %}
       {% elsif relatedProductColor != currentColor %}
-        {% assign colorObject = '{
+        {% assign colorObject = '[{
           "handle": "'
           | append: relatedProduct.handle
           | append: '",
           "name": "'
           | append: relatedProductColor
           | append: '"
-        }'
+        }]'
         %}
         {% assign colorArray = colorArray | concat: colorObject %}
       {% endif %}
 
       {% if relatedProductShape != currentShape %}
-        {% assign shapeObject = '{
+        {% assign shapeObject = '[{
           "handle": "'
           | append: relatedProduct.handle
           | append: '",
           "name": "'
           | append: relatedProductShape
           | append: '"
-        }'
+        }]'
         %}
         {% assign shapeArray = shapeArray | concat: shapeObject %}
       {% endif %}
 
       {% if relatedProductSize != currentSize %}
-        {% assign sizeObject = '{
+        {% assign sizeObject = '[{
           "handle": "'
           | append: relatedProduct.handle
           | append: '",
           "name": "'
           | append: relatedProductSize
           | append: '"
-        }'
+        }]'
         %}
         {% assign sizeArray = sizeArray | concat: sizeObject %}
       {% endif %}
