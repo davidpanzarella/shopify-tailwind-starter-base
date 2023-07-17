@@ -116,7 +116,7 @@
       assign productTitle = product.title | escape
     endif
 
-    assign productTypeDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
+    assign productTitleDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
   %}
 
   <script>
@@ -124,10 +124,11 @@
     console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
     console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
     console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
-    console.log("productTypeDisplay", {{ productTypeDisplay | json }});
+    console.log("productTitleDisplay", {{ productTitleDisplay | json }});
   </script>
 
   {% assign uniqueSizes = uniqueSizes | uniq | sort %}
+  {% assign uniqueColors = uniqueColors | uniq | sort %}
 
   <script>
     console.log("currentType", {{ currentType | json }});
