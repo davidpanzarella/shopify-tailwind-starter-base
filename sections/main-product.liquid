@@ -181,13 +181,13 @@
       {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
       {% assign uniqueColors = uniqueColors | concat: relatedProductColor %}
-      {% echo relatedProductSize %}
 
       {% if relatedProduct.available
         and relatedProductFormat == currentFormat
         and relatedProductTemplate == currentTemplate
         and relatedProductTemplateOptions == currentTemplateOptions
       %}
+        {% echo relatedProductSize %}
         {% if relatedProductColor == currentColor and relatedProduct.handle == product.handle %}
           {% assign colorArray[forloop.index].handle = null %}
           {% assign colorArray[forloop.index].name = relatedProduct.title %}
