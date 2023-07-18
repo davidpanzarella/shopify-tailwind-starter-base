@@ -268,7 +268,8 @@
   {%- assign final = results | split: ',' -%}
 
   <script>
-    console.log("final ", {{ final | json  }});
+    console.log("results ", {{ results | json }});
+    console.log("final ", {{ final | json }});
   </script>
 
   {% comment %}
