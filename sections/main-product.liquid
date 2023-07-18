@@ -270,7 +270,7 @@
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
       {% unless seen_shapes contains relatedProductShape %}
-        {% assign seen_shapes = seen_shapes | append: relatedProductShape %}
+        {% assign seen_shapes = seen_shapes | concat: relatedProductShape %}
         <!-- Generate shape button here -->
       {% endunless %}
       {% unless seen_sizes contains relatedProductSize %}
