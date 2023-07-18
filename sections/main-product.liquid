@@ -283,7 +283,7 @@
         {% assign seen_colors = seen_colors | append: color_with_delimiter %}
         <!-- Generate color button here -->
       {% endunless %}
-      {% assign template_with_delimiter = relatedProductTemplate | append: ',' %}
+      {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
         <!-- Generate template button here -->
