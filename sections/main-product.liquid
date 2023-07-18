@@ -315,14 +315,32 @@
   {% assign templates = templates | split: ',' %}
 
   {% if shapes.size > 1 %}
-    {% for shape in shapes %}
-      {% assign shape_option = shape | split: '|:|' %}
-      <script>
-        console.log("shape", {{ shape | json }});
-        console.log("shape_option", {{ shape_option | json }});
-      </script>
-      <!-- Generate shape button here using shape_option[0] as the option and shape_option[1] as the URL -->
-    {% endfor %}
+    <!-- Size selector -->
+    <fieldset>
+      <legend class="block text-sm font-medium text-gray-700">Size Options</legend>
+      <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {% for shape in shapes %}
+          {% assign shape_option = shape | split: '|:|' %}
+          <script>
+            console.log("shape", {{ shape | json }});
+            console.log("shape_option", {{ shape_option | json }});
+          </script>
+          <!-- Generate shape button here using shape_option[0] as the option and shape_option[1] as the URL -->
+
+          <!-- Active: "ring-2 ring-indigo-500" -->
+          <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
+            <input type="radio" name="size-choice" value="18L" class="sr-only" aria-labelledby="size-choice-0-label" aria-describedby="size-choice-0-description">
+            <p id="size-choice-0-label" class="text-base font-medium text-gray-900">18L</p>
+            <p id="size-choice-0-description" class="mt-1 text-sm text-gray-500">Perfect for a reasonable amount of snacks.</p>
+            <!--
+              Active: "border", Not Active: "border-2"
+              Checked: "border-indigo-500", Not Checked: "border-transparent"
+            -->
+            <div class="pointer-events-none absolute -inset-px rounded-lg border-2" aria-hidden="true"></div>
+          </div>
+        </div>
+      {% endfor %}
+    </fieldset>
   {% endif %}
   {% if sizes.size > 1 %}
     {% for size in sizes %}
