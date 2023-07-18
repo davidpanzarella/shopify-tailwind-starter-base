@@ -142,16 +142,14 @@
 
     assign productTitleDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
   %}
-  {% comment %}
-    <script>
-       console.log("relatedProductsByType", {{ relatedProductsByType | json }});
-       console.log("uniqueColors", {{ uniqueColors | json }});
-       //console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
-      //console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
-       //console.log("colorArray", {{ colorArray | json }});
-       //console.log("productTitleDisplay", {{ productTitleDisplay | json }});
-    </script>
-  {% endcomment %}
+  <script>
+     console.log("relatedProductsByType", {{ relatedProductsByType | json }});
+     //console.log("uniqueColors", {{ uniqueColors | json }});
+     //console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
+    //console.log("uniqueProductBySize", {{ uniqueProductBySize | json }});
+     //console.log("colorArray", {{ colorArray | json }});
+     //console.log("productTitleDisplay", {{ productTitleDisplay | json }});
+  </script>
 
   {% comment %}
     Get all products of the same product type as the current product for the related products section.
