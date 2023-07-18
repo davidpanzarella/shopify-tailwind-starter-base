@@ -382,7 +382,7 @@
 
                     <div
                       class="cursor-pointer group"
-                      {% if current_product %}
+                      {% if current_product == false %}
                         onclick="window.location.href='/products/{{ related_product.handle }}'"
                       {% endif %}
                     >
