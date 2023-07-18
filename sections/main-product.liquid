@@ -216,24 +216,24 @@
         {%- assign shape = values[2] -%}
         {%- assign handle = values[4] -%}
         {
-          "color": [
+          "color": 
             {
               "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
               "name": "{{- color -}}"
             }
-          ],
-          "size": [
+          ,
+          "size": 
             {
               "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
               "name": "{{- size -}}"
             }
-          ],
-          "shape": [
+          ,
+          "shape": 
             {
               "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
               "name": "{{- shape -}}"
             }
-          ]
+          
         },
       {%- endfor -%}
     {%- echo ']' -%}
