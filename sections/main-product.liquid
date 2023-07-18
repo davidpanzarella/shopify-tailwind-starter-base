@@ -366,25 +366,83 @@
   {% endif %}
 
   {% if sizes.size > 1 %}
-    {% for size in sizes %}
-      {% assign size_option = size | split: '|:|' %}
-      <script>
-        console.log("size", {{ size | json }});
-        console.log("size_option", {{ size_option | json }});
-      </script>
-      <!-- Generate size button here using size_option[0] as the option and size_option[1] as the URL -->
-    {% endfor %}
+    <!-- Size selector -->
+    <fieldset>
+      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Size Options</legend>
+      <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
+        {% for size in sizes %}
+          {% assign size_option = size | split: '|:|' %}
+          <!-- Generate size button here using size_option[0] as the option and size_option[1] as the URL -->
+          <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
+            <input
+              type="radio"
+              name="size-choice"
+              value="{{ size_option[0] }}"
+              class="tw-sr-only"
+              aria-labelledby="size-choice-0-label"
+              aria-describedby="size-choice-0-description"
+            >
+            <a href="{{ size_option[1] }}" title="{{ size_option[0] }}">
+              <p id="size-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">{{ size_option[0] }}</p>
+              <p id="size-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
+                Perfect for a reasonable amount of snacks.
+              </p>
+            </a>
+            {% if sameProduct %}
+              {% assign border_class = 'tw-border-2 tw-border-indigo-500' %}
+            {% else %}
+              {% assign border_class = 'tw-border-2 tw-border-transparent' %}
+            {% endif %}
+            <div
+              class="{{ border_class }} tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg"
+              aria-hidden="true"
+            ></div>
+          </div>
+        {% endfor %}
+      </div>
+    </fieldset>
   {% endif %}
+
   {% if colors.size > 1 %}
-    {% for color in colors %}
-      {% assign color_option = color | split: '|:|' %}
-      <script>
-        console.log("color", {{ color | json }});
-        console.log("color_option", {{ color_option | json }});
-      </script>
-      <!-- Generate color button here using color_option[0] as the option and color_option[1] as the URL -->
-    {% endfor %}
+    <!-- Color selector -->
+    <fieldset>
+      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Color Options</legend>
+      <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
+        {% for color in colors %}
+          {% assign color_option = color | split: '|:|' %}
+          <!-- Generate color button here using color_option[0] as the option and color_option[1] as the URL -->
+          <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
+            <input
+              type="radio"
+              name="color-choice"
+              value="{{ color_option[0] }}"
+              class="tw-sr-only"
+              aria-labelledby="color-choice-0-label"
+              aria-describedby="color-choice-0-description"
+            >
+            <a href="{{ color_option[1] }}" title="{{ color_option[0] }}">
+              <p id="color-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
+                {{ color_option[0] }}
+              </p>
+              <p id="color-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
+                Perfect for a reasonable amount of snacks.
+              </p>
+            </a>
+            {% if sameProduct %}
+              {% assign border_class = 'tw-border-2 tw-border-indigo-500' %}
+            {% else %}
+              {% assign border_class = 'tw-border-2 tw-border-transparent' %}
+            {% endif %}
+            <div
+              class="{{ border_class }} tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg"
+              aria-hidden="true"
+            ></div>
+          </div>
+        {% endfor %}
+      </div>
+    </fieldset>
   {% endif %}
+
   {% if templates.size > 1 %}
     <!-- Template selector -->
     <fieldset>
