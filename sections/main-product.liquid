@@ -193,7 +193,7 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     -%}
-      {{- relatedProduct.title -}}|{{- relatedProductColor -}}|{{- relatedProductFormat -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
+      {{- relatedProduct.title -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
     {%- endif -%}
   {%- endfor -%}
   {%- endcapture -%}
@@ -211,11 +211,13 @@
     {%- echo '[' -%}
       {%- for item in items_array -%}
         {%- assign values = item | split: '|' -%}
-        {%- assign color = values[0] -%}
-        {%- assign size = values[3] -%}
+        {%- assign title = values[0] -%}
+        {%- assign color = values[1] -%}
         {%- assign shape = values[2] -%}
+        {%- assign size = values[3] -%}
         {%- assign handle = values[4] -%}
         {
+          "title": "{{- title -}}",
           "color":{
               "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
               "name": "{{- color -}}"
