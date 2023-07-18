@@ -386,7 +386,7 @@
                         onclick="window.location.href='/products/{{ related_product.handle }}'"
                       {% endif %}
                     >
-                      <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} tw-ring-2 tw-ring-indigo-500{% endif %}">
+                      <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
                         <img
                           src="{{ related_product.media[2].preview_image | image_url: width: 200 }}"
                           alt="{{ related_product.title }}"
