@@ -242,10 +242,11 @@
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
-
-  <script>
-    console.log("relatedProductsByType", {{ relatedProductsByType | json }});
-  </script>
+  {% comment %}
+    <script>
+      console.log("relatedProductsByType", {{ relatedProductsByType | json }});
+    </script>
+  {% endcomment %}
 
   {% assign seen_shapes = '' %}
   {% assign seen_sizes = '' %}
@@ -253,10 +254,6 @@
   {% assign seen_templates = '' %}
 
   {% for relatedProduct in relatedProductsByType %}
-    <script>
-      console.log("relatedProduct", {{ relatedProduct | json }});
-    </script>
-
     {% assign sameProduct = false %}
     {% if relatedProduct.handle == product.handle %}
       {% assign sameProduct = true %}
@@ -272,6 +269,9 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
+      <script>
+        console.log("relatedProduct", {{ relatedProduct | json }});
+      </script>
       {% unless seen_shapes contains relatedProductShape %}
         {% assign seen_shapes = seen_shapes | append: relatedProductShape %}
         <!-- Generate shape button here -->
