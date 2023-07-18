@@ -221,6 +221,7 @@
 
     {%- unless uniqueColors contains color -%}
       {%- assign uniqueColors = uniqueColors | append: color | append: ',' -%}
+      {%- echo uniqueColors -%}
     {%- endunless -%}
 
     {%- if size == currentSize -%}
