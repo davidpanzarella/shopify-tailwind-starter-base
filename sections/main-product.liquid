@@ -269,44 +269,44 @@
       {% unless seen_shapes contains shape_with_delimiter %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
         {% if sameProduct %}
-          <button class="selected">{{ relatedProductShape }}</button>
+          <div class="selected">{{ relatedProductShape }}</div>
         {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}"
-            ><button>{{ relatedProductShape }}</button></a
-          >
+          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
+            <div>{{ relatedProductShape }}</div>
+          </a>
         {% endif %}
       {% endunless %}
       {% assign size_with_delimiter = relatedProductSize | append: ',' %}
       {% unless seen_sizes contains size_with_delimiter %}
         {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
         {% if sameProduct %}
-          <button class="selected">{{ relatedProductSize }}</button>
+          <div class="selected">{{ relatedProductSize }}</div>
         {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}"
-            ><button>{{ relatedProductSize }}</button></a
-          >
+          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
+            <div>{{ relatedProductSize }}</div>
+          </a>
         {% endif %}
       {% endunless %}
       {% assign color_with_delimiter = relatedProductColor | append: ',' %}
       {% unless seen_colors contains color_with_delimiter %}
         {% assign seen_colors = seen_colors | append: color_with_delimiter %}
         {% if sameProduct %}
-          <button class="selected">{{ relatedProductColor }}</button>
+          <div class="selected">{{ relatedProductColor }}</div>
         {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}"
-            ><button>{{ relatedProductColor }}</button></a
-          >
+          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
+            <div>{{ relatedProductColor }}</div>
+          </a>
         {% endif %}
       {% endunless %}
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
         {% if sameProduct %}
-          <button class="selected">{{ relatedProductTemplateOptions }}</button>
+          <div class="selected">{{ relatedProductTemplateOptions }}</div>
         {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}"
-            ><button>{{ relatedProductTemplateOptions }}</button></a
-          >
+          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
+            <div>{{ relatedProductTemplateOptions }}</div>
+          </a>
         {% endif %}
       {% endunless %}
     {% endif %}
