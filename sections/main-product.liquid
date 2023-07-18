@@ -247,6 +247,46 @@
     console.log("items_array", {{ items_array | json }});
   </script>
 
+  {% assign seen_shapes = '' %}
+  {% assign seen_sizes = '' %}
+  {% assign seen_colors = '' %}
+  {% assign seen_templates = '' %}
+
+  {% for relatedProduct in relatedProductsByType %}
+    {% assign sameProduct = false %}
+    {% if relatedProduct.handle == product.handle %}
+      {% assign sameProduct = true %}
+    {% endif %}
+    {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+    {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+    {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+    {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+    {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+    {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+
+    {% if relatedProductFormat == currentFormat
+      and relatedProductTemplate == currentTemplate
+      and relatedProductTemplateOptions == currentTemplateOptions
+    %}
+      {% unless seen_shapes contains relatedProductShape %}
+        {% assign seen_shapes = seen_shapes | append: relatedProductShape %}
+        <!-- Generate shape button here -->
+      {% endunless %}
+      {% unless seen_sizes contains relatedProductSize %}
+        {% assign seen_sizes = seen_sizes | append: relatedProductSize %}
+        <!-- Generate size button here -->
+      {% endunless %}
+      {% unless seen_colors contains relatedProductColor %}
+        {% assign seen_colors = seen_colors | append: relatedProductColor %}
+        <!-- Generate color button here -->
+      {% endunless %}
+      {% unless seen_templates contains relatedProductTemplate %}
+        {% assign seen_templates = seen_templates | append: relatedProductTemplate %}
+        <!-- Generate template button here -->
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
   {% comment %}
     now that i have a proper array, how can i loop through it and get the unique values?
   {% endcomment %}
