@@ -363,47 +363,37 @@
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
             <div>
-              {% for item in resultArray %}
-                {% assign title = item.title %}
-                {% assign color = item.color %}
-                {% assign size = item.size %}
-                {% assign shape = item.shape %}
-                <script>
-                  console.log("item", {{ item }});
-                </script>
-                {% if color.name != currentColor or shape.name != currentShape or size.name != currentSize %}
-                  {% assign uniqueColor = color.handle %}
-                  {% assign uniqueShape = shape.handle %}
-                  {% assign uniqueSize = size.handle %}
+              {% for item in items_array %}
+                {% assign values = item | split: '|' %}
+                {% assign title = values[0] %}
+                {% assign color = values[1] %}
+                {% assign shape = values[2] %}
+                {% assign size = values[3] %}
+                {% assign handle = values[4] %}
 
-                  {% unless uniqueColor == 'null' or uniqueShape == 'null' or uniqueSize == 'null' %}
+                {% if color != currentColor or shape != currentShape or size != currentSize %}
+                  {% assign uniqueColor = color %}
+                  {% assign uniqueSize = size %}
+                  {% assign uniqueShape = shape %}
+
+                  {% unless uniqueColor == currentColor %}
                     <div>
-                      {% if uniqueColor != currentColor %}
-                        <div>
-                          <span>{{ color.name }}</span>
-                          {% if uniqueColor != 'null' %}
-                            <a href="/products/{{ uniqueColor }}">Link</a>
-                          {% endif %}
-                        </div>
-                      {% endif %}
+                      <span>{{ color }}</span>
+                      <a href="/products/{{ handle }}">Link</a>
+                    </div>
+                  {% endunless %}
 
-                      {% if uniqueSize != currentSize %}
-                        <div>
-                          <span>{{ size.name }}</span>
-                          {% if uniqueSize != 'null' %}
-                            <a href="/products/{{ uniqueSize }}">Link</a>
-                          {% endif %}
-                        </div>
-                      {% endif %}
+                  {% unless uniqueSize == currentSize %}
+                    <div>
+                      <span>{{ size }}</span>
+                      <a href="/products/{{ handle }}">Link</a>
+                    </div>
+                  {% endunless %}
 
-                      {% if uniqueShape != currentShape %}
-                        <div>
-                          <span>{{ shape.name }}</span>
-                          {% if uniqueShape != 'null' %}
-                            <a href="/products/{{ uniqueShape }}">Link</a>
-                          {% endif %}
-                        </div>
-                      {% endif %}
+                  {% unless uniqueShape == currentShape %}
+                    <div>
+                      <span>{{ shape }}</span>
+                      <a href="/products/{{ handle }}">Link</a>
                     </div>
                   {% endunless %}
                 {% endif %}
