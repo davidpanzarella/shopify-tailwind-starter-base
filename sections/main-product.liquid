@@ -247,7 +247,6 @@
       console.log("relatedProductsByType", {{ relatedProductsByType | json }});
     </script>
   {% endcomment %}
-
   {% assign seen_shapes = '' %}
   {% assign seen_sizes = '' %}
   {% assign seen_colors = '' %}
@@ -269,20 +268,24 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      {% unless seen_shapes contains relatedProductShape %}
-        {% assign seen_shapes = seen_shapes | append: relatedProductShape %}
+      {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
+      {% unless seen_shapes contains shape_with_delimiter %}
+        {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
         <!-- Generate shape button here -->
       {% endunless %}
-      {% unless seen_sizes contains relatedProductSize %}
-        {% assign seen_sizes = seen_sizes | append: relatedProductSize %}
+      {% assign size_with_delimiter = relatedProductSize | append: ',' %}
+      {% unless seen_sizes contains size_with_delimiter %}
+        {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
         <!-- Generate size button here -->
       {% endunless %}
-      {% unless seen_colors contains relatedProductColor %}
-        {% assign seen_colors = seen_colors | append: relatedProductColor %}
+      {% assign color_with_delimiter = relatedProductColor | append: ',' %}
+      {% unless seen_colors contains color_with_delimiter %}
+        {% assign seen_colors = seen_colors | append: color_with_delimiter %}
         <!-- Generate color button here -->
       {% endunless %}
-      {% unless seen_templates contains relatedProductTemplate %}
-        {% assign seen_templates = seen_templates | append: relatedProductTemplate %}
+      {% assign template_with_delimiter = relatedProductTemplate | append: ',' %}
+      {% unless seen_templates contains template_with_delimiter %}
+        {% assign seen_templates = seen_templates | append: template_with_delimiter %}
         <!-- Generate template button here -->
       {% endunless %}
       <script>
