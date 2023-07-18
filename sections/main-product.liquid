@@ -251,6 +251,10 @@
   {% assign seen_sizes = '' %}
   {% assign seen_colors = '' %}
   {% assign seen_templates = '' %}
+  {% assign shapes = '' %}
+  {% assign sizes = '' %}
+  {% assign colors = '' %}
+  {% assign templates = '' %}
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
@@ -268,48 +272,61 @@
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
       {% unless seen_shapes contains shape_with_delimiter %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
-        {% if sameProduct %}
-          <div class="selected">{{ relatedProductShape }}</div>
-        {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
-            <div>{{ relatedProductShape }}</div>
-          </a>
-        {% endif %}
+        {% assign shapes = shapes | append: relatedProductShape | append: ',' %}
       {% endunless %}
       {% assign size_with_delimiter = relatedProductSize | append: ',' %}
       {% unless seen_sizes contains size_with_delimiter %}
         {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
-        {% if sameProduct %}
-          <div class="selected">{{ relatedProductSize }}</div>
-        {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
-            <div>{{ relatedProductSize }}</div>
-          </a>
-        {% endif %}
+        {% assign sizes = sizes | append: relatedProductSize | append: ',' %}
       {% endunless %}
       {% assign color_with_delimiter = relatedProductColor | append: ',' %}
       {% unless seen_colors contains color_with_delimiter %}
         {% assign seen_colors = seen_colors | append: color_with_delimiter %}
-        {% if sameProduct %}
-          <div class="selected">{{ relatedProductColor }}</div>
-        {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
-            <div>{{ relatedProductColor }}</div>
-          </a>
-        {% endif %}
+        {% assign colors = colors | append: relatedProductColor | append: ',' %}
       {% endunless %}
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
-        {% if sameProduct %}
-          <div class="selected">{{ relatedProductTemplateOptions }}</div>
-        {% else %}
-          <a href="{{ relatedProduct.url }}" title="{{ relatedProduct.title }}">
-            <div>{{ relatedProductTemplateOptions }}</div>
-          </a>
-        {% endif %}
+        {% assign templates = templates | append: relatedProductTemplateOptions | append: ',' %}
       {% endunless %}
+      <script>
+        console.log("relatedProduct", {{ relatedProduct | json }});
+        console.log("seen_shapes", {{ seen_shapes | json }});
+        console.log("seen_sizes", {{ seen_sizes | json }});
+        console.log("seen_colors", {{ seen_colors | json }});
+        console.log("seen_templates", {{ seen_templates | json }});
+      </script>
     {% endif %}
+  {% endfor %}
+
+  {% assign shapes = shapes | split: ',' %}
+  {% assign sizes = sizes | split: ',' %}
+  {% assign colors = colors | split: ',' %}
+  {% assign templates = templates | split: ',' %}
+
+  {% for shape in shapes %}
+    <script>
+      console.log("shape", {{ shape | json }});
+    </script>
+    <!-- Generate shape button here -->
+  {% endfor %}
+  {% for size in sizes %}
+    <script>
+      console.log("size", {{ size | json }});
+    </script>
+    <!-- Generate size button here -->
+  {% endfor %}
+  {% for color in colors %}
+    <script>
+      console.log("color", {{ color | json }});
+    </script>
+    <!-- Generate color button here -->
+  {% endfor %}
+  {% for template in templates %}
+    <script>
+      console.log("template", {{ template | json }});
+    </script>
+    <!-- Generate template button here -->
   {% endfor %}
 
   {% comment %}
