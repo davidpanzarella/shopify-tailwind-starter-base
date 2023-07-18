@@ -253,6 +253,10 @@
   {% assign seen_templates = '' %}
 
   {% for relatedProduct in relatedProductsByType %}
+    <script>
+      console.log("relatedProduct", {{ relatedProduct | json }});
+    </script>
+
     {% assign sameProduct = false %}
     {% if relatedProduct.handle == product.handle %}
       {% assign sameProduct = true %}
