@@ -208,7 +208,7 @@
   {%- assign matchedShape = false -%}
 
   {%- capture result -%}
-  {%- echo '[' -%}
+  {%- echo '{' -%}
     {%- for item in items_array -%}
       {%- assign values = item | split: '|' -%}
       {%- assign title = values[0] -%}
@@ -232,7 +232,7 @@
         }
       },
     {%- endfor -%}
-  {%- echo ']' -%}
+  {%- echo '}' -%}
 {%- endcapture -%}
 
   {%- assign resultArray = result | json -%}
