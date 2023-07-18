@@ -265,9 +265,10 @@
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
+  {%- assign final = results | split: ',' -%}
 
   <script>
-    console.log("result", {{ [result] | json  }});
+    console.log("final ", {{ final | json  }});
   </script>
 
   {% comment %}
