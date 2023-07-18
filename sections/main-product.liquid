@@ -235,16 +235,14 @@
   {%- echo ']' -%}
 {%- endcapture -%}
 
-  {%- assign resultArray = result -%}
+  {% comment %} {%- assign resultArray = result | json -%} {% endcomment %}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
 
   <script>
-    console.log("items_array", {{ result | json }});
-    //console.log("result", {{ result }});
-    //console.log("resultArray", {{ resultArray }});
+    console.log("items_array", {{ items_array | json }});
   </script>
 
   {% comment %}
