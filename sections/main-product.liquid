@@ -314,7 +314,7 @@
   {% assign colors = colors | split: ',' %}
   {% assign templates = templates | split: ',' %}
   <script>
-    console.log("shape", {{ shapes.size }});
+    console.log("shape size", {{ shapes.size }});
   </script>
   {% if shapes.size > 1 %}
     <fieldset>
