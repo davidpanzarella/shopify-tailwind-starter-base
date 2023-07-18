@@ -359,14 +359,6 @@
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
-            {%- for item in items_array -%}
-              {%- assign values = item | split: '|' -%}
-              {%- assign color = values[0] -%}
-              {%- assign size = values[3] -%}
-              {%- assign shape = values[2] -%}
-              {%- assign handle = values[4] -%}
-            {% endfor %}
-
             <!-- Size selector -->
             <div class="sm:tw-flex sm:tw-justify-between">
               <fieldset>
