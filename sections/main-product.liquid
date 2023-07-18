@@ -243,19 +243,19 @@
       "color": [
         {
           "handle": {% if matchedColor %} null {% else %} {{- handle -}} {% endif %},
-          "name": {{-color-}}
+          "name": {{- color -}}
         }
       ],
       "size": [
         {
           "handle": {% if matchedSize %} null {% else %} {{- handle -}} {% endif %},
-          "name": "MATCHED SIZE"
+          "name": {{- size -}}
         }
       ],
       "shape": [
         {
           "handle": {% if matchedShape %} null {% else %} {{- handle -}} {% endif %},
-          "name": "MATCHED SHAPE"
+          "name": {{- shape -}}
         }
       ]
     }
