@@ -207,33 +207,35 @@
   {%- assign matchedSize = false -%}
   {%- assign matchedShape = false -%}
 
-  {%- capture result -%}
-  {%- echo '[' -%}
-    {%- for item in items_array -%}
-      {%- assign values = item | split: '|' -%}
-      {%- assign title = values[0] -%}
-      {%- assign color = values[1] -%}
-      {%- assign shape = values[2] -%}
-      {%- assign size = values[3] -%}
-      {%- assign handle = values[4] -%}
-      {
-        "title": "{{- title -}}",
-        "color":{
-            "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
-            "name": "{{- color -}}"
-          },
-        "size":{
-            "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
-            "name": "{{- size -}}"
-          },
-        "shape":{
-            "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
-            "name": "{{- shape -}}"
-        }
-      },
-    {%- endfor -%}
-  {%- echo ']' -%}
-  {%- endcapture -%}
+  {% comment %}
+    {%- capture result -%}
+    {%- echo '[' -%}
+      {%- for item in items_array -%}
+        {%- assign values = item | split: '|' -%}
+        {%- assign title = values[0] -%}
+        {%- assign color = values[1] -%}
+        {%- assign shape = values[2] -%}
+        {%- assign size = values[3] -%}
+        {%- assign handle = values[4] -%}
+        {
+          "title": "{{- title -}}",
+          "color":{
+              "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
+              "name": "{{- color -}}"
+            },
+          "size":{
+              "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
+              "name": "{{- size -}}"
+            },
+          "shape":{
+              "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
+              "name": "{{- shape -}}"
+          }
+        },
+      {%- endfor -%}
+    {%- echo ']' -%}
+    {%- endcapture -%}
+  {% endcomment %}
 
   {% comment %} {%- assign resultArray = result | json -%} {% endcomment %}
 
