@@ -242,8 +242,9 @@
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
 
   <script>
-    console.log("result", {{ result }});
-    console.log("resultArray", {{ resultArray }});
+    console.log("items_array", {{ result | json }});
+    //console.log("result", {{ result }});
+    //console.log("resultArray", {{ resultArray }});
   </script>
 
   {% comment %}
