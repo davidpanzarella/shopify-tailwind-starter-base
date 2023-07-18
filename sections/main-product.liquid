@@ -207,6 +207,7 @@
   {%- assign matchedSize = false -%}
   {%- assign matchedShape = false -%}
 
+  {%- capture result -%}
   {%- for item in items_array -%}
     {%- assign values = item | split: '|' -%}
     {%- assign color = values[0] -%}
@@ -239,7 +240,6 @@
       {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
     {%- endunless -%}
 
-    {%- capture result -%}
     {
       "color": [
         {
@@ -260,8 +260,8 @@
         }
       ]
     },
-    {%- endcapture -%}
   {%- endfor -%}
+  {%- endcapture -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
