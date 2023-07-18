@@ -237,34 +237,34 @@
     {%- unless uniqueShapes contains shape -%}
       {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
     {%- endunless -%}
+
+    {%- capture result -%}
+    {
+      "color": [
+        {
+          "handle": {% if matchedColor %} null {% else %} {{-handle-}} {% endif %},
+          "name": "MATCHED COLOR"
+        }
+      ],
+      "size": [
+        {
+          "handle": {% if matchedSize %} null {% else %} handle {% endif %},
+          "name": "MATCHED SIZE"
+        }
+      ],
+      "shape": [
+        {
+          "handle": {% if matchedShape %} null {% else %} handle {% endif %},
+          "name": "MATCHED SHAPE"
+        }
+      ]
+    }
+    {%- endcapture -%}
   {%- endfor -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
-
-  {%- capture result -%}
-  {
-    "color": [
-      {
-        "handle": {% if matchedColor %} null {% else %} "/product/the-first-related-color" {% endif %},
-        "name": "MATCHED COLOR"
-      }
-    ],
-    "size": [
-      {
-        "handle": {% if matchedSize %} null {% else %} "/product/the-first-related-size" {% endif %},
-        "name": "MATCHED SIZE"
-      }
-    ],
-    "shape": [
-      {
-        "handle": {% if matchedShape %} null {% else %} "/product/the-first-related-shape" {% endif %},
-        "name": "MATCHED SHAPE"
-      }
-    ]
-  }
-  {%- endcapture -%}
 
   <script>
     console.log("result", {{ result| json  }});
