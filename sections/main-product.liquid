@@ -365,8 +365,9 @@
                 {% assign color = item.color %}
                 {% assign size = item.size %}
                 {% assign shape = item.shape %}
-                {% echo item %}
-
+                <script>
+                  console.log("item", {{ item | json }});
+                </script>
                 {% if color.name != currentColor or shape.name != currentShape or size.name != currentSize %}
                   {% assign uniqueColor = color.handle %}
                   {% assign uniqueShape = shape.handle %}
