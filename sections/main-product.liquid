@@ -386,8 +386,8 @@
   {% if templates.size > 1 %}
     <!-- Template selector -->
     <fieldset>
-      <legend class="block text-sm font-medium text-gray-700">Template Options</legend>
-      <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
+      <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
         {% for template in templates %}
           {% assign template_option = template | split: '|:|' %}
           <script>
@@ -398,32 +398,37 @@
             Generate template button here using template_option[0] as the option and template_option[1] as the URL
           -->
 
-          <!-- Active: "ring-2 ring-indigo-500" -->
-          <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
+          <!-- Active: "tw-ring-2 tw-ring-indigo-500" -->
+          <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
             <input
               type="radio"
               name="template-choice"
               value="{{ template_option[0] }}"
-              class="sr-only"
+              class="tw-sr-only"
               aria-labelledby="template-choice-0-label"
               aria-describedby="template-choice-0-description"
             >
             <a href="{{ template_option[1] }}" title="{{ template_option[0] }}">
-              <p id="template-choice-0-label" class="text-base font-medium text-gray-900">{{ template_option[0] }}</p>
-              <p id="template-choice-0-description" class="mt-1 text-sm text-gray-500">
+              <p id="template-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
+                {{ template_option[0] }}
+              </p>
+              <p id="template-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
                 Perfect for a reasonable amount of snacks.
               </p>
             </a>
             <!--
-              Active: "border", Not Active: "border-2"
-              Checked: "border-indigo-500", Not Checked: "border-transparent"
+              Active: "tw-border", Not Active: "tw-border-2"
+              Checked: "tw-border-indigo-500", Not Checked: "tw-border-transparent"
             -->
             {% if sameProduct %}
-              {% assign border_class = 'border-2 border-indigo-500' %}
+              {% assign border_class = 'tw-border-2 tw-border-indigo-500' %}
             {% else %}
-              {% assign border_class = 'border-2 border-transparent' %}
+              {% assign border_class = 'tw-border-2 tw-border-transparent' %}
             {% endif %}
-            <div class="{{ border_class }} pointer-events-none absolute -inset-px rounded-lg" aria-hidden="true"></div>
+            <div
+              class="{{ border_class }} tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg"
+              aria-hidden="true"
+            ></div>
           </div>
         {% endfor %}
       </div>
