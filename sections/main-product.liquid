@@ -384,14 +384,50 @@
     {% endfor %}
   {% endif %}
   {% if templates.size > 1 %}
-    {% for template in templates %}
-      {% assign template_option = template | split: '|:|' %}
-      <script>
-        console.log("template", {{ template | json }});
-        console.log("template_option", {{ template_option | json }});
-      </script>
-      <!-- Generate template button here using template_option[0] as the option and template_option[1] as the URL -->
-    {% endfor %}
+    <!-- Template selector -->
+    <fieldset>
+      <legend class="block text-sm font-medium text-gray-700">Template Options</legend>
+      <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {% for template in templates %}
+          {% assign template_option = template | split: '|:|' %}
+          <script>
+            console.log("template", {{ template | json }});
+            console.log("template_option", {{ template_option | json }});
+          </script>
+          <!--
+            Generate template button here using template_option[0] as the option and template_option[1] as the URL
+          -->
+
+          <!-- Active: "ring-2 ring-indigo-500" -->
+          <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
+            <input
+              type="radio"
+              name="template-choice"
+              value="{{ template_option[0] }}"
+              class="sr-only"
+              aria-labelledby="template-choice-0-label"
+              aria-describedby="template-choice-0-description"
+            >
+            <a href="{{ template_option[1] }}" title="{{ template_option[0] }}">
+              <p id="template-choice-0-label" class="text-base font-medium text-gray-900">{{ template_option[0] }}</p>
+              <p id="template-choice-0-description" class="mt-1 text-sm text-gray-500">
+                Perfect for a reasonable amount of snacks.
+              </p>
+            </a>
+            <!--
+              Active: "border", Not Active: "border-2"
+              Checked: "border-indigo-500", Not Checked: "border-transparent"
+            -->
+            {% if sameProduct %}
+              {% assign border_class = 'border-2 border-indigo-500' %}
+            {% else %}
+              {% assign border_class = 'border-2 border-transparent' %}
+            {% endif %}
+            <div class="{{ border_class }} pointer-events-none absolute -inset-px rounded-lg" aria-hidden="true"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </fieldset>
   {% endif %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
