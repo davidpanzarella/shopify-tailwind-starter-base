@@ -208,37 +208,38 @@
   {%- assign matchedShape = false -%}
 
   {%- capture result -%}
-    {% comment %} {%- echo '[' -%} {% endcomment %}
-      {%- for item in items_array -%}
-        {%- assign values = item | split: '|' -%}
-        {%- assign title = values[0] -%}
-        {%- assign color = values[1] -%}
-        {%- assign shape = values[2] -%}
-        {%- assign size = values[3] -%}
-        {%- assign handle = values[4] -%}
-        {
-          "title": "{{- title -}}",
-          "color":{
-              "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- color -}}"
-            },
-          "size":{
-              "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- size -}}"
-            },
-          "shape":{
-              "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- shape -}}"
-          }
-        },
-      {%- endfor -%}
-    {% comment %} {%- echo ']' -%} {% endcomment %}
-  {%- endcapture -%}
+  {%- echo '[' -%}
+    {%- for item in items_array -%}
+      {%- assign values = item | split: '|' -%}
+      {%- assign title = values[0] -%}
+      {%- assign color = values[1] -%}
+      {%- assign shape = values[2] -%}
+      {%- assign size = values[3] -%}
+      {%- assign handle = values[4] -%}
+      {
+        "title": "{{- title -}}",
+        "color":{
+            "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
+            "name": "{{- color -}}"
+          },
+        "size":{
+            "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
+            "name": "{{- size -}}"
+          },
+        "shape":{
+            "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
+            "name": "{{- shape -}}"
+        }
+      },
+    {%- endfor -%}
+  {%- echo ']' -%}
+{%- endcapture -%}
+
+  {%- assign resultArray = result | split: ',' | map: 'strip' | map: 'json' -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
-  {%- assign resultArray = result | json -%}
 
   <script>
     console.log("result", {{ result }});
