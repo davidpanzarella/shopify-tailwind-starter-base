@@ -365,7 +365,7 @@
                 {% assign color = item.color %}
                 {% assign size = item.size %}
                 {% assign shape = item.shape %}
-                {% echo shape %}
+                {% echo item %}
 
                 {% if color.name != currentColor or shape.name != currentShape or size.name != currentSize %}
                   {% assign uniqueColor = color.handle %}
