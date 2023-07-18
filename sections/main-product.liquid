@@ -237,16 +237,6 @@
     {%- endcapture -%}
   {% endcomment %}
 
-  {% comment %} {%- assign resultArray = result | json -%} {% endcomment %}
-
-  {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
-  {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
-  {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
-  {% comment %}
-    <script>
-      console.log("relatedProductsByType", {{ relatedProductsByType | json }});
-    </script>
-  {% endcomment %}
   {% assign seen_shapes = '' %}
   {% assign seen_sizes = '' %}
   {% assign seen_colors = '' %}
@@ -272,22 +262,42 @@
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
       {% unless seen_shapes contains shape_with_delimiter %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
-        {% assign shapes = shapes | append: relatedProductShape | append: ',' %}
+        {% assign shapes = shapes
+          | append: relatedProductShape
+          | append: '|:|'
+          | append: relatedProduct.url
+          | append: ','
+        %}
       {% endunless %}
       {% assign size_with_delimiter = relatedProductSize | append: ',' %}
       {% unless seen_sizes contains size_with_delimiter %}
         {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
-        {% assign sizes = sizes | append: relatedProductSize | append: ',' %}
+        {% assign sizes = sizes
+          | append: relatedProductSize
+          | append: '|:|'
+          | append: relatedProduct.url
+          | append: ','
+        %}
       {% endunless %}
       {% assign color_with_delimiter = relatedProductColor | append: ',' %}
       {% unless seen_colors contains color_with_delimiter %}
         {% assign seen_colors = seen_colors | append: color_with_delimiter %}
-        {% assign colors = colors | append: relatedProductColor | append: ',' %}
+        {% assign colors = colors
+          | append: relatedProductColor
+          | append: '|:|'
+          | append: relatedProduct.url
+          | append: ','
+        %}
       {% endunless %}
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
-        {% assign templates = templates | append: relatedProductTemplateOptions | append: ',' %}
+        {% assign templates = templates
+          | append: relatedProductTemplateOptions
+          | append: '|:|'
+          | append: relatedProduct.url
+          | append: ','
+        %}
       {% endunless %}
       <script>
         console.log("relatedProduct", {{ relatedProduct | json }});
@@ -304,42 +314,46 @@
   {% assign colors = colors | split: ',' %}
   {% assign templates = templates | split: ',' %}
 
-  {% for shape in shapes %}
-    <script>
-      console.log("shape", {{ shape | json }});
-    </script>
-    <!-- Generate shape button here -->
-  {% endfor %}
-  {% for size in sizes %}
-    <script>
-      console.log("size", {{ size | json }});
-    </script>
-    <!-- Generate size button here -->
-  {% endfor %}
-  {% for color in colors %}
-    <script>
-      console.log("color", {{ color | json }});
-    </script>
-    <!-- Generate color button here -->
-  {% endfor %}
-  {% for template in templates %}
-    <script>
-      console.log("template", {{ template | json }});
-    </script>
-    <!-- Generate template button here -->
-  {% endfor %}
-
-  {% comment %}
-    now that i have a proper array, how can i loop through it and get the unique values?
-  {% endcomment %}
-
-  {% comment %}
-    <script>
-      console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
-      console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
-      console.log("items_array", {{ items_array | json }});
-    </script>
-  {% endcomment %}
+  {% if shapes.size > 1 %}
+    {% for shape in shapes %}
+      {% assign shape_option = shape | split: '|:|' %}
+      <script>
+        console.log("shape", {{ shape | json }});
+        console.log("shape_option", {{ shape_option | json }});
+      </script>
+      <!-- Generate shape button here using shape_option[0] as the option and shape_option[1] as the URL -->
+    {% endfor %}
+  {% endif %}
+  {% if sizes.size > 1 %}
+    {% for size in sizes %}
+      {% assign size_option = size | split: '|:|' %}
+      <script>
+        console.log("size", {{ size | json }});
+        console.log("size_option", {{ size_option | json }});
+      </script>
+      <!-- Generate size button here using size_option[0] as the option and size_option[1] as the URL -->
+    {% endfor %}
+  {% endif %}
+  {% if colors.size > 1 %}
+    {% for color in colors %}
+      {% assign color_option = color | split: '|:|' %}
+      <script>
+        console.log("color", {{ color | json }});
+        console.log("color_option", {{ color_option | json }});
+      </script>
+      <!-- Generate color button here using color_option[0] as the option and color_option[1] as the URL -->
+    {% endfor %}
+  {% endif %}
+  {% if templates.size > 1 %}
+    {% for template in templates %}
+      {% assign template_option = template | split: '|:|' %}
+      <script>
+        console.log("template", {{ template | json }});
+        console.log("template_option", {{ template_option | json }});
+      </script>
+      <!-- Generate template button here using template_option[0] as the option and template_option[1] as the URL -->
+    {% endfor %}
+  {% endif %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
