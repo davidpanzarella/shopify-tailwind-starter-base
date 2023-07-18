@@ -332,25 +332,38 @@
             <input
               type="radio"
               name="size-choice"
-              value="18L"
+              value="{{ shape_option[0] }}"
               class="sr-only"
               aria-labelledby="size-choice-0-label"
               aria-describedby="size-choice-0-description"
             >
-            <p id="size-choice-0-label" class="text-base font-medium text-gray-900">18L</p>
-            <p id="size-choice-0-description" class="mt-1 text-sm text-gray-500">
-              Perfect for a reasonable amount of snacks.
-            </p>
+            <a href="{{ shape_option[1] }}" title="{{ shape_option[0] }}">
+              <p id="size-choice-0-label" class="text-base font-medium text-gray-900">{{ shape_option[0] }}</p>
+              <p id="size-choice-0-description" class="mt-1 text-sm text-gray-500">
+                Perfect for a reasonable amount of snacks.
+              </p>
+            </a>
             <!--
               Active: "border", Not Active: "border-2"
               Checked: "border-indigo-500", Not Checked: "border-transparent"
             -->
-            <div class="pointer-events-none absolute -inset-px rounded-lg border-2" aria-hidden="true"></div>
+            {% if sameProduct %}
+              <div
+                class="pointer-events-none absolute -inset-px rounded-lg border-2 border-indigo-500"
+                aria-hidden="true"
+              ></div>
+            {% else %}
+              <div
+                class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent"
+                aria-hidden="true"
+              ></div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>
     </fieldset>
   {% endif %}
+
   {% if sizes.size > 1 %}
     {% for size in sizes %}
       {% assign size_option = size | split: '|:|' %}
