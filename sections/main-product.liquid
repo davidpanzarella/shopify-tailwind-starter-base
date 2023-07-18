@@ -244,7 +244,7 @@
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
 
   <script>
-    console.log("items_array", {{ items_array | json }});
+    console.log("relatedProductsByType", {{ relatedProductsByType | json }});
   </script>
 
   {% assign seen_shapes = '' %}
