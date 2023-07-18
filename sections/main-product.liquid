@@ -269,9 +269,6 @@
       and relatedProductTemplate == currentTemplate
       and relatedProductTemplateOptions == currentTemplateOptions
     %}
-      <script>
-        console.log("relatedProduct", {{ relatedProduct | json }});
-      </script>
       {% unless seen_shapes contains relatedProductShape %}
         {% assign seen_shapes = seen_shapes | append: relatedProductShape %}
         <!-- Generate shape button here -->
@@ -288,6 +285,13 @@
         {% assign seen_templates = seen_templates | append: relatedProductTemplate %}
         <!-- Generate template button here -->
       {% endunless %}
+      <script>
+        console.log("relatedProduct", {{ relatedProduct | json }});
+        console.log("seen_shapes", {{ seen_shapes | json }});
+        console.log("seen_sizes", {{ seen_sizes | json }});
+        console.log("seen_colors", {{ seen_colors | json }});
+        console.log("seen_templates", {{ seen_templates | json }});
+      </script>
     {% endif %}
   {% endfor %}
 
