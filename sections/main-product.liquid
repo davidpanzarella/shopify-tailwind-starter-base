@@ -208,61 +208,61 @@
   {%- assign matchedShape = false -%}
 
   {%- capture result -%}
-  {%- echo '[' -%}
-  {%- for item in items_array -%}
-    {%- assign values = item | split: '|' -%}
-    {%- assign color = values[0] -%}
-    {%- assign size = values[3] -%}
-    {%- assign shape = values[2] -%}
-    {%- assign handle = values[4] -%}
+    {%- echo '[' -%}
+      {%- for item in items_array -%}
+        {%- assign values = item | split: '|' -%}
+        {%- assign color = values[0] -%}
+        {%- assign size = values[3] -%}
+        {%- assign shape = values[2] -%}
+        {%- assign handle = values[4] -%}
 
-    {%- if color == currentColor -%}
-      {%- assign matchedColor = true -%}
-    {%- endif -%}
+        {%- if color == currentColor -%}
+          {%- assign matchedColor = true -%}
+        {%- endif -%}
 
-    {%- unless uniqueColors contains color -%}
-      {%- assign uniqueColors = uniqueColors | append: color | append: ',' -%}
-      {%- echo uniqueColors -%}
-    {%- endunless -%}
+        {%- unless uniqueColors contains color -%}
+          {%- assign uniqueColors = uniqueColors | append: color | append: ',' -%}
+          {%- echo uniqueColors -%}
+        {%- endunless -%}
 
-    {%- if size == currentSize -%}
-      {%- assign matchedSize = true -%}
-    {%- endif -%}
+        {%- if size == currentSize -%}
+          {%- assign matchedSize = true -%}
+        {%- endif -%}
 
-    {%- unless uniqueSizes contains size -%}
-      {%- assign uniqueSizes = uniqueSizes | append: size | append: ',' -%}
-    {%- endunless -%}
+        {%- unless uniqueSizes contains size -%}
+          {%- assign uniqueSizes = uniqueSizes | append: size | append: ',' -%}
+        {%- endunless -%}
 
-    {%- if shape == currentShape -%}
-      {%- assign matchedShape = true -%}
-    {%- endif -%}
+        {%- if shape == currentShape -%}
+          {%- assign matchedShape = true -%}
+        {%- endif -%}
 
-    {%- unless uniqueShapes contains shape -%}
-      {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
-    {%- endunless -%}
-    {
-      "color": [
+        {%- unless uniqueShapes contains shape -%}
+          {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
+        {%- endunless -%}
         {
-          "handle": {% if matchedColor %} null {% else %} {{- handle -}} {% endif %},
-          "name": {{- color -}}
-        }
-      ],
-      "size": [
-        {
-          "handle": {% if matchedSize %} null {% else %} {{- handle -}} {% endif %},
-          "name": {{- size -}}
-        }
-      ],
-      "shape": [
-        {
-          "handle": {% if matchedShape %} null {% else %} {{- handle -}} {% endif %},
-          "name": {{- shape -}}
-        }
-      ]
-    },
-  {%- endfor -%}
-  {%- echo ']' -%}
-    {%- endcapture -%}
+          "color": [
+            {
+              "handle": {% if matchedColor %} null {% else %} {{- handle -}} {% endif %},
+              "name": {{- color -}}
+            }
+          ],
+          "size": [
+            {
+              "handle": {% if matchedSize %} null {% else %} {{- handle -}} {% endif %},
+              "name": {{- size -}}
+            }
+          ],
+          "shape": [
+            {
+              "handle": {% if matchedShape %} null {% else %} {{- handle -}} {% endif %},
+              "name": {{- shape -}}
+            }
+          ]
+        },
+      {%- endfor -%}
+    {%- echo ']' -%}
+  {%- endcapture -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
