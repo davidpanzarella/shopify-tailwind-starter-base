@@ -242,19 +242,19 @@
     {
       "color": [
         {
-          "handle": {% if matchedColor %} null {% else %} {{-handle-}} {% endif %},
-          "name": "MATCHED COLOR"
+          "handle": {% if matchedColor %} null {% else %} {{- handle -}} {% endif %},
+          "name": {{-color-}}
         }
       ],
       "size": [
         {
-          "handle": {% if matchedSize %} null {% else %} handle {% endif %},
+          "handle": {% if matchedSize %} null {% else %} {{- handle -}} {% endif %},
           "name": "MATCHED SIZE"
         }
       ],
       "shape": [
         {
-          "handle": {% if matchedShape %} null {% else %} handle {% endif %},
+          "handle": {% if matchedShape %} null {% else %} {{- handle -}} {% endif %},
           "name": "MATCHED SHAPE"
         }
       ]
