@@ -199,62 +199,84 @@
   {%- endcapture -%}
   {% assign items_array = items | split: ',' %}
 
-  {% comment %}
-        now that we have the other products that relate to this product, we need to find the unique colors, shapes, and sizes
-         for each product. We will use the handle of the product to identify it.
+  {%- assign uniqueColors = '' -%}
+  {%- assign uniqueSizes = '' -%}
+  {%- assign uniqueShapes = '' -%}
 
-         Lets start with the sizes. We need to know how many other sizes there are for this product and the related products in this list (which also include the current product). We then need to store the handle of the product that has a different size than the current product. We will use this handle to create a link to the product page for that product and not use the link for the current product.
+  {%- assign matchedColor = false -%}
+  {%- assign matchedSize = false -%}
+  {%- assign matchedShape = false -%}
 
-          We will do the same for the shapes and colors.
+  {%- for item in items_array -%}
+    {%- assign values = item | split: '|' -%}
+    {%- assign color = values[0] -%}
+    {%- assign size = values[3] -%}
+    {%- assign shape = values[2] -%}
+    {%- assign handle = values[4] -%}
 
-          I want the final result to look like this:
-          {
-      "color": [
-        {
-          "handle": null,
-          "name": "MATCHED COLOR"
-        },
-        {
-          "handle": "/product/the-first-related-color",
-          "name": "Full Color"
-        }
-      ],
-      "size": [
-        {
-          "handle": "/product/the-first-related-size",
-          "name": "5 Inch"
-        },
-        {
-          "handle": null,
-          "name": "MATCHED SIZE"
-        },
-        {
-          "handle": "/product/the-second-related-size",
-          "name": "7 Inch"
-        }
-      ],
-      "shape": [
-        {
-          "handle": "/product/the-first-related-shape",
-          "name": "Square"
-        },
-        {
-          "handle": null,
-          "name": "MATCHED SHAPE"
-        },
-        {
-          "handle": "/product/the-second-related-shape",
-          "name": "Triangle"
-        }
-      ]
-    }
-  {% endcomment %}
+    {%- if color == currentColor -%}
+      {%- assign matchedColor = true -%}
+    {%- endif -%}
+
+    {%- unless uniqueColors contains color -%}
+      {%- assign uniqueColors = uniqueColors | append: color | append: ',' -%}
+    {%- endunless -%}
+
+    {%- if size == currentSize -%}
+      {%- assign matchedSize = true -%}
+    {%- endif -%}
+
+    {%- unless uniqueSizes contains size -%}
+      {%- assign uniqueSizes = uniqueSizes | append: size | append: ',' -%}
+    {%- endunless -%}
+
+    {%- if shape == currentShape -%}
+      {%- assign matchedShape = true -%}
+    {%- endif -%}
+
+    {%- unless uniqueShapes contains shape -%}
+      {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
+  {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
+  {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
+
+  {%- capture result -%}
+  {
+    "color": [
+      {
+        "handle": {% if matchedColor %} null {% else %} "/product/the-first-related-color" {% endif %},
+        "name": "MATCHED COLOR"
+      }
+    ],
+    "size": [
+      {
+        "handle": {% if matchedSize %} null {% else %} "/product/the-first-related-size" {% endif %},
+        "name": "MATCHED SIZE"
+      }
+    ],
+    "shape": [
+      {
+        "handle": {% if matchedShape %} null {% else %} "/product/the-first-related-shape" {% endif %},
+        "name": "MATCHED SHAPE"
+      }
+    ]
+  }
+  {%- endcapture -%}
 
   <script>
-    console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
-    console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
-    console.log("items_array", {{ items_array | json }});
+    console.log("result", {{ result| json  }});
   </script>
+
+  {% comment %}
+    <script>
+      console.log("uniqueProductByShape", {{ uniqueProductByShape | json }});
+      console.log("uniqueProductByColor", {{ uniqueProductByColor | json }});
+      console.log("items_array", {{ items_array | json }});
+    </script>
+  {% endcomment %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
