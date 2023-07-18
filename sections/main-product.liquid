@@ -208,7 +208,7 @@
   {%- assign matchedShape = false -%}
 
   {%- capture result -%}
-  [
+  {%- echo '[' -%}
   {%- for item in items_array -%}
     {%- assign values = item | split: '|' -%}
     {%- assign color = values[0] -%}
@@ -261,8 +261,8 @@
       ]
     },
   {%- endfor -%}
-]
-  {%- endcapture -%}
+  {%- echo ']' -%}
+    {%- endcapture -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
