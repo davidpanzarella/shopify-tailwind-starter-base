@@ -238,8 +238,12 @@
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
 
   <script>
-    console.log("result", {{ result  }});
+    console.log("result", {{ result }});
   </script>
+
+  {% comment %}
+    now that i have a proper array, how can i loop through it and get the unique values?
+  {% endcomment %}
 
   {% comment %}
     <script>
