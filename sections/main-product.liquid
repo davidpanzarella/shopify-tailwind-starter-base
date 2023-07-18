@@ -365,12 +365,7 @@
                 {% assign color = item.color %}
                 {% assign size = item.size %}
                 {% assign shape = item.shape %}
-
-                {% liquid
-                  assign currentColor = product.metafields.custom.color.value[0]
-                  assign currentShape = product.metafields.custom['product-shape'].value[0]
-                  assign currentSize = product.metafields.custom['product-size'].value[0]
-                %}
+                {% echo shape %}
 
                 {% if color.name != currentColor or shape.name != currentShape or size.name != currentSize %}
                   {% assign uniqueColor = color.handle %}
