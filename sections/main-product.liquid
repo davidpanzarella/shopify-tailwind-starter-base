@@ -238,9 +238,11 @@
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
   {%- assign uniqueShapes = uniqueShapes | split: ',' | join: '' -%}
+  {%- assign resultArray = result | json -%}
 
   <script>
     console.log("result", {{ result }});
+    console.log("resultArray", {{ resultArray }});
   </script>
 
   {% comment %}
