@@ -264,10 +264,7 @@
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-    {% if relatedProductFormat == currentFormat
-      and relatedProductTemplate == currentTemplate
-      and relatedProductTemplateOptions == currentTemplateOptions
-    %}
+    {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
       {% unless seen_shapes contains shape_with_delimiter %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
