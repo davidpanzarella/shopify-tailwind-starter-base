@@ -235,7 +235,7 @@
   {%- echo ']' -%}
 {%- endcapture -%}
 
-  {%- assign resultArray = result | json -%}
+  {%- assign resultArray = result -%}
 
   {%- assign uniqueColors = uniqueColors | split: ',' | join: '' -%}
   {%- assign uniqueSizes = uniqueSizes | split: ',' | join: '' -%}
