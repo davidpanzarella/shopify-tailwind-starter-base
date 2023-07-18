@@ -215,31 +215,6 @@
         {%- assign size = values[3] -%}
         {%- assign shape = values[2] -%}
         {%- assign handle = values[4] -%}
-
-        {%- if color == currentColor -%}
-          {%- assign matchedColor = true -%}
-        {%- endif -%}
-
-        {%- unless uniqueColors contains color -%}
-          {%- assign uniqueColors = uniqueColors | append: color | append: ',' -%}
-          {%- echo uniqueColors -%}
-        {%- endunless -%}
-
-        {%- if size == currentSize -%}
-          {%- assign matchedSize = true -%}
-        {%- endif -%}
-
-        {%- unless uniqueSizes contains size -%}
-          {%- assign uniqueSizes = uniqueSizes | append: size | append: ',' -%}
-        {%- endunless -%}
-
-        {%- if shape == currentShape -%}
-          {%- assign matchedShape = true -%}
-        {%- endif -%}
-
-        {%- unless uniqueShapes contains shape -%}
-          {%- assign uniqueShapes = uniqueShapes | append: shape | append: ',' -%}
-        {%- endunless -%}
         {
           "color": [
             {
