@@ -125,13 +125,6 @@
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% if currentSize == relatedProductSize
-        or currentColor == relatedProductColor
-        or currentTemplateOptions == relatedProductTemplateOptions
-      %}
-        {% assign sameProduct = true %}
-      {% endif %}
-
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
@@ -141,13 +134,17 @@
 
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
       {% unless seen_shapes contains shape_with_delimiter %}
+        {% assign sameShape = false %}
+        {% if currentShape == relatedProductShape %}
+          {% assign sameShape = true %}
+        {% endif %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
         {% assign shapes = shapes
           | append: relatedProductShape
           | append: '|:|'
           | append: relatedProduct.url
           | append: '|:|'
-          | append: sameProduct
+          | append: sameShape
           | append: ','
         %}
       {% endunless %}
