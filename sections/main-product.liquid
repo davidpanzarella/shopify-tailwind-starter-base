@@ -116,6 +116,13 @@
   </script>
 
   {% for relatedProduct in relatedProductsByType %}
+    {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
+    {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
+    {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
+    {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
+    {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
+    {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
+
     {% if relatedProductFormat == currentFormat
       and relatedProductTemplate == currentTemplate
       and relatedProductShape == currentShape
@@ -127,18 +134,7 @@
       {% assign sameProduct = false %}
     {% endif %}
 
-    {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
-    {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
-    {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
-    {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
-    {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
-    {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
-
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% if relatedProduct.id == product.id %}
-        {% assign sameProduct = true %}
-      {% endif %}
-
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
