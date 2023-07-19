@@ -291,7 +291,6 @@
     </fieldset>
   {% endif %}
 
-
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
       <div class="lg:tw-max-w-lg lg:tw-self-end">
@@ -396,17 +395,17 @@
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
-            
-            
             <!-- Color selector -->
             {% if colors.size > 1 %}
-              <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between"">
+              <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
                   <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Color Options</legend>
                   <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
                     {% for color in colors %}
                       {% assign color_option = color | split: '|:|' %}
-                      <!-- Generate color button here using color_option[0] as the option and color_option[1] as the URL -->
+                      <!--
+                        Generate color button here using color_option[0] as the option and color_option[1] as the URL
+                      -->
                       <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
                         <input
                           type="radio"
@@ -442,7 +441,7 @@
 
             <!-- Template selector -->
             {% if templates.size > 1 %}
-              <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between"">
+              <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
                   <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
                   <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
