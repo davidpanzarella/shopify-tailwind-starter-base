@@ -337,13 +337,15 @@
           {% assign templateImage = template_option[2] %}
 
           {% assign templateMatch = false %}
-          {% if relatedProduct.url == product.url %}
+          {% if relatedProduct.handle == product.handle %}
             {% assign templateMatch = true %}
           {% endif %}
 
           <script>
+            console.log("relatedProduct.handle ", {{ templateMatch }});
+            console.log("product.handle", {{ product.handle }});
             console.log("templateMatch", {{ templateMatch }});
-            console.log("template_option", {{ template_option | json }});
+            //console.log("template_option", {{ template_option | json }});
           </script>
 
           <div
