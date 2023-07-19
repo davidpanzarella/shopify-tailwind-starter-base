@@ -70,61 +70,24 @@
         then create a unique list for each that holds the related product handle and the name of the shape, size, or format
         otherwise, if the current product is a different color than the related product, then create a unique list for the other color
     endcomment
-    comment
-      assign currentColor = product.metafields.custom.color.value[0]
-      assign currentType = product.metafields.custom['product-type']
-      assign currentTypes = currentType | append: 's'
-      assign currentFormat = product.metafields.custom['product-format'].value
-      assign currentShape = product.metafields.custom['product-shape'].value[0]
-      assign currentSize = product.metafields.custom['product-size'].value[0]
-      assign currentTemplate = product.metafields.custom['product-template-name'].value
-      assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
-      assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
+    assign currentColor = product.metafields.custom.color.value[0]
+    assign currentType = product.metafields.custom['product-type']
+    assign currentTypes = currentType | append: 's'
+    assign currentFormat = product.metafields.custom['product-format'].value
+    assign currentShape = product.metafields.custom['product-shape'].value[0]
+    assign currentSize = product.metafields.custom['product-size'].value[0]
+    assign currentTemplate = product.metafields.custom['product-template-name'].value
+    assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
+    assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
 
-      assign uniqueColors = '' | split: ','
-      assign uniqueShapes = ''
-      assign uniqueSizes = ''
-
-      assign colorArray = ''
-      assign shapeArray = ''
-      assign sizeArray = ''
-      assign currentUniqIndex = 0
-
-      for relatedProduct in relatedProductsByType
-        assign sameProduct = false
-        if relatedProduct.handle == product.handle
-          assign sameProduct = true
-        endif
-        assign relatedProductColor = relatedProduct.metafields.custom.color.value[0]
-        assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value
-        assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value
-        assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value
-        assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0]
-        assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0]
-
-        if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate and relatedProductTemplateOptions == currentTemplateOptions
-          assign currentUniqIndex = currentUniqIndex | plus: 1
-          assign uniqueColors = uniqueColors | append: relatedProductColor
-
-          assign uniqueShapes = uniqueShapes | concat: relatedProductShape
-          assign uniqueSizes = uniqueSizes | concat: relatedProductSize
-          assign colorArray = colorArray | concat: relatedProductColor
-
-          if relatedProductColor == currentColor
-            if relatedProductShape != currentShape
-              assign uniqueProductByShape = relatedProduct.handle
-            endif
-          else
-            assign uniqueProductByColor = relatedProduct.handle
-          endif
-
-          if relatedProductSize != currentSize
-            assign uniqueProductBySize = relatedProduct.handle
-          endif
-        endif
-      endfor
-      echo uniqueColors
-    endcomment
+    assign seen_shapes = ''
+    assign seen_sizes = ''
+    assign seen_colors = ''
+    assign seen_templates = ''
+    assign shapes = ''
+    assign sizes = ''
+    assign colors = ''
+    assign templates = ''
 
     assign colorDisplay = ''
     if currentColor == 'Black and White'
@@ -158,93 +121,6 @@
     Otherwise, if the current product is a different color than the related product,
     create a unique list for the other color.
   {% endcomment %}
-
-  {% assign currentColor = product.metafields.custom.color.value[0] %}
-  {% assign currentType = product.metafields.custom['product-type'] %}
-  {% assign currentTypes = currentType | append: 's' %}
-  {% assign currentFormat = product.metafields.custom['product-format'].value %}
-  {% assign currentShape = product.metafields.custom['product-shape'].value[0] %}
-  {% assign currentSize = product.metafields.custom['product-size'].value[0] %}
-  {% assign currentTemplate = product.metafields.custom['product-template-name'].value %}
-  {% assign currentTemplateOptions = product.metafields.custom['product-template-options'].value %}
-
-  {% assign relatedProductsByType = collections.all.products | where: 'type', currentTypes %}
-
-  {% comment %}
-    {% assign uniqueColors = '' | split: '' %}
-    {% assign uniqueShapes = '' | split: '' %}
-    {% assign uniqueSizes = '' | split: '' %}
-
-    {% assign uniqueProductByColor = '' %}
-    {% assign uniqueProductByShape = '' %}
-    {% assign uniqueProductBySize = '' %}
-
-    {%- capture items -%}
-    {%- for relatedProduct in relatedProductsByType -%}
-      {%- assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] -%}
-      {%- assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value -%}
-      {%- assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value -%}
-      {%- assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value -%}
-      {%- assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] -%}
-      {%- assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] -%}
-      {%- if relatedProduct.available
-        and relatedProductFormat == currentFormat
-        and relatedProductTemplate == currentTemplate
-        and relatedProductTemplateOptions == currentTemplateOptions
-      -%}
-        {{- relatedProduct.title -}}|{{- relatedProductColor -}}|{{- relatedProductShape -}}|{{- relatedProductSize -}}|{{- relatedProduct.handle -}},
-      {%- endif -%}
-    {%- endfor -%}
-    {%- endcapture -%}
-    {% assign items_array = items | split: ',' %}
-
-    {%- assign uniqueColors = '' -%}
-    {%- assign uniqueSizes = '' -%}
-    {%- assign uniqueShapes = '' -%}
-
-    {%- assign matchedColor = false -%}
-    {%- assign matchedSize = false -%}
-    {%- assign matchedShape = false -%}
-  {% endcomment %}
-
-  {% comment %}
-    {%- capture result -%}
-    {%- echo '[' -%}
-      {%- for item in items_array -%}
-        {%- assign values = item | split: '|' -%}
-        {%- assign title = values[0] -%}
-        {%- assign color = values[1] -%}
-        {%- assign shape = values[2] -%}
-        {%- assign size = values[3] -%}
-        {%- assign handle = values[4] -%}
-        {
-          "title": "{{- title -}}",
-          "color":{
-              "handle": "{% if matchedColor %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- color -}}"
-            },
-          "size":{
-              "handle": "{% if matchedSize %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- size -}}"
-            },
-          "shape":{
-              "handle": "{% if matchedShape %} null {% else %} {{- handle -}} {% endif %}",
-              "name": "{{- shape -}}"
-          }
-        },
-      {%- endfor -%}
-    {%- echo ']' -%}
-    {%- endcapture -%}
-  {% endcomment %}
-
-  {% assign seen_shapes = '' %}
-  {% assign seen_sizes = '' %}
-  {% assign seen_colors = '' %}
-  {% assign seen_templates = '' %}
-  {% assign shapes = '' %}
-  {% assign sizes = '' %}
-  {% assign colors = '' %}
-  {% assign templates = '' %}
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
