@@ -194,16 +194,22 @@
   {% assign colors = colors | split: ',' %}
   {% assign templates = templates | split: ',' %}
 
+  <script>
+    console.log("templates", {{ templates | json  }});
+  </script>
+
   {% if shapes.size > 1 %}
     <fieldset>
       <legend class="block text-sm font-medium text-gray-700">Size Options</legend>
       <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {% for shape in shapes %}
           {% assign shape_option = shape | split: '|:|' %}
-          <script>
-            console.log("shape", {{ shape | json }});
-            console.log("shape_option", {{ shape_option | json }});
-          </script>
+          {% comment %}
+            <script>
+              console.log("shape", {{ shape | json }});
+              console.log("shape_option", {{ shape_option | json }});
+            </script>
+          {% endcomment %}
           <!-- Generate shape button here using shape_option[0] as the option and shape_option[1] as the URL -->
 
           <!-- Active: "ring-2 ring-indigo-500" -->
