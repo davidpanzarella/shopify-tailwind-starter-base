@@ -142,7 +142,7 @@
           | append: '|:|'
           | append: relatedProduct.url
           | append: '|:|'
-          | append: sameProduct
+          | append: relatedProduct.id
           | append: ','
         %}
       {% endunless %}
@@ -155,7 +155,7 @@
           | append: '|:|'
           | append: relatedProduct.url
           | append: '|:|'
-          | append: sameProduct
+          | append: relatedProduct.id
           | append: ','
         %}
       {% endunless %}
@@ -168,7 +168,7 @@
           | append: '|:|'
           | append: relatedProduct.url
           | append: '|:|'
-          | append: sameProduct
+          | append: relatedProduct.id
           | append: ','
         %}
       {% endunless %}
@@ -184,7 +184,7 @@
           | append: '|:|'
           | append: templateImage
           | append: '|:|'
-          | append: sameProduct
+          | append: relatedProduct.id
           | append: ','
         %}
       {% endunless %}
@@ -337,9 +337,10 @@
           {% assign templateName = template_option[0] %}
           {% assign templateUrl = template_option[1] %}
           {% assign templateImage = template_option[2] %}
+          {% assign templateProductID = template_option[3] %}
 
           {% assign templateMatch = false %}
-          {% if relatedProduct.id == product.id %}
+          {% if templateProductID == product.id %}
             {% assign templateMatch = true %}
           {% endif %}
 
