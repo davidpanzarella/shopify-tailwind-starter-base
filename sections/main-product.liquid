@@ -291,8 +291,8 @@
       {% endunless %}
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
-        {% assign templateImage = related_product.media[2].preview_image | image_url: width: 200  %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
+        {% assign templateImage = related_product.media[2].preview_image | image_url: width: 200  %}
         {% assign templates = templates
           | append: relatedProductTemplateOptions
           | append: '|:|'
