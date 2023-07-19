@@ -372,9 +372,10 @@
                   <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
                     {% for size in sizes %}
                       {% assign size_option = size | split: '|:|' %}
-                      <!--
-                        Generate size button here using size_option[0] as the option and size_option[1] as the URL
-                      -->
+                      {% assign sizeName = size_option[0] %}
+                      {% assign sizeUrl = size_option[1] %}
+                      {% assign sizeMatch = size_option[2] %}
+
                       <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
                         <input
                           type="radio"
