@@ -419,23 +419,23 @@
                       {% assign colorName = color_option[0] %}
                       {% assign colorUrl = color_option[1] %}
                       {% assign colorMatch = color_option[3] %}
-                      <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
-                        <input
-                          type="radio"
-                          name="color-choice"
-                          value="{{ color_option[0] }}"
-                          class="tw-sr-only"
-                          aria-labelledby="color-choice-0-label"
-                          aria-describedby="color-choice-0-description"
-                        >
-                        <div
-                          class="cursor-pointer group"
-                          {% if colorMatch == 'false' %}
-                            onclick="window.location.href='{{colorUrl}}'"
-                          {% endif %}
-                        >
+                      <input
+                        type="radio"
+                        name="color-choice"
+                        value="{{ colorName }}"
+                        class="tw-sr-only"
+                        aria-labelledby="color-choice-0-label"
+                        aria-describedby="color-choice-0-description"
+                      >
+                      <div
+                        class="cursor-pointer group"
+                        {% if colorMatch == 'false' %}
+                          onclick="window.location.href='{{colorUrl}}'"
+                        {% endif %}
+                      >
+                        <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if colorMatch == 'true' %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
                           <p id="color-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
-                            {{ color_option[0] }}
+                            {{ colorName }}
                           </p>
                         </div>
                       </div>
