@@ -330,13 +330,13 @@
       <!-- Product form -->
       <div class="tw-mt-10 lg:tw-col-start-1 lg:tw-row-start-2 lg:tw-max-w-lg lg:tw-self-start">
         <section aria-labelledby="options-heading">
-          <h2 id="options-heading" class="tw-sr-only">Product options</h2>
+          <h2 id="options-heading" class="tw-sr-only">Product Options</h2>
           <form>
             <!-- shapes picker -->
             {% if shapes.size > 1 %}
               <div class="tw-mt-6 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
-                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Shape Options</legend>
+                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Shape</legend>
                   <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
                     {% for shape in shapes %}
                       {% assign shape_option = shape | split: '|:|' %}
@@ -371,7 +371,7 @@
             {% if sizes.size > 1 %}
               <div class="tw-mt-6 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
-                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Size Options</legend>
+                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Size</legend>
                   <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-mt-1 sm:tw-grid-cols-3">
                     {% for size in sizes %}
                       {% assign size_option = size | split: '|:|' %}
@@ -406,7 +406,7 @@
             {% if colors.size > 1 %}
               <div class="tw-mt-6 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
-                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Color Options</legend>
+                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Color</legend>
                   <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-mt-1 sm:tw-grid-cols-3">
                     {% for color in colors %}
                       {% assign color_option = color | split: '|:|' %}
@@ -448,7 +448,7 @@
             <!-- Template selector -->
             <div class="tw-mt-6 sm:tw-flex sm:tw-justify-between">
               <fieldset>
-                <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
+                <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template</legend>
                 <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
                   {% for template in templates %}
                     {% assign template_option = template | split: '|:|' %}
