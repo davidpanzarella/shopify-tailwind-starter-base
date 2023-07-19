@@ -182,8 +182,8 @@
   {% assign colors = colors | split: ',' %}
   {% assign templates = templates | split: ',' %}
   <script>
-     == product.handle
-    console.log("relatedProduct.handle", {{ sameProduct }});
+    console.log("relatedProduct.handle", {{ relatedProduct.handle }});
+    console.log("product.handle", {{ product.handle }});
   </script>
 
   {% if shapes.size > 1 %}
