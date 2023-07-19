@@ -315,6 +315,15 @@
       <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
         {% for template in templates %}
           {% assign template_option = template | split: '|:|' %}
+          {% assign templateName = template_option[0] %}
+          {% assign templateUrl = template_option[1] %}
+          {% assign templateImage = template_option[2] %}
+
+          {% assign current_product = false %}
+          {% if templateUrl == product.handle %}
+            {% assign current_product = true %}
+          {% endif %}
+
           <script>
             console.log("template", {{ template | json }});
             console.log("template_option", {{ template_option | json }});
@@ -323,7 +332,7 @@
           <div
             class="cursor-pointer group"
             {% if current_product == false %}
-              onclick="window.location.href='/products/{{ related_product.handle }}'"
+              onclick="window.location.href='{{templateUrl}}'"
             {% endif %}
           >
             <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
@@ -338,8 +347,6 @@
             >
             </div>
           </div>
-
-
         {% endfor %}
       </div>
     </fieldset>
