@@ -466,32 +466,15 @@
 
           <!-- Active: "tw-ring-2 tw-ring-indigo-500" -->
           <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
-            <input
-              type="radio"
-              name="template-choice"
-              value="{{ template_option[0] }}"
-              class="tw-sr-only"
-              aria-labelledby="template-choice-0-label"
-              aria-describedby="template-choice-0-description"
-            >
-            <a href="{{ template_option[1] }}" title="{{ template_option[0] }}">
-              <p id="template-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
-                {{ template_option[0] }}
-              </p>
-              <p id="template-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
-                Perfect for a reasonable amount of snacks.
-              </p>
-            </a>
-            {% if sameProduct %}
-              {% assign border_class = 'tw-border-2 tw-border-indigo-500' %}
-            {% else %}
-              {% assign border_class = 'tw-border tw-border-transparent' %}
-            {% endif %}
-            <div
-              class="{{ border_class }} tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg"
-              aria-hidden="true"
-            ></div>
-          </div>
+            
+              <img
+                src="{{ template_option[2] }}"
+                alt="{{ template_option[0] }}"
+                width="200"
+                height="200"
+                loading="lazy"
+                class="object-cover w-full h-full"
+              >
         {% endfor %}
       </div>
     </fieldset>
