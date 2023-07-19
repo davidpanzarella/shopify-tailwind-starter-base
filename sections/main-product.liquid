@@ -289,7 +289,13 @@
           | append: ','
         %}
       {% endunless %}
-      {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
+      {% assign template_with_delimiter = relatedProductTemplateOptions
+        | append: '|:|'
+        | append: relatedProduct.handle
+        | append: '|:|'
+        | append: relatedProduct.media[2].preview_image
+        | img_url: '200x'
+      %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
         {% assign templates = templates
