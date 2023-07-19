@@ -151,13 +151,17 @@
 
       {% assign size_with_delimiter = relatedProductSize | append: ',' %}
       {% unless seen_sizes contains size_with_delimiter %}
+        {% assign sameSize = false %}
+        {% if currentSize == relatedProductSize %}
+          {% assign sameSize = true %}
+        {% endif %}
         {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
         {% assign sizes = sizes
           | append: relatedProductSize
           | append: '|:|'
           | append: relatedProduct.url
           | append: '|:|'
-          | append: sameProduct
+          | append: sameSize
           | append: ','
         %}
       {% endunless %}
