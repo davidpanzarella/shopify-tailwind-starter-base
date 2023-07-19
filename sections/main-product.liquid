@@ -131,7 +131,7 @@
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
         console.log("relatedProduct", {{ relatedProduct | json }});
-        //console.log("sameProduct", {{ sameProduct }});
+        console.log("sameProduct", {{ sameProduct }});
       </script>
 
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
@@ -184,7 +184,7 @@
           | append: '|:|'
           | append: templateImage
           | append: '|:|'
-          | append: relatedProduct.id
+          | append: sameProduct
           | append: ','
         %}
       {% endunless %}
