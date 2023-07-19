@@ -191,9 +191,9 @@
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
-        {% assign templateImage = relatedProduct.media[1].preview_image | image_url: width: 300 %}
+        {% assign templateImage = relatedProduct.media[1].preview_image | image_url: width: 200 %}
         {% if relatedProduct.id == product.id %}
-          {% assign templateImage = product.media[1].preview_image | image_url: width: 300 %}
+          {% assign templateImage = product.media[1].preview_image | image_url: width: 200 %}
         {% endif %}
         {% assign templates = templates
           | append: relatedProductTemplateOptions
