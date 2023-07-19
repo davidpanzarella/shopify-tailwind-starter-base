@@ -166,10 +166,7 @@
         %}
       {% endunless %}
 
-      {% if currentTemplateOptions == relatedProductTemplateOptions
-        and relatedProductShape == currentShape
-        and relatedProductSize == currentSize
-      %}
+      {% if relatedProductShape == currentShape and relatedProductSize == currentSize %}
         {% assign color_with_delimiter = relatedProductColor | append: ',' %}
         {% unless seen_colors contains color_with_delimiter %}
           {% assign sameColor = false %}
