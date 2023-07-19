@@ -125,7 +125,7 @@
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% if relatedProduct.id == product.id %}
+      {% if currentTemplateOptions == relatedProductTemplateOptions %}
         {% assign sameProduct = true %}
       {% endif %}
 
