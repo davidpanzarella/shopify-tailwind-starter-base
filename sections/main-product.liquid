@@ -113,14 +113,6 @@
     console.log("relatedProductsByType", {{ relatedProductsByType | json }});
   </script>
 
-  {% comment %}
-    Get all products of the same product type as the current product for the related products section.
-    If the current product is the same color as the related product but has a different shape, size, or format,
-    create a unique list for each that holds the related product handle and the name of the shape, size, or format.
-    Otherwise, if the current product is a different color than the related product,
-    create a unique list for the other color.
-  {% endcomment %}
-
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
     {% if relatedProduct.handle == product.handle %}
@@ -177,16 +169,10 @@
           | append: ','
         %}
       {% endunless %}
-      <script>
-        //console.log("relatedProduct", {{ relatedProduct | json }});
-        //console.log("seen_shapes", {{ seen_shapes | json }});
-        //console.log("seen_sizes", {{ seen_sizes | json }});
-        //console.log("seen_colors", {{ seen_colors | json }});
-        console.log("templateImage", {{ templateImage | json }});
-      </script>
     {% endif %}
   {% endfor %}
 
+  {% comment %} set up arrays for each option set {% endcomment %}
   {% assign shapes = shapes | split: ',' %}
   {% assign sizes = sizes | split: ',' %}
   {% assign colors = colors | split: ',' %}
@@ -194,6 +180,7 @@
   <script>
     console.log("sizes size", {{ sizes.size }});
   </script>
+
   {% if shapes.size > 1 %}
     <fieldset>
       <legend class="block text-sm font-medium text-gray-700">Size Options</legend>
