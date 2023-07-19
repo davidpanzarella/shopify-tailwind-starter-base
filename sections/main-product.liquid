@@ -315,50 +315,25 @@
             {% if shapes.size > 1 %}
               <div class="tw-mt-6 sm:tw-flex sm:tw-justify-between">
                 <fieldset>
-                  <legend class="block text-sm font-medium text-gray-700">Size Options</legend>
-                  <div class="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Shape Options</legend>
+                  <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
                     {% for shape in shapes %}
                       {% assign shape_option = shape | split: '|:|' %}
-                      {% comment %}
-                        <script>
-                          console.log("shape", {{ shape | json }});
-                          console.log("shape_option", {{ shape_option | json }});
-                        </script>
-                      {% endcomment %}
-                      <!--
-                        Generate shape button here using shape_option[0] as the option and shape_option[1] as the URL
-                      -->
+                      {% assign shapeName = shape_option[0] %}
+                      {% assign shapeUrl = shape_option[1] %}
+                      {% assign shapeMatch = shape_option[2] %}
 
-                      <!-- Active: "ring-2 ring-indigo-500" -->
-                      <div class="relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none">
-                        <input
-                          type="radio"
-                          name="size-choice"
-                          value="{{ shape_option[0] }}"
-                          class="sr-only"
-                          aria-labelledby="size-choice-0-label"
-                          aria-describedby="size-choice-0-description"
-                        >
-                        <a href="{{ shape_option[1] }}" title="{{ shape_option[0] }}">
-                          <p id="size-choice-0-label" class="text-base font-medium text-gray-900">
-                            {{ shape_option[0] }}
-                          </p>
-                        </a>
-                        <!--
-                          Active: "border", Not Active: "border-2"
-                          Checked: "border-indigo-500", Not Checked: "border-transparent"
-                        -->
-                        {% if sameProduct %}
-                          <div
-                            class="pointer-events-none absolute -inset-px rounded-lg border-2 border-indigo-500"
-                            aria-hidden="true"
-                          ></div>
-                        {% else %}
-                          <div
-                            class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent"
-                            aria-hidden="true"
-                          ></div>
+                      <div
+                        class="cursor-pointer group"
+                        {% if shapeMatch == 'false' %}
+                          onclick="window.location.href='{{ shapeUrl }}'"
                         {% endif %}
+                      >
+                        <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if shapeMatch == 'true' %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
+                          <p id="shape-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
+                            {{ shapeName }}
+                          </p>
+                        </div>
                       </div>
                     {% endfor %}
                   </div>
@@ -378,29 +353,17 @@
                       {% assign sizeUrl = size_option[1] %}
                       {% assign sizeMatch = size_option[2] %}
 
-                      <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
-                        <input
-                          type="radio"
-                          name="size-choice"
-                          value="{{ sizeName }}"
-                          class="tw-sr-only"
-                          aria-labelledby="size-choice-0-label"
-                          aria-describedby="size-choice-0-description"
-                        >
-                        <a href="{{ sizeUrl }}" title="{{ sizeName }}">
+                      <div
+                        class="cursor-pointer group"
+                        {% if sizeMatch == 'false' %}
+                          onclick="window.location.href='{{ sizeUrl }}'"
+                        {% endif %}
+                      >
+                        <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if sizeMatch == 'true' %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
                           <p id="size-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
                             {{ sizeName }}
                           </p>
-                        </a>
-                        {% if sizeMatch %}
-                          {% assign border_class = 'tw-border-2 tw-border-indigo-500' %}
-                        {% else %}
-                          {% assign border_class = 'tw-border-2 tw-border-transparent' %}
-                        {% endif %}
-                        <div
-                          class="{{ border_class }} tw-pointer-events-none tw-absolute -tw-inset-px tw-rounded-lg"
-                          aria-hidden="true"
-                        ></div>
+                        </div>
                       </div>
                     {% endfor %}
                   </div>
