@@ -128,8 +128,9 @@
       {% endif %}
 
       <script>
-        console.log("sameProduct", {{ sameProduct  }});
+        console.log("sameProduct", {{ sameProduct }});
       </script>
+
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
       {% unless seen_shapes contains shape_with_delimiter %}
         {% assign seen_shapes = seen_shapes | append: shape_with_delimiter %}
