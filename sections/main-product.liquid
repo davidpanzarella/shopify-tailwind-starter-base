@@ -331,45 +331,6 @@
     </fieldset>
   {% endif %}
 
-  {% if templates.size > 1 %}
-    <!-- Template selector -->
-    <fieldset>
-      <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
-      <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
-        {% for template in templates %}
-          {% assign template_option = template | split: '|:|' %}
-          {% assign templateName = template_option[0] %}
-          {% assign templateUrl = template_option[1] %}
-          {% assign templateImage = template_option[2] %}
-          {% assign templateMatch = template_option[3] %}
-
-          <script>
-            console.log("templateMatch", {{ templateMatch }});
-            console.log("template_option", {{ template_option | json }});
-          </script>
-
-          <div
-            class="cursor-pointer group"
-            {% if templateMatch == 'false' %}
-              onclick="window.location.href='{{templateUrl}}'"
-            {% endif %}
-          >
-            <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if templateMatch == 'true' %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
-              <img
-                src="{{ templateImage }}"
-                alt="{{ templateName }}"
-                width="200"
-                height="200"
-                loading="lazy"
-                class="object-cover w-full h-full"
-              >
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </fieldset>
-  {% endif %}
-
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="tw-px-4 tw-py-6 tw-mx-auto sm:tw-px-6 sm:tw-py-24 lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-x-8 lg:tw-px-8">
       <div class="lg:tw-max-w-lg lg:tw-self-end">
@@ -476,6 +437,45 @@
           <form>
             <!-- Size selector -->
             <div class="sm:tw-flex sm:tw-justify-between">
+              {% if templates.size > 1 %}
+                <!-- Template selector -->
+                <fieldset>
+                  <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
+                  <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
+                    {% for template in templates %}
+                      {% assign template_option = template | split: '|:|' %}
+                      {% assign templateName = template_option[0] %}
+                      {% assign templateUrl = template_option[1] %}
+                      {% assign templateImage = template_option[2] %}
+                      {% assign templateMatch = template_option[3] %}
+
+                      <script>
+                        console.log("templateMatch", {{ templateMatch }});
+                        console.log("template_option", {{ template_option | json }});
+                      </script>
+
+                      <div
+                        class="cursor-pointer group"
+                        {% if templateMatch == 'false' %}
+                          onclick="window.location.href='{{templateUrl}}'"
+                        {% endif %}
+                      >
+                        <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if templateMatch == 'true' %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
+                          <img
+                            src="{{ templateImage }}"
+                            alt="{{ templateName }}"
+                            width="200"
+                            height="200"
+                            loading="lazy"
+                            class="object-cover w-full h-full"
+                          >
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              {% endif %}
+
               <fieldset>
                 <legend class="tw-block tw-text-base tw-font-medium tw-text-gray-700">Design Options</legend>
                 <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-3">
@@ -505,55 +505,6 @@
                       </div>
                     </div>
                   {% endfor %}
-
-                  {% comment %}
-                    <!-- Active: "ring-2 ring-indigo-500" -->
-                    <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
-                      <input
-                        type="radio"
-                        name="size-choice"
-                        value="18L"
-                        class="tw-sr-only"
-                        aria-labelledby="size-choice-0-label"
-                        aria-describedby="size-choice-0-description"
-                      >
-                      <p id="size-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">5.6345 Inch</p>
-                      <p id="size-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
-                        Perfect for a reasonable amount of snacks.
-                      </p>
-                      <!--
-                        Active: "border", Not Active: "border-2"
-                        Checked: "border-indigo-500", Not Checked: "border-transparent"
-                      -->
-                      <div
-                        class="tw-absolute tw-border-2 tw-rounded-lg tw-pointer-events-none -tw-inset-px"
-                        aria-hidden="true"
-                      ></div>
-                    </div>
-                    <!-- Active: "ring-2 ring-indigo-500" -->
-                    <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
-                      <input
-                        type="radio"
-                        name="size-choice"
-                        value="20L"
-                        class="tw-sr-only"
-                        aria-labelledby="size-choice-1-label"
-                        aria-describedby="size-choice-1-description"
-                      >
-                      <p id="size-choice-1-label" class="tw-text-base tw-font-medium tw-text-gray-900">20L</p>
-                      <p id="size-choice-1-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
-                        Enough room for a serious amount of snacks.
-                      </p>
-                      <!--
-                        Active: "border", Not Active: "border-2"
-                        Checked: "border-indigo-500", Not Checked: "border-transparent"
-                      -->
-                      <div
-                        class="tw-absolute tw-border-2 tw-rounded-lg tw-pointer-events-none -tw-inset-px"
-                        aria-hidden="true"
-                      ></div>
-                    </div>
-                  {% endcomment %}
                 </div>
               </fieldset>
             </div>
