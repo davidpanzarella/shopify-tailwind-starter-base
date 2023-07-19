@@ -119,6 +119,11 @@
       {% assign sameProduct = true %}
     {% endif %}
 
+    <script>
+      console.log("relatedProduct.handle", {{ relatedProduct.handle }});
+      console.log("product.handle", {{ product.handle }});
+    </script>
+
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
     {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
     {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
@@ -181,10 +186,6 @@
   {% assign sizes = sizes | split: ',' %}
   {% assign colors = colors | split: ',' %}
   {% assign templates = templates | split: ',' %}
-  <script>
-    console.log("relatedProduct.handle", {{ relatedProduct.handle }});
-    console.log("product.handle", {{ product.handle }});
-  </script>
 
   {% if shapes.size > 1 %}
     <fieldset>
