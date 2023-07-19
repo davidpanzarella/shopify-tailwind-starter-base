@@ -147,6 +147,20 @@
     {% endif %}
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
+      {% if preferredURL %}
+        {# Use the most preferred URL #}
+        {% assign finalURL = preferredURL %}
+      {% elsif secondPreferredURL %}
+        {# Use the second most preferred URL #}
+        {% assign finalURL = secondPreferredURL %}
+      {% elsif thirdPreferredURL %}
+        {# Use the third most preferred URL #}
+        {% assign finalURL = thirdPreferredURL %}
+      {% else %}
+        {# Use the fourth most preferred URL #}
+        {% assign finalURL = fourthPreferredURL %}
+      {% endif %}
+
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
@@ -217,7 +231,7 @@
         {% assign templates = templates
           | append: relatedProductTemplateOptions
           | append: '|:|'
-          | append: relatedProduct.url
+          | append: finalURL
           | append: '|:|'
           | append: templateImage
           | append: '|:|'
