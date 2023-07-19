@@ -380,17 +380,14 @@
                         <input
                           type="radio"
                           name="size-choice"
-                          value="{{ size_option[0] }}"
+                          value="{{ sizeName }}"
                           class="tw-sr-only"
                           aria-labelledby="size-choice-0-label"
                           aria-describedby="size-choice-0-description"
                         >
-                        <a href="{{ size_option[1] }}" title="{{ size_option[0] }}">
+                        <a href="{{ size_option[1] }}" title="{{ sizeName }}">
                           <p id="size-choice-0-label" class="tw-text-base tw-font-medium tw-text-gray-900">
-                            {{ size_option[0] }}
-                          </p>
-                          <p id="size-choice-0-description" class="tw-mt-1 tw-text-sm tw-text-gray-500">
-                            Perfect for a reasonable amount of snacks.
+                            {{ sizeName }}
                           </p>
                         </a>
                         {% if sameProduct %}
