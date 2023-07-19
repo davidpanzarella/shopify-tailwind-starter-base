@@ -110,7 +110,7 @@
   %}
 
   <script>
-    //console.log("relatedProductsByType", {{ relatedProductsByType | json }});
+    console.log("relatedProductsByType", {{ relatedProductsByType | json }});
   </script>
 
   {% for relatedProduct in relatedProductsByType %}
@@ -130,7 +130,7 @@
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
-        //console.log("relatedProduct", {{ relatedProduct | json }});
+        console.log("relatedProduct", {{ relatedProduct | json }});
         //console.log("sameProduct", {{ sameProduct }});
       </script>
 
