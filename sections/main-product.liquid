@@ -122,18 +122,19 @@
     {% assign relatedProductTemplateOptions = relatedProduct.metafields.custom['product-template-options'].value %}
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
-
-    {% if relatedProductFormat == currentFormat
-      and relatedProductTemplate == currentTemplate
-      and relatedProductTemplateOptions == relatedProductTemplateOptions
-      and relatedProductShape == currentShape
-      and relatedProductSize == currentSize
-      and relatedProductColor == currentColor
-    %}
-      {% assign sameProduct = true %}
-    {% else %}
-      {% assign sameProduct = false %}
-    {% endif %}
+    {% comment %}
+      {% if relatedProductFormat == currentFormat
+        and relatedProductTemplate == currentTemplate
+        and relatedProductTemplateOptions == relatedProductTemplateOptions
+        and relatedProductShape == currentShape
+        and relatedProductSize == currentSize
+        and relatedProductColor == currentColor
+      %}
+        {% assign sameProduct = true %}
+      {% else %}
+        {% assign sameProduct = false %}
+      {% endif %}
+    {% endcomment %}
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplateOptions == currentTemplate %}
       <script>
