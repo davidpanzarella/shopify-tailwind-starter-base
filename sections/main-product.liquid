@@ -123,9 +123,7 @@
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-    {% if relatedProductFormat == currentFormat
-      and relatedProductTemplate == currentTemplate
-      and relatedProductTemplateOptions == currentTemplateOptions
+    {% if relatedProductTemplateOptions == currentTemplateOptions
       and relatedProductShape == currentShape
       and relatedProductSize == currentSize
       and relatedProductColor == currentColor
