@@ -120,8 +120,7 @@
     {% endif %}
 
     <script>
-      console.log("relatedProduct", {{ relatedProduct }});
-      console.log("product.handle", {{ product.handle }});
+      console.log("relatedProduct.handle", {{ relatedProduct.handle }});
     </script>
 
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
