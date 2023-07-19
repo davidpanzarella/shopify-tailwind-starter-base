@@ -64,6 +64,8 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   {% liquid
+    assign product_form_id = 'product-form-' | append: section.id
+
     comment
       Get all products of the same product type as the current product for the related products section
     endcomment
@@ -1044,7 +1046,7 @@
       }
 
       if (!isIE()) return;
-      //const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
+      const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
       const noScriptInputWrapper = document.createElement('div');
       const variantSwitcher =
         document.querySelector('variant-radios[data-section="{{ section.id }}"]') ||
