@@ -195,9 +195,6 @@
 
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
         {% assign templateImage = relatedProduct.media[1].preview_image | image_url: width: 200 %}
-        {% if sameTemplateOptions %}
-          {% assign templateImage = product.media[1].preview_image | image_url: width: 200 %}
-        {% endif %}
         {% assign templates = templates
           | append: relatedProductTemplateOptions
           | append: '|:|'
