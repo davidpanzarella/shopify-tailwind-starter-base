@@ -324,11 +324,7 @@
           {% assign templateName = template_option[0] %}
           {% assign templateUrl = template_option[1] %}
           {% assign templateImage = template_option[2] %}
-
-          {% assign templateMatch = false %}
-          {% if templateName == product.title %}
-            {% assign templateMatch = true %}
-          {% endif %}
+          {% assign templateMatch = template_option[3] %}
 
           <script>
             console.log("templateMatch", {{ templateMatch }});
