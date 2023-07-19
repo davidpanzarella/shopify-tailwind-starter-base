@@ -417,6 +417,12 @@
                       {% assign colorName = color_option[0] %}
                       {% assign colorUrl = color_option[1] %}
                       {% assign colorMatch = color_option[2] %}
+
+                      <script>
+                        console.log("color_option", {{ template_option | json }});
+                        console.log("colorMatch", {{ templateMatch }});
+                      </script>
+
                       <input
                         type="radio"
                         name="color-choice"
@@ -457,8 +463,8 @@
                       {% assign templateMatch = template_option[3] %}
 
                       <script>
-                        console.log("templateMatch", {{ templateMatch }});
                         console.log("template_option", {{ template_option | json }});
+                        console.log("templateMatch", {{ templateMatch }});
                       </script>
 
                       <div
