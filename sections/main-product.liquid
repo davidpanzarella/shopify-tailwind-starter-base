@@ -475,44 +475,6 @@
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
-            <div>
-              {% for item in items_array %}
-                {% assign values = item | split: '|' %}
-                {% assign title = values[0] %}
-                {% assign color = values[1] %}
-                {% assign shape = values[2] %}
-                {% assign size = values[3] %}
-                {% assign handle = values[4] %}
-
-                {% if color != currentColor or shape != currentShape or size != currentSize %}
-                  {% assign uniqueColor = color %}
-                  {% assign uniqueSize = size %}
-                  {% assign uniqueShape = shape %}
-
-                  {% unless uniqueColor == currentColor %}
-                    <div>
-                      <span>{{ color }}</span>
-                      <a href="/products/{{ handle }}">Link</a>
-                    </div>
-                  {% endunless %}
-
-                  {% unless uniqueSize == currentSize %}
-                    <div>
-                      <span>{{ size }}</span>
-                      <a href="/products/{{ handle }}">Link</a>
-                    </div>
-                  {% endunless %}
-
-                  {% unless uniqueShape == currentShape %}
-                    <div>
-                      <span>{{ shape }}</span>
-                      <a href="/products/{{ handle }}">Link</a>
-                    </div>
-                  {% endunless %}
-                {% endif %}
-              {% endfor %}
-            </div>
-
             <!-- Size selector -->
             <div class="sm:tw-flex sm:tw-justify-between">
               <fieldset>
