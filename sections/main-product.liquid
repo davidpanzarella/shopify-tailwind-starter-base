@@ -119,10 +119,6 @@
       {% assign sameProduct = true %}
     {% endif %}
 
-    <script>
-      console.log('sameProduct', '{{ sameProduct }}');
-    </script>
-
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
     {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
     {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
@@ -138,6 +134,8 @@
           | append: relatedProductShape
           | append: '|:|'
           | append: relatedProduct.url
+          | append: '|:|'
+          | append: sameProduct
           | append: ','
         %}
       {% endunless %}
@@ -149,6 +147,8 @@
           | append: relatedProductSize
           | append: '|:|'
           | append: relatedProduct.url
+          | append: '|:|'
+          | append: sameProduct
           | append: ','
         %}
       {% endunless %}
@@ -160,6 +160,8 @@
           | append: relatedProductColor
           | append: '|:|'
           | append: relatedProduct.url
+          | append: '|:|'
+          | append: sameProduct
           | append: ','
         %}
       {% endunless %}
@@ -174,6 +176,8 @@
           | append: relatedProduct.url
           | append: '|:|'
           | append: templateImage
+          | append: '|:|'
+          | append: sameProduct
           | append: ','
         %}
       {% endunless %}
@@ -322,7 +326,7 @@
           {% assign templateImage = template_option[2] %}
 
           {% assign templateMatch = false %}
-          {% if templateUrl == product.handle %}
+          {% if templateName == product.title %}
             {% assign templateMatch = true %}
           {% endif %}
 
