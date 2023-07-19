@@ -319,9 +319,9 @@
           {% assign templateUrl = template_option[1] %}
           {% assign templateImage = template_option[2] %}
 
-          {% assign current_product = false %}
+          {% assign templateMatch = false %}
           {% if templateUrl == product.handle %}
-            {% assign current_product = true %}
+            {% assign templateMatch = true %}
           {% endif %}
 
           <script>
@@ -331,15 +331,15 @@
 
           <div
             class="cursor-pointer group"
-            {% if current_product == false %}
+            {% if templateMatch == false %}
               onclick="window.location.href='{{templateUrl}}'"
             {% endif %}
           >
-            <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if current_product %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
+            <div class="tw-relative tw-block tw-cursor-pointer tw-rounded-lg tw-border tw-border-gray-300 tw-p-4 tw-focus:outline-none{% if templateMatch %} tw-ring-2 tw-ring-indigo-500 tw-cursor-default{% endif %}">
           <div class="tw-relative tw-block tw-p-4 tw-border tw-border-gray-300 tw-rounded-lg tw-cursor-pointer tw-focus:outline-none">
             <img
-              src="{{ template_option[2] }}"
-              alt="{{ template_option[0] }}"
+              src="{{ templateImage }}"
+              alt="{{ templateName }}"
               width="200"
               height="200"
               loading="lazy"
