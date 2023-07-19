@@ -166,24 +166,22 @@
         %}
       {% endunless %}
 
-      {% if relatedProductShape == currentShape and relatedProductSize == currentSize %}
-        {% assign color_with_delimiter = relatedProductColor | append: ',' %}
-        {% unless seen_colors contains color_with_delimiter %}
-          {% assign sameColor = false %}
-          {% if currentColor == relatedProductColor %}
-            {% assign sameColor = true %}
-          {% endif %}
-          {% assign seen_colors = seen_colors | append: color_with_delimiter %}
-          {% assign colors = colors
-            | append: relatedProductColor
-            | append: '|:|'
-            | append: relatedProduct.url
-            | append: '|:|'
-            | append: sameColor
-            | append: ','
-          %}
-        {% endunless %}
-      {% endif %}
+      {% assign color_with_delimiter = relatedProductColor | append: ',' %}
+      {% unless seen_colors contains color_with_delimiter %}
+        {% assign sameColor = false %}
+        {% if currentColor == relatedProductColor %}
+          {% assign sameColor = true %}
+        {% endif %}
+        {% assign seen_colors = seen_colors | append: color_with_delimiter %}
+        {% assign colors = colors
+          | append: relatedProductColor
+          | append: '|:|'
+          | append: relatedProduct.url
+          | append: '|:|'
+          | append: sameColor
+          | append: ','
+        %}
+      {% endunless %}
 
       {% if relatedProductColor == currentColor
         and relatedProductShape == currentShape
