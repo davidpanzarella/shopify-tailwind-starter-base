@@ -115,12 +115,12 @@
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
-    {% if relatedProduct.handle == product.handle %}
+    {% if relatedProduct.title == product.title %}
       {% assign sameProduct = true %}
     {% endif %}
 
     <script>
-      console.log('relatedProduct.handle', '{{ relatedProduct.handle }}');
+      console.log('relatedProduct.title', '{{ relatedProduct.title }}');
     </script>
 
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
