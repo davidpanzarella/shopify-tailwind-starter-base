@@ -136,9 +136,11 @@
     {% endif %}
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% if relatedProduct.id == product.id %}
-        {% assign sameProduct = true %}
-      {% endif %}
+      {% comment %}
+        {% if relatedProduct.id == product.id %}
+          {% assign sameProduct = true %}
+        {% endif %}
+      {% endcomment %}
 
       <script>
         //console.log("product.id", {{ product.id }});
