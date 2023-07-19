@@ -205,32 +205,31 @@
           %}
         {% endunless %}
       {% endcomment %}
-    {% endif %}
+      {% if relatedProductColor == currentColor
+        and relatedProductShape == currentShape
+        and relatedProductSize == currentSize
+      %}
+        {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
+        {% unless seen_templates contains template_with_delimiter %}
+          {% assign sameTemplateOptions = false %}
+          {% if currentTemplateOptions == relatedProductTemplateOptions %}
+            {% assign sameTemplateOptions = true %}
+          {% endif %}
 
-    {% if relatedProductColor == currentColor
-      and relatedProductShape == currentShape
-      and relatedProductSize == currentSize
-    %}
-      {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
-      {% unless seen_templates contains template_with_delimiter %}
-        {% assign sameTemplateOptions = false %}
-        {% if currentTemplateOptions == relatedProductTemplateOptions %}
-          {% assign sameTemplateOptions = true %}
-        {% endif %}
-
-        {% assign seen_templates = seen_templates | append: template_with_delimiter %}
-        {% assign templateImage = relatedProduct.media[1].preview_image | image_url: width: 200 %}
-        {% assign templates = templates
-          | append: relatedProductTemplateOptions
-          | append: '|:|'
-          | append: relatedProduct.url
-          | append: '|:|'
-          | append: templateImage
-          | append: '|:|'
-          | append: sameTemplateOptions
-          | append: ','
-        %}
-      {% endunless %}
+          {% assign seen_templates = seen_templates | append: template_with_delimiter %}
+          {% assign templateImage = relatedProduct.media[1].preview_image | image_url: width: 200 %}
+          {% assign templates = templates
+            | append: relatedProductTemplateOptions
+            | append: '|:|'
+            | append: relatedProduct.url
+            | append: '|:|'
+            | append: templateImage
+            | append: '|:|'
+            | append: sameTemplateOptions
+            | append: ','
+          %}
+        {% endunless %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 
