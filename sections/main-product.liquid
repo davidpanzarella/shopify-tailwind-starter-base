@@ -125,6 +125,7 @@
 
     {% if relatedProductFormat == currentFormat
       and relatedProductTemplate == currentTemplate
+      and relatedProductTemplateOptions == relatedProductTemplateOptions
       and relatedProductShape == currentShape
       and relatedProductSize == currentSize
       and relatedProductColor == currentColor
@@ -134,7 +135,7 @@
       {% assign sameProduct = false %}
     {% endif %}
 
-    {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
+    {% if relatedProductFormat == currentFormat and relatedProductTemplateOptions == currentTemplate %}
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
