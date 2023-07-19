@@ -198,6 +198,9 @@
   {% assign templates = templates | split: ',' %}
 
   <script>
+    console.log("shapes", {{ shapes | json  }});
+    console.log("sizes", {{ sizes | json  }});
+    console.log("colors", {{ colors | json  }});
     console.log("templates", {{ templates | json  }});
   </script>
 
