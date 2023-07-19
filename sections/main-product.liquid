@@ -109,7 +109,6 @@
     assign sizes = ''
     assign colors = ''
     assign templates = ''
-    assign sameProduct = false
   %}
 
   <script>
@@ -124,23 +123,10 @@
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-    {% if relatedProductFormat == currentFormat
-      and relatedProductTemplateOptions == currentTemplateOptions
-      and relatedProductShape == currentShape
-      and relatedProductSize == currentSize
-      and relatedProductColor == currentColor
-    %}
-      {% assign sameProduct = true %}
-    {% else %}
-      {% assign sameProduct = false %}
-    {% endif %}
-
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% comment %}
-        {% if relatedProduct.id == product.id %}
-          {% assign sameProduct = true %}
-        {% endif %}
-      {% endcomment %}
+      {% if relatedProduct.id == product.id %}
+        {% assign sameProduct = true %}
+      {% endif %}
 
       <script>
         //console.log("product.id", {{ product.id }});
