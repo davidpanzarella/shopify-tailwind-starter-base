@@ -69,7 +69,6 @@
     endcomment
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentType = product.metafields.custom['product-type']
-    assign currentUrl = product.handle
     assign currentTypes = currentType | append: 's'
     assign currentFormat = product.metafields.custom['product-format'].value
     assign currentShape = product.metafields.custom['product-shape'].value[0]
@@ -338,7 +337,7 @@
           {% assign templateImage = template_option[2] %}
 
           {% assign templateMatch = false %}
-          {% if relatedProduct.handle == currentUrl %}
+          {% if relatedProduct.id == product.id %}
             {% assign templateMatch = true %}
           {% endif %}
 
