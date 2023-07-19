@@ -76,7 +76,6 @@
     assign currentTemplate = product.metafields.custom['product-template-name'].value
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
-    echo '<script>console.log(' | append: currentColor | append: ');</script>'
 
     comment
       set some default values for the product title display
