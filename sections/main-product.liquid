@@ -123,7 +123,7 @@
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
       {% assign sameProduct = false %}
-      {% if relatedProduct.handle == product.handle %}
+      {% if relatedProduct.url == product.url %}
         {% assign sameProduct = true %}
       {% endif %}
 
