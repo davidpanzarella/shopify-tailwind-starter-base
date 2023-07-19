@@ -136,6 +136,7 @@
           | append: ','
         %}
       {% endunless %}
+
       {% assign size_with_delimiter = relatedProductSize | append: ',' %}
       {% unless seen_sizes contains size_with_delimiter %}
         {% assign seen_sizes = seen_sizes | append: size_with_delimiter %}
@@ -146,6 +147,7 @@
           | append: ','
         %}
       {% endunless %}
+
       {% assign color_with_delimiter = relatedProductColor | append: ',' %}
       {% unless seen_colors contains color_with_delimiter %}
         {% assign seen_colors = seen_colors | append: color_with_delimiter %}
@@ -156,6 +158,7 @@
           | append: ','
         %}
       {% endunless %}
+
       {% assign template_with_delimiter = relatedProductTemplateOptions | append: ',' %}
       {% unless seen_templates contains template_with_delimiter %}
         {% assign seen_templates = seen_templates | append: template_with_delimiter %}
