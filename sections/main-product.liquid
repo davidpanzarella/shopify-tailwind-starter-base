@@ -110,7 +110,7 @@
   %}
 
   <script>
-    console.log("relatedProductsByType", {{ relatedProductsByType | json }});
+    //console.log("relatedProductsByType", {{ relatedProductsByType | json }});
   </script>
 
   {% for relatedProduct in relatedProductsByType %}
@@ -128,10 +128,10 @@
       {% endif %}
 
       <script>
-        console.log("product.id", {{ product.id }});
-        console.log("relatedProduct.id ", {{ relatedProduct.id }});
-        console.log("relatedProduct", {{ relatedProduct | json }});
-        console.log("sameProduct", {{ sameProduct }});
+        //console.log("product.id", {{ product.id }});
+        //console.log("relatedProduct.id ", {{ relatedProduct.id }});
+        //console.log("relatedProduct", {{ relatedProduct | json }});
+        //console.log("sameProduct", {{ sameProduct }});
       </script>
 
       {% assign shape_with_delimiter = relatedProductShape | append: ',' %}
@@ -348,7 +348,7 @@
             console.log("templateProductID", {{ templateProductID }});
             console.log("product.id", {{ product.id }});
             console.log("templateMatch", {{ templateMatch }});
-            console.log("template_option", {{ template_option | json }});
+            //console.log("template_option", {{ template_option | json }});
           </script>
 
           <div
