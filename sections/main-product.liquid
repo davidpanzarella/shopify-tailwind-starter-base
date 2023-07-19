@@ -396,9 +396,12 @@
         <section aria-labelledby="options-heading">
           <h2 id="options-heading" class="tw-sr-only">Product options</h2>
           <form>
-
+            
+            
   <!-- Color selector -->
   {% if colors.size > 1 %}
+    <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between"">
+
     <fieldset>
       <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Color Options</legend>
       <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
@@ -435,11 +438,12 @@
         {% endfor %}
       </div>
     </fieldset>
+  </div>
+
   {% endif %}
-            <!-- Size selector -->
             <!-- Template selector -->
-            <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between"">
-              {% if templates.size > 1 %}
+            {% if templates.size > 1 %}
+              <div class="tw-mt-4 sm:tw-flex sm:tw-justify-between"">
                 <fieldset>
                   <legend class="tw-block tw-text-sm tw-font-medium tw-text-gray-700">Template Options</legend>
                   <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-mt-1 sm:tw-grid-cols-2">
@@ -475,8 +479,8 @@
                     {% endfor %}
                   </div>
                 </fieldset>
+              </div>
               {% endif %}
-            </div>
 
             <div class="tw-mt-4">
               <a href="#" class="tw-inline-flex tw-text-sm tw-text-gray-500 tw-group hover:tw-text-gray-700">
