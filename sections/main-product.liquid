@@ -117,6 +117,7 @@
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
+    {% assign relatedProductURL = relatedProduct.url %}
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
     {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
     {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
@@ -124,10 +125,28 @@
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-    {% if relatedProductFormat == currentFormat
-      and relatedProductTemplate == currentTemplate
-      and relatedProductColor == currentColor
+    {% if currentColor == relatedProductColor
+      and currentShape == relatedProductShape
+      and currentSize == relatedProductSize
+      and currentTemplateOptions == relatedProductTemplateOptions
     %}
+      {# This is the most preferred URL, as it matches all the current selections #}
+      {% assign preferredURL = relatedProductURL %}
+    {% elsif currentColor == relatedProductColor
+      and currentShape == relatedProductShape
+      and currentSize == relatedProductSize
+    %}
+      {# This URL matches the current color, shape, and size, but not the template options #}
+      {% assign secondPreferredURL = relatedProductURL %}
+    {% elsif currentColor == relatedProductColor and currentShape == relatedProductShape %}
+      {# This URL matches the current color and shape, but not the size or template options #}
+      {% assign thirdPreferredURL = relatedProductURL %}
+    {% elsif currentColor == relatedProductColor %}
+      {# This URL matches only the current color #}
+      {% assign fourthPreferredURL = relatedProductURL %}
+    {% endif %}
+
+    {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
