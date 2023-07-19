@@ -117,7 +117,6 @@
 
   {% for relatedProduct in relatedProductsByType %}
     {% assign sameProduct = false %}
-    {% assign relatedProductURL = relatedProduct.url %}
     {% assign relatedProductColor = relatedProduct.metafields.custom.color.value[0] %}
     {% assign relatedProductFormat = relatedProduct.metafields.custom['product-format'].value %}
     {% assign relatedProductTemplate = relatedProduct.metafields.custom['product-template-name'].value %}
@@ -125,42 +124,10 @@
     {% assign relatedProductShape = relatedProduct.metafields.custom['product-shape'].value[0] %}
     {% assign relatedProductSize = relatedProduct.metafields.custom['product-size'].value[0] %}
 
-    {% if currentColor == relatedProductColor
-      and currentShape == relatedProductShape
-      and currentSize == relatedProductSize
-      and currentTemplateOptions == relatedProductTemplateOptions
+    {% if relatedProductFormat == currentFormat
+      and relatedProductTemplate == currentTemplate
+      and relatedProductColor == currentColor
     %}
-      {# This is the most preferred URL, as it matches all the current selections #}
-      {% assign preferredURL = relatedProductURL %}
-    {% elsif currentColor == relatedProductColor
-      and currentShape == relatedProductShape
-      and currentSize == relatedProductSize
-    %}
-      {# This URL matches the current color, shape, and size, but not the template options #}
-      {% assign secondPreferredURL = relatedProductURL %}
-    {% elsif currentColor == relatedProductColor and currentShape == relatedProductShape %}
-      {# This URL matches the current color and shape, but not the size or template options #}
-      {% assign thirdPreferredURL = relatedProductURL %}
-    {% elsif currentColor == relatedProductColor %}
-      {# This URL matches only the current color #}
-      {% assign fourthPreferredURL = relatedProductURL %}
-    {% endif %}
-
-    {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
-      {% if preferredURL %}
-        {# Use the most preferred URL #}
-        {% assign finalURL = preferredURL %}
-      {% elsif secondPreferredURL %}
-        {# Use the second most preferred URL #}
-        {% assign finalURL = secondPreferredURL %}
-      {% elsif thirdPreferredURL %}
-        {# Use the third most preferred URL #}
-        {% assign finalURL = thirdPreferredURL %}
-      {% else %}
-        {# Use the fourth most preferred URL #}
-        {% assign finalURL = fourthPreferredURL %}
-      {% endif %}
-
       <script>
         //console.log("product.id", {{ product.id }});
         //console.log("relatedProduct.id ", {{ relatedProduct.id }});
@@ -231,7 +198,7 @@
         {% assign templates = templates
           | append: relatedProductTemplateOptions
           | append: '|:|'
-          | append: finalURL
+          | append: relatedProduct.url
           | append: '|:|'
           | append: templateImage
           | append: '|:|'
