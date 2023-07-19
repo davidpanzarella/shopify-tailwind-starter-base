@@ -335,7 +335,11 @@
           {% assign templateName = template_option[0] %}
           {% assign templateUrl = template_option[1] %}
           {% assign templateImage = template_option[2] %}
-          {% assign templateMatch = template_option[3] %}
+
+          {% assign templateMatch = false %}
+          {% if relatedProduct.url == product.url %}
+            {% assign templateMatch = true %}
+          {% endif %}
 
           <script>
             console.log("templateMatch", {{ templateMatch }});
