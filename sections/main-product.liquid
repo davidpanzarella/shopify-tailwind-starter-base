@@ -126,8 +126,8 @@
 
     {% if relatedProductFormat == currentFormat and relatedProductTemplate == currentTemplate %}
       {% if currentSize == relatedProductSize
-        and currentColor == relatedProductColor
-        and currentTemplateOptions == relatedProductTemplateOptions
+        or currentColor == relatedProductColor
+        or currentTemplateOptions == relatedProductTemplateOptions
       %}
         {% assign sameProduct = true %}
       {% endif %}
