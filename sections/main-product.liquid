@@ -66,9 +66,6 @@
   {% liquid
     comment
       Get all products of the same product type as the current product for the related products section
-      - If the current product is the same color as the related product, but a different shape, size, or format
-        then create a unique list for each that holds the related product handle and the name of the shape, size, or format
-        otherwise, if the current product is a different color than the related product, then create a unique list for the other color
     endcomment
     assign currentColor = product.metafields.custom.color.value[0]
     assign currentType = product.metafields.custom['product-type']
@@ -80,15 +77,9 @@
     assign currentTemplateOptions = product.metafields.custom['product-template-options'].value
     assign relatedProductsByType = collections.all.products | where: 'type', currentTypes
 
-    assign seen_shapes = ''
-    assign seen_sizes = ''
-    assign seen_colors = ''
-    assign seen_templates = ''
-    assign shapes = ''
-    assign sizes = ''
-    assign colors = ''
-    assign templates = ''
-
+    comment
+      set some default values for the product title display
+    endcomment
     assign colorDisplay = ''
     if currentColor == 'Black and White'
       assign colorDisplay = 'B&W'
@@ -104,6 +95,15 @@
     endif
 
     assign productTitleDisplay = currentSize | append: ' ' | append: currentShape | append: ' ' | append: currentType
+
+    assign seen_shapes = ''
+    assign seen_sizes = ''
+    assign seen_colors = ''
+    assign seen_templates = ''
+    assign shapes = ''
+    assign sizes = ''
+    assign colors = ''
+    assign templates = ''
   %}
   <script>
      console.log("relatedProductsByType", {{ relatedProductsByType | json }});
